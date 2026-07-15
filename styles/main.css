@@ -56,7 +56,7 @@ html, body, [class*="css"] { font-family: var(--font-body); color: var(--ink); }
 /* ---- Columna izquierda -------------------------------------------------- */
 .hero-left { padding: 0 1rem; animation: rise 0.7s ease both; }
 
-.brand-logo { width: min(280px, 70%); height: auto; margin-bottom: 2.4rem; }
+.brand-logo { width: min(280px, 100%); height: auto; margin-bottom: 2.4rem; }
 
 .hero-title {
   font-family: var(--font-display);
