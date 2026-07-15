@@ -12,6 +12,7 @@ from utils import (
     SECTIONS,
     configure_page,
     load_global_style,
+    render_html,
     render_sidebar,
 )
 from utils.helpers import data_uri
@@ -49,7 +50,7 @@ def render_landing() -> None:
     logo = data_uri("logo_unila.png")
     cards = "".join(_card_html(sec) for sec in SECTIONS)
 
-    st.markdown(
+    render_html(
         f"""
         <div class="hero">
           <div class="hero-left">
@@ -71,8 +72,7 @@ def render_landing() -> None:
             </div>
           </div>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 

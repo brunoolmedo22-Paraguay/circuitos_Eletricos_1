@@ -7,6 +7,7 @@ from .helpers import (
     asset_b64,
     configure_page,
     load_global_style,
+    render_html,
     render_sidebar,
     render_placeholder,
 )
@@ -18,6 +19,7 @@ __all__ = [
     "asset_b64",
     "configure_page",
     "load_global_style",
+    "render_html",
     "render_sidebar",
     "render_placeholder",
 ]

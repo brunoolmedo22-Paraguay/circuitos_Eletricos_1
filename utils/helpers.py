@@ -129,6 +129,18 @@ def load_global_style() -> None:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
+def render_html(html: str) -> None:
+    """Inyecta HTML en la app de forma segura.
+
+    Streamlit pasa ``st.markdown`` por un parser Markdown: si alguna línea del
+    HTML está indentada (4+ espacios) la interpreta como bloque de código y la
+    muestra como texto literal. Aquí quitamos la indentación de cada línea (y las
+    líneas vacías) para que el bloque se renderice siempre como HTML.
+    """
+    cleaned = "\n".join(line.lstrip() for line in html.splitlines() if line.strip())
+    st.markdown(cleaned, unsafe_allow_html=True)
+
+
 # --------------------------------------------------------------------------- #
 # Navegación
 # --------------------------------------------------------------------------- #
@@ -162,7 +174,7 @@ def render_placeholder(section_key: str) -> None:
         return
 
     icon_uri = data_uri(sec["image"])
-    st.markdown(
+    render_html(
         f"""
         <div class="page-hero">
           <div class="page-hero__badge">
@@ -181,7 +193,6 @@ def render_placeholder(section_key: str) -> None:
           desarrollará en una próxima versión. La estructura ya está lista para
           recibir el contenido.</p>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
     st.page_link("app.py", label="Volver al inicio", icon=":material/arrow_back:")
