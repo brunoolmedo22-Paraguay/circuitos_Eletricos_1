@@ -64,7 +64,7 @@ html, body, [class*="css"] { font-family: var(--font-body); color: var(--ink); }
   font-size: clamp(2.4rem, 3.4vw, 3.4rem);
   line-height: 1.06;
   letter-spacing: -0.5px;
-  color: var(--ink);
+  color: #4c2454;
   margin: 0 0 0.6rem 0;
 }
 
