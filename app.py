@@ -55,7 +55,7 @@ def render_landing() -> None:
         <div class="hero">
           <div class="hero-left">
             <img class="brand-logo" src="{logo}" alt="UNILA" />
-            <h1 class="hero-title">Circuitos <span class="amp">Eléctricos</span> I</h1>
+            <h1 class="hero-title"><span class="amp">Circuitos Eléctricos I</span></h1>
             <p class="hero-sub">Guía Interactiva de Aprendizaje</p>
             <div class="hero-rule"></div>
             <p class="hero-author">
