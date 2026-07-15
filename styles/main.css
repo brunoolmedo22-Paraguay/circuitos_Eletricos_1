@@ -68,7 +68,11 @@ body,
   min-height: 100vh;
   padding: 0rem !important;
 }
-
+/* Remove o espaçamento vertical automático criado pelo Streamlit */
+[data-testid="stMainBlockContainer"]
+[data-testid="stVerticalBlock"] {
+  gap: 0 !important;
+}
 /* ==========================================================================
    PANTALLA PRINCIPAL
    ========================================================================== */
@@ -77,7 +81,7 @@ body,
   display: grid;
   grid-template-columns: minmax(0, 44%) minmax(0, 56%);
   width: 100%;
-  min-height: calc(100vh - 2rem);
+  min-height: 100vh;
   overflow: hidden;
   background: var(--white);
   border-radius: var(--radius-shell);
