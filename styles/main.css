@@ -84,7 +84,6 @@ body,
   min-height: 100vh;
   overflow: hidden;
   background: var(--white);
-  border-radius: var(--radius-shell);
   box-shadow: var(--shadow-shell);
 }
 
