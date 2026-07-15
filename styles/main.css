@@ -1,271 +1,196 @@
 /* ==========================================================================
-   Circuitos Eléctricos I — Estilo global
-   Paleta y layout derivados de la identidad de la plataforma (púrpura UNILA).
+   Circuitos Eléctricos I — Estilo global (v2)
+   Rediseño tipo split layout
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
-:root {
-  --panel:        #88678b;   /* panel púrpura principal */
-  --panel-deep:   #6f5273;   /* variante oscura para profundidad */
-  --card:         #b7a2ba;   /* tarjeta mauve clara */
-  --card-hover:   #c8b6cb;   /* tarjeta al pasar el mouse */
-  --accent:       #532458;   /* púrpura profundo (logo / detalles) */
-  --ink:          #211c26;   /* texto casi negro */
-  --muted:        #6b6472;   /* texto secundario */
-  --line:         #ece8ef;   /* divisores suaves */
-  --white:        #ffffff;
+:root{
+  --panel:#88678b;
+  --panel-deep:#6f5273;
+  --card:#b7a2ba;
+  --card-hover:#c8b6cb;
+  --accent:#532458;
+  --ink:#211c26;
+  --muted:#6b6472;
+  --line:#ece8ef;
+  --white:#fff;
 
-  --radius-lg:    28px;
-  --radius-md:    20px;
-  --shadow-soft:  0 10px 30px rgba(83, 36, 88, 0.10);
-  --shadow-card:  0 6px 18px rgba(45, 20, 50, 0.14);
-  --shadow-hover: 0 18px 40px rgba(45, 20, 50, 0.28);
+  --radius-xl:52px;
+  --radius-lg:30px;
+  --radius-md:22px;
 
-  --font-display: 'Poppins', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --shadow:0 18px 55px rgba(45,20,50,.16);
+
+  --font-display:'Poppins',sans-serif;
+  --font-body:'Inter',sans-serif;
 }
 
-/* --- Limpieza del cromo de Streamlit para lograr aspecto de producto ------ */
-#MainMenu,
-header[data-testid="stHeader"],
-footer,
-[data-testid="stSidebarNav"] { display: none !important; }
-
-[data-testid="stAppViewContainer"] { background: var(--white); }
-
-.block-container {
-  padding-top: 2.2rem;
-  padding-bottom: 2.5rem;
-  max-width: 1240px;
+#MainMenu,header[data-testid="stHeader"],footer,[data-testid="stSidebarNav"]{
+display:none!important;
 }
 
-html, body, [class*="css"] { font-family: var(--font-body); color: var(--ink); }
-
-/* ==========================================================================
-   PORTADA (landing)
-   ========================================================================== */
-.hero {
-  display: grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: center;
-  min-height: 78vh;
+[data-testid="stAppViewContainer"]{
+background:#f7f5f8;
 }
 
-/* ---- Columna izquierda -------------------------------------------------- */
-.hero-left { padding: 0 1rem; animation: rise 0.7s ease both; }
-
-.brand-logo { width: min(400px, 100%); height: auto; margin-bottom: 2.4rem; }
-
-.hero-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2.4rem, 3.4vw, 3.4rem);
-  line-height: 1.06;
-  letter-spacing: -0.5px;
-  color: #4c2454;
-  margin: 0 0 0.6rem 0;
+.block-container{
+max-width:1400px;
+padding-top:2rem;
+padding-bottom:2rem;
 }
 
-.hero-title .amp { color: var(--accent); }
-
-.hero-sub {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
-  color: var(--panel);
-  margin: 0 0 2.2rem 0;
+.hero{
+display:grid;
+grid-template-columns:46% 54%;
+min-height:82vh;
+background:white;
+border-radius:52px;
+overflow:hidden;
+box-shadow:var(--shadow);
 }
 
-.hero-rule {
-  width: 64px; height: 4px; border-radius: 4px;
-  background: var(--accent); margin-bottom: 2rem;
+.hero-left{
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:5rem;
+background:white;
 }
 
-.hero-author {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.5;
-  margin: 0;
-}
-.hero-author strong { color: var(--ink); font-weight: 600; }
-
-/* ---- Columna derecha: panel + tarjetas ---------------------------------- */
-.hero-right { animation: rise 0.7s ease 0.05s both; }
-
-.panel {
-  background: linear-gradient(150deg, var(--panel) 0%, var(--panel-deep) 100%);
-  border-radius: var(--radius-lg);
-  padding: 1.6rem;
-  box-shadow: var(--shadow-soft);
+.brand-logo{
+width:430px;
+max-width:100%;
+height:auto;
+margin-bottom:3.5rem;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
+.hero-title{
+font-family:var(--font-display);
+font-size:4.2rem;
+font-weight:700;
+line-height:1.05;
+margin:0 0 1rem;
+color:var(--accent);
 }
 
-/* ---- Tarjeta ------------------------------------------------------------- */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.85rem;
-  padding: 1.7rem 1.35rem 1.5rem;
-  background: var(--card);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  text-decoration: none;
-  color: var(--white);
-  cursor: pointer;
-  text-decoration:none !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-  animation: rise 0.6s ease both;
-}
-.card:nth-child(1) { animation-delay: 0.10s; }
-.card:nth-child(2) { animation-delay: 0.18s; }
-.card:nth-child(3) { animation-delay: 0.26s; }
-.card:nth-child(4) { animation-delay: 0.34s; }
-
-.card:hover {
-  transform: translateY(-8px);
-  background: var(--card-hover);
-  box-shadow: var(--shadow-hover);
-  text-decoration:none !important;
+.hero-sub{
+font-family:var(--font-display);
+font-size:1.35rem;
+color:var(--panel);
+margin:0 0 2.8rem;
 }
 
-.card-icon {
-  width: 96px; height: 96px;
-  display: flex; align-items: center; justify-content: center;
-  transition: transform 0.25s ease;
-}
-.card:hover .card-icon { transform: scale(1.09); }
-.card-icon img { width: 100%; height: 100%; object-fit: contain; }
-
-.card-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.08rem;
-  letter-spacing: 0.2px;
-  color: var(--white);
+.hero-rule{
+width:90px;
+height:5px;
+border-radius:99px;
+background:var(--accent);
+margin-bottom:3rem;
 }
 
-.card-desc {
-  font-size: 0.85rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
+.hero-author{
+color:var(--muted);
+line-height:1.6;
 }
 
-.card-cta {
-  margin-top: 0.15rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--white);
-  opacity: 0.85;
-  transition: opacity 0.25s ease, letter-spacing 0.25s ease;
-}
-.card:hover .card-cta { opacity: 1; letter-spacing: 0.4px; }
-.card:visited{
-    text-decoration:none !important;
-}
-.card *{
-    text-decoration:none !important;
-}
-/* ==========================================================================
-   PÁGINAS INTERNAS (encabezado + estado en construcción)
-   ========================================================================== */
-.page-hero {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  padding: 1.8rem 2rem;
-  border-radius: var(--radius-md);
-  background: linear-gradient(150deg, var(--panel) 0%, var(--panel-deep) 100%);
-  box-shadow: var(--shadow-soft);
-  animation: rise 0.6s ease both;
-}
-.page-hero__badge {
-  flex: 0 0 auto;
-  width: 84px; height: 84px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  font-size: 2rem;
-}
-.page-hero__badge img { width: 66px; height: 66px; object-fit: contain; }
-.page-hero__text { color: var(--white); }
-.page-hero__text .eyebrow {
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase; color: rgba(255, 255, 255, 0.75);
-}
-.page-hero__text h1 {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
-  margin: 0.2rem 0 0.4rem; color: var(--white);
-}
-.page-hero__text p {
-  margin: 0; max-width: 60ch;
-  color: rgba(255, 255, 255, 0.92); font-size: 0.95rem; line-height: 1.5;
+.hero-right{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:3.5rem;
+background:linear-gradient(150deg,var(--panel) 0%,var(--panel-deep) 100%);
+border-top-left-radius:70px;
+border-bottom-left-radius:70px;
 }
 
-.build-note {
-  margin: 1.6rem 0 1.2rem;
-  padding: 1.4rem 1.6rem;
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
-  border-radius: 14px;
-  background: #faf8fb;
-}
-.build-note__tag {
-  display: inline-block;
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: rgba(83, 36, 88, 0.08);
-  padding: 0.25rem 0.6rem; border-radius: 999px;
-  margin-bottom: 0.6rem;
-}
-.build-note p { margin: 0; color: var(--muted); line-height: 1.55; }
-
-/* ==========================================================================
-   BARRA LATERAL PROPIA
-   ========================================================================== */
-[data-testid="stSidebar"] { background: #faf8fb; border-right: 1px solid var(--line); }
-.side-brand {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: 1.05rem; color: var(--accent);
-  padding: 0.4rem 0 1rem;
-}
-.side-foot {
-  margin-top: 1.4rem; padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.75rem; color: var(--muted); line-height: 1.5;
+.card-grid{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:2rem;
 }
 
-/* ==========================================================================
-   ANIMACIONES Y RESPONSIVE
-   ========================================================================== */
-@keyframes rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+.card{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+min-height:300px;
+padding:2.2rem;
+background:var(--card);
+border-radius:28px;
+text-decoration:none!important;
+color:white;
+transition:.25s;
+box-shadow:0 8px 22px rgba(0,0,0,.12);
 }
 
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; }
-  .hero-left { padding: 0; text-align: center; }
-  .brand-logo { margin-left: auto; margin-right: auto; }
-  .hero-rule { margin-left: auto; margin-right: auto; }
+.card:hover{
+transform:translateY(-8px);
+background:var(--card-hover);
+box-shadow:0 20px 45px rgba(0,0,0,.22);
+text-decoration:none!important;
 }
 
-@media (max-width: 560px) {
-  .card-grid { grid-template-columns: 1fr; }
-  .page-hero { flex-direction: column; text-align: center; }
+.card,.card *,.card:visited{
+text-decoration:none!important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-left, .hero-right, .card, .page-hero { animation: none !important; }
-  .card, .card-icon { transition: none !important; }
+.card-icon{
+width:120px;
+height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:.8rem;
+}
+
+.card-icon img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+
+.card-title{
+font-family:var(--font-display);
+font-size:1.2rem;
+font-weight:600;
+color:white;
+margin-bottom:.5rem;
+}
+
+.card-desc{
+font-size:.9rem;
+line-height:1.5;
+color:rgba(255,255,255,.9);
+}
+
+.card-cta{
+margin-top:1rem;
+font-weight:600;
+opacity:.85;
+}
+
+@media(max-width:900px){
+.hero{
+grid-template-columns:1fr;
+}
+.hero-right{
+border-radius:0;
+}
+.hero-left{
+padding:3rem;
+text-align:center;
+}
+.brand-logo{
+margin-inline:auto;
+}
+.hero-rule{
+margin-inline:auto;
+}
+.card-grid{
+grid-template-columns:1fr;
+}
 }
