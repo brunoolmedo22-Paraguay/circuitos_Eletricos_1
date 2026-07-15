@@ -65,12 +65,10 @@ def render_landing() -> None:
           </div>
 
           <div class="hero-right">
-            <div class="panel">
-              <div class="card-grid">
-                {cards}
-              </div>
+                <div class="card-grid">
+                    {cards}
+                </div>
             </div>
-          </div>
         </div>
         """
     )
