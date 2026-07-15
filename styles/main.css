@@ -102,10 +102,11 @@ body,
 }
 
 .brand-logo {
-  display: block;
-  width: min(430px, 100%);
-  height: auto;
-  margin: 0 0 clamp(2.5rem, 4.5vw, 4.5rem);
+    width: 65%;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin-bottom: 3rem;
 }
 
 .app-title {
