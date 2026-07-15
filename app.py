@@ -46,30 +46,33 @@ def _card_html(section: dict) -> str:
 
 
 def render_landing() -> None:
-    """Renderiza la portada completa (columna de marca + panel de tarjetas)."""
+    """Renderiza la pantalla principal de la plataforma."""
     logo = data_uri("logo_unila.png")
     cards = "".join(_card_html(sec) for sec in SECTIONS)
 
     render_html(
         f"""
-        <div class="hero">
-          <div class="hero-left">
+        <main class="app-shell">
+          <section class="left-panel">
             <img class="brand-logo" src="{logo}" alt="UNILA" />
-            <h1 class="hero-title"><span class="amp">Circuitos Eléctricos I</span></h1>
-            <p class="hero-sub">Guía Interactiva de Aprendizaje</p>
-            <div class="hero-rule"></div>
-            <p class="hero-author">
+
+            <h1 class="app-title">Circuitos Eléctricos I</h1>
+            <p class="app-subtitle">Guía Interactiva de Aprendizaje</p>
+
+            <div class="app-rule"></div>
+
+            <p class="app-author">
               Desarrollado por el Monitor<br>
               <strong>Bruno Manuel Olmedo Chavez</strong>
             </p>
-          </div>
+          </section>
 
-          <div class="hero-right">
-                <div class="card-grid">
-                    {cards}
-                </div>
+          <section class="right-panel">
+            <div class="cards-grid">
+              {cards}
             </div>
-        </div>
+          </section>
+        </main>
         """
     )
 
