@@ -47,7 +47,7 @@ def _card_html(section: dict) -> str:
 
 def render_landing() -> None:
     """Renderiza la portada completa (columna de marca + panel de tarjetas)."""
-    logo = data_uri("logo_unila.png")
+    
     cards = "".join(_card_html(sec) for sec in SECTIONS)
 
     render_html(
