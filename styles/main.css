@@ -149,10 +149,6 @@ body,
   font-weight: 600;
   font-size: 1.05em;
 }
-.app-shell .left-panel h1.app-title {
-  font-size: clamp(3.6rem, 5.2vw, 6rem) !important;
-  font-family: var(--font-display) !important;
-}
 /* --------------------------------------------------------------------------
    Panel derecho
    -------------------------------------------------------------------------- */
