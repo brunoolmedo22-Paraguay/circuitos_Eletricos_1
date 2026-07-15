@@ -83,7 +83,7 @@ SECTIONS = [
 # --------------------------------------------------------------------------- #
 # Recursos (imágenes y CSS)
 # --------------------------------------------------------------------------- #
-@lru_cache(maxsize=None)
+
 def asset_b64(filename: str) -> str:
     """Devuelve una imagen de ``assets/`` como cadena base64 lista para un data URI.
 
@@ -102,7 +102,7 @@ def data_uri(filename: str, mime: str = "image/png") -> str:
     return f"data:{mime};base64,{b64}" if b64 else ""
 
 
-@lru_cache(maxsize=1)
+
 def _read_css() -> str:
     css_path = STYLES_DIR / "main.css"
     return css_path.read_text(encoding="utf-8") if css_path.exists() else ""
