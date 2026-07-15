@@ -43,7 +43,7 @@ padding-bottom:2rem;
 .hero{
 display:grid;
 grid-template-columns:46% 54%;
-min-height:82vh;
+max-height:95vh;
 background:white;
 border-radius:52px;
 overflow:hidden;
