@@ -7,8 +7,9 @@ El objetivo es acompañar el proceso de aprendizaje del alumno siguiendo una
 secuencia lógica similar a la del semestre: aprender la teoría, interactuar con
 ella, consultar formularios y estudiar ejercicios resueltos.
 
-> **Estado actual: Versión 0.1** — arquitectura del proyecto y portada
-> profesional. Los módulos de contenido se desarrollan por versiones.
+> **Estado actual: Versión 0.2** — arquitectura, portada y módulo
+> **Aprenda la Teoría** con siete unidades organizadas. La primera unidad,
+> *Fundamentos de circuitos en CC*, incluye siete capítulos interactivos.
 
 ---
 
@@ -18,7 +19,7 @@ La plataforma crecerá alrededor de cuatro grandes módulos:
 
 | Módulo | Descripción |
 | --- | --- |
-| 📘 **Aprenda la Teoría** | Contenidos teóricos: Ley de Ohm, potencia, energía, Kirchhoff, resistencias, divisores, Thévenin, Norton, capacitores, inductores, RC y RL. Cada tema con explicación, imágenes, ejemplos, ecuaciones en LaTeX y observaciones. |
+| 📘 **Aprenda la Teoría** | Libro digital organizado en siete unidades. La Unidad 1 ya incluye circuito eléctrico, tensión, corriente, resistencia, Ley de Ohm, potencia, energía, consumo y medición, con ecuaciones, ejemplos y gráficos interactivos. |
 | 🎛️ **Interactúe con la Teoría** | Simulaciones dinámicas con *sliders*: Ley de Ohm, circuitos RC/RL, constante de tiempo, carga/descarga, etc. Gráficos interactivos. |
 | 📐 **Formularios** | Biblioteca organizada de ecuaciones renderizadas en LaTeX. |
 | ✅ **Ejercicios Resueltos** | Problemas desarrollados paso a paso con ecuaciones en LaTeX. |
@@ -48,7 +49,8 @@ Circuitos_Electricos_I/
 │
 ├── utils/                 # Código reutilizable
 │   ├── __init__.py
-│   └── helpers.py         # rutas, base64, config, CSS, navegación
+│   ├── helpers.py         # rutas, base64, config, CSS, navegación
+│   └── theory.py          # catálogo de unidades y capítulos de teoría
 │
 └── pages/                 # Módulos (multipágina de Streamlit)
     ├── teoria.py
@@ -85,6 +87,38 @@ La lista `SECTIONS` en `utils/helpers.py` es la **única fuente de verdad**: la
 portada, la barra lateral y las páginas leen de ahí. Para sumar una sección,
 agrega su entrada a `SECTIONS`, coloca su ícono en `assets/` y crea el archivo
 correspondiente en `pages/`.
+
+## 📘 Aprenda la Teoría · Versión 0.2
+
+El módulo usa parámetros de URL (`unit` y `topic`) para que cada capítulo pueda
+abrirse directamente y conservarse al recargar la página. La biblioteca muestra
+las siete unidades de la disciplina y marca como **Próximamente** los capítulos
+que todavía no fueron desarrollados.
+
+La Unidad 1 contiene:
+
+1. ¿Qué es un circuito eléctrico?
+2. Tensión y corriente.
+3. Resistencia y resistores.
+4. Ley de Ohm.
+5. Potencia, energía y eficiencia.
+6. Consumo eléctrico.
+7. Circuito abierto, cortocircuito y medición.
+
+Cada capítulo mantiene la misma estructura didáctica: objetivos, explicación,
+ecuaciones, experiencia guiada, error frecuente, comprobación rápida, resumen y
+navegación anterior/siguiente.
+
+### Referencia didáctica
+
+La secuencia y el alcance conceptual toman como referencia:
+
+> BOYLESTAD, Robert L. *Introdução à análise de circuitos*. 12. ed. São Paulo:
+> Pearson Prentice Hall, 2012.
+
+Los textos, ejemplos, diagramas y visualizaciones de la plataforma fueron
+redactados específicamente para este proyecto; el libro no se redistribuye con
+la aplicación.
 
 ---
 

@@ -3,6 +3,7 @@
 from .helpers import (
     APP_TITLE,
     APP_ICON,
+    APP_VERSION,
     SECTIONS,
     asset_b64,
     configure_page,
@@ -15,6 +16,7 @@ from .helpers import (
 __all__ = [
     "APP_TITLE",
     "APP_ICON",
+    "APP_VERSION",
     "SECTIONS",
     "asset_b64",
     "configure_page",

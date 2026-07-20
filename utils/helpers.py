@@ -26,6 +26,7 @@ STYLES_DIR = ROOT_DIR / "styles"
 # --------------------------------------------------------------------------- #
 APP_TITLE = "Circuitos Eléctricos I"
 APP_ICON = "⚡"
+APP_VERSION = "0.2"
 
 # Definición única de las secciones. Cada página y la portada leen de aquí,
 # así agregar un módulo nuevo es cambiar una sola lista.
@@ -158,7 +159,7 @@ def render_sidebar(active: str | None = None) -> None:
         for sec in SECTIONS:
             st.page_link(sec["page"], label=sec["title"], icon=sec["icon"])
         st.markdown(
-            "<div class='side-foot'>Monitoría · UNILA<br>Versión 0.1</div>",
+            f"<div class='side-foot'>Monitoría · UNILA<br>Versión {APP_VERSION}</div>",
             unsafe_allow_html=True,
         )
 
