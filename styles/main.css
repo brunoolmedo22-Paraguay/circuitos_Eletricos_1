@@ -13,6 +13,8 @@
   --accent:       #532458;
   --ink:          #211c26;
   --muted:        #6b6472;
+  --green:        #2f7d63;
+  --amber:        #b36b20;
   --line:         #ece8ef;
   --surface:      #f6f3f7;
   --white:        #ffffff;
@@ -411,7 +413,7 @@ body,
 }
 
 /* ==========================================================================
-   APRENDA LA TEORÍA · LIBRO DIGITAL INTERACTIVO (v0.2)
+   APRENDA LA TEORÍA · REPOSITORIO DE CONSULTA (v0.3)
    ========================================================================== */
 
 .theory-page-marker {
@@ -441,6 +443,35 @@ body,
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) li {
   font-size: 1rem;
   line-height: 1.72;
+}
+
+/*
+ * Streamlit puede conservar el color de texto de un tema anterior al navegar
+ * entre páginas. Solo se fuerzan los nodos nativos directos: el contenido HTML
+ * de portadas y cabeceras mantiene su propio contraste sobre fondos oscuros.
+ */
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > p,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > ul,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > ol,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > blockquote,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stWidgetLabel"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stCaptionContainer"] p,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stExpander"] summary p {
+  color: var(--ink) !important;
+}
+
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > p strong,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker)
+[data-testid="stMarkdownContainer"] > li strong {
+  color: var(--ink);
 }
 
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) h1,
@@ -613,14 +644,17 @@ body,
 .theory-hero__symbol b { color: rgba(255, 255, 255, 0.76); font-size: 1.45rem; }
 
 /* Encabezados de sección */
-.lesson-section-title {
+.lesson-section-title,
+.reference-section-title {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   margin: 2.6rem 0 1rem;
+  scroll-margin-top: 1.5rem;
 }
 
-.lesson-section-title > span {
+.lesson-section-title > span,
+.reference-section-title > span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -635,7 +669,8 @@ body,
   letter-spacing: 0.06em;
 }
 
-.lesson-section-title h2 {
+.lesson-section-title h2,
+.reference-section-title h2 {
   margin: 0;
   color: var(--ink);
   font-size: clamp(1.35rem, 2.1vw, 1.8rem);
@@ -643,7 +678,8 @@ body,
   letter-spacing: -0.02em;
 }
 
-.lesson-section-title p {
+.lesson-section-title p,
+.reference-section-title p {
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 0.9rem !important;
@@ -653,17 +689,26 @@ body,
 /* Selector Streamlit */
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stSelectbox"] label,
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stNumberInput"] label,
-[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stSlider"] label {
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stSlider"] label,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stTextInput"] label,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stToggle"] label {
   color: var(--ink);
   font-weight: 600;
 }
 
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-baseweb="select"] > div,
-[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stNumberInput"] input {
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stNumberInput"] input,
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stTextInput"] input {
   min-height: 48px;
+  color: var(--ink);
   background: rgba(255, 255, 255, 0.92);
   border-color: #ded6e1;
   border-radius: 13px;
+}
+
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stTextInput"] input::placeholder {
+  color: #817886;
+  opacity: 1;
 }
 
 /* Unidad y tarjetas */
@@ -749,6 +794,7 @@ body,
 .topic-card__icon { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin: 1.2rem 0 0.8rem; color: var(--accent); background: rgba(139, 106, 143, 0.10); border-radius: 14px; font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; }
 .topic-card h3 { margin: 0 0 0.45rem; color: var(--ink); font-size: 1.02rem; line-height: 1.35; }
 .topic-card p { margin: 0; color: var(--muted); font-size: 0.8rem !important; line-height: 1.55 !important; }
+.topic-card__source { margin-top: 0.8rem; color: var(--panel-deep); font-size: 0.69rem; font-weight: 600; line-height: 1.4; }
 .topic-card__cta { margin-top: auto; padding-top: 1rem; color: var(--accent); font-size: 0.75rem; font-weight: 700; }
 .topic-card--locked .topic-card__cta { color: #99919c; }
 .topic-card__cta b { display: inline-block; margin-left: 0.2rem; transition: transform 0.2s ease; }
@@ -778,7 +824,202 @@ body,
 .roadmap-item b { font-family: var(--font-display); font-size: 0.78rem; line-height: 1.35; }
 .roadmap-item small { color: var(--muted); font-size: 0.64rem; line-height: 1.35; }
 
-/* Página de capítulo */
+/* Índice y componentes editoriales */
+.search-summary {
+  margin: 0.2rem 0 1rem;
+  padding: 0.75rem 0.9rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(83, 36, 88, 0.09);
+  border-radius: 13px;
+  font-size: 0.8rem;
+}
+
+.search-summary strong {
+  color: var(--accent);
+  font-family: var(--font-display);
+}
+
+.article-index {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0 0.2rem;
+  padding: 0.95rem 1.05rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(83, 36, 88, 0.10);
+  border-radius: 16px;
+}
+
+.article-index > span {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.article-index > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.article-index a {
+  padding: 0.35rem 0.58rem;
+  color: var(--accent) !important;
+  background: rgba(139, 106, 143, 0.08);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.article-index a:hover {
+  background: rgba(139, 106, 143, 0.16);
+}
+
+.fact-sheet {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0.8rem 0 1.2rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(83, 36, 88, 0.10);
+  border-radius: 17px;
+}
+
+.fact-sheet > div {
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-right: 1px solid rgba(83, 36, 88, 0.09);
+}
+
+.fact-sheet > div:last-child { border-right: 0; }
+
+.fact-sheet dt {
+  margin-bottom: 0.28rem;
+  color: var(--muted);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.fact-sheet dd {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.reference-table-wrap {
+  margin: 0.8rem 0 1.15rem;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(83, 36, 88, 0.10);
+  border-radius: 16px;
+}
+
+.reference-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  color: var(--ink);
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.reference-table th,
+.reference-table td {
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid rgba(83, 36, 88, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.reference-table th {
+  color: var(--accent);
+  background: rgba(139, 106, 143, 0.09);
+  font-family: var(--font-display);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.reference-table tbody tr:last-child td { border-bottom: 0; }
+.reference-table tbody tr:hover { background: rgba(139, 106, 143, 0.04); }
+
+.reference-note {
+  margin: 1rem 0;
+  padding: 0.95rem 1.05rem;
+  background: rgba(72, 122, 170, 0.055);
+  border: 1px solid rgba(72, 122, 170, 0.12);
+  border-left: 4px solid #487aaa;
+  border-radius: 13px;
+}
+
+.reference-note--warning {
+  background: rgba(179, 107, 32, 0.055);
+  border-color: rgba(179, 107, 32, 0.16);
+  border-left-color: var(--amber);
+}
+
+.reference-note strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+}
+
+.reference-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem !important;
+  line-height: 1.6 !important;
+}
+
+.inline-citation { color: var(--accent); font-weight: 600; }
+
+.article-source {
+  margin: 2rem 0 0.5rem;
+  padding: 1.1rem 1.2rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.68);
+  border-top: 3px solid var(--panel);
+  border-radius: 0 0 15px 15px;
+}
+
+.article-source > span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.article-source p {
+  margin: 0 0 0.3rem;
+  color: var(--ink);
+  font-size: 0.78rem !important;
+  line-height: 1.55 !important;
+}
+
+.article-source small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+/* Página de artículo */
 .lesson-toolbar {
   display: flex;
   align-items: center;
@@ -804,6 +1045,10 @@ body,
   background: linear-gradient(140deg, var(--panel) 0%, var(--panel-deep) 70%, var(--accent) 100%);
   border-radius: 28px;
   box-shadow: 0 16px 40px rgba(83, 36, 88, 0.15);
+}
+
+.lesson-hero--reference {
+  grid-template-columns: 74px minmax(0, 1fr);
 }
 
 .lesson-hero__icon {
@@ -887,7 +1132,20 @@ body,
 .lesson-callout strong { display: block; margin: 0 0 0.2rem; color: var(--ink); font-family: var(--font-display); font-size: 0.83rem; }
 .lesson-callout p { margin: 0; color: var(--muted); font-size: 0.78rem !important; line-height: 1.55 !important; }
 
-/* Widgets y gráficos en modo libro */
+/* Herramientas de consulta y gráficos */
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stExpander"] {
+  margin: 0.45rem 0 0.75rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(83, 36, 88, 0.11);
+  border-radius: 15px;
+}
+
+[data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stExpander"] summary {
+  color: var(--ink) !important;
+  font-weight: 600;
+}
+
 [data-testid="stAppViewContainer"]:has(.theory-page-marker) [data-testid="stMetric"] {
   min-height: 108px;
   padding: 1rem 1.1rem;
@@ -1006,6 +1264,9 @@ body,
   .theory-hero__symbol { display: none; }
   .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .theory-roadmap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fact-sheet { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fact-sheet > div:nth-child(2) { border-right: 0; }
+  .fact-sheet > div:nth-child(-n + 2) { border-bottom: 1px solid rgba(83, 36, 88, 0.09); }
   .lesson-objectives { grid-template-columns: 1fr; }
   .lesson-objectives ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -1018,7 +1279,8 @@ body,
   .theory-hero { min-height: auto; padding: 2rem 1.3rem; border-radius: 25px; }
   .theory-hero h1 { font-size: clamp(2.3rem, 13vw, 3.35rem); }
   .theory-hero__copy > p { font-size: 0.9rem !important; }
-  .lesson-section-title { gap: 0.65rem; margin-top: 2rem; }
+  .lesson-section-title, .reference-section-title { gap: 0.65rem; margin-top: 2rem; }
+  .article-index { grid-template-columns: 1fr; gap: 0.55rem; }
   .unit-intro { grid-template-columns: 64px 1fr; padding: 1rem; }
   .unit-intro__number { width: 58px; height: 58px; border-radius: 16px; font-size: 1.25rem; }
   .topic-grid, .theory-roadmap, .concept-grid, .lesson-bottom-nav { grid-template-columns: 1fr; }

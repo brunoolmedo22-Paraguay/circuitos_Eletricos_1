@@ -1,9 +1,8 @@
-"""Catálogo y utilidades del módulo ``Aprenda la Teoría``.
+"""Catálogo y utilidades del repositorio ``Aprenda la Teoría``.
 
-El catálogo vive fuera de la página para que, a medida que el curso crezca,
-la navegación y el contenido sigan siendo fáciles de mantener.  Los textos de
-las lecciones son originales y usan Boylestad (12.ª edición) como referencia
-de secuencia y alcance, no como contenido copiado.
+El catálogo vive fuera de la página para mantener una única estructura de
+consulta. Los artículos son originales y utilizan Boylestad (12.ª edición)
+como referencia bibliográfica de secuencia y alcance.
 """
 
 from __future__ import annotations
@@ -13,13 +12,13 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class TheoryTopic:
-    """Metadatos de un capítulo breve dentro de una unidad."""
+    """Metadatos de una entrada de consulta dentro de una unidad."""
 
     key: str
     title: str
     description: str
     icon: str
-    duration: str = "8 min"
+    source_pages: str = ""
     available: bool = False
 
 
@@ -44,8 +43,8 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Fundamentos de circuitos en CC",
         short_title="Fundamentos en CC",
         description=(
-            "Construya la base: circuito eléctrico, tensión, corriente, "
-            "resistencia, Ley de Ohm, potencia, energía y consumo."
+            "Definiciones y relaciones básicas: circuito eléctrico, tensión, "
+            "corriente, resistencia, Ley de Ohm, potencia, energía y consumo."
         ),
         reference="Boylestad · capítulos 2–4",
         icon="⚡",
@@ -53,57 +52,57 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
             TheoryTopic(
                 "que-es-un-circuito",
                 "¿Qué es un circuito eléctrico?",
-                "Fuentes, conductores, cargas y la necesidad de un camino cerrado.",
+                "Estructura mínima, elementos funcionales y estados del circuito.",
                 "🔌",
-                "7 min",
+                "pp. 29–30",
                 True,
             ),
             TheoryTopic(
                 "tension-y-corriente",
                 "Tensión y corriente",
-                "Diferencia de potencial, movimiento de carga y sentidos de referencia.",
+                "Definiciones, unidades, relaciones y sentidos de referencia.",
                 "↗",
-                "9 min",
+                "pp. 27–30",
                 True,
             ),
             TheoryTopic(
                 "resistencia",
                 "Resistencia y resistores",
-                "Qué limita la corriente, de qué depende R y cómo leer un resistor.",
+                "Resistividad, geometría, conductancia y código de colores.",
                 "〰",
-                "10 min",
+                "pp. 51–52, 64–67",
                 True,
             ),
             TheoryTopic(
                 "ley-de-ohm",
                 "Ley de Ohm",
-                "Relacione V, I y R y descubra qué representa la pendiente del gráfico.",
+                "Relaciones entre V, I y R e interpretación de la característica V–I.",
                 "Ω",
-                "10 min",
+                "pp. 84–87",
                 True,
             ),
             TheoryTopic(
                 "potencia-y-energia",
                 "Potencia, energía y eficiencia",
-                "Comprenda la rapidez de conversión de energía y sus ecuaciones.",
+                "Definiciones, unidades, ecuaciones de potencia y rendimiento.",
                 "💡",
-                "10 min",
+                "pp. 89–94",
                 True,
             ),
             TheoryTopic(
                 "consumo-electrico",
                 "Consumo eléctrico",
-                "Diferencie kW de kWh y estime energía y costo de utilización.",
+                "Diferencia entre kW y kWh, medición, energía y costo básico.",
                 "🧾",
-                "8 min",
+                "pp. 91–94",
                 True,
             ),
             TheoryTopic(
                 "abierto-corto-medicion",
                 "Circuito abierto, corto y medición",
-                "Compare estados del circuito y conecte amperímetro y voltímetro.",
+                "Modelos abierto y corto; conexión de amperímetro y voltímetro.",
                 "🧰",
-                "10 min",
+                "pp. 42–43, 179–180",
                 True,
             ),
         ),
@@ -114,8 +113,8 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Circuitos resistivos",
         short_title="Circuitos resistivos",
         description=(
-            "Analice asociaciones en serie, paralelo y serie–paralelo usando "
-            "resistencia equivalente y las leyes de Kirchhoff."
+            "Asociaciones serie, paralelo y serie–paralelo; resistencia "
+            "equivalente y leyes de Kirchhoff."
         ),
         reference="Boylestad · capítulos 5–7",
         icon="⛓",
@@ -134,17 +133,17 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Métodos de análisis en CC",
         short_title="Métodos de análisis",
         description=(
-            "Formule y resuelva circuitos que ya no pueden reducirse solamente "
-            "con asociaciones serie–paralelo."
+            "Métodos para redes que no pueden reducirse únicamente mediante "
+            "asociaciones serie–paralelo."
         ),
         reference="Boylestad · capítulo 8 + ampliación didáctica",
         icon="🧠",
         topics=(
-            TheoryTopic("topologia", "Ramas, nodos y mallas", "Reconozca la topología antes de escribir ecuaciones.", "◫"),
-            TheoryTopic("nodal", "Análisis nodal", "Encuentre tensiones desconocidas aplicando KCL.", "●"),
-            TheoryTopic("supernodos", "Supernodos", "Trate fuentes de tensión entre dos nodos no conocidos.", "◉"),
-            TheoryTopic("mallas", "Análisis de mallas", "Encuentre corrientes desconocidas aplicando KVL.", "↻"),
-            TheoryTopic("supermallas", "Supermallas", "Trate fuentes de corriente compartidas entre mallas.", "◎"),
+            TheoryTopic("topologia", "Ramas, nodos y mallas", "Topología de la red y recuento de variables.", "◫"),
+            TheoryTopic("nodal", "Análisis nodal", "Tensiones desconocidas y formulación mediante KCL.", "●"),
+            TheoryTopic("supernodos", "Supernodos", "Fuentes de tensión entre dos nodos no conocidos.", "◉"),
+            TheoryTopic("mallas", "Análisis de mallas", "Corrientes desconocidas y formulación mediante KVL.", "↻"),
+            TheoryTopic("supermallas", "Supermallas", "Fuentes de corriente compartidas entre mallas.", "◎"),
         ),
     ),
     TheoryUnit(
@@ -153,16 +152,16 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Teoremas de circuitos",
         short_title="Teoremas de circuitos",
         description=(
-            "Simplifique redes y estudie su efecto sobre una carga mediante "
-            "equivalentes y principios fundamentales."
+            "Equivalentes y principios para representar una red y estudiar su "
+            "efecto sobre una carga."
         ),
         reference="Boylestad · capítulo 9",
         icon="🧩",
         topics=(
-            TheoryTopic("superposicion", "Superposición", "Separe el efecto de cada fuente independiente.", "+"),
-            TheoryTopic("thevenin", "Teorema de Thévenin", "Represente una red mediante una fuente y una resistencia en serie.", "T"),
-            TheoryTopic("norton", "Teorema de Norton", "Represente una red mediante una fuente y una resistencia en paralelo.", "N"),
-            TheoryTopic("maxima-potencia", "Máxima transferencia de potencia", "Determine la carga que recibe la máxima potencia.", "P"),
+            TheoryTopic("superposicion", "Superposición", "Contribución individual de cada fuente independiente.", "+"),
+            TheoryTopic("thevenin", "Teorema de Thévenin", "Equivalente con fuente de tensión y resistencia en serie.", "T"),
+            TheoryTopic("norton", "Teorema de Norton", "Equivalente con fuente de corriente y resistencia en paralelo.", "N"),
+            TheoryTopic("maxima-potencia", "Máxima transferencia de potencia", "Condición de carga para la máxima potencia recibida.", "P"),
         ),
     ),
     TheoryUnit(
@@ -171,8 +170,8 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Capacitores e inductores",
         short_title="Capacitores e inductores",
         description=(
-            "Explore almacenamiento de energía, continuidad de las variables de "
-            "estado y respuestas transitorias de primer orden."
+            "Almacenamiento de energía, continuidad de las variables de estado "
+            "y respuestas transitorias de primer orden."
         ),
         reference="Boylestad · capítulos 10–11",
         icon="〽",
@@ -190,17 +189,17 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Introducción a corriente alternada",
         short_title="Introducción a CA",
         description=(
-            "Describa señales senoidales y utilice valores eficaces, desfase, "
-            "números complejos y fasores."
+            "Señales senoidales, valores eficaces, desfase, números complejos y "
+            "representación fasorial."
         ),
         reference="Boylestad · capítulos 13–14",
         icon="∿",
         topics=(
             TheoryTopic("senoide", "La señal senoidal", "Amplitud, período, frecuencia y velocidad angular.", "∿"),
-            TheoryTopic("rms", "Valor eficaz (RMS)", "Compare el efecto energético de CA y CC.", "√"),
-            TheoryTopic("fase", "Fase y desfase", "Interprete adelanto y atraso entre señales.", "φ"),
-            TheoryTopic("complejos", "Números complejos", "Trabaje en forma rectangular y polar.", "j"),
-            TheoryTopic("fasores", "Fasores", "Represente senoides mediante magnitud y ángulo.", "↗"),
+            TheoryTopic("rms", "Valor eficaz (RMS)", "Equivalencia energética entre magnitudes de CA y CC.", "√"),
+            TheoryTopic("fase", "Fase y desfase", "Adelanto y atraso entre señales senoidales.", "φ"),
+            TheoryTopic("complejos", "Números complejos", "Formas rectangular y polar; operaciones básicas.", "j"),
+            TheoryTopic("fasores", "Fasores", "Representación de senoides mediante magnitud y ángulo.", "↗"),
         ),
     ),
     TheoryUnit(
@@ -209,8 +208,8 @@ THEORY_UNITS: tuple[TheoryUnit, ...] = (
         title="Circuitos y potencia en CA",
         short_title="Circuitos y potencia en CA",
         description=(
-            "Analice R, L y C mediante impedancias y comprenda el intercambio de "
-            "potencia activa y reactiva."
+            "Modelos de R, L y C mediante impedancias; potencia activa, reactiva "
+            "y aparente."
         ),
         reference="Boylestad · capítulos 15 y 19",
         icon="△",
@@ -235,12 +234,6 @@ def get_topic(unit: TheoryUnit, topic_key: str | None) -> TheoryTopic | None:
     """Busca un tema dentro de una unidad y evita enlaces cruzados inválidos."""
 
     return next((topic for topic in unit.topics if topic.key == topic_key), None)
-
-
-def topic_position(unit: TheoryUnit, topic: TheoryTopic) -> int:
-    """Posición basada en uno para indicadores de progreso."""
-
-    return unit.topics.index(topic) + 1
 
 
 def engineering_notation(value: float, unit: str = "") -> str:

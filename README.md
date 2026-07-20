@@ -1,15 +1,16 @@
-# ⚡ Circuitos Eléctricos I — Guía Interactiva de Aprendizaje
+# ⚡ Circuitos Eléctricos I — Plataforma de Monitoría
 
-Plataforma educativa modular construida con **Streamlit + Python** como
-complemento oficial de la disciplina *Circuitos Eléctricos I* (UNILA).
+Plataforma modular construida con **Streamlit + Python** como complemento de la
+disciplina *Circuitos Eléctricos I* (UNILA).
 
-El objetivo es acompañar el proceso de aprendizaje del alumno siguiendo una
-secuencia lógica similar a la del semestre: aprender la teoría, interactuar con
-ella, consultar formularios y estudiar ejercicios resueltos.
+El proyecto no sustituye las clases. Funciona como un repositorio académico al
+que el estudiante puede volver para localizar conceptos, ecuaciones,
+convenciones, herramientas de cálculo y ejercicios resueltos.
 
-> **Estado actual: Versión 0.2** — arquitectura, portada y módulo
-> **Aprenda la Teoría** con siete unidades organizadas. La primera unidad,
-> *Fundamentos de circuitos en CC*, incluye siete capítulos interactivos.
+> **Estado actual: Versión 0.3** — arquitectura, portada y módulo
+> **Aprenda la Teoría** convertido en una base de consulta. La primera unidad,
+> *Fundamentos de circuitos en CC*, incluye siete artículos técnicos con
+> referencias directas a Boylestad y herramientas interactivas opcionales.
 
 ---
 
@@ -19,7 +20,7 @@ La plataforma crecerá alrededor de cuatro grandes módulos:
 
 | Módulo | Descripción |
 | --- | --- |
-| 📘 **Aprenda la Teoría** | Libro digital organizado en siete unidades. La Unidad 1 ya incluye circuito eléctrico, tensión, corriente, resistencia, Ley de Ohm, potencia, energía, consumo y medición, con ecuaciones, ejemplos y gráficos interactivos. |
+| 📘 **Aprenda la Teoría** | Repositorio teórico organizado en siete unidades, con búsqueda, fichas de referencia, ecuaciones, tablas, citas y herramientas gráficas opcionales. |
 | 🎛️ **Interactúe con la Teoría** | Simulaciones dinámicas con *sliders*: Ley de Ohm, circuitos RC/RL, constante de tiempo, carga/descarga, etc. Gráficos interactivos. |
 | 📐 **Formularios** | Biblioteca organizada de ecuaciones renderizadas en LaTeX. |
 | ✅ **Ejercicios Resueltos** | Problemas desarrollados paso a paso con ecuaciones en LaTeX. |
@@ -88,12 +89,13 @@ portada, la barra lateral y las páginas leen de ahí. Para sumar una sección,
 agrega su entrada a `SECTIONS`, coloca su ícono en `assets/` y crea el archivo
 correspondiente en `pages/`.
 
-## 📘 Aprenda la Teoría · Versión 0.2
+## 📘 Aprenda la Teoría · Versión 0.3
 
-El módulo usa parámetros de URL (`unit` y `topic`) para que cada capítulo pueda
-abrirse directamente y conservarse al recargar la página. La biblioteca muestra
-las siete unidades de la disciplina y marca como **Próximamente** los capítulos
-que todavía no fueron desarrollados.
+El módulo usa parámetros de URL (`unit` y `topic`) para que cada artículo pueda
+abrirse directamente y conservarse al recargar la página. La portada incorpora
+una búsqueda conceptual y un índice con las siete unidades de la disciplina;
+las entradas aún no desarrolladas permanecen identificadas como contenido
+pendiente.
 
 La Unidad 1 contiene:
 
@@ -105,20 +107,23 @@ La Unidad 1 contiene:
 6. Consumo eléctrico.
 7. Circuito abierto, cortocircuito y medición.
 
-Cada capítulo mantiene la misma estructura didáctica: objetivos, explicación,
-ecuaciones, experiencia guiada, error frecuente, comprobación rápida, resumen y
-navegación anterior/siguiente.
+Cada artículo está pensado para consulta rápida después de clase: índice
+interno, ficha de magnitudes, definiciones compactas, ecuaciones, tablas de
+comparación, advertencias técnicas, referencias de página y navegación entre
+temas. Los gráficos y calculadores permanecen disponibles dentro de paneles
+desplegables, sin interrumpir la lectura principal.
 
-### Referencia didáctica
+### Referencia bibliográfica
 
 La secuencia y el alcance conceptual toman como referencia:
 
 > BOYLESTAD, Robert L. *Introdução à análise de circuitos*. 12. ed. São Paulo:
 > Pearson Prentice Hall, 2012.
 
-Los textos, ejemplos, diagramas y visualizaciones de la plataforma fueron
-redactados específicamente para este proyecto; el libro no se redistribuye con
-la aplicación.
+Los artículos incluyen citas en el texto con el formato
+`(BOYLESTAD, 2012, p. xx)` y una ficha bibliográfica al final. Los textos,
+ejemplos, diagramas y visualizaciones fueron redactados específicamente para
+este proyecto; el libro no se redistribuye con la aplicación.
 
 ---
 

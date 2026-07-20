@@ -2,7 +2,7 @@
 Circuitos Eléctricos I — Guía Interactiva de Aprendizaje
 Portada (landing) de la plataforma educativa · UNILA
 
-Versión 0.2 — portada y primera unidad de Aprenda la Teoría.
+Versión 0.3 — portada y repositorio de consulta teórica.
 """
 
 import streamlit as st

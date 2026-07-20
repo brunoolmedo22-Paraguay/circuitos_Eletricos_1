@@ -26,7 +26,7 @@ STYLES_DIR = ROOT_DIR / "styles"
 # --------------------------------------------------------------------------- #
 APP_TITLE = "Circuitos Eléctricos I"
 APP_ICON = "⚡"
-APP_VERSION = "0.2"
+APP_VERSION = "0.3"
 
 # Definición única de las secciones. Cada página y la portada leen de aquí,
 # así agregar un módulo nuevo es cambiar una sola lista.
@@ -39,8 +39,8 @@ SECTIONS = [
         "image": "teoria.png",
         "title": "Aprenda la Teoría",
         "description": (
-            "Explore los fundamentos de Circuitos Eléctricos I mediante "
-            "explicaciones claras, ejemplos y conceptos organizados."
+            "Consulte definiciones, ecuaciones, convenciones y referencias de "
+            "los contenidos trabajados en Circuitos Eléctricos I."
         ),
     },
     {
