@@ -1,0 +1,3643 @@
+{
+  "metadata": {
+    "title": "Formulario de Circuitos Eléctricos I",
+    "source": "Robert L. Boylestad — Introdução à análise de circuitos, 12ª edição, Pearson, 2012",
+    "language": "es",
+    "formula_count": 172,
+    "chapter_count": 26,
+    "note": "Referencias organizadas por capítulo/sección del ejemplar utilizado en la plataforma."
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Introducción",
+      "start_page": "1"
+    },
+    {
+      "number": 2,
+      "title": "Tensión y corriente",
+      "start_page": "24"
+    },
+    {
+      "number": 3,
+      "title": "Resistencia",
+      "start_page": "51"
+    },
+    {
+      "number": 4,
+      "title": "Ley de Ohm, potencia y energía",
+      "start_page": "84"
+    },
+    {
+      "number": 5,
+      "title": "Circuitos en serie",
+      "start_page": "112"
+    },
+    {
+      "number": 6,
+      "title": "Circuitos en paralelo",
+      "start_page": "159"
+    },
+    {
+      "number": 7,
+      "title": "Circuitos serie-paralelo",
+      "start_page": "205"
+    },
+    {
+      "number": 8,
+      "title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "start_page": "237"
+    },
+    {
+      "number": 9,
+      "title": "Teoremas para análisis de circuitos",
+      "start_page": "286"
+    },
+    {
+      "number": 10,
+      "title": "Capacitores",
+      "start_page": "334"
+    },
+    {
+      "number": 11,
+      "title": "Inductores",
+      "start_page": "388"
+    },
+    {
+      "number": 12,
+      "title": "Circuitos magnéticos",
+      "start_page": "429"
+    },
+    {
+      "number": 13,
+      "title": "Formas de onda alternadas senoidales",
+      "start_page": "452"
+    },
+    {
+      "number": 14,
+      "title": "Dispositivos básicos y fasores",
+      "start_page": "493"
+    },
+    {
+      "number": 15,
+      "title": "Circuitos CA en serie y paralelo",
+      "start_page": "532"
+    },
+    {
+      "number": 16,
+      "title": "Circuitos CA serie-paralelo",
+      "start_page": "592"
+    },
+    {
+      "number": 17,
+      "title": "Métodos de análisis (CA)",
+      "start_page": "616"
+    },
+    {
+      "number": 18,
+      "title": "Teoremas sobre circuitos (CA)",
+      "start_page": "647"
+    },
+    {
+      "number": 19,
+      "title": "Potencia (CA)",
+      "start_page": "684"
+    },
+    {
+      "number": 20,
+      "title": "Resonancia",
+      "start_page": "712"
+    },
+    {
+      "number": 21,
+      "title": "Decibeles, filtros y gráficos de Bode",
+      "start_page": "746"
+    },
+    {
+      "number": 22,
+      "title": "Transformadores",
+      "start_page": "802"
+    },
+    {
+      "number": 23,
+      "title": "Sistemas polifásicos",
+      "start_page": "836"
+    },
+    {
+      "number": 24,
+      "title": "Formas de onda pulsadas y respuesta R-C",
+      "start_page": "863"
+    },
+    {
+      "number": 25,
+      "title": "Circuitos no senoidales",
+      "start_page": "885"
+    },
+    {
+      "number": 26,
+      "title": "Análisis de sistemas: una introducción",
+      "start_page": "903"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "engineering_notation",
+      "name": "Notación de ingeniería",
+      "latex": "N=a\\times 10^{3k}",
+      "variants": [],
+      "chapter": 1,
+      "chapter_title": "Introducción",
+      "section": "1.7",
+      "pages": "12–13",
+      "topics": [
+        "Notación",
+        "Unidades"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [
+        "potencias de diez",
+        "prefijos SI"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "percent_error",
+      "name": "Error porcentual",
+      "latex": "\\%\\,erro=\\left|\\frac{x_{med}-x_{ref}}{x_{ref}}\\right|100\\%",
+      "variants": [],
+      "chapter": 1,
+      "chapter_title": "Introducción",
+      "section": "1.5",
+      "pages": "9–10",
+      "topics": [
+        "Medición",
+        "Unidades"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [
+        "precisión",
+        "error relativo"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "voltage_energy_charge",
+      "name": "Definición de tensión",
+      "latex": "V=\\frac{W}{Q}",
+      "variants": [],
+      "chapter": 2,
+      "chapter_title": "Tensión y corriente",
+      "section": "2.3",
+      "pages": "26–28",
+      "topics": [
+        "Tensión",
+        "Energía"
+      ],
+      "variables": {
+        "V": "tensión [V]",
+        "W": "energía [J]",
+        "Q": "carga [C]"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "current_charge_time",
+      "name": "Definición de corriente",
+      "latex": "I=\\frac{Q}{t}",
+      "variants": [
+        "Q=It",
+        "t=\\frac{Q}{I}"
+      ],
+      "chapter": 2,
+      "chapter_title": "Tensión y corriente",
+      "section": "2.4",
+      "pages": "28–30",
+      "topics": [
+        "Corriente",
+        "Carga"
+      ],
+      "variables": {
+        "I": "corriente [A]",
+        "Q": "carga [C]",
+        "t": "tiempo [s]"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "electron_charge_count",
+      "name": "Carga total por electrones",
+      "latex": "Q=nq_e",
+      "variants": [],
+      "chapter": 2,
+      "chapter_title": "Tensión y corriente",
+      "section": "2.4",
+      "pages": "28–30",
+      "topics": [
+        "Corriente",
+        "Carga"
+      ],
+      "variables": {
+        "n": "número de electrones",
+        "q_e": "carga elemental"
+      },
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "amp_hour",
+      "name": "Capacidad ampere-hora",
+      "latex": "C_{Ah}=I\\,t_h",
+      "variants": [
+        "t_h=\\frac{C_{Ah}}{I}"
+      ],
+      "chapter": 2,
+      "chapter_title": "Tensión y corriente",
+      "section": "2.6",
+      "pages": "38–39",
+      "topics": [
+        "Baterías",
+        "Corriente",
+        "Energía"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [
+        "Ah",
+        "ampere hora",
+        "autonomía batería"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "resistance_geometry",
+      "name": "Resistencia de un conductor",
+      "latex": "R=\\rho\\frac{\\ell}{A}",
+      "variants": [
+        "\\rho=R\\frac{A}{\\ell}"
+      ],
+      "chapter": 3,
+      "chapter_title": "Resistencia",
+      "section": "3.2",
+      "pages": "51–54",
+      "topics": [
+        "Resistencia",
+        "Conductores"
+      ],
+      "variables": {
+        "R": "resistencia [Ω]",
+        "ρ": "resistividad [Ω·m]",
+        "ℓ": "longitud [m]",
+        "A": "área [m²]"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "temperature_resistance",
+      "name": "Resistencia con temperatura",
+      "latex": "R_2=R_1[1+\\alpha(T_2-T_1)]",
+      "variants": [
+        "\\Delta R=R_1\\alpha\\Delta T"
+      ],
+      "chapter": 3,
+      "chapter_title": "Resistencia",
+      "section": "3.4",
+      "pages": "57–59",
+      "topics": [
+        "Resistencia",
+        "Temperatura"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [
+        "coeficiente de temperatura"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "conductance",
+      "name": "Conductancia",
+      "latex": "G=\\frac{1}{R}",
+      "variants": [
+        "R=\\frac{1}{G}"
+      ],
+      "chapter": 3,
+      "chapter_title": "Resistencia",
+      "section": "3.7",
+      "pages": "67–68",
+      "topics": [
+        "Conductancia",
+        "Resistencia"
+      ],
+      "variables": {
+        "G": "conductancia [S]",
+        "R": "resistencia [Ω]"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "circular_mil_area",
+      "name": "Área en mil circular",
+      "latex": "A_{CM}=d^2",
+      "variants": [],
+      "chapter": 3,
+      "chapter_title": "Resistencia",
+      "section": "3.2",
+      "pages": "51–54",
+      "topics": [
+        "Conductores",
+        "Resistencia"
+      ],
+      "variables": {
+        "d": "diámetro en mils"
+      },
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "wire_resistance_cm",
+      "name": "Resistencia con mil circular",
+      "latex": "R=\\rho\\frac{\\ell}{A_{CM}}",
+      "variants": [],
+      "chapter": 3,
+      "chapter_title": "Resistencia",
+      "section": "3.2",
+      "pages": "51–54",
+      "topics": [
+        "Conductores",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ohms_law",
+      "name": "Ley de Ohm",
+      "latex": "V=IR",
+      "variants": [
+        "I=\\frac{V}{R}",
+        "R=\\frac{V}{I}"
+      ],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.2",
+      "pages": "84–86",
+      "topics": [
+        "Tensión",
+        "Corriente",
+        "Resistencia"
+      ],
+      "variables": {
+        "V": "tensión [V]",
+        "I": "corriente [A]",
+        "R": "resistencia [Ω]"
+      },
+      "frequent": true,
+      "aliases": [
+        "ohm",
+        "ley ohm"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "power_vi",
+      "name": "Potencia eléctrica",
+      "latex": "P=VI",
+      "variants": [
+        "P=I^2R",
+        "P=\\frac{V^2}{R}",
+        "I=\\frac{P}{V}"
+      ],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.4",
+      "pages": "89–91",
+      "topics": [
+        "Potencia",
+        "Tensión",
+        "Corriente"
+      ],
+      "variables": {
+        "P": "potencia [W]",
+        "V": "tensión [V]",
+        "I": "corriente [A]"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "joule_loss",
+      "name": "Pérdida óhmica / efecto Joule",
+      "latex": "P_{loss}=I^2R",
+      "variants": [
+        "P_{loss}=\\frac{V_R^2}{R}"
+      ],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.4",
+      "pages": "89–91",
+      "topics": [
+        "Potencia",
+        "Pérdidas",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [
+        "perda ohmica",
+        "pérdida resistiva",
+        "joule"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "electrical_energy",
+      "name": "Energía eléctrica",
+      "latex": "W=Pt",
+      "variants": [
+        "W=VIt"
+      ],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.5",
+      "pages": "91–93",
+      "topics": [
+        "Energía",
+        "Potencia"
+      ],
+      "variables": {
+        "W": "energía [J o Wh]",
+        "P": "potencia [W]",
+        "t": "tiempo"
+      },
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "efficiency",
+      "name": "Eficiencia",
+      "latex": "\\eta=\\frac{P_{out}}{P_{in}}\\times100\\%",
+      "variants": [
+        "P_{loss}=P_{in}-P_{out}"
+      ],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.6",
+      "pages": "93–96",
+      "topics": [
+        "Eficiencia",
+        "Potencia",
+        "Pérdidas"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "energy_kwh",
+      "name": "Energía en kWh",
+      "latex": "E_{kWh}=P_{kW}t_h",
+      "variants": [],
+      "chapter": 4,
+      "chapter_title": "Ley de Ohm, potencia y energía",
+      "section": "4.5",
+      "pages": "91–93",
+      "topics": [
+        "Energía",
+        "Potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_resistance",
+      "name": "Resistencia equivalente en serie",
+      "latex": "R_T=R_1+R_2+\\cdots+R_n",
+      "variants": [],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.2",
+      "pages": "113–115",
+      "topics": [
+        "Serie",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "kvl",
+      "name": "Ley de Kirchhoff de tensiones (KVL)",
+      "latex": "\\sum_k V_k=0",
+      "variants": [
+        "E=V_1+V_2+\\cdots+V_n"
+      ],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.6",
+      "pages": "122–126",
+      "topics": [
+        "Kirchhoff",
+        "Tensión",
+        "Mallas"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [
+        "segunda ley kirchhoff",
+        "kvl"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "voltage_divider",
+      "name": "Divisor de tensión",
+      "latex": "V_x=V_T\\frac{R_x}{R_T}",
+      "variants": [],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.7",
+      "pages": "126–129",
+      "topics": [
+        "Divisores",
+        "Tensión",
+        "Serie"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_current",
+      "name": "Corriente en un circuito serie",
+      "latex": "I_T=I_1=I_2=\\cdots=I_n",
+      "variants": [],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.3",
+      "pages": "115–119",
+      "topics": [
+        "Corriente",
+        "Serie"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_power",
+      "name": "Potencia total en serie",
+      "latex": "P_T=P_1+P_2+\\cdots+P_n",
+      "variants": [],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.4",
+      "pages": "119–121",
+      "topics": [
+        "Potencia",
+        "Serie"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "source_internal_voltage",
+      "name": "Tensión terminal de una fuente real",
+      "latex": "V_L=E-I R_{int}",
+      "variants": [
+        "E=V_L+IR_{int}"
+      ],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.10",
+      "pages": "135–138",
+      "topics": [
+        "Fuentes",
+        "Tensión",
+        "Pérdidas"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "voltage_regulation",
+      "name": "Regulación de tensión",
+      "latex": "VR=\\frac{V_{NL}-V_{FL}}{V_{FL}}\\times100\\%",
+      "variants": [],
+      "chapter": 5,
+      "chapter_title": "Circuitos en serie",
+      "section": "5.10",
+      "pages": "135–138",
+      "topics": [
+        "Tensión",
+        "Fuentes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [
+        "regulación"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_resistance",
+      "name": "Resistencia equivalente en paralelo",
+      "latex": "\\frac{1}{R_T}=\\sum_{k=1}^{n}\\frac{1}{R_k}",
+      "variants": [
+        "R_T=\\left(\\sum_k\\frac{1}{R_k}\\right)^{-1}"
+      ],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.2",
+      "pages": "159–166",
+      "topics": [
+        "Paralelo",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_two_resistors",
+      "name": "Dos resistores en paralelo",
+      "latex": "R_T=\\frac{R_1R_2}{R_1+R_2}",
+      "variants": [],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.2",
+      "pages": "159–166",
+      "topics": [
+        "Paralelo",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_equal_resistors",
+      "name": "Resistores iguales en paralelo",
+      "latex": "R_T=\\frac{R}{n}",
+      "variants": [],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.2",
+      "pages": "159–166",
+      "topics": [
+        "Paralelo",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "kcl",
+      "name": "Ley de Kirchhoff de corrientes (KCL)",
+      "latex": "\\sum_k I_k=0",
+      "variants": [
+        "I_T=I_1+I_2+\\cdots+I_n"
+      ],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.5",
+      "pages": "171–175",
+      "topics": [
+        "Kirchhoff",
+        "Corriente",
+        "Nodos"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [
+        "primera ley kirchhoff",
+        "kcl"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "current_divider",
+      "name": "Divisor de corriente",
+      "latex": "I_x=I_T\\frac{R_T}{R_x}",
+      "variants": [
+        "I_1=I_T\\frac{R_2}{R_1+R_2}"
+      ],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.6",
+      "pages": "175–178",
+      "topics": [
+        "Divisores",
+        "Corriente",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_conductance",
+      "name": "Conductancia equivalente en paralelo",
+      "latex": "G_T=G_1+G_2+\\cdots+G_n",
+      "variants": [],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.2",
+      "pages": "159–166",
+      "topics": [
+        "Conductancia",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_voltage",
+      "name": "Tensión en ramas paralelas",
+      "latex": "V_T=V_1=V_2=\\cdots=V_n",
+      "variants": [],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.3",
+      "pages": "166–169",
+      "topics": [
+        "Tensión",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_power",
+      "name": "Potencia total en paralelo",
+      "latex": "P_T=\\sum_k P_k",
+      "variants": [],
+      "chapter": 6,
+      "chapter_title": "Circuitos en paralelo",
+      "section": "6.4",
+      "pages": "169–171",
+      "topics": [
+        "Potencia",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "loaded_divider",
+      "name": "Divisor de tensión cargado",
+      "latex": "V_L=E\\frac{R_2\\parallel R_L}{R_1+(R_2\\parallel R_L)}",
+      "variants": [],
+      "chapter": 7,
+      "chapter_title": "Circuitos serie-paralelo",
+      "section": "7.7",
+      "pages": "219–220",
+      "topics": [
+        "Divisores",
+        "Serie-paralelo",
+        "Carga"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_operator",
+      "name": "Operador paralelo",
+      "latex": "R_a\\parallel R_b=\\frac{R_aR_b}{R_a+R_b}",
+      "variants": [],
+      "chapter": 7,
+      "chapter_title": "Circuitos serie-paralelo",
+      "section": "7.2",
+      "pages": "205–206",
+      "topics": [
+        "Serie-paralelo",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ammeter_shunt",
+      "name": "Shunt para amperímetro",
+      "latex": "R_{sh}=\\frac{I_mR_m}{I-I_m}",
+      "variants": [],
+      "chapter": 7,
+      "chapter_title": "Circuitos serie-paralelo",
+      "section": "7.9",
+      "pages": "222–225",
+      "topics": [
+        "Instrumentación",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "voltmeter_multiplier",
+      "name": "Resistencia multiplicadora de voltímetro",
+      "latex": "R_s=\\frac{V}{I_m}-R_m",
+      "variants": [],
+      "chapter": 7,
+      "chapter_title": "Circuitos serie-paralelo",
+      "section": "7.9",
+      "pages": "222–225",
+      "topics": [
+        "Instrumentación",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "source_transform",
+      "name": "Conversión de fuentes",
+      "latex": "V_s=I_sR_s",
+      "variants": [
+        "I_s=\\frac{V_s}{R_s}"
+      ],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.3",
+      "pages": "239–241",
+      "topics": [
+        "Fuentes",
+        "Redes",
+        "CC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "mesh_matrix",
+      "name": "Ecuaciones de malla",
+      "latex": "\\mathbf{R}\\,\\mathbf{I}=\\mathbf{V}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.7–8.8",
+      "pages": "246–254",
+      "topics": [
+        "Mallas",
+        "Matrices",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [
+        "método de mallas"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "node_matrix",
+      "name": "Ecuaciones nodales",
+      "latex": "\\mathbf{G}\\,\\mathbf{V}=\\mathbf{I}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.9–8.10",
+      "pages": "254–262",
+      "topics": [
+        "Nodos",
+        "Matrices",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [
+        "método de nodos"
+      ],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "delta_to_star_ra",
+      "name": "Conversión Δ→Y: R_A",
+      "latex": "R_A=\\frac{R_{AB}R_{CA}}{R_{AB}+R_{BC}+R_{CA}}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.12",
+      "pages": "265–270",
+      "topics": [
+        "Conversión Δ-Y",
+        "Resistencia",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "delta_to_star_rb",
+      "name": "Conversión Δ→Y: R_B",
+      "latex": "R_B=\\frac{R_{AB}R_{BC}}{R_{AB}+R_{BC}+R_{CA}}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.12",
+      "pages": "265–270",
+      "topics": [
+        "Conversión Δ-Y",
+        "Resistencia",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "delta_to_star_rc",
+      "name": "Conversión Δ→Y: R_C",
+      "latex": "R_C=\\frac{R_{BC}R_{CA}}{R_{AB}+R_{BC}+R_{CA}}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.12",
+      "pages": "265–270",
+      "topics": [
+        "Conversión Δ-Y",
+        "Resistencia",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "star_to_delta_rab",
+      "name": "Conversión Y→Δ: R_AB",
+      "latex": "R_{AB}=R_A+R_B+\\frac{R_AR_B}{R_C}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.12",
+      "pages": "265–270",
+      "topics": [
+        "Conversión Δ-Y",
+        "Resistencia",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "bridge_balance",
+      "name": "Puente resistivo equilibrado",
+      "latex": "\\frac{R_1}{R_2}=\\frac{R_3}{R_4}",
+      "variants": [],
+      "chapter": 8,
+      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "section": "8.11",
+      "pages": "262–265",
+      "topics": [
+        "Puentes",
+        "Resistencia",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "superposition",
+      "name": "Teorema de superposición",
+      "latex": "x_T=x_1+x_2+\\cdots+x_n",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.2",
+      "pages": "286–293",
+      "topics": [
+        "Superposición",
+        "Redes",
+        "CC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "thevenin_voltage",
+      "name": "Tensión de Thévenin",
+      "latex": "V_{Th}=V_{oc}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.3",
+      "pages": "293–303",
+      "topics": [
+        "Thévenin",
+        "Redes",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "thevenin_resistance",
+      "name": "Resistencia de Thévenin",
+      "latex": "R_{Th}=\\frac{V_{Th}}{I_{sc}}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.3",
+      "pages": "293–303",
+      "topics": [
+        "Thévenin",
+        "Redes",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "norton_current",
+      "name": "Corriente de Norton",
+      "latex": "I_N=I_{sc}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.4",
+      "pages": "303–307",
+      "topics": [
+        "Norton",
+        "Redes",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "norton_resistance",
+      "name": "Resistencia de Norton",
+      "latex": "R_N=R_{Th}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.4",
+      "pages": "303–307",
+      "topics": [
+        "Norton",
+        "Thévenin",
+        "Resistencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "thevenin_norton_conversion",
+      "name": "Conversión Thévenin–Norton",
+      "latex": "V_{Th}=I_NR_{Th}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.3–9.4",
+      "pages": "293–307",
+      "topics": [
+        "Thévenin",
+        "Norton",
+        "Fuentes"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "max_power_dc",
+      "name": "Máxima transferencia de potencia (CC)",
+      "latex": "R_L=R_{Th}",
+      "variants": [
+        "P_{L,max}=\\frac{V_{Th}^2}{4R_{Th}}"
+      ],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.5",
+      "pages": "307–315",
+      "topics": [
+        "Potencia",
+        "Thévenin",
+        "Máxima transferencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "millman",
+      "name": "Teorema de Millman",
+      "latex": "V=\\frac{\\sum_k E_k/R_k}{\\sum_k 1/R_k}",
+      "variants": [],
+      "chapter": 9,
+      "chapter_title": "Teoremas para análisis de circuitos",
+      "section": "9.6",
+      "pages": "315–318",
+      "topics": [
+        "Millman",
+        "Nodos",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitance",
+      "name": "Capacitancia",
+      "latex": "C=\\frac{Q}{V}",
+      "variants": [
+        "Q=CV"
+      ],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.3",
+      "pages": "335–339",
+      "topics": [
+        "Capacitancia",
+        "Carga",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitor_current",
+      "name": "Corriente del capacitor",
+      "latex": "i_C=C\\frac{dv_C}{dt}",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.10",
+      "pages": "363–365",
+      "topics": [
+        "Capacitancia",
+        "Corriente",
+        "Transitorios"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitor_voltage_integral",
+      "name": "Tensión del capacitor",
+      "latex": "v_C(t)=v_C(t_0)+\\frac{1}{C}\\int_{t_0}^{t}i_C(\\tau)d\\tau",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.10",
+      "pages": "363–365",
+      "topics": [
+        "Capacitancia",
+        "Tensión",
+        "Transitorios"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_tau",
+      "name": "Constante de tiempo RC",
+      "latex": "\\tau=R_{Th}C",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.9",
+      "pages": "361–363",
+      "topics": [
+        "Transitorios",
+        "Capacitancia",
+        "RC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_charge_voltage",
+      "name": "Carga RC: tensión",
+      "latex": "v_C(t)=E+(V_0-E)e^{-t/\\tau}",
+      "variants": [
+        "V_0=0:\\quad v_C=E(1-e^{-t/RC})"
+      ],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.5",
+      "pages": "348–354",
+      "topics": [
+        "Transitorios",
+        "Capacitancia",
+        "RC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_charge_current",
+      "name": "Carga RC: corriente",
+      "latex": "i_C(t)=\\frac{E-V_0}{R}e^{-t/\\tau}",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.5",
+      "pages": "348–354",
+      "topics": [
+        "Transitorios",
+        "Corriente",
+        "RC"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_discharge",
+      "name": "Descarga RC",
+      "latex": "v_C(t)=V_0e^{-t/RC}",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.6",
+      "pages": "354–359",
+      "topics": [
+        "Transitorios",
+        "Capacitancia",
+        "RC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitors_parallel",
+      "name": "Capacitores en paralelo",
+      "latex": "C_T=C_1+C_2+\\cdots+C_n",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.11",
+      "pages": "365–368",
+      "topics": [
+        "Capacitancia",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitors_series",
+      "name": "Capacitores en serie",
+      "latex": "\\frac{1}{C_T}=\\sum_k\\frac{1}{C_k}",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.11",
+      "pages": "365–368",
+      "topics": [
+        "Capacitancia",
+        "Serie"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitor_energy",
+      "name": "Energía almacenada en un capacitor",
+      "latex": "W_C=\\frac{1}{2}CV^2",
+      "variants": [],
+      "chapter": 10,
+      "chapter_title": "Capacitores",
+      "section": "10.12",
+      "pages": "368",
+      "topics": [
+        "Energía",
+        "Capacitancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductance_flux",
+      "name": "Definición de inductancia",
+      "latex": "L=\\frac{N\\Phi}{I}",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.3",
+      "pages": "393–399",
+      "topics": [
+        "Inductancia",
+        "Magnetismo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductor_voltage",
+      "name": "Tensión en un inductor",
+      "latex": "v_L=L\\frac{di_L}{dt}",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.4",
+      "pages": "399–401",
+      "topics": [
+        "Inductancia",
+        "Tensión",
+        "Transitorios"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductor_current_integral",
+      "name": "Corriente del inductor",
+      "latex": "i_L(t)=i_L(t_0)+\\frac{1}{L}\\int_{t_0}^{t}v_L(\\tau)d\\tau",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.4",
+      "pages": "399–401",
+      "topics": [
+        "Inductancia",
+        "Corriente",
+        "Transitorios"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rl_tau",
+      "name": "Constante de tiempo RL",
+      "latex": "\\tau=\\frac{L}{R_{Th}}",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.8",
+      "pages": "407–409",
+      "topics": [
+        "Transitorios",
+        "Inductancia",
+        "RL"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rl_growth",
+      "name": "Crecimiento de corriente RL",
+      "latex": "i_L(t)=I_f+(I_0-I_f)e^{-t/\\tau}",
+      "variants": [
+        "I_0=0:\\quad i_L=\\frac{E}{R}(1-e^{-tR/L})"
+      ],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.5",
+      "pages": "401–403",
+      "topics": [
+        "Transitorios",
+        "Inductancia",
+        "RL"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rl_decay",
+      "name": "Decaimiento de corriente RL",
+      "latex": "i_L(t)=I_0e^{-tR/L}",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.7",
+      "pages": "405–407",
+      "topics": [
+        "Transitorios",
+        "Inductancia",
+        "RL"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductors_series",
+      "name": "Inductores no acoplados en serie",
+      "latex": "L_T=L_1+L_2+\\cdots+L_n",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.11",
+      "pages": "411–412",
+      "topics": [
+        "Inductancia",
+        "Serie"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductors_parallel",
+      "name": "Inductores no acoplados en paralelo",
+      "latex": "\\frac{1}{L_T}=\\sum_k\\frac{1}{L_k}",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.11",
+      "pages": "411–412",
+      "topics": [
+        "Inductancia",
+        "Paralelo"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductor_energy",
+      "name": "Energía almacenada en un inductor",
+      "latex": "W_L=\\frac{1}{2}LI^2",
+      "variants": [],
+      "chapter": 11,
+      "chapter_title": "Inductores",
+      "section": "11.13",
+      "pages": "413–414",
+      "topics": [
+        "Energía",
+        "Inductancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "flux_density",
+      "name": "Densidad de flujo magnético",
+      "latex": "B=\\frac{\\Phi}{A}",
+      "variants": [
+        "\\Phi=BA"
+      ],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.2",
+      "pages": "429–430",
+      "topics": [
+        "Magnetismo",
+        "Flujo"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "reluctance",
+      "name": "Reluctancia",
+      "latex": "\\mathcal{R}=\\frac{\\ell}{\\mu A}",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.3",
+      "pages": "430",
+      "topics": [
+        "Magnetismo",
+        "Reluctancia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "magnetic_ohm",
+      "name": "Ley de Ohm magnética",
+      "latex": "\\Phi=\\frac{\\mathcal{F}}{\\mathcal{R}}",
+      "variants": [
+        "\\mathcal{F}=\\Phi\\mathcal{R}"
+      ],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.4",
+      "pages": "430",
+      "topics": [
+        "Magnetismo",
+        "Flujo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "magnetomotive_force",
+      "name": "Fuerza magnetomotriz",
+      "latex": "\\mathcal{F}=NI",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.5",
+      "pages": "430–431",
+      "topics": [
+        "Magnetismo",
+        "MMF"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "magnetic_field_strength",
+      "name": "Intensidad de campo magnético",
+      "latex": "H=\\frac{NI}{\\ell}",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.5",
+      "pages": "430–431",
+      "topics": [
+        "Magnetismo",
+        "Campo magnético"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "permeability",
+      "name": "Permeabilidad",
+      "latex": "\\mu=\\mu_0\\mu_r",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.3",
+      "pages": "430",
+      "topics": [
+        "Magnetismo",
+        "Materiales"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ampere_law",
+      "name": "Ley circuital de Ampère",
+      "latex": "\\oint H\\,d\\ell=NI",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.7",
+      "pages": "435–436",
+      "topics": [
+        "Magnetismo",
+        "Ampère"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductance_reluctance",
+      "name": "Inductancia y reluctancia",
+      "latex": "L=\\frac{N^2}{\\mathcal{R}}",
+      "variants": [],
+      "chapter": 12,
+      "chapter_title": "Circuitos magnéticos",
+      "section": "12.3–12.5",
+      "pages": "430–431",
+      "topics": [
+        "Inductancia",
+        "Magnetismo"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "period_frequency",
+      "name": "Frecuencia y período",
+      "latex": "f=\\frac{1}{T}",
+      "variants": [
+        "T=\\frac{1}{f}"
+      ],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.2",
+      "pages": "453–456",
+      "topics": [
+        "CA senoidal",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "angular_frequency",
+      "name": "Frecuencia angular",
+      "latex": "\\omega=2\\pi f=\\frac{2\\pi}{T}",
+      "variants": [],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.4–13.5",
+      "pages": "458–464",
+      "topics": [
+        "CA senoidal",
+        "Frecuencia",
+        "Fasores"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "sinusoid",
+      "name": "Expresión senoidal general",
+      "latex": "v(t)=V_m\\sin(\\omega t+\\phi)",
+      "variants": [
+        "i(t)=I_m\\sin(\\omega t+\\phi)"
+      ],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.5",
+      "pages": "461–464",
+      "topics": [
+        "CA senoidal",
+        "Tensión",
+        "Fasores"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "phase_time",
+      "name": "Desfase a partir del tiempo",
+      "latex": "\\phi=360^\\circ\\frac{\\Delta t}{T}",
+      "variants": [],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.6",
+      "pages": "464–469",
+      "topics": [
+        "CA senoidal",
+        "Fase"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "sine_average",
+      "name": "Valor medio de media onda senoidal",
+      "latex": "V_{avg}=\\frac{2V_m}{\\pi}",
+      "variants": [],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.7",
+      "pages": "469–474",
+      "topics": [
+        "CA senoidal",
+        "Valor medio"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "sine_rms",
+      "name": "Valor eficaz de una senoide",
+      "latex": "V_{rms}=\\frac{V_m}{\\sqrt{2}}",
+      "variants": [
+        "I_{rms}=\\frac{I_m}{\\sqrt{2}}"
+      ],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.8",
+      "pages": "474–479",
+      "topics": [
+        "CA senoidal",
+        "RMS",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "general_rms",
+      "name": "Definición general de RMS",
+      "latex": "X_{rms}=\\sqrt{\\frac{1}{T}\\int_0^T x^2(t)dt}",
+      "variants": [],
+      "chapter": 13,
+      "chapter_title": "Formas de onda alternadas senoidales",
+      "section": "13.8",
+      "pages": "474–479",
+      "topics": [
+        "RMS",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductive_reactance",
+      "name": "Reactancia inductiva",
+      "latex": "X_L=\\omega L=2\\pi fL",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.3–14.4",
+      "pages": "494–506",
+      "topics": [
+        "Inductancia",
+        "Reactancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitive_reactance",
+      "name": "Reactancia capacitiva",
+      "latex": "X_C=\\frac{1}{\\omega C}=\\frac{1}{2\\pi fC}",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.3–14.4",
+      "pages": "494–506",
+      "topics": [
+        "Capacitancia",
+        "Reactancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "resistor_impedance",
+      "name": "Impedancia resistiva",
+      "latex": "Z_R=R",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.3",
+      "pages": "494–500",
+      "topics": [
+        "Impedancia",
+        "Resistencia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "inductor_impedance",
+      "name": "Impedancia inductiva",
+      "latex": "Z_L=j\\omega L=jX_L",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.3",
+      "pages": "494–500",
+      "topics": [
+        "Impedancia",
+        "Inductancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "capacitor_impedance",
+      "name": "Impedancia capacitiva",
+      "latex": "Z_C=\\frac{1}{j\\omega C}=-jX_C",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.3",
+      "pages": "494–500",
+      "topics": [
+        "Impedancia",
+        "Capacitancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "polar_rectangular",
+      "name": "Polar → rectangular",
+      "latex": "A\\angle\\theta=A\\cos\\theta+jA\\sin\\theta",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.9",
+      "pages": "512–513",
+      "topics": [
+        "Fasores",
+        "Complejos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rectangular_polar_mag",
+      "name": "Rectangular → módulo",
+      "latex": "|Z|=\\sqrt{a^2+b^2}",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.9",
+      "pages": "512–513",
+      "topics": [
+        "Fasores",
+        "Complejos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rectangular_polar_angle",
+      "name": "Rectangular → ángulo",
+      "latex": "\\theta=\\tan^{-1}\\left(\\frac{b}{a}\\right)",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.9",
+      "pages": "512–513",
+      "topics": [
+        "Fasores",
+        "Complejos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "average_power_phase",
+      "name": "Potencia media senoidal",
+      "latex": "P=V_{rms}I_{rms}\\cos\\phi",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.5",
+      "pages": "506–510",
+      "topics": [
+        "Potencia CA",
+        "Factor de potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "power_factor",
+      "name": "Factor de potencia",
+      "latex": "PF=\\cos\\phi",
+      "variants": [],
+      "chapter": 14,
+      "chapter_title": "Dispositivos básicos y fasores",
+      "section": "14.5",
+      "pages": "506–510",
+      "topics": [
+        "Potencia CA",
+        "Factor de potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_ohm",
+      "name": "Ley de Ohm fasorial",
+      "latex": "\\underline{V}=\\underline{I}\\,\\underline{Z}",
+      "variants": [
+        "\\underline{I}=\\frac{\\underline{V}}{\\underline{Z}}"
+      ],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.2",
+      "pages": "532–537",
+      "topics": [
+        "Impedancia",
+        "Fasores",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_impedance",
+      "name": "Impedancia total en serie",
+      "latex": "Z_T=Z_1+Z_2+\\cdots+Z_n",
+      "variants": [],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.3",
+      "pages": "537–543",
+      "topics": [
+        "Impedancia",
+        "Serie",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_voltage_divider",
+      "name": "Divisor de tensión fasorial",
+      "latex": "\\underline{V}_x=\\underline{V}_T\\frac{Z_x}{Z_T}",
+      "variants": [],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.4",
+      "pages": "543–546",
+      "topics": [
+        "Divisores",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "admittance",
+      "name": "Admitancia",
+      "latex": "Y=\\frac{1}{Z}=G+jB",
+      "variants": [],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.7",
+      "pages": "553–556",
+      "topics": [
+        "Admitancia",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_admittance",
+      "name": "Admitancia total en paralelo",
+      "latex": "Y_T=Y_1+Y_2+\\cdots+Y_n",
+      "variants": [],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.8",
+      "pages": "556–561",
+      "topics": [
+        "Admitancia",
+        "Paralelo",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_current_divider",
+      "name": "Divisor de corriente fasorial",
+      "latex": "\\underline{I}_x=\\underline{I}_T\\frac{Y_x}{Y_T}",
+      "variants": [
+        "\\underline{I}_1=\\underline{I}_T\\frac{Z_2}{Z_1+Z_2}"
+      ],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.9",
+      "pages": "561–562",
+      "topics": [
+        "Divisores",
+        "Admitancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rl_series_impedance",
+      "name": "Impedancia R-L serie",
+      "latex": "Z=R+jX_L",
+      "variants": [
+        "|Z|=\\sqrt{R^2+X_L^2}",
+        "\\theta=\\tan^{-1}(X_L/R)"
+      ],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.3",
+      "pages": "537–543",
+      "topics": [
+        "Impedancia",
+        "RL",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_series_impedance",
+      "name": "Impedancia R-C serie",
+      "latex": "Z=R-jX_C",
+      "variants": [
+        "|Z|=\\sqrt{R^2+X_C^2}",
+        "\\theta=-\\tan^{-1}(X_C/R)"
+      ],
+      "chapter": 15,
+      "chapter_title": "Circuitos CA en serie y paralelo",
+      "section": "15.3",
+      "pages": "537–543",
+      "topics": [
+        "Impedancia",
+        "RC",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_parallel_impedance",
+      "name": "Impedancia equivalente en paralelo",
+      "latex": "Z_T=\\left(\\sum_k\\frac{1}{Z_k}\\right)^{-1}",
+      "variants": [],
+      "chapter": 16,
+      "chapter_title": "Circuitos CA serie-paralelo",
+      "section": "16.2",
+      "pages": "593–600",
+      "topics": [
+        "Impedancia",
+        "Paralelo",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_cascade_input",
+      "name": "Impedancia de entrada de una cascada",
+      "latex": "Z_{in}=Z_1+Z_{resto}",
+      "variants": [],
+      "chapter": 16,
+      "chapter_title": "Circuitos CA serie-paralelo",
+      "section": "16.3",
+      "pages": "600",
+      "topics": [
+        "Impedancia",
+        "Serie-paralelo",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_mesh_matrix",
+      "name": "Mallas en CA",
+      "latex": "\\mathbf{Z}\\,\\mathbf{I}=\\mathbf{V}",
+      "variants": [],
+      "chapter": 17,
+      "chapter_title": "Métodos de análisis (CA)",
+      "section": "17.4",
+      "pages": "619–624",
+      "topics": [
+        "Mallas",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_node_matrix",
+      "name": "Nodos en CA",
+      "latex": "\\mathbf{Y}\\,\\mathbf{V}=\\mathbf{I}",
+      "variants": [],
+      "chapter": 17,
+      "chapter_title": "Métodos de análisis (CA)",
+      "section": "17.5",
+      "pages": "624–631",
+      "topics": [
+        "Nodos",
+        "Admitancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_bridge_balance",
+      "name": "Puente CA equilibrado",
+      "latex": "Z_1Z_4=Z_2Z_3",
+      "variants": [],
+      "chapter": 17,
+      "chapter_title": "Métodos de análisis (CA)",
+      "section": "17.6",
+      "pages": "631–634",
+      "topics": [
+        "Puentes",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "delta_star_complex",
+      "name": "Conversión Δ–Y compleja",
+      "latex": "Z_A=\\frac{Z_{AB}Z_{CA}}{Z_{AB}+Z_{BC}+Z_{CA}}",
+      "variants": [],
+      "chapter": 17,
+      "chapter_title": "Métodos de análisis (CA)",
+      "section": "17.7",
+      "pages": "634–638",
+      "topics": [
+        "Conversión Δ-Y",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_superposition",
+      "name": "Superposición fasorial",
+      "latex": "\\underline{X}_T=\\sum_k\\underline{X}_k",
+      "variants": [],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.2",
+      "pages": "647–653",
+      "topics": [
+        "Superposición",
+        "Fasores",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_thevenin",
+      "name": "Thévenin en CA",
+      "latex": "\\underline{V}_{Th}=\\underline{V}_{oc}",
+      "variants": [],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.3",
+      "pages": "653–662",
+      "topics": [
+        "Thévenin",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_thevenin_impedance",
+      "name": "Impedancia de Thévenin",
+      "latex": "Z_{Th}=\\frac{V_{Th}}{I_{sc}}",
+      "variants": [],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.3",
+      "pages": "653–662",
+      "topics": [
+        "Thévenin",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "ac_norton",
+      "name": "Norton en CA",
+      "latex": "\\underline{I}_N=\\underline{I}_{sc}",
+      "variants": [],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.4",
+      "pages": "662–668",
+      "topics": [
+        "Norton",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "max_power_ac",
+      "name": "Máxima transferencia de potencia (CA)",
+      "latex": "Z_L=Z_{Th}^{*}",
+      "variants": [
+        "R_L=R_{Th},\\quad X_L=-X_{Th}"
+      ],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.5",
+      "pages": "668–671",
+      "topics": [
+        "Potencia CA",
+        "Máxima transferencia",
+        "Impedancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "millman_ac",
+      "name": "Millman en CA",
+      "latex": "\\underline{V}=\\frac{\\sum_k \\underline{E}_k/Z_k}{\\sum_k 1/Z_k}",
+      "variants": [],
+      "chapter": 18,
+      "chapter_title": "Teoremas sobre circuitos (CA)",
+      "section": "18.6",
+      "pages": "671",
+      "topics": [
+        "Millman",
+        "Impedancia",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "instantaneous_power_ac",
+      "name": "Potencia instantánea",
+      "latex": "p(t)=v(t)i(t)",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.2",
+      "pages": "684–685",
+      "topics": [
+        "Potencia CA",
+        "CA senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "real_power",
+      "name": "Potencia activa",
+      "latex": "P=VI\\cos\\phi",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.2–19.3",
+      "pages": "684–686",
+      "topics": [
+        "Potencia CA",
+        "Potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "reactive_power",
+      "name": "Potencia reactiva",
+      "latex": "Q=VI\\sin\\phi",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.5–19.6",
+      "pages": "687–691",
+      "topics": [
+        "Potencia CA",
+        "Reactiva"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "apparent_power",
+      "name": "Potencia aparente",
+      "latex": "S=VI",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.4",
+      "pages": "686–687",
+      "topics": [
+        "Potencia CA",
+        "Aparente"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "complex_power",
+      "name": "Potencia compleja",
+      "latex": "\\underline{S}=P+jQ=\\underline{V}\\,\\underline{I}^{*}",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.7–19.8",
+      "pages": "691–696",
+      "topics": [
+        "Potencia CA",
+        "Complejos"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "power_triangle",
+      "name": "Triángulo de potencias",
+      "latex": "S=\\sqrt{P^2+Q^2}",
+      "variants": [
+        "PF=\\frac{P}{S}"
+      ],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.7",
+      "pages": "691–693",
+      "topics": [
+        "Potencia CA",
+        "Factor de potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "total_complex_power",
+      "name": "Potencia compleja total",
+      "latex": "\\underline{S}_T=\\sum_k\\underline{S}_k",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.8",
+      "pages": "693–696",
+      "topics": [
+        "Potencia CA",
+        "Redes"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "pf_correction_qc",
+      "name": "Corrección de factor de potencia",
+      "latex": "Q_C=P(\\tan\\phi_1-\\tan\\phi_2)",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.9",
+      "pages": "696–699",
+      "topics": [
+        "Potencia CA",
+        "Factor de potencia",
+        "Capacitancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "pf_correction_c",
+      "name": "Capacitancia para corrección de FP",
+      "latex": "C=\\frac{Q_C}{\\omega V^2}",
+      "variants": [],
+      "chapter": 19,
+      "chapter_title": "Potencia (CA)",
+      "section": "19.9",
+      "pages": "696–699",
+      "topics": [
+        "Potencia CA",
+        "Factor de potencia",
+        "Capacitancia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_resonance_frequency",
+      "name": "Frecuencia de resonancia",
+      "latex": "f_0=\\frac{1}{2\\pi\\sqrt{LC}}",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.2",
+      "pages": "713–715",
+      "topics": [
+        "Resonancia",
+        "Frecuencia",
+        "RLC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_resonance_condition",
+      "name": "Condición de resonancia",
+      "latex": "X_L=X_C",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.2",
+      "pages": "713–715",
+      "topics": [
+        "Resonancia",
+        "Reactancia",
+        "RLC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "series_q",
+      "name": "Factor de calidad serie",
+      "latex": "Q=\\frac{X_L}{R}=\\frac{\\omega_0L}{R}=\\frac{1}{\\omega_0CR}",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.3",
+      "pages": "715–716",
+      "topics": [
+        "Resonancia",
+        "Factor Q",
+        "RLC"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "bandwidth",
+      "name": "Ancho de banda",
+      "latex": "BW=f_2-f_1=\\frac{f_0}{Q}",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.5",
+      "pages": "717–719",
+      "topics": [
+        "Resonancia",
+        "Filtros",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "half_power_freq_product",
+      "name": "Frecuencias de media potencia",
+      "latex": "f_1f_2=f_0^2",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.5",
+      "pages": "717–719",
+      "topics": [
+        "Resonancia",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "parallel_resonance_ideal",
+      "name": "Resonancia paralela ideal",
+      "latex": "f_0=\\frac{1}{2\\pi\\sqrt{LC}}",
+      "variants": [],
+      "chapter": 20,
+      "chapter_title": "Resonancia",
+      "section": "20.8",
+      "pages": "722–724",
+      "topics": [
+        "Resonancia",
+        "Paralelo",
+        "RLC"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "decibel_power",
+      "name": "Ganancia de potencia en dB",
+      "latex": "G_{dB}=10\\log_{10}\\left(\\frac{P_2}{P_1}\\right)",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.3",
+      "pages": "749–753",
+      "topics": [
+        "Decibeles",
+        "Ganancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "decibel_voltage",
+      "name": "Ganancia de tensión en dB",
+      "latex": "G_{dB}=20\\log_{10}\\left|\\frac{V_2}{V_1}\\right|",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.3",
+      "pages": "749–753",
+      "topics": [
+        "Decibeles",
+        "Ganancia",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "decibel_current",
+      "name": "Ganancia de corriente en dB",
+      "latex": "G_{dB}=20\\log_{10}\\left|\\frac{I_2}{I_1}\\right|",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.3",
+      "pages": "749–753",
+      "topics": [
+        "Decibeles",
+        "Ganancia",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_lowpass_fc",
+      "name": "Corte RC pasa-bajos",
+      "latex": "f_c=\\frac{1}{2\\pi RC}",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.5",
+      "pages": "754–757",
+      "topics": [
+        "Filtros",
+        "RC",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_lowpass_transfer",
+      "name": "Transferencia RC pasa-bajos",
+      "latex": "H(j\\omega)=\\frac{1}{1+j\\omega RC}",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.5",
+      "pages": "754–757",
+      "topics": [
+        "Filtros",
+        "RC",
+        "Transferencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_highpass_transfer",
+      "name": "Transferencia RC pasa-altos",
+      "latex": "H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.6",
+      "pages": "757–760",
+      "topics": [
+        "Filtros",
+        "RC",
+        "Transferencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "bode_magnitude_db",
+      "name": "Magnitud de Bode",
+      "latex": "|H|_{dB}=20\\log_{10}|H(j\\omega)|",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.10–21.11",
+      "pages": "765–775",
+      "topics": [
+        "Bode",
+        "Decibeles",
+        "Filtros"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "bandpass_center",
+      "name": "Frecuencia central de pasa-banda",
+      "latex": "f_0=\\sqrt{f_Lf_H}",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.7",
+      "pages": "760–763",
+      "topics": [
+        "Filtros",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "filter_bandwidth",
+      "name": "Ancho de banda de filtro",
+      "latex": "BW=f_H-f_L",
+      "variants": [],
+      "chapter": 21,
+      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "section": "21.7",
+      "pages": "760–763",
+      "topics": [
+        "Filtros",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "mutual_inductance",
+      "name": "Inductancia mutua",
+      "latex": "M=k\\sqrt{L_1L_2}",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.2",
+      "pages": "802–804",
+      "topics": [
+        "Transformadores",
+        "Inductancia",
+        "Acoplamiento"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "transformer_turns_voltage",
+      "name": "Relación de transformación de tensión",
+      "latex": "\\frac{V_p}{V_s}=\\frac{N_p}{N_s}=a",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.3",
+      "pages": "804–807",
+      "topics": [
+        "Transformadores",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "transformer_current",
+      "name": "Relación de corrientes ideal",
+      "latex": "\\frac{I_p}{I_s}=\\frac{N_s}{N_p}=\\frac{1}{a}",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.3",
+      "pages": "804–807",
+      "topics": [
+        "Transformadores",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "transformer_impedance",
+      "name": "Impedancia reflejada",
+      "latex": "Z_p=a^2Z_L",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.4",
+      "pages": "807–808",
+      "topics": [
+        "Transformadores",
+        "Impedancia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "transformer_power",
+      "name": "Potencia en transformador ideal",
+      "latex": "V_pI_p=V_sI_s",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.4",
+      "pages": "807–808",
+      "topics": [
+        "Transformadores",
+        "Potencia"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "coupled_series_aiding",
+      "name": "Inductores acoplados serie aditiva",
+      "latex": "L_T=L_1+L_2+2M",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.8",
+      "pages": "815–818",
+      "topics": [
+        "Inductancia",
+        "Acoplamiento",
+        "Transformadores"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "coupled_series_opposing",
+      "name": "Inductores acoplados serie sustractiva",
+      "latex": "L_T=L_1+L_2-2M",
+      "variants": [],
+      "chapter": 22,
+      "chapter_title": "Transformadores",
+      "section": "22.8",
+      "pages": "815–818",
+      "topics": [
+        "Inductancia",
+        "Acoplamiento",
+        "Transformadores"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_y_voltage",
+      "name": "Sistema Y equilibrado",
+      "latex": "V_L=\\sqrt{3}V_\\phi",
+      "variants": [
+        "I_L=I_\\phi"
+      ],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.3–23.5",
+      "pages": "838–842",
+      "topics": [
+        "Trifásico",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_delta_current",
+      "name": "Sistema Δ equilibrado",
+      "latex": "I_L=\\sqrt{3}I_\\phi",
+      "variants": [
+        "V_L=V_\\phi"
+      ],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.7–23.9",
+      "pages": "844–846",
+      "topics": [
+        "Trifásico",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_active_power",
+      "name": "Potencia activa trifásica",
+      "latex": "P_{3\\phi}=\\sqrt{3}V_LI_L\\cos\\phi",
+      "variants": [],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.10",
+      "pages": "846–850",
+      "topics": [
+        "Trifásico",
+        "Potencia CA"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_reactive_power",
+      "name": "Potencia reactiva trifásica",
+      "latex": "Q_{3\\phi}=\\sqrt{3}V_LI_L\\sin\\phi",
+      "variants": [],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.10",
+      "pages": "846–850",
+      "topics": [
+        "Trifásico",
+        "Potencia CA"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_apparent_power",
+      "name": "Potencia aparente trifásica",
+      "latex": "S_{3\\phi}=\\sqrt{3}V_LI_L",
+      "variants": [],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.10",
+      "pages": "846–850",
+      "topics": [
+        "Trifásico",
+        "Potencia CA"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "three_phase_phase_power",
+      "name": "Potencia por fase",
+      "latex": "P_{3\\phi}=3V_\\phi I_\\phi\\cos\\phi",
+      "variants": [],
+      "chapter": 23,
+      "chapter_title": "Sistemas polifásicos",
+      "section": "23.10",
+      "pages": "846–850",
+      "topics": [
+        "Trifásico",
+        "Potencia CA"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "duty_cycle",
+      "name": "Ciclo de trabajo",
+      "latex": "D=\\frac{t_{on}}{T}\\times100\\%",
+      "variants": [],
+      "chapter": 24,
+      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "section": "24.3",
+      "pages": "866–868",
+      "topics": [
+        "Pulsos",
+        "Tiempo"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "pulse_frequency",
+      "name": "Frecuencia de repetición",
+      "latex": "f=\\frac{1}{T}",
+      "variants": [],
+      "chapter": 24,
+      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "section": "24.3",
+      "pages": "866–868",
+      "topics": [
+        "Pulsos",
+        "Frecuencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "pulse_average",
+      "name": "Valor medio de pulso rectangular",
+      "latex": "V_{avg}=V_p\\frac{t_{on}}{T}=V_pD",
+      "variants": [],
+      "chapter": 24,
+      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "section": "24.4",
+      "pages": "868–869",
+      "topics": [
+        "Pulsos",
+        "Valor medio"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "rc_square_response",
+      "name": "Respuesta RC a escalón",
+      "latex": "v_C(t)=V_f+(V_i-V_f)e^{-t/RC}",
+      "variants": [],
+      "chapter": 24,
+      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "section": "24.5–24.6",
+      "pages": "869–875",
+      "topics": [
+        "Pulsos",
+        "RC",
+        "Transitorios"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "attenuator_probe",
+      "name": "Divisor compensado RC",
+      "latex": "R_1C_1=R_2C_2",
+      "variants": [],
+      "chapter": 24,
+      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "section": "24.7",
+      "pages": "875–877",
+      "topics": [
+        "Instrumentación",
+        "RC",
+        "Compensación"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "fourier_series",
+      "name": "Serie trigonométrica de Fourier",
+      "latex": "f(t)=a_0+\\sum_{n=1}^{\\infty}[a_n\\cos(n\\omega_0t)+b_n\\sin(n\\omega_0t)]",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.2",
+      "pages": "886–892",
+      "topics": [
+        "Fourier",
+        "No senoidal",
+        "Armónicos"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "fourier_a0",
+      "name": "Coeficiente DC de Fourier",
+      "latex": "a_0=\\frac{1}{T}\\int_0^T f(t)dt",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.2",
+      "pages": "886–892",
+      "topics": [
+        "Fourier",
+        "Valor medio"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "fourier_an",
+      "name": "Coeficiente cosenoidal",
+      "latex": "a_n=\\frac{2}{T}\\int_0^T f(t)\\cos(n\\omega_0t)dt",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.2",
+      "pages": "886–892",
+      "topics": [
+        "Fourier",
+        "Armónicos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "fourier_bn",
+      "name": "Coeficiente senoidal",
+      "latex": "b_n=\\frac{2}{T}\\int_0^T f(t)\\sin(n\\omega_0t)dt",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.2",
+      "pages": "886–892",
+      "topics": [
+        "Fourier",
+        "Armónicos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "nonsinusoidal_rms",
+      "name": "RMS con armónicos",
+      "latex": "X_{rms}=\\sqrt{X_{0}^2+X_{1,rms}^2+X_{2,rms}^2+\\cdots}",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.3",
+      "pages": "892–897",
+      "topics": [
+        "RMS",
+        "Armónicos",
+        "No senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "harmonic_impedance",
+      "name": "Impedancia del armónico n",
+      "latex": "Z_n=R+j\\left(n\\omega_0L-\\frac{1}{n\\omega_0C}\\right)",
+      "variants": [],
+      "chapter": 25,
+      "chapter_title": "Circuitos no senoidales",
+      "section": "25.3",
+      "pages": "892–897",
+      "topics": [
+        "Armónicos",
+        "Impedancia",
+        "No senoidal"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "voltage_gain",
+      "name": "Ganancia de tensión",
+      "latex": "A_v=\\frac{V_o}{V_i}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.3",
+      "pages": "908–910",
+      "topics": [
+        "Sistemas",
+        "Ganancia",
+        "Tensión"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "current_gain",
+      "name": "Ganancia de corriente",
+      "latex": "A_i=\\frac{I_o}{I_i}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.4",
+      "pages": "910–912",
+      "topics": [
+        "Sistemas",
+        "Ganancia",
+        "Corriente"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "power_gain",
+      "name": "Ganancia de potencia",
+      "latex": "A_G=\\frac{P_o}{P_i}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.4",
+      "pages": "910–912",
+      "topics": [
+        "Sistemas",
+        "Ganancia",
+        "Potencia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "cascade_gain",
+      "name": "Ganancia total en cascada",
+      "latex": "A_T=A_1A_2\\cdots A_n",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.5",
+      "pages": "912–914",
+      "topics": [
+        "Sistemas",
+        "Ganancia",
+        "Cascada"
+      ],
+      "variables": {},
+      "frequent": true,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "cascade_db_gain",
+      "name": "Ganancia total en cascada (dB)",
+      "latex": "A_{T,dB}=A_{1,dB}+A_{2,dB}+\\cdots+A_{n,dB}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.5",
+      "pages": "912–914",
+      "topics": [
+        "Sistemas",
+        "Ganancia",
+        "Decibeles"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "z_parameters",
+      "name": "Parámetros Z",
+      "latex": "\\begin{bmatrix}V_1\\\\V_2\\end{bmatrix}=\\begin{bmatrix}Z_{11}&Z_{12}\\\\Z_{21}&Z_{22}\\end{bmatrix}\\begin{bmatrix}I_1\\\\I_2\\end{bmatrix}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.6",
+      "pages": "914–918",
+      "topics": [
+        "Sistemas",
+        "Dos puertos",
+        "Impedancia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "y_parameters",
+      "name": "Parámetros Y",
+      "latex": "\\begin{bmatrix}I_1\\\\I_2\\end{bmatrix}=\\begin{bmatrix}Y_{11}&Y_{12}\\\\Y_{21}&Y_{22}\\end{bmatrix}\\begin{bmatrix}V_1\\\\V_2\\end{bmatrix}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.7",
+      "pages": "918–920",
+      "topics": [
+        "Sistemas",
+        "Dos puertos",
+        "Admitancia"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    },
+    {
+      "id": "h_parameters",
+      "name": "Parámetros híbridos h",
+      "latex": "\\begin{bmatrix}V_1\\\\I_2\\end{bmatrix}=\\begin{bmatrix}h_{11}&h_{12}\\\\h_{21}&h_{22}\\end{bmatrix}\\begin{bmatrix}I_1\\\\V_2\\end{bmatrix}",
+      "variants": [],
+      "chapter": 26,
+      "chapter_title": "Análisis de sistemas: una introducción",
+      "section": "26.8",
+      "pages": "920–922",
+      "topics": [
+        "Sistemas",
+        "Dos puertos",
+        "Parámetros híbridos"
+      ],
+      "variables": {},
+      "frequent": false,
+      "aliases": [],
+      "note": "",
+      "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
+    }
+  ]
+}

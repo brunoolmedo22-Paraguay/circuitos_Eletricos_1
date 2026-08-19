@@ -104,3 +104,7 @@ El módulo está completamente vacío. No contiene títulos, directorios interno
 ---
 
 *Desarrollado por el Monitor **Bruno Manuel Olmedo Chavez** · UNILA.*
+
+## Formularios
+
+El módulo `pages/formularios.py` consume una base independiente en `data/formulas.json` y usa `utils/formulas.py` para búsqueda y filtros. La base actual contiene 172 relaciones matemáticas distribuidas en los 26 capítulos del Boylestad (12ª ed.). El visualizador permite consulta por fórmulas frecuentes, búsqueda, capítulo y tema sin cambiar de página.

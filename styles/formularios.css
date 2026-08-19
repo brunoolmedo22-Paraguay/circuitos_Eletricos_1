@@ -1,0 +1,112 @@
+/* ==========================================================================
+   FORMULARIOS · catálogo de ecuaciones
+   ========================================================================== */
+
+.formula-page-hero {
+  margin-bottom: 1rem;
+}
+
+.formula-nav-heading {
+  margin-bottom: 0.65rem;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.formula-nav-divider {
+  height: 1px;
+  margin: 0.65rem 0 0.9rem;
+  background: var(--line);
+}
+
+.formula-db-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.formula-view-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 86px;
+  margin-bottom: 0.85rem;
+  padding: 0.2rem 0.2rem 0.45rem;
+}
+
+.formula-view-kicker {
+  margin-bottom: 0.15rem;
+  color: var(--panel);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.formula-view-head h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  line-height: 1.15;
+}
+
+.formula-view-head p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.formula-view-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 0.8rem;
+  color: var(--white);
+  background: var(--panel);
+  border-radius: 14px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.formula-card-name {
+  min-height: 2.65rem;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.formula-after-detail {
+  height: 0.8rem;
+}
+
+/* Navegación vertical: botones compactos, uno debajo del otro. */
+[data-testid="stButton"] button {
+  border-radius: 10px;
+}
+
+/* Tarjetas y paneles algo más compactos dentro del formulario. */
+[data-testid="stVerticalBlockBorderWrapper"] {
+  border-color: var(--line) !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+[data-testid="stLatex"] {
+  overflow-x: auto;
+}
+
+@media (max-width: 980px) {
+  .formula-view-head {
+    min-height: auto;
+  }
+}
