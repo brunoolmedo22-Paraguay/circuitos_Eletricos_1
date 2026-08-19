@@ -1,10 +1,74 @@
 /* ==========================================================================
    FORMULARIOS · catálogo de ecuaciones
+   Tema local: siempre legible sobre la superficie clara de la plataforma.
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Superficie y tipografía nativa de Streamlit
+   -------------------------------------------------------------------------- */
+
+[data-testid="stAppViewContainer"] {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+
+[data-testid="stMainBlockContainer"],
+[data-testid="stMainBlockContainer"] p,
+[data-testid="stMainBlockContainer"] li,
+[data-testid="stMainBlockContainer"] label,
+[data-testid="stMainBlockContainer"] span {
+  color: var(--ink);
+}
+
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4,
+[data-testid="stMarkdownContainer"] strong {
+  color: var(--ink) !important;
+}
+
+[data-testid="stCaptionContainer"],
+[data-testid="stCaptionContainer"] p,
+[data-testid="stCaptionContainer"] span {
+  color: var(--muted) !important;
+}
+
+/* LaTeX: Streamlit hereda el color del tema del navegador. Lo fijamos aquí. */
+[data-testid="stLatex"],
+[data-testid="stLatex"] *,
+[data-testid="stLatex"] .katex,
+[data-testid="stLatex"] .katex * {
+  color: var(--accent) !important;
+}
+
+[data-testid="stLatex"] {
+  overflow-x: auto;
+  padding: 0.15rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   Hero / encabezado
+   -------------------------------------------------------------------------- */
 
 .formula-page-hero {
   margin-bottom: 1rem;
 }
+
+.formula-page-hero .page-hero__text,
+.formula-page-hero .page-hero__text h1,
+.formula-page-hero .page-hero__text p,
+.formula-page-hero .page-hero__text span {
+  color: var(--white) !important;
+}
+
+.formula-page-hero .page-hero__text .eyebrow {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navegación izquierda
+   -------------------------------------------------------------------------- */
 
 .formula-nav-heading {
   margin-bottom: 0.65rem;
@@ -30,6 +94,14 @@
   line-height: 1.5;
 }
 
+.formula-db-note strong {
+  color: var(--accent) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Cabeza del visor
+   -------------------------------------------------------------------------- */
+
 .formula-view-head {
   display: flex;
   align-items: center;
@@ -41,7 +113,7 @@
 
 .formula-view-kicker {
   margin-bottom: 0.15rem;
-  color: var(--panel);
+  color: var(--panel) !important;
   font-size: 0.67rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -49,7 +121,7 @@
 
 .formula-view-head h2 {
   margin: 0;
-  color: var(--ink);
+  color: var(--ink) !important;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 1.8vw, 1.85rem);
   line-height: 1.15;
@@ -57,7 +129,7 @@
 
 .formula-view-head p {
   margin: 0.35rem 0 0;
-  color: var(--muted);
+  color: var(--muted) !important;
   font-size: 0.84rem;
 }
 
@@ -68,7 +140,7 @@
   min-width: 48px;
   height: 48px;
   padding: 0 0.8rem;
-  color: var(--white);
+  color: var(--white) !important;
   background: var(--panel);
   border-radius: 14px;
   font-family: var(--font-display);
@@ -76,9 +148,13 @@
   font-weight: 700;
 }
 
+/* --------------------------------------------------------------------------
+   Cards de fórmulas y panel de detalle
+   -------------------------------------------------------------------------- */
+
 .formula-card-name {
   min-height: 2.65rem;
-  color: var(--accent);
+  color: var(--accent) !important;
   font-family: var(--font-display);
   font-size: 0.92rem;
   font-weight: 700;
@@ -89,20 +165,114 @@
   height: 0.8rem;
 }
 
-/* Navegación vertical: botones compactos, uno debajo del otro. */
-[data-testid="stButton"] button {
-  border-radius: 10px;
-}
-
-/* Tarjetas y paneles algo más compactos dentro del formulario. */
 [data-testid="stVerticalBlockBorderWrapper"] {
-  border-color: var(--line) !important;
+  border: 1px solid var(--line) !important;
   border-radius: 16px !important;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 5px 16px rgba(45, 20, 50, 0.045);
 }
 
-[data-testid="stLatex"] {
-  overflow-x: auto;
+/* --------------------------------------------------------------------------
+   Botones: quitar negro/rojo del tema automático y usar la identidad UNILA.
+   -------------------------------------------------------------------------- */
+
+[data-testid="stButton"] button,
+[data-testid="stBaseButton-secondary"] {
+  min-height: 2.35rem;
+  color: var(--accent) !important;
+  background: #f3edf5 !important;
+  border: 1px solid #d9cddd !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+[data-testid="stButton"] button:hover,
+[data-testid="stBaseButton-secondary"]:hover {
+  color: var(--accent) !important;
+  background: #e8ddea !important;
+  border-color: #bca8c1 !important;
+}
+
+[data-testid="stBaseButton-primary"] {
+  color: var(--white) !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+[data-testid="stBaseButton-primary"]:hover {
+  color: var(--white) !important;
+  background: var(--panel-deep) !important;
+  border-color: var(--panel-deep) !important;
+}
+
+[data-testid="stButton"] button p,
+[data-testid="stButton"] button span,
+[data-testid="stBaseButton-primary"] p,
+[data-testid="stBaseButton-primary"] span {
+  color: inherit !important;
+}
+
+/* --------------------------------------------------------------------------
+   Buscador y selectores: siempre claros, también con SO/navegador oscuro.
+   -------------------------------------------------------------------------- */
+
+[data-testid="stTextInput"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stTextInput"] [data-testid="stWidgetLabel"] p,
+[data-testid="stSelectbox"] [data-testid="stWidgetLabel"] p {
+  color: var(--ink) !important;
+}
+
+[data-testid="stTextInput"] div[data-baseweb="input"] {
+  color: var(--ink) !important;
+  background: var(--white) !important;
+  border-color: #d9cddd !important;
+}
+
+[data-testid="stTextInput"] input {
+  color: var(--ink) !important;
+  background: transparent !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--accent) !important;
+}
+
+[data-testid="stTextInput"] input::placeholder {
+  color: #8b8390 !important;
+  -webkit-text-fill-color: #8b8390 !important;
+  opacity: 1;
+}
+
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  color: var(--ink) !important;
+  background: var(--white) !important;
+  border-color: #d9cddd !important;
+}
+
+[data-testid="stSelectbox"] div[data-baseweb="select"] span,
+[data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+  color: var(--ink) !important;
+  fill: currentColor !important;
+}
+
+/* Popover del selectbox (se monta fuera del bloque principal). */
+[role="listbox"],
+[role="option"] {
+  color: var(--ink) !important;
+  background: var(--white) !important;
+}
+
+[role="option"]:hover,
+[aria-selected="true"][role="option"] {
+  background: #eee5f0 !important;
+}
+
+/* Links de navegación al final de la página. */
+[data-testid="stPageLink"] a,
+[data-testid="stPageLink"] p,
+[data-testid="stPageLink"] span {
+  color: var(--accent) !important;
 }
 
 @media (max-width: 980px) {
