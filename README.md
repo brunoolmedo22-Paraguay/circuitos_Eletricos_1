@@ -8,8 +8,7 @@ que el estudiante puede volver para localizar conceptos, ecuaciones,
 convenciones, herramientas de cálculo y ejercicios resueltos.
 
 > **Estado actual: Versión 0.3** — arquitectura y portada activas. El módulo
-> **Aprenda la Teoría** conserva únicamente el directorio de sus siete unidades;
-> el contenido interno está vacío para ser reconstruido desde cero.
+> **Aprenda la Teoría** está completamente vacío y reservado para ser reconstruido desde cero.
 
 ---
 
@@ -19,7 +18,7 @@ La plataforma crecerá alrededor de cuatro grandes módulos:
 
 | Módulo | Descripción |
 | --- | --- |
-| 📘 **Aprenda la Teoría** | Estructura vacía con directorio de siete unidades, preparada para reconstruir el contenido desde cero. |
+| 📘 **Aprenda la Teoría** | Página completamente vacía, reservada para reconstruir el contenido desde cero. |
 | 🎛️ **Interactúe con la Teoría** | Simulaciones dinámicas con *sliders*: Ley de Ohm, circuitos RC/RL, constante de tiempo, carga/descarga, etc. Gráficos interactivos. |
 | 📐 **Formularios** | Biblioteca organizada de ecuaciones renderizadas en LaTeX. |
 | ✅ **Ejercicios Resueltos** | Problemas desarrollados paso a paso con ecuaciones en LaTeX. |
@@ -89,8 +88,7 @@ correspondiente en `pages/`.
 
 ## 📘 Aprenda la Teoría · Versión 0.3
 
-El módulo conserva únicamente el directorio de las siete unidades. No contiene
-artículos, tópicos, búsqueda, gráficos, referencias ni material teórico.
+El módulo está completamente vacío. No contiene títulos, directorios internos, unidades, artículos, tópicos, búsqueda, gráficos, referencias ni material teórico.
 
 ---
 
