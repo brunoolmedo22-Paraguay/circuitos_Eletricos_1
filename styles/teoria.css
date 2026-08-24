@@ -1,0 +1,322 @@
+/* ==========================================================================
+   APRENDA A TEORIA · catálogo conceitual
+   Visual deliberadamente familiar ao módulo Formulários.
+   ========================================================================== */
+
+[data-testid="stAppViewContainer"] {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+
+[data-testid="stMainBlockContainer"],
+[data-testid="stMainBlockContainer"] p,
+[data-testid="stMainBlockContainer"] li,
+[data-testid="stMainBlockContainer"] label,
+[data-testid="stMainBlockContainer"] span {
+  color: var(--ink);
+}
+
+.theory-page-hero {
+  margin-bottom: 1rem;
+}
+
+.theory-page-hero .page-hero__text,
+.theory-page-hero .page-hero__text h1,
+.theory-page-hero .page-hero__text p,
+.theory-page-hero .page-hero__text span {
+  color: var(--white) !important;
+}
+
+.theory-page-hero .page-hero__text .eyebrow {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+/* Navegação -------------------------------------------------------------- */
+.theory-nav-heading {
+  margin-bottom: 0.95rem;
+  padding-bottom: 0.18rem;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.st-key-theory-nav-panel [data-testid="stButton"] {
+  margin-bottom: 0.38rem !important;
+}
+
+.theory-nav-divider {
+  height: 1px;
+  margin: 0.65rem 0 0.9rem;
+  background: var(--line);
+}
+
+.theory-db-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.theory-db-note strong {
+  color: var(--accent) !important;
+}
+
+.theory-db-note span {
+  display: block;
+  margin-top: 0.36rem;
+  color: #918a95 !important;
+  font-size: 0.69rem;
+}
+
+/* Cabeçalho do visor ------------------------------------------------------ */
+.theory-view-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 86px;
+  margin-bottom: 0.55rem;
+  padding: 0.2rem 0.2rem 0.2rem;
+}
+
+.theory-view-kicker {
+  margin-bottom: 0.15rem;
+  color: var(--panel) !important;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.theory-view-head h2 {
+  margin: 0;
+  color: var(--ink) !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  line-height: 1.15;
+}
+
+.theory-view-head p {
+  margin: 0.35rem 0 0;
+  color: var(--muted) !important;
+  font-size: 0.84rem;
+}
+
+.theory-view-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 0.8rem;
+  color: var(--white) !important;
+  background: var(--panel);
+  border-radius: 14px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.theory-source-strip {
+  margin: 0 0.15rem 1rem;
+  padding: 0.56rem 0.72rem;
+  color: #746d77 !important;
+  background: rgba(243, 237, 245, 0.72);
+  border-left: 3px solid rgba(83, 36, 88, 0.34);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.73rem;
+  line-height: 1.45;
+}
+
+.theory-source-strip strong {
+  color: var(--accent) !important;
+}
+
+/* Cartões --------------------------------------------------------------- */
+div[class*="st-key-theory-card-"] {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0.78rem !important;
+  padding: 0.95rem 1rem 0.9rem !important;
+  overflow: hidden;
+  background: rgb(243, 237, 245) !important;
+  border: 1px solid rgba(83, 36, 88, 0.31) !important;
+  border-radius: 17px !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.92) inset,
+    0 7px 18px rgba(45, 20, 50, 0.075) !important;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+div[class*="st-key-theory-card-"]:hover {
+  border-color: rgba(83, 36, 88, 0.46) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 10px 24px rgba(45, 20, 50, 0.105) !important;
+  transform: translateY(-1px);
+}
+
+div[class*="st-key-theory-card-"] [data-testid="stVerticalBlock"] {
+  gap: 0.2rem !important;
+}
+
+.theory-card-title {
+  margin-bottom: 0.55rem;
+  color: var(--accent) !important;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.theory-card-summary {
+  min-height: 5.05rem;
+  margin-bottom: 0.58rem;
+  color: #3e3940 !important;
+  font-size: 0.84rem;
+  line-height: 1.52;
+}
+
+.theory-card-kicker {
+  margin-top: 0.28rem;
+  margin-bottom: 0.08rem;
+  color: var(--panel) !important;
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+div[class*="st-key-theory-card-"] [data-testid="stLatex"] {
+  margin: 0.12rem 0 !important;
+  padding: 0 !important;
+  overflow-x: auto;
+}
+
+div[class*="st-key-theory-card-"] [data-testid="stLatex"] .katex,
+div[class*="st-key-theory-card-"] [data-testid="stLatex"] .katex * {
+  color: #2f2931 !important;
+}
+
+.theory-card-reference {
+  margin-top: 0.72rem;
+  padding-top: 0.68rem;
+  color: #8d8590 !important;
+  border-top: 1px solid rgba(83, 36, 88, 0.14);
+  font-size: 0.7rem;
+  line-height: 1.42;
+}
+
+.theory-card-reference span {
+  display: block;
+  margin-bottom: 0.22rem;
+  color: var(--panel) !important;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.theory-card-reference strong {
+  color: #625968 !important;
+  font-weight: 650;
+}
+
+/* Botões --------------------------------------------------------------- */
+[data-testid="stButton"] button,
+[data-testid="stBaseButton-secondary"] {
+  min-height: 2.35rem;
+  color: var(--accent) !important;
+  background: #f3edf5 !important;
+  border: 1px solid #d9cddd !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stButton"] button:hover,
+[data-testid="stBaseButton-secondary"]:hover {
+  color: var(--accent) !important;
+  background: #e8ddea !important;
+  border-color: #bca8c1 !important;
+}
+
+[data-testid="stBaseButton-primary"] {
+  color: var(--white) !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+[data-testid="stBaseButton-primary"]:hover {
+  color: var(--white) !important;
+  background: var(--panel-deep) !important;
+  border-color: var(--panel-deep) !important;
+}
+
+[data-testid="stButton"] button p,
+[data-testid="stButton"] button span,
+[data-testid="stBaseButton-primary"] p,
+[data-testid="stBaseButton-primary"] span {
+  color: inherit !important;
+}
+
+/* Busca e selectboxes: fundo claro fixo -------------------------------- */
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"],
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"],
+.st-key-theory-nav-panel [data-testid="stTextInput"] div:has(> input) {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  border-color: #d9cddd !important;
+  box-shadow: none !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] input {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--accent) !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] input::placeholder {
+  color: #8b8390 !important;
+  -webkit-text-fill-color: #8b8390 !important;
+  opacity: 1;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  border-color: #d9cddd !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] span,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+  color: var(--ink) !important;
+  fill: currentColor !important;
+}
+
+/* Popover dos selectboxes também claro. */
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] [role="listbox"],
+div[data-baseweb="popover"] [role="option"] {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+}
+
+div[data-baseweb="popover"] [role="option"]:hover {
+  background: #f3edf5 !important;
+}
+
+@media (max-width: 980px) {
+  .theory-card-summary {
+    min-height: auto;
+  }
+}
+
+.theory-card-kicker--definition {
+  margin-top: 0;
+  margin-bottom: 0.34rem;
+}

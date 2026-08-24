@@ -1,0 +1,818 @@
+{
+  "metadata": {
+    "title": "Aprenda a Teoria",
+    "source": "Robert L. Boylestad, Introdução à análise de circuitos, 12ª ed., Pearson, 2012",
+    "note": "Resumos didáticos elaborados exclusivamente a partir da organização conceitual e das referências do livro adotado."
+  },
+  "theories": [
+    {
+      "id": "unidades_si",
+      "title": "Unidades e grandezas elétricas",
+      "summary": "A análise de circuitos depende de grandezas expressas em unidades coerentes. O SI organiza essas medidas e seus prefixos para permitir cálculos com tensão, corrente, resistência, potência e energia sem ambiguidade.",
+      "chapter": 1, "section": "1.3–1.4", "pages": "6–9",
+      "topics": ["Unidades", "Fundamentos"], "formula_ids": [], "frequent": false,
+      "aliases": ["SI", "unidades de medida", "prefixos"]
+    },
+    {
+      "id": "notacao_engenharia",
+      "title": "Notação de engenharia",
+      "summary": "A notação de engenharia representa números usando potências de dez em múltiplos de três. Isso combina naturalmente com prefixos como mili, micro, quilo e mega, muito usados em circuitos elétricos.",
+      "chapter": 1, "section": "1.7", "pages": "12–13",
+      "topics": ["Unidades", "Notação"], "formula_ids": ["engineering_notation"], "frequent": true,
+      "aliases": ["potências de dez", "prefixos SI", "notação científica"]
+    },
+    {
+      "id": "precisao_medidas",
+      "title": "Precisão, arredondamento e erro",
+      "summary": "Resultados de medição e cálculo devem respeitar a precisão dos dados disponíveis. Algarismos significativos e erro percentual ajudam a expressar corretamente a qualidade de uma medida ou aproximação.",
+      "chapter": 1, "section": "1.5", "pages": "9–10",
+      "topics": ["Medição", "Fundamentos"], "formula_ids": ["percent_error"], "frequent": false,
+      "aliases": ["erro percentual", "algarismos significativos", "arredondamento"]
+    },
+
+    {
+      "id": "tensao",
+      "title": "Tensão elétrica",
+      "summary": "Tensão é a diferença de potencial associada à energia necessária ou fornecida para deslocar carga elétrica entre dois pontos. É sempre definida entre dois pontos e sua unidade é o volt.",
+      "chapter": 2, "section": "2.3", "pages": "26–28",
+      "topics": ["Tensão", "Fundamentos"], "formula_ids": ["voltage_energy_charge"], "frequent": true,
+      "aliases": ["diferença de potencial", "ddp", "voltagem"]
+    },
+    {
+      "id": "corrente",
+      "title": "Corrente elétrica",
+      "summary": "Corrente elétrica descreve a taxa de fluxo de carga através de uma seção de um condutor. A corrente convencional é representada no sentido associado ao movimento de cargas positivas e é medida em ampères.",
+      "chapter": 2, "section": "2.4", "pages": "28–30",
+      "topics": ["Corrente", "Fundamentos"], "formula_ids": ["current_charge_time"], "frequent": true,
+      "aliases": ["fluxo de carga", "ampère", "corrente convencional"]
+    },
+    {
+      "id": "fontes_tensao",
+      "title": "Fontes de tensão",
+      "summary": "Uma fonte de tensão estabelece uma diferença de potencial entre seus terminais e fornece energia ao circuito. Fontes ideais mantêm a tensão especificada; fontes reais apresentam limitações e resistência interna.",
+      "chapter": 2, "section": "2.5", "pages": "31–38",
+      "topics": ["Tensão", "Fontes"], "formula_ids": [], "frequent": true,
+      "aliases": ["fonte ideal", "fonte real", "bateria"]
+    },
+    {
+      "id": "capacidade_bateria",
+      "title": "Capacidade ampère-hora",
+      "summary": "A especificação em ampère-hora relaciona a corrente que uma bateria pode fornecer ao tempo de fornecimento. Ela é uma indicação prática de capacidade e autonomia, condicionada às características reais de descarga.",
+      "chapter": 2, "section": "2.6–2.7", "pages": "38–40",
+      "topics": ["Corrente", "Baterias", "Energia"], "formula_ids": ["amp_hour"], "frequent": false,
+      "aliases": ["Ah", "autonomia", "bateria"]
+    },
+    {
+      "id": "condutores_isolantes",
+      "title": "Condutores, isolantes e semicondutores",
+      "summary": "Materiais são diferenciados pela facilidade com que suas cargas podem se mover. Condutores favorecem o fluxo de corrente, isolantes o restringem fortemente e semicondutores ocupam uma faixa intermediária com comportamento controlável.",
+      "chapter": 2, "section": "2.8–2.9", "pages": "40–42",
+      "topics": ["Materiais", "Corrente"], "formula_ids": [], "frequent": false,
+      "aliases": ["condutor", "isolante", "semicondutor"]
+    },
+    {
+      "id": "medicao_vi",
+      "title": "Amperímetro e voltímetro",
+      "summary": "O amperímetro mede corrente e deve ser inserido de modo que a corrente do ramo o atravesse. O voltímetro mede diferença de potencial entre dois pontos e, por isso, é conectado em paralelo com o elemento observado.",
+      "chapter": 2, "section": "2.10", "pages": "42–43",
+      "topics": ["Medição", "Corrente", "Tensão"], "formula_ids": [], "frequent": true,
+      "aliases": ["amperímetro", "voltímetro", "instrumentos"]
+    },
+
+    {
+      "id": "resistencia",
+      "title": "Resistência elétrica",
+      "summary": "Resistência expressa a oposição de um material ao estabelecimento de corrente elétrica. Seu valor depende do material e da geometria do condutor e é medido em ohms.",
+      "chapter": 3, "section": "3.1–3.2", "pages": "51–54",
+      "topics": ["Resistência", "Fundamentos"], "formula_ids": ["resistance_geometry"], "frequent": true,
+      "aliases": ["ohm", "oposição à corrente", "resistividade"]
+    },
+    {
+      "id": "resistividade_geometria",
+      "title": "Resistividade e geometria do condutor",
+      "summary": "Para um fio uniforme, a resistência cresce com o comprimento e com a resistividade do material, e diminui quando a área da seção transversal aumenta. A relação separa propriedades do material e dimensões físicas.",
+      "chapter": 3, "section": "3.2", "pages": "51–54",
+      "topics": ["Resistência", "Condutores"], "formula_ids": ["resistance_geometry"], "frequent": true,
+      "aliases": ["rho", "resistividade", "comprimento do fio", "área do fio"]
+    },
+    {
+      "id": "temperatura_resistencia_teoria",
+      "title": "Efeito da temperatura na resistência",
+      "summary": "A resistência de muitos materiais varia com a temperatura. Em uma faixa adequada, essa variação pode ser aproximada por um coeficiente de temperatura que relaciona a resistência em duas temperaturas.",
+      "chapter": 3, "section": "3.4", "pages": "57–59",
+      "topics": ["Resistência", "Temperatura"], "formula_ids": ["temperature_resistance"], "frequent": false,
+      "aliases": ["coeficiente de temperatura", "alpha"]
+    },
+    {
+      "id": "resistor",
+      "title": "Resistor",
+      "summary": "O resistor é o elemento de circuito utilizado para introduzir um valor de resistência definido. Na prática, resistores possuem valor nominal, tolerância e limites de potência que devem ser respeitados.",
+      "chapter": 3, "section": "3.5–3.6", "pages": "59–67",
+      "topics": ["Resistência", "Componentes"], "formula_ids": [], "frequent": true,
+      "aliases": ["resistores", "código de cores", "tolerância"]
+    },
+    {
+      "id": "condutancia_teoria",
+      "title": "Condutância",
+      "summary": "Condutância mede a facilidade com que um elemento conduz corrente e é o inverso da resistência. Sua unidade é o siemens e ela é especialmente conveniente em associações paralelas.",
+      "chapter": 3, "section": "3.7", "pages": "67–68",
+      "topics": ["Condutância", "Resistência"], "formula_ids": ["conductance"], "frequent": false,
+      "aliases": ["siemens", "G"]
+    },
+    {
+      "id": "resistores_dependentes",
+      "title": "Termistores, LDRs e varistores",
+      "summary": "Alguns elementos resistivos alteram sua resistência de forma útil quando muda uma grandeza física. O livro apresenta termistores para temperatura, células fotocondutoras para luz e varistores para tensão.",
+      "chapter": 3, "section": "3.12–3.14", "pages": "74–75",
+      "topics": ["Resistência", "Sensores", "Componentes"], "formula_ids": [], "frequent": false,
+      "aliases": ["termistor", "LDR", "varistor", "fotocondutor"]
+    },
+
+    {
+      "id": "lei_ohm_teoria",
+      "title": "Lei de Ohm",
+      "summary": "Para um elemento resistivo ôhmico, tensão, corrente e resistência estão ligadas por uma relação linear. Conhecendo duas dessas grandezas, a terceira pode ser determinada diretamente.",
+      "chapter": 4, "section": "4.2", "pages": "84–86",
+      "topics": ["Resistência", "Tensão", "Corrente", "Lei de Ohm"], "formula_ids": ["ohms_law"], "frequent": true,
+      "aliases": ["VIR", "V=RI", "ohm"]
+    },
+    {
+      "id": "potencia",
+      "title": "Potência elétrica",
+      "summary": "Potência indica a rapidez com que energia é convertida ou transferida. Em um circuito elétrico, ela pode ser obtida a partir da tensão e da corrente e, em elementos resistivos, também por formas derivadas da lei de Ohm.",
+      "chapter": 4, "section": "4.4", "pages": "89–91",
+      "topics": ["Potência", "Energia"], "formula_ids": ["power_vi", "joule_loss"], "frequent": true,
+      "aliases": ["watt", "potência dissipada", "P=VI"]
+    },
+    {
+      "id": "energia_eletrica_teoria",
+      "title": "Energia elétrica",
+      "summary": "Energia corresponde ao trabalho realizado ao longo de um intervalo de tempo. Em aplicações elétricas, a energia consumida depende da potência e do tempo e pode ser expressa em joules ou em quilowatt-hora.",
+      "chapter": 4, "section": "4.5", "pages": "91–93",
+      "topics": ["Energia", "Potência"], "formula_ids": ["electrical_energy", "energy_kwh"], "frequent": true,
+      "aliases": ["kWh", "consumo de energia", "joule"]
+    },
+    {
+      "id": "eficiencia_teoria",
+      "title": "Eficiência",
+      "summary": "Eficiência compara a potência útil de saída com a potência fornecida ao sistema. Como existem perdas, a potência útil é menor que a potência de entrada e a eficiência real permanece abaixo de 100%.",
+      "chapter": 4, "section": "4.6", "pages": "93–96",
+      "topics": ["Potência", "Eficiência", "Perdas"], "formula_ids": ["efficiency"], "frequent": true,
+      "aliases": ["rendimento", "perdas"]
+    },
+    {
+      "id": "protecao_circuitos",
+      "title": "Fusíveis e disjuntores",
+      "summary": "Dispositivos de proteção interrompem o circuito quando a corrente ultrapassa condições admissíveis. Seu papel é limitar danos por sobrecorrentes e reduzir riscos associados ao aquecimento excessivo.",
+      "chapter": 4, "section": "4.7", "pages": "96–97",
+      "topics": ["Proteção", "Corrente"], "formula_ids": [], "frequent": false,
+      "aliases": ["fusível", "disjuntor", "sobrecorrente"]
+    },
+
+    {
+      "id": "circuito_serie",
+      "title": "Circuito em série",
+      "summary": "Elementos em série compartilham a mesma corrente porque existe um único caminho para o fluxo de carga. A resistência equivalente de resistores em série é a soma de seus valores.",
+      "chapter": 5, "section": "5.2–5.3", "pages": "113–119",
+      "topics": ["Série", "Resistência", "Corrente"], "formula_ids": ["series_resistance", "series_current"], "frequent": true,
+      "aliases": ["resistores em série", "corrente em série"]
+    },
+    {
+      "id": "kvl_teoria",
+      "title": "Lei de Kirchhoff para tensões",
+      "summary": "Em qualquer percurso fechado de um circuito, a soma algébrica das elevações e quedas de tensão é zero. A lei expressa a conservação de energia ao longo de uma malha.",
+      "chapter": 5, "section": "5.6", "pages": "122–126",
+      "topics": ["Kirchhoff", "Tensão", "Malhas"], "formula_ids": ["kvl"], "frequent": true,
+      "aliases": ["KVL", "LKT", "lei das tensões"]
+    },
+    {
+      "id": "divisor_tensao_teoria",
+      "title": "Divisor de tensão",
+      "summary": "Em uma associação resistiva em série, a tensão total se distribui entre os resistores em proporção aos seus valores. Essa propriedade permite obter uma fração previsível da tensão aplicada.",
+      "chapter": 5, "section": "5.7", "pages": "126–129",
+      "topics": ["Divisores", "Tensão", "Série"], "formula_ids": ["voltage_divider"], "frequent": true,
+      "aliases": ["regra do divisor de tensão", "VDR"]
+    },
+    {
+      "id": "fonte_real_regulacao",
+      "title": "Fonte real e regulação de tensão",
+      "summary": "Uma fonte real pode ser modelada com resistência interna, fazendo a tensão terminal variar com a corrente de carga. A regulação quantifica essa mudança entre condições de operação.",
+      "chapter": 5, "section": "5.10", "pages": "135–138",
+      "topics": ["Fontes", "Tensão", "Resistência"], "formula_ids": ["source_internal_voltage", "voltage_regulation"], "frequent": false,
+      "aliases": ["resistência interna", "regulação", "tensão terminal"]
+    },
+
+    {
+      "id": "circuito_paralelo",
+      "title": "Circuito em paralelo",
+      "summary": "Elementos em paralelo estão ligados aos mesmos dois nós e, portanto, apresentam a mesma tensão. A corrente total se divide entre os ramos conforme suas resistências ou condutâncias.",
+      "chapter": 6, "section": "6.2–6.3", "pages": "159–169",
+      "topics": ["Paralelo", "Tensão", "Corrente"], "formula_ids": ["parallel_resistance", "parallel_voltage"], "frequent": true,
+      "aliases": ["resistores em paralelo", "ramos paralelos"]
+    },
+    {
+      "id": "kcl_teoria",
+      "title": "Lei de Kirchhoff para correntes",
+      "summary": "Em um nó, a soma das correntes que entram é igual à soma das correntes que saem. A lei representa a conservação de carga elétrica e fundamenta a análise nodal.",
+      "chapter": 6, "section": "6.5", "pages": "171–175",
+      "topics": ["Kirchhoff", "Corrente", "Nós"], "formula_ids": ["kcl"], "frequent": true,
+      "aliases": ["KCL", "LKC", "lei das correntes"]
+    },
+    {
+      "id": "divisor_corrente_teoria",
+      "title": "Divisor de corrente",
+      "summary": "Em ramos paralelos, a corrente se distribui de forma inversamente relacionada à resistência de cada ramo. A regra permite calcular diretamente a parcela de corrente em um resistor específico.",
+      "chapter": 6, "section": "6.6", "pages": "175–178",
+      "topics": ["Divisores", "Corrente", "Paralelo"], "formula_ids": ["current_divider"], "frequent": true,
+      "aliases": ["regra do divisor de corrente", "CDR"]
+    },
+    {
+      "id": "aberto_curto",
+      "title": "Circuito aberto e curto-circuito",
+      "summary": "Um circuito aberto interrompe o caminho da corrente e idealmente corresponde a resistência muito elevada. Um curto-circuito cria um caminho de resistência muito baixa e pode produzir correntes intensas.",
+      "chapter": 6, "section": "6.8", "pages": "179–183",
+      "topics": ["Paralelo", "Proteção", "Fundamentos"], "formula_ids": [], "frequent": true,
+      "aliases": ["circuito aberto", "curto", "short circuit"]
+    },
+
+    {
+      "id": "serie_paralelo_reducao",
+      "title": "Redução de circuitos série-paralelo",
+      "summary": "Circuitos mistos podem ser simplificados identificando associações elementares em série e em paralelo. O método de redução substitui partes do circuito por equivalentes e depois retorna ao circuito original para recuperar grandezas internas.",
+      "chapter": 7, "section": "7.2–7.3", "pages": "205–209",
+      "topics": ["Série-paralelo", "Redes"], "formula_ids": ["parallel_operator"], "frequent": true,
+      "aliases": ["redução e retorno", "circuito misto"]
+    },
+    {
+      "id": "divisor_carregado",
+      "title": "Divisor de tensão carregado",
+      "summary": "Quando uma carga é conectada à saída de um divisor, ela altera a resistência equivalente vista naquele ponto e modifica a tensão prevista pelo divisor sem carga. O efeito deve ser considerado no projeto.",
+      "chapter": 7, "section": "7.7", "pages": "219–220",
+      "topics": ["Divisores", "Carga", "Série-paralelo"], "formula_ids": ["loaded_divider"], "frequent": true,
+      "aliases": ["efeito de carga", "divisor com carga"]
+    },
+    {
+      "id": "instrumentos_resistivos",
+      "title": "Expansão de escalas de instrumentos",
+      "summary": "A faixa de medição de instrumentos pode ser adaptada com resistores externos. Um shunt amplia a faixa de corrente de um amperímetro, enquanto um resistor em série amplia a faixa de tensão de um voltímetro.",
+      "chapter": 7, "section": "7.9", "pages": "222–225",
+      "topics": ["Instrumentação", "Medição"], "formula_ids": ["ammeter_shunt", "voltmeter_multiplier"], "frequent": false,
+      "aliases": ["shunt", "resistor multiplicador", "amperímetro", "voltímetro"]
+    },
+
+    {
+      "id": "conversao_fontes_teoria",
+      "title": "Conversão de fontes",
+      "summary": "Uma fonte de tensão com resistência em série pode ser convertida em uma fonte de corrente com resistência em paralelo, e vice-versa, preservando o comportamento terminal da rede.",
+      "chapter": 8, "section": "8.3", "pages": "239–241",
+      "topics": ["Fontes", "Redes"], "formula_ids": ["source_transform"], "frequent": true,
+      "aliases": ["transformação de fonte", "fonte de corrente"]
+    },
+    {
+      "id": "analise_malhas",
+      "title": "Análise de malhas",
+      "summary": "O método das malhas associa correntes independentes às malhas de um circuito planar e aplica a lei de Kirchhoff das tensões para formar um sistema de equações.",
+      "chapter": 8, "section": "8.7–8.8", "pages": "246–254",
+      "topics": ["Malhas", "Redes", "Kirchhoff"], "formula_ids": ["mesh_matrix"], "frequent": true,
+      "aliases": ["método das malhas", "correntes de malha"]
+    },
+    {
+      "id": "analise_nodal",
+      "title": "Análise nodal",
+      "summary": "O método dos nós escolhe um nó de referência e determina as demais tensões nodais aplicando a lei de Kirchhoff das correntes. É especialmente eficiente em redes com muitas fontes de corrente.",
+      "chapter": 8, "section": "8.9–8.10", "pages": "254–262",
+      "topics": ["Nós", "Redes", "Kirchhoff"], "formula_ids": ["node_matrix"], "frequent": true,
+      "aliases": ["método dos nós", "tensão nodal"]
+    },
+    {
+      "id": "ponte_resistiva",
+      "title": "Ponte resistiva",
+      "summary": "Uma rede em ponte possui ramos que impedem uma redução direta apenas por série e paralelo. Em condição de equilíbrio, relações entre resistências permitem determinar valores desconhecidos com grande sensibilidade.",
+      "chapter": 8, "section": "8.11", "pages": "262–265",
+      "topics": ["Pontes", "Redes", "Resistência"], "formula_ids": ["bridge_balance"], "frequent": false,
+      "aliases": ["ponte de Wheatstone", "ponte equilibrada"]
+    },
+    {
+      "id": "delta_estrela",
+      "title": "Conversões Δ–Y e Y–Δ",
+      "summary": "Redes de três resistores conectadas em triângulo ou estrela podem ser transformadas entre si sem alterar o comportamento observado nos três terminais. A conversão facilita a redução de redes que não possuem associações série-paralelo evidentes.",
+      "chapter": 8, "section": "8.12", "pages": "265–270",
+      "topics": ["Conversão Δ-Y", "Redes", "Resistência"], "formula_ids": ["delta_to_star_ra", "star_to_delta_rab"], "frequent": false,
+      "aliases": ["delta estrela", "triângulo estrela", "Y delta"]
+    },
+
+    {
+      "id": "superposicao_teoria",
+      "title": "Teorema da superposição",
+      "summary": "Em uma rede linear com várias fontes independentes, a resposta em um elemento pode ser obtida somando as contribuições produzidas por cada fonte atuando separadamente, com as demais fontes independentes desativadas adequadamente.",
+      "chapter": 9, "section": "9.2", "pages": "286–293",
+      "topics": ["Superposição", "Teoremas", "Redes"], "formula_ids": ["superposition"], "frequent": true,
+      "aliases": ["superposition", "fontes independentes"]
+    },
+    {
+      "id": "thevenin_teoria",
+      "title": "Teorema de Thévenin",
+      "summary": "Uma rede linear de dois terminais pode ser substituída, do ponto de vista da carga, por uma única fonte de tensão em série com uma resistência equivalente. O modelo simplifica a análise quando a carga varia.",
+      "chapter": 9, "section": "9.3", "pages": "293–303",
+      "topics": ["Thévenin", "Teoremas", "Redes"], "formula_ids": ["thevenin_voltage", "thevenin_resistance"], "frequent": true,
+      "aliases": ["equivalente de Thévenin", "Vth", "Rth"]
+    },
+    {
+      "id": "norton_teoria",
+      "title": "Teorema de Norton",
+      "summary": "Uma rede linear de dois terminais também pode ser representada por uma fonte de corrente em paralelo com uma resistência equivalente. Os equivalentes de Norton e Thévenin descrevem o mesmo comportamento terminal.",
+      "chapter": 9, "section": "9.4", "pages": "303–307",
+      "topics": ["Norton", "Teoremas", "Redes"], "formula_ids": ["norton_current", "norton_resistance", "thevenin_norton_conversion"], "frequent": true,
+      "aliases": ["equivalente de Norton", "In", "Rn"]
+    },
+    {
+      "id": "maxima_potencia_cc",
+      "title": "Máxima transferência de potência",
+      "summary": "Para uma rede resistiva equivalente, existe uma condição de carga que maximiza a potência recebida pela carga. Essa condição relaciona diretamente a resistência da carga com a resistência equivalente da fonte.",
+      "chapter": 9, "section": "9.5", "pages": "307–315",
+      "topics": ["Máxima transferência", "Potência", "Teoremas"], "formula_ids": ["max_power_dc"], "frequent": true,
+      "aliases": ["maximum power transfer", "casamento de resistência"]
+    },
+    {
+      "id": "millman_teoria",
+      "title": "Teorema de Millman",
+      "summary": "O teorema de Millman fornece uma forma compacta de determinar a tensão comum de ramos paralelos que contêm fontes e resistências. Ele pode reduzir significativamente o número de etapas algébricas.",
+      "chapter": 9, "section": "9.6", "pages": "315–318",
+      "topics": ["Millman", "Teoremas", "Paralelo"], "formula_ids": ["millman"], "frequent": false,
+      "aliases": ["Millman", "ramos paralelos"]
+    },
+
+    {
+      "id": "capacitor",
+      "title": "Capacitor",
+      "summary": "O capacitor é um elemento de dois terminais capaz de armazenar energia em um campo elétrico. Diferentemente de um resistor ideal, ele não dissipa continuamente a energia recebida, podendo devolvê-la ao circuito.",
+      "chapter": 10, "section": "10.1–10.4", "pages": "334–348",
+      "topics": ["Capacitância", "Componentes", "Energia"], "formula_ids": ["capacitance"], "frequent": true,
+      "aliases": ["capacitores", "campo elétrico"]
+    },
+    {
+      "id": "capacitancia_teoria",
+      "title": "Capacitância",
+      "summary": "Capacitância expressa a capacidade de um capacitor de armazenar carga para uma dada tensão entre suas placas. O valor depende da geometria e do material dielétrico.",
+      "chapter": 10, "section": "10.3", "pages": "335–339",
+      "topics": ["Capacitância", "Tensão", "Carga"], "formula_ids": ["capacitance"], "frequent": true,
+      "aliases": ["farad", "C=Q/V"]
+    },
+    {
+      "id": "transitorio_rc",
+      "title": "Transitório RC",
+      "summary": "Ao conectar ou desconectar uma fonte em um circuito RC, tensão e corrente não mudam instantaneamente para seus valores finais. A resposta segue uma função exponencial de carga ou descarga governada pela constante de tempo.",
+      "chapter": 10, "section": "10.5–10.9", "pages": "348–363",
+      "topics": ["RC", "Transitórios", "Capacitância"], "formula_ids": ["rc_tau", "rc_charge_voltage", "rc_discharge"], "frequent": true,
+      "aliases": ["carga do capacitor", "descarga do capacitor", "constante de tempo"]
+    },
+    {
+      "id": "corrente_capacitor",
+      "title": "Corrente e tensão no capacitor",
+      "summary": "A corrente de um capacitor está associada à rapidez de variação de sua tensão. Consequentemente, a tensão em um capacitor ideal não pode sofrer uma mudança finita instantânea sem exigir uma corrente impulsiva.",
+      "chapter": 10, "section": "10.10", "pages": "363–365",
+      "topics": ["Capacitância", "Corrente", "Tensão"], "formula_ids": ["capacitor_current", "capacitor_voltage_integral"], "frequent": true,
+      "aliases": ["iC", "dv/dt", "tensão do capacitor"]
+    },
+    {
+      "id": "associacao_capacitores",
+      "title": "Capacitores em série e em paralelo",
+      "summary": "Capacitores podem ser substituídos por uma capacitância equivalente. Em paralelo, as capacitâncias se somam; em série, a relação equivalente é análoga à de resistores em paralelo.",
+      "chapter": 10, "section": "10.11", "pages": "365–368",
+      "topics": ["Capacitância", "Série", "Paralelo"], "formula_ids": ["capacitors_parallel", "capacitors_series"], "frequent": false,
+      "aliases": ["capacitor equivalente"]
+    },
+    {
+      "id": "energia_capacitor",
+      "title": "Energia armazenada no capacitor",
+      "summary": "A energia entregue a um capacitor ideal durante a carga fica armazenada no campo elétrico. Essa energia pode ser devolvida ao circuito durante a descarga.",
+      "chapter": 10, "section": "10.12", "pages": "368",
+      "topics": ["Capacitância", "Energia"], "formula_ids": ["capacitor_energy"], "frequent": false,
+      "aliases": ["energia eletrostática", "campo elétrico"]
+    },
+
+    {
+      "id": "indutor",
+      "title": "Indutor",
+      "summary": "O indutor armazena energia em um campo magnético produzido pela corrente. Sua característica essencial é se opor a variações de corrente por meio de uma tensão induzida.",
+      "chapter": 11, "section": "11.1–11.4", "pages": "388–401",
+      "topics": ["Indutância", "Componentes", "Magnetismo"], "formula_ids": ["inductance_flux", "inductor_voltage"], "frequent": true,
+      "aliases": ["bobina", "indutância"]
+    },
+    {
+      "id": "indutancia_teoria",
+      "title": "Indutância",
+      "summary": "Indutância relaciona o fluxo magnético concatenado com a corrente que o produz. Quanto maior a indutância, maior a oposição do elemento a mudanças rápidas de corrente.",
+      "chapter": 11, "section": "11.3", "pages": "393–399",
+      "topics": ["Indutância", "Magnetismo"], "formula_ids": ["inductance_flux"], "frequent": true,
+      "aliases": ["henry", "L"]
+    },
+    {
+      "id": "tensao_indutor",
+      "title": "Tensão induzida no indutor",
+      "summary": "A tensão em um indutor depende da taxa de variação da corrente. Uma corrente constante em regime contínuo ideal não produz queda de tensão indutiva, enquanto variações rápidas produzem tensões maiores.",
+      "chapter": 11, "section": "11.4", "pages": "399–401",
+      "topics": ["Indutância", "Tensão", "Corrente"], "formula_ids": ["inductor_voltage", "inductor_current_integral"], "frequent": true,
+      "aliases": ["vL", "di/dt", "tensão na bobina"]
+    },
+    {
+      "id": "transitorio_rl",
+      "title": "Transitório RL",
+      "summary": "Em um circuito RL, a corrente cresce ou decai exponencialmente após uma comutação. A velocidade da resposta é determinada pela relação entre indutância e resistência equivalente.",
+      "chapter": 11, "section": "11.5–11.9", "pages": "401–409",
+      "topics": ["RL", "Transitórios", "Indutância"], "formula_ids": ["rl_tau", "rl_growth", "rl_decay"], "frequent": true,
+      "aliases": ["constante de tempo RL", "crescimento de corrente", "decaimento"]
+    },
+    {
+      "id": "energia_indutor",
+      "title": "Energia armazenada no indutor",
+      "summary": "A energia de um indutor ideal fica armazenada no campo magnético associado à corrente. Quando a corrente diminui, essa energia pode retornar ao circuito.",
+      "chapter": 11, "section": "11.13", "pages": "413–414",
+      "topics": ["Indutância", "Energia"], "formula_ids": ["inductor_energy"], "frequent": false,
+      "aliases": ["energia magnética"]
+    },
+
+    {
+      "id": "campo_magnetico",
+      "title": "Campo e fluxo magnético",
+      "summary": "Correntes elétricas produzem campos magnéticos. O fluxo magnético descreve a quantidade de campo que atravessa uma superfície, enquanto a densidade de fluxo representa sua concentração por área.",
+      "chapter": 12, "section": "12.2", "pages": "429–430",
+      "topics": ["Magnetismo", "Fluxo"], "formula_ids": ["flux_density"], "frequent": false,
+      "aliases": ["fluxo magnético", "densidade de fluxo", "B"]
+    },
+    {
+      "id": "relutancia_magnetica",
+      "title": "Relutância e circuito magnético",
+      "summary": "Relutância representa a oposição de um caminho magnético ao estabelecimento de fluxo. O livro organiza força magnetomotriz, fluxo e relutância em uma relação análoga à lei de Ohm dos circuitos elétricos.",
+      "chapter": 12, "section": "12.3–12.5", "pages": "430–431",
+      "topics": ["Magnetismo", "Relutância"], "formula_ids": ["reluctance", "magnetic_ohm", "magnetomotive_force"], "frequent": false,
+      "aliases": ["lei de Ohm magnética", "força magnetomotriz", "FMM"]
+    },
+    {
+      "id": "histerese",
+      "title": "Histerese magnética",
+      "summary": "Materiais ferromagnéticos apresentam uma relação entre campo magnetizante e densidade de fluxo que depende do histórico de magnetização. O ciclo de histerese evidencia remanência, coercividade e perdas magnéticas.",
+      "chapter": 12, "section": "12.6", "pages": "431–435",
+      "topics": ["Magnetismo", "Materiais", "Perdas"], "formula_ids": [], "frequent": false,
+      "aliases": ["curva BH", "remanência", "coercividade"]
+    },
+    {
+      "id": "lei_ampere",
+      "title": "Lei circuital de Ampère",
+      "summary": "A lei circuital de Ampère relaciona a circulação da intensidade de campo magnético ao redor de um caminho fechado com a corrente total concatenada por esse caminho.",
+      "chapter": 12, "section": "12.7", "pages": "435–436",
+      "topics": ["Magnetismo", "Ampère"], "formula_ids": ["ampere_law"], "frequent": false,
+      "aliases": ["lei de Ampere", "circuito magnético"]
+    },
+
+    {
+      "id": "senoide",
+      "title": "Forma de onda senoidal",
+      "summary": "A senoide é a forma de onda fundamental usada na análise de corrente alternada. Ela é caracterizada por amplitude, período ou frequência, fase e valor instantâneo.",
+      "chapter": 13, "section": "13.2–13.5", "pages": "453–464",
+      "topics": ["CA senoidal", "Frequência"], "formula_ids": ["period_frequency", "angular_frequency", "sinusoid"], "frequent": true,
+      "aliases": ["senoidal", "corrente alternada", "senoide"]
+    },
+    {
+      "id": "frequencia_periodo",
+      "title": "Frequência, período e frequência angular",
+      "summary": "O período é o tempo de um ciclo completo e a frequência indica quantos ciclos ocorrem por segundo. A frequência angular expressa a mesma repetição em radianos por segundo.",
+      "chapter": 13, "section": "13.2–13.5", "pages": "453–464",
+      "topics": ["Frequência", "CA senoidal"], "formula_ids": ["period_frequency", "angular_frequency"], "frequent": true,
+      "aliases": ["Hz", "omega", "período"]
+    },
+    {
+      "id": "fase_defasagem",
+      "title": "Fase e defasagem",
+      "summary": "A fase localiza uma senoide dentro do ciclo. A diferença de fase entre duas grandezas indica quanto uma está adiantada ou atrasada em relação à outra.",
+      "chapter": 13, "section": "13.6", "pages": "464–469",
+      "topics": ["CA senoidal", "Fasores"], "formula_ids": ["phase_time"], "frequent": true,
+      "aliases": ["ângulo de fase", "adiantado", "atrasado"]
+    },
+    {
+      "id": "valor_medio_rms",
+      "title": "Valor médio e valor eficaz (RMS)",
+      "summary": "O valor médio descreve o nível médio de uma forma de onda no intervalo considerado. O valor eficaz fornece o valor contínuo equivalente em termos de efeito de potência em uma resistência.",
+      "chapter": 13, "section": "13.7–13.8", "pages": "469–479",
+      "topics": ["RMS", "Valor médio", "CA senoidal"], "formula_ids": ["sine_average", "sine_rms", "general_rms"], "frequent": true,
+      "aliases": ["valor eficaz", "rms", "root mean square"]
+    },
+
+    {
+      "id": "resposta_rlc_ca",
+      "title": "Resposta de R, L e C em corrente alternada",
+      "summary": "Resistores, indutores e capacitores respondem de modo distinto a uma excitação senoidal. O resistor não introduz defasagem ideal, enquanto indutores e capacitores estabelecem relações de fase características entre tensão e corrente.",
+      "chapter": 14, "section": "14.3", "pages": "494–500",
+      "topics": ["CA senoidal", "Impedância", "Fasores"], "formula_ids": ["resistor_impedance", "inductor_impedance", "capacitor_impedance"], "frequent": true,
+      "aliases": ["RLC", "resistor indutor capacitor", "fase"]
+    },
+    {
+      "id": "reatancia",
+      "title": "Reatância indutiva e capacitiva",
+      "summary": "Reatância quantifica a oposição de indutores e capacitores à corrente alternada. A reatância indutiva cresce com a frequência, enquanto a capacitiva diminui quando a frequência aumenta.",
+      "chapter": 14, "section": "14.3–14.4", "pages": "494–506",
+      "topics": ["Reatância", "Impedância", "Frequência"], "formula_ids": ["inductive_reactance", "capacitive_reactance"], "frequent": true,
+      "aliases": ["XL", "XC", "reatância capacitiva", "reatância indutiva"]
+    },
+    {
+      "id": "numeros_complexos",
+      "title": "Números complexos na análise CA",
+      "summary": "Grandezas senoidais podem ser manipuladas eficientemente usando números complexos em forma retangular ou polar. Essa representação simplifica operações de magnitude e fase em redes de corrente alternada.",
+      "chapter": 14, "section": "14.6–14.10", "pages": "510–518",
+      "topics": ["Complexos", "CA senoidal"], "formula_ids": ["polar_rectangular", "rectangular_polar_mag", "rectangular_polar_angle"], "frequent": false,
+      "aliases": ["forma polar", "forma retangular", "complexos"]
+    },
+    {
+      "id": "fasor",
+      "title": "Fasores",
+      "summary": "O fasor representa magnitude e fase de uma grandeza senoidal em regime permanente, permitindo substituir operações diferenciais por álgebra complexa quando todas as grandezas possuem a mesma frequência.",
+      "chapter": 14, "section": "14.12", "pages": "520–524",
+      "topics": ["Fasores", "CA senoidal"], "formula_ids": [], "frequent": true,
+      "aliases": ["representação fasorial", "phasor"]
+    },
+    {
+      "id": "fator_potencia_basico",
+      "title": "Potência média e fator de potência",
+      "summary": "Em regime senoidal, a potência média depende da defasagem entre tensão e corrente. O fator de potência expressa quanto da potência aparente está associada à transferência média de energia.",
+      "chapter": 14, "section": "14.5", "pages": "506–510",
+      "topics": ["Fator de potência", "Potência CA", "CA senoidal"], "formula_ids": ["average_power_phase", "power_factor"], "frequent": true,
+      "aliases": ["cos phi", "FP", "potência média"]
+    },
+
+    {
+      "id": "impedancia",
+      "title": "Impedância",
+      "summary": "Impedância generaliza a resistência para circuitos senoidais, reunindo componentes resistivos e reativos em uma grandeza complexa. Ela relaciona os fasores de tensão e corrente por uma forma fasorial da lei de Ohm.",
+      "chapter": 15, "section": "15.2", "pages": "532–537",
+      "topics": ["Impedância", "CA senoidal", "Fasores"], "formula_ids": ["ac_ohm"], "frequent": true,
+      "aliases": ["Z", "lei de Ohm fasorial"]
+    },
+    {
+      "id": "ca_serie",
+      "title": "Circuitos CA em série",
+      "summary": "Em série, impedâncias complexas são somadas para obter a impedância total. A mesma corrente atravessa todos os elementos e as tensões devem ser combinadas considerando magnitude e fase.",
+      "chapter": 15, "section": "15.3–15.6", "pages": "537–553",
+      "topics": ["Impedância", "Série", "CA senoidal"], "formula_ids": ["series_impedance", "rl_series_impedance", "rc_series_impedance", "ac_voltage_divider"], "frequent": true,
+      "aliases": ["RLC série", "impedâncias em série"]
+    },
+    {
+      "id": "admitancia_teoria",
+      "title": "Admitância e circuitos CA em paralelo",
+      "summary": "Admitância é o inverso da impedância e é útil em redes paralelas porque as admitâncias dos ramos podem ser somadas diretamente. Ela reúne condutância e susceptância.",
+      "chapter": 15, "section": "15.7–15.9", "pages": "553–562",
+      "topics": ["Admitância", "Paralelo", "CA senoidal"], "formula_ids": ["admittance", "parallel_admittance", "ac_current_divider"], "frequent": true,
+      "aliases": ["Y", "susceptância", "CA paralelo"]
+    },
+
+    {
+      "id": "ca_serie_paralelo",
+      "title": "Circuitos CA série-paralelo",
+      "summary": "Redes senoidais mistas são analisadas combinando impedâncias e admitâncias equivalentes, respeitando suas magnitudes e ângulos. A lógica de redução é semelhante à de CC, mas com grandezas complexas.",
+      "chapter": 16, "section": "16.1–16.3", "pages": "592–600",
+      "topics": ["Série-paralelo", "Impedância", "CA senoidal"], "formula_ids": ["ac_parallel_impedance", "ac_cascade_input"], "frequent": false,
+      "aliases": ["RLC misto", "rede CA mista"]
+    },
+    {
+      "id": "aterramento_ca",
+      "title": "Aterramento em circuitos CA",
+      "summary": "O aterramento estabelece um ponto de referência de potencial e pode cumprir funções de segurança e de referência de sinais. A interpretação correta do terra evita confundir referência elétrica com caminho obrigatório de corrente.",
+      "chapter": 16, "section": "16.4", "pages": "600–603",
+      "topics": ["Aterramento", "CA senoidal", "Fundamentos"], "formula_ids": [], "frequent": false,
+      "aliases": ["terra", "ground", "referência"]
+    },
+
+    {
+      "id": "malhas_ca",
+      "title": "Análise de malhas em CA",
+      "summary": "O método das malhas é aplicado em regime senoidal usando impedâncias complexas e fontes fasoriais. As equações mantêm a estrutura da análise em CC, mas são resolvidas no domínio complexo.",
+      "chapter": 17, "section": "17.4", "pages": "619–624",
+      "topics": ["Malhas", "CA senoidal", "Redes"], "formula_ids": ["ac_mesh_matrix"], "frequent": false,
+      "aliases": ["malhas fasoriais", "mesh AC"]
+    },
+    {
+      "id": "nos_ca",
+      "title": "Análise nodal em CA",
+      "summary": "A análise nodal em corrente alternada aplica a lei das correntes aos fasores e utiliza admitâncias ou impedâncias complexas para relacionar correntes e tensões nodais.",
+      "chapter": 17, "section": "17.5", "pages": "624–631",
+      "topics": ["Nós", "CA senoidal", "Redes"], "formula_ids": ["ac_node_matrix"], "frequent": false,
+      "aliases": ["nós fasoriais", "nodal AC"]
+    },
+
+    {
+      "id": "thevenin_norton_ca",
+      "title": "Thévenin e Norton em CA",
+      "summary": "Os equivalentes de Thévenin e Norton permanecem válidos em redes lineares de corrente alternada. Resistências são substituídas por impedâncias complexas e as fontes são tratadas como fasores.",
+      "chapter": 18, "section": "18.3–18.4", "pages": "653–668",
+      "topics": ["Thévenin", "Norton", "CA senoidal"], "formula_ids": ["ac_thevenin", "ac_thevenin_impedance", "ac_norton"], "frequent": true,
+      "aliases": ["equivalente CA", "Zth"]
+    },
+    {
+      "id": "superposicao_ca",
+      "title": "Superposição em CA",
+      "summary": "A superposição pode ser aplicada a redes lineares de CA. Para fontes de mesma frequência, as contribuições são combinadas fasorialmente; fontes de frequências diferentes exigem tratamento separado antes da soma no domínio do tempo.",
+      "chapter": 18, "section": "18.2", "pages": "647–653",
+      "topics": ["Superposição", "CA senoidal", "Teoremas"], "formula_ids": ["ac_superposition"], "frequent": false,
+      "aliases": ["superposição fasorial"]
+    },
+    {
+      "id": "maxima_potencia_ca",
+      "title": "Máxima transferência de potência em CA",
+      "summary": "Em redes senoidais, a condição de máxima transferência de potência envolve o casamento conjugado entre a impedância da carga e a impedância equivalente da fonte.",
+      "chapter": 18, "section": "18.5", "pages": "668–671",
+      "topics": ["Máxima transferência", "Potência CA", "Impedância"], "formula_ids": ["max_power_ac"], "frequent": false,
+      "aliases": ["casamento conjugado", "maximum power AC"]
+    },
+
+    {
+      "id": "potencias_ca",
+      "title": "Potência ativa, reativa e aparente",
+      "summary": "Em circuitos CA, a potência é descrita por grandezas complementares. A potência ativa representa transferência média de energia, a reativa representa troca periódica de energia com elementos reativos e a aparente combina magnitude de tensão e corrente.",
+      "chapter": 19, "section": "19.2–19.6", "pages": "684–691",
+      "topics": ["Potência CA", "Fator de potência"], "formula_ids": ["real_power", "reactive_power", "apparent_power"], "frequent": true,
+      "aliases": ["P Q S", "potência real", "potência aparente", "potência reativa"]
+    },
+    {
+      "id": "triangulo_potencia",
+      "title": "Triângulo de potências",
+      "summary": "O triângulo de potências organiza geometricamente potência ativa, reativa e aparente. O ângulo associado é o mesmo usado no fator de potência e ajuda a visualizar o caráter indutivo ou capacitivo da carga.",
+      "chapter": 19, "section": "19.7", "pages": "691–693",
+      "topics": ["Potência CA", "Fator de potência"], "formula_ids": ["power_triangle", "complex_power"], "frequent": true,
+      "aliases": ["PQS", "potência complexa"]
+    },
+    {
+      "id": "correcao_fp",
+      "title": "Correção do fator de potência",
+      "summary": "A correção do fator de potência reduz a parcela reativa demandada da fonte sem alterar a potência ativa da carga. Em cargas indutivas, capacitores podem fornecer localmente parte da potência reativa necessária.",
+      "chapter": 19, "section": "19.9", "pages": "696–699",
+      "topics": ["Fator de potência", "Potência CA", "Capacitância"], "formula_ids": ["pf_correction_qc", "pf_correction_c"], "frequent": true,
+      "aliases": ["correção de FP", "banco de capacitores"]
+    },
+
+    {
+      "id": "ressonancia",
+      "title": "Ressonância",
+      "summary": "A ressonância ocorre quando os efeitos reativos indutivo e capacitivo se compensam em determinada frequência. Nessa condição, circuitos RLC apresentam comportamento especialmente seletivo em frequência.",
+      "chapter": 20, "section": "20.2", "pages": "713–715",
+      "topics": ["Ressonância", "Frequência", "RLC"], "formula_ids": ["series_resonance_frequency", "series_resonance_condition"], "frequent": true,
+      "aliases": ["frequência de ressonância", "RLC ressonante"]
+    },
+    {
+      "id": "qualidade_seletividade",
+      "title": "Fator de qualidade e seletividade",
+      "summary": "O fator de qualidade indica quão pronunciada é a resposta de um circuito ressonante. A largura de banda mede a faixa entre as frequências de meia potência e, junto com Q, caracteriza a seletividade.",
+      "chapter": 20, "section": "20.3–20.5", "pages": "715–719",
+      "topics": ["Ressonância", "Frequência", "Filtros"], "formula_ids": ["series_q", "bandwidth", "half_power_freq_product"], "frequent": false,
+      "aliases": ["Q", "bandwidth", "largura de banda"]
+    },
+    {
+      "id": "ressonancia_paralela",
+      "title": "Ressonância em paralelo",
+      "summary": "Em um circuito ressonante paralelo, as contribuições reativas dos ramos se equilibram na frequência de ressonância. O comportamento de impedância e corrente difere do caso série, embora a compensação reativa permaneça central.",
+      "chapter": 20, "section": "20.8–20.10", "pages": "722–729",
+      "topics": ["Ressonância", "Paralelo", "RLC"], "formula_ids": ["parallel_resonance_ideal"], "frequent": false,
+      "aliases": ["tanque LC", "ressonância paralela"]
+    },
+
+    {
+      "id": "decibel",
+      "title": "Decibel",
+      "summary": "O decibel expressa razões de potência ou de amplitude em escala logarítmica. Essa representação transforma produtos de ganhos em somas e facilita a análise de sistemas em ampla faixa de frequência.",
+      "chapter": 21, "section": "21.3", "pages": "749–753",
+      "topics": ["Decibéis", "Ganho"], "formula_ids": ["decibel_power", "decibel_voltage", "decibel_current"], "frequent": true,
+      "aliases": ["dB", "ganho logarítmico"]
+    },
+    {
+      "id": "filtros",
+      "title": "Filtros passa-baixa, passa-alta e passa-faixa",
+      "summary": "Filtros são redes que favorecem determinadas faixas de frequência e atenuam outras. O livro apresenta topologias RC básicas e conceitos de frequência de corte, banda passante e banda rejeitada.",
+      "chapter": 21, "section": "21.4–21.9", "pages": "753–765",
+      "topics": ["Filtros", "Frequência", "RC"], "formula_ids": ["rc_lowpass_fc", "rc_lowpass_transfer", "rc_highpass_transfer", "bandpass_center"], "frequent": true,
+      "aliases": ["passa baixa", "passa alta", "passa faixa", "corte"]
+    },
+    {
+      "id": "bode",
+      "title": "Gráficos de Bode",
+      "summary": "Gráficos de Bode representam magnitude em decibéis e fase em função da frequência em escala logarítmica. Aproximações assintóticas permitem visualizar rapidamente frequências de quebra e inclinações da resposta.",
+      "chapter": 21, "section": "21.10–21.14", "pages": "765–786",
+      "topics": ["Filtros", "Decibéis", "Frequência"], "formula_ids": ["bode_magnitude_db"], "frequent": true,
+      "aliases": ["Bode", "resposta em frequência"]
+    },
+
+    {
+      "id": "indutancia_mutua",
+      "title": "Indutância mútua",
+      "summary": "Quando o fluxo produzido por uma bobina concatena outra bobina, uma variação de corrente em uma pode induzir tensão na outra. A indutância mútua quantifica esse acoplamento magnético.",
+      "chapter": 22, "section": "22.2", "pages": "802–804",
+      "topics": ["Transformadores", "Indutância", "Acoplamento"], "formula_ids": ["mutual_inductance"], "frequent": false,
+      "aliases": ["M", "acoplamento magnético"]
+    },
+    {
+      "id": "transformador_ideal",
+      "title": "Transformador ideal",
+      "summary": "O transformador transfere energia entre enrolamentos por acoplamento magnético e permite alterar níveis de tensão e corrente. No modelo ideal, as relações dependem da razão de espiras e a potência é conservada.",
+      "chapter": 22, "section": "22.3–22.4", "pages": "804–808",
+      "topics": ["Transformadores", "Acoplamento", "Potência CA"], "formula_ids": ["transformer_turns_voltage", "transformer_current", "transformer_power"], "frequent": true,
+      "aliases": ["relação de espiras", "transformação", "trafo"]
+    },
+    {
+      "id": "impedancia_refletida",
+      "title": "Impedância refletida",
+      "summary": "Uma impedância conectada ao secundário pode ser representada no primário por uma impedância equivalente escalada pelo quadrado da razão de espiras. Essa propriedade é útil no casamento de impedâncias.",
+      "chapter": 22, "section": "22.4–22.5", "pages": "807–811",
+      "topics": ["Transformadores", "Impedância"], "formula_ids": ["transformer_impedance"], "frequent": true,
+      "aliases": ["impedância refletida", "casamento de impedância"]
+    },
+
+    {
+      "id": "sistema_trifasico",
+      "title": "Sistema trifásico equilibrado",
+      "summary": "Um sistema trifásico equilibrado utiliza três grandezas senoidais de mesma amplitude e frequência, separadas por 120 graus elétricos. Essa estrutura permite transferência de potência mais uniforme e é base dos sistemas polifásicos.",
+      "chapter": 23, "section": "23.2–23.5", "pages": "837–842",
+      "topics": ["Trifásico", "CA senoidal"], "formula_ids": ["three_phase_y_voltage"], "frequent": true,
+      "aliases": ["trifásico", "120 graus", "sistema equilibrado"]
+    },
+    {
+      "id": "ligacoes_y_delta",
+      "title": "Ligações Y e Δ",
+      "summary": "Geradores e cargas trifásicas podem ser conectados em estrela (Y) ou triângulo (Δ). Cada conexão estabelece relações próprias entre grandezas de fase e grandezas de linha.",
+      "chapter": 23, "section": "23.3–23.9", "pages": "838–846",
+      "topics": ["Trifásico", "Conversão Δ-Y"], "formula_ids": ["three_phase_y_voltage", "three_phase_delta_current"], "frequent": true,
+      "aliases": ["estrela", "triângulo", "delta", "Y"]
+    },
+    {
+      "id": "potencia_trifasica",
+      "title": "Potência trifásica",
+      "summary": "Em sistemas trifásicos equilibrados, a potência total pode ser calculada a partir das grandezas de linha ou somando a potência das três fases. As potências ativa, reativa e aparente mantêm relações análogas às do caso monofásico.",
+      "chapter": 23, "section": "23.10", "pages": "846–850",
+      "topics": ["Trifásico", "Potência CA"], "formula_ids": ["three_phase_active_power", "three_phase_reactive_power", "three_phase_apparent_power"], "frequent": true,
+      "aliases": ["potência 3 fases", "potência trifásica"]
+    },
+
+    {
+      "id": "pulso_ciclo_trabalho",
+      "title": "Pulsos e ciclo de trabalho",
+      "summary": "Formas de onda pulsadas são caracterizadas por amplitude, largura de pulso, período, frequência de repetição e ciclo de trabalho. O ciclo de trabalho indica a fração do período em que o pulso permanece ativo.",
+      "chapter": 24, "section": "24.2–24.4", "pages": "863–869",
+      "topics": ["Pulsos", "Frequência"], "formula_ids": ["duty_cycle", "pulse_frequency", "pulse_average"], "frequent": false,
+      "aliases": ["duty cycle", "PWM", "trem de pulsos"]
+    },
+    {
+      "id": "rc_onda_quadrada",
+      "title": "Resposta RC a uma onda quadrada",
+      "summary": "Uma onda quadrada aplica sucessivos degraus ao circuito RC. A resposta depende da relação entre a constante de tempo do circuito e a duração de cada nível do pulso.",
+      "chapter": 24, "section": "24.5–24.6", "pages": "869–875",
+      "topics": ["RC", "Pulsos", "Transitórios"], "formula_ids": ["rc_square_response"], "frequent": false,
+      "aliases": ["onda quadrada", "degrau RC"]
+    },
+    {
+      "id": "ponta_compensada",
+      "title": "Ponta de prova compensada",
+      "summary": "Uma ponta de prova atenuadora usa uma rede RC ajustada para manter a razão de divisão aproximadamente independente da frequência dentro da faixa de operação. O equilíbrio das constantes de tempo é essencial para evitar distorção.",
+      "chapter": 24, "section": "24.7", "pages": "875–877",
+      "topics": ["RC", "Instrumentação", "Filtros"], "formula_ids": ["attenuator_probe"], "frequent": false,
+      "aliases": ["probe compensada", "osciloscópio"]
+    },
+
+    {
+      "id": "fourier",
+      "title": "Série de Fourier",
+      "summary": "Uma forma de onda periódica não senoidal pode ser representada como soma de uma componente contínua e componentes senoidais harmônicas. A série de Fourier permite analisar cada frequência separadamente em redes lineares.",
+      "chapter": 25, "section": "25.2", "pages": "886–892",
+      "topics": ["Fourier", "Harmônicos", "Não senoidal"], "formula_ids": ["fourier_series", "fourier_a0", "fourier_an", "fourier_bn"], "frequent": true,
+      "aliases": ["harmônicos", "decomposição de Fourier"]
+    },
+    {
+      "id": "resposta_harmonicos",
+      "title": "Resposta de circuitos a harmônicos",
+      "summary": "Em uma rede linear, cada componente harmônica de um sinal não senoidal encontra uma impedância correspondente à sua frequência. A resposta total é obtida combinando as respostas individuais.",
+      "chapter": 25, "section": "25.3", "pages": "892–897",
+      "topics": ["Harmônicos", "Impedância", "Não senoidal"], "formula_ids": ["harmonic_impedance", "nonsinusoidal_rms"], "frequent": false,
+      "aliases": ["circuitos não senoidais", "harmônica n"]
+    },
+
+    {
+      "id": "ganhos_sistema",
+      "title": "Ganhos de tensão, corrente e potência",
+      "summary": "O desempenho de um sistema pode ser descrito por razões entre grandezas de saída e entrada. Ganhos de tensão, corrente e potência fornecem medidas distintas do efeito produzido pelo sistema.",
+      "chapter": 26, "section": "26.3–26.4", "pages": "908–912",
+      "topics": ["Ganho", "Sistemas"], "formula_ids": ["voltage_gain", "current_gain", "power_gain"], "frequent": false,
+      "aliases": ["Av", "Ai", "Ap", "amplificação"]
+    },
+    {
+      "id": "sistemas_cascata",
+      "title": "Sistemas em cascata",
+      "summary": "Quando estágios são conectados em cascata, o ganho total em escala linear é o produto dos ganhos individuais. Em decibéis, a mesma composição se transforma em soma.",
+      "chapter": 26, "section": "26.5", "pages": "912–914",
+      "topics": ["Ganho", "Sistemas", "Decibéis"], "formula_ids": ["cascade_gain", "cascade_db_gain"], "frequent": false,
+      "aliases": ["cascata", "ganho total"]
+    },
+    {
+      "id": "duas_portas",
+      "title": "Parâmetros de redes de duas portas",
+      "summary": "Redes de duas portas podem ser descritas por conjuntos de parâmetros que relacionam tensões e correntes de entrada e saída. O livro introduz parâmetros Z, Y e híbridos como representações equivalentes úteis em diferentes condições de análise.",
+      "chapter": 26, "section": "26.6–26.8", "pages": "914–922",
+      "topics": ["Duas portas", "Sistemas", "Impedância", "Admitância"], "formula_ids": ["z_parameters", "y_parameters", "h_parameters"], "frequent": false,
+      "aliases": ["parâmetros Z", "parâmetros Y", "parâmetros h", "two port"]
+    }
+  ]
+}
