@@ -211,29 +211,27 @@ with viewer_col:
     if not rows:
         st.info("Nenhum conceito foi encontrado com esse critério. Tente outra palavra, capítulo ou tema.")
     else:
-        # Grade em linhas reais (3 cartões por linha). Evita o efeito de
-        # "masonry" das três colunas permanentes, no qual cartões de alturas
-        # diferentes ficavam visualmente colados ou desalinhados.
-        for row_start in range(0, len(rows), 3):
-            row_items = rows[row_start:row_start + 3]
-            grid = st.columns(3, gap="large")
-            for col, item in zip(grid, row_items):
-                is_open = st.session_state.theory_selected_id == item["id"]
-                card_state = "open" if is_open else "closed"
-                with col:
-                    with st.container(key=f"theory-card-{card_state}-{item['id']}"):
-                        render_theory_intro(item)
-                        st.button(
-                            "Ocultar detalhes" if is_open else "Ver mais",
-                            key=f"theory_toggle_{mode}_{item['id']}",
-                            on_click=toggle_theory,
-                            args=(item["id"],),
-                            use_container_width=True,
-                        )
+        # Mantemos três colunas permanentes, exatamente como em Formulários.
+        # Assim, quando um cartão expande, ele só empurra os cartões da sua
+        # própria coluna, sem interferir nas colunas vizinhas.
+        grid = st.columns(3, gap="medium")
+        for idx, item in enumerate(rows):
+            is_open = st.session_state.theory_selected_id == item["id"]
+            card_state = "open" if is_open else "closed"
 
-                        if is_open:
-                            with st.container(key=f"theory-detail-{item['id']}"):
-                                render_theory_details(item)
-            st.markdown("<div class='theory-row-spacer'></div>", unsafe_allow_html=True)
+            with grid[idx % 3]:
+                with st.container(key=f"theory-card-{card_state}-{item['id']}"):
+                    render_theory_intro(item)
+                    st.button(
+                        "Ocultar detalhes" if is_open else "Ver mais",
+                        key=f"theory_toggle_{mode}_{item['id']}",
+                        on_click=toggle_theory,
+                        args=(item["id"],),
+                        use_container_width=True,
+                    )
+
+                    if is_open:
+                        with st.container(key=f"theory-detail-{item['id']}"):
+                            render_theory_details(item)
 
 st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")
