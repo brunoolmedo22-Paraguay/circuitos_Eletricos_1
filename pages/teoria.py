@@ -48,26 +48,39 @@ render_html(
 
 if "theory_nav" not in st.session_state:
     st.session_state.theory_nav = "Teorias frequentes"
+if "theory_selected_id" not in st.session_state:
+    st.session_state.theory_selected_id = None
+
+
+def toggle_theory(theory_id: str) -> None:
+    """Abre/fecha os detalhes dentro do próprio painel conceitual."""
+    current = st.session_state.get("theory_selected_id")
+    st.session_state.theory_selected_id = None if current == theory_id else theory_id
 
 
 def set_mode(mode_name: str) -> None:
     st.session_state.theory_nav = mode_name
+    # O painel aberto pertence à grade atual; ao trocar a consulta, fechamos
+    # o detalhe para evitar manter um conceito aberto fora da nova seleção.
+    st.session_state.theory_selected_id = None
 
 
-def render_theory_card(item: dict) -> None:
-    """Renderiza um cartão curto: conceito, definição, fórmulas e referência."""
-    # Título, rótulo e definição ficam no mesmo bloco HTML para preservar
-    # o espaçamento interno mesmo com o gap global do Streamlit zerado.
+def render_theory_intro(item: dict) -> None:
+    """Conteúdo sempre visível: somente título e definição curta."""
     st.markdown(
         f"""
         <div class="theory-card-intro">
           <div class="theory-card-title">{item['title']}</div>
-          <div class="theory-card-kicker theory-card-kicker--definition">DEFINIÇÃO</div>
           <div class="theory-card-summary">{item['summary']}</div>
         </div>
         """,
         unsafe_allow_html=True,
     )
+
+
+def render_theory_details(item: dict) -> None:
+    """Conteúdo revelado dentro do próprio painel ao clicar em Ver mais."""
+    st.markdown("<div class='theory-detail-kicker'>DETALHES</div>", unsafe_allow_html=True)
 
     equations = formulas_for(item, limit=2)
     if equations:
@@ -75,10 +88,15 @@ def render_theory_card(item: dict) -> None:
         for formula in equations:
             st.latex(formula["latex"])
 
+    item_topics = item.get("topics", [])
+    if item_topics:
+        st.markdown("<div class='theory-card-kicker theory-card-kicker--topics'>TEMAS</div>", unsafe_allow_html=True)
+        st.caption(" · ".join(item_topics))
+
     st.markdown(
         f"""
         <div class="theory-card-reference">
-          <span>REFERÊNCIA</span>
+          <span>ONDE ENCONTRAR</span>
           <strong>Boylestad · 12ª ed.</strong><br>
           Cap. {item['chapter']:02d} · § {item['section']} · p. {item['pages']}
         </div>
@@ -200,9 +218,22 @@ with viewer_col:
             row_items = rows[row_start:row_start + 3]
             grid = st.columns(3, gap="large")
             for col, item in zip(grid, row_items):
+                is_open = st.session_state.theory_selected_id == item["id"]
+                card_state = "open" if is_open else "closed"
                 with col:
-                    with st.container(key=f"theory-card-{item['id']}"):
-                        render_theory_card(item)
+                    with st.container(key=f"theory-card-{card_state}-{item['id']}"):
+                        render_theory_intro(item)
+                        st.button(
+                            "Ocultar detalhes" if is_open else "Ver mais",
+                            key=f"theory_toggle_{mode}_{item['id']}",
+                            on_click=toggle_theory,
+                            args=(item["id"],),
+                            use_container_width=True,
+                        )
+
+                        if is_open:
+                            with st.container(key=f"theory-detail-{item['id']}"):
+                                render_theory_details(item)
             st.markdown("<div class='theory-row-spacer'></div>", unsafe_allow_html=True)
 
 st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

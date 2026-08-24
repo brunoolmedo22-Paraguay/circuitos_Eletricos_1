@@ -364,3 +364,98 @@ div[class*="st-key-theory-card-"] [data-testid="stLatex"] {
   margin-top: 0.9rem;
   padding-top: 0.78rem;
 }
+
+/* --------------------------------------------------------------------------
+   Refinamento v11 · teoria em cards expansíveis, como o Formulário
+   Fechado: título + definição + "Ver mais".
+   Aberto: relações, temas e localização no Boylestad dentro do mesmo painel.
+   -------------------------------------------------------------------------- */
+
+/* O card fechado fica limpo e compacto; a definição termina antes do botão. */
+div[class*="st-key-theory-card-"] .theory-card-title {
+  min-height: 1.45rem;
+  margin: 0 0 0.58rem !important;
+}
+
+div[class*="st-key-theory-card-"] .theory-card-summary {
+  min-height: 5.15rem;
+  margin: 0 0 0.78rem !important;
+  color: #3e3940 !important;
+}
+
+/* Botão do próprio card com pequeno respiro acima. */
+div[class*="st-key-theory-card-"] [data-testid="stButton"] {
+  margin-top: 0.12rem !important;
+}
+
+/* Card aberto: mesma cor fixa, apenas mais presença na borda/sombra. */
+div[class*="st-key-theory-card-open-"] {
+  background: rgb(243, 237, 245) !important;
+  border-color: rgba(83, 36, 88, 0.56) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 12px 28px rgba(45, 20, 50, 0.12) !important;
+}
+
+/* O conteúdo detalhado nasce dentro do mesmo painel e expande suavemente. */
+div[class*="st-key-theory-detail-"] {
+  overflow: hidden;
+  transform-origin: top center;
+  animation: theory-detail-reveal 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: max-height, opacity, transform;
+}
+
+@keyframes theory-detail-reveal {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+  100% {
+    max-height: 48rem;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Separador e respiro antes do conteúdo que foi revelado. */
+.theory-detail-kicker {
+  margin: 0.78rem 0 0.92rem !important;
+  padding-top: 0.82rem;
+  color: var(--panel) !important;
+  border-top: 1px solid rgba(83, 36, 88, 0.14);
+  font-size: 0.61rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.13em;
+}
+
+/* Seções internas do detalhe. */
+div[class*="st-key-theory-detail-"] .theory-card-kicker {
+  margin: 0.15rem 0 0.34rem !important;
+}
+
+div[class*="st-key-theory-detail-"] .theory-card-kicker--topics {
+  margin-top: 0.82rem !important;
+}
+
+div[class*="st-key-theory-detail-"] [data-testid="stCaptionContainer"] {
+  margin: 0.08rem 0 0.56rem !important;
+}
+
+div[class*="st-key-theory-detail-"] .theory-card-reference {
+  margin-top: 0.9rem;
+  padding-top: 0.78rem;
+}
+
+/* A matemática acompanha o mesmo visual limpo dos cards de formulário. */
+div[class*="st-key-theory-detail-"] [data-testid="stLatex"] {
+  margin: 0.24rem 0 0.34rem !important;
+  padding: 0.08rem 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  div[class*="st-key-theory-detail-"] {
+    animation: none !important;
+  }
+}
