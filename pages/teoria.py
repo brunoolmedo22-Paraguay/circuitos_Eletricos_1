@@ -214,7 +214,7 @@ with viewer_col:
         # Mantemos três colunas permanentes, exatamente como em Formulários.
         # Assim, quando um cartão expande, ele só empurra os cartões da sua
         # própria coluna, sem interferir nas colunas vizinhas.
-        grid = st.columns(3, gap="medium")
+        grid = st.columns(3, gap="small")
         for idx, item in enumerate(rows):
             is_open = st.session_state.theory_selected_id == item["id"]
             card_state = "open" if is_open else "closed"
