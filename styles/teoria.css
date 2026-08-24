@@ -459,3 +459,108 @@ div[class*="st-key-theory-detail-"] [data-testid="stLatex"] {
     animation: none !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Hotfix v13 · Busca + seletores Capítulo/Tema sempre claros
+   Repete o tratamento robusto já validado em Formulários para as diferentes
+   estruturas DOM que Streamlit/BaseWeb pode gerar em temas escuros.
+   -------------------------------------------------------------------------- */
+
+[data-testid="stTextInput"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stTextInput"] [data-testid="stWidgetLabel"] p,
+[data-testid="stSelectbox"] [data-testid="stWidgetLabel"] p {
+  color: var(--ink) !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"],
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"],
+.st-key-theory-nav-panel [data-testid="stTextInput"] div:has(> input) {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #d9cddd !important;
+  box-shadow: none !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"]:focus-within,
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"]:focus-within,
+.st-key-theory-nav-panel [data-testid="stTextInput"] div:has(> input):focus-within {
+  border-color: rgba(83, 36, 88, 0.58) !important;
+  box-shadow: 0 0 0 1px rgba(83, 36, 88, 0.10) !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] input {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--accent) !important;
+  color-scheme: light !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] div:has(> input) span,
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"] span,
+.st-key-theory-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"] span {
+  color: #8b8390 !important;
+  -webkit-text-fill-color: #8b8390 !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stTextInput"] input::placeholder {
+  color: #8b8390 !important;
+  -webkit-text-fill-color: #8b8390 !important;
+  opacity: 1 !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div > div,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] [role="combobox"],
+.st-key-theory-nav-panel [data-testid="stSelectbox"] [aria-haspopup="listbox"] {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  border-color: #d9cddd !important;
+  box-shadow: none !important;
+  color-scheme: light !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] span,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] p,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] div {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+  color: var(--ink) !important;
+  fill: currentColor !important;
+}
+
+.st-key-theory-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div:focus-within,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] [role="combobox"]:focus,
+.st-key-theory-nav-panel [data-testid="stSelectbox"] [aria-haspopup="listbox"]:focus {
+  border-color: rgba(83, 36, 88, 0.58) !important;
+  box-shadow: 0 0 0 1px rgba(83, 36, 88, 0.10) !important;
+}
+
+/* O menu aberto é montado fora do painel lateral, então precisa de regra global. */
+div[data-baseweb="popover"] ul,
+div[data-baseweb="popover"] [role="listbox"],
+div[data-baseweb="popover"] [role="option"],
+div[data-baseweb="menu"] [role="listbox"],
+div[data-baseweb="menu"] [role="option"] {
+  color: var(--ink) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  color-scheme: light !important;
+}
+
+div[data-baseweb="popover"] [role="option"]:hover,
+div[data-baseweb="popover"] [role="option"][aria-selected="true"],
+div[data-baseweb="menu"] [role="option"]:hover,
+div[data-baseweb="menu"] [role="option"][aria-selected="true"] {
+  background: #eee5f0 !important;
+  background-color: #eee5f0 !important;
+}
