@@ -1,8 +1,8 @@
 """
-Circuitos Eléctricos I — Guía Interactiva de Aprendizaje
-Portada (landing) de la plataforma educativa · UNILA
+Circuitos Elétricos I — Guia Interativo de Aprendizagem
+Página inicial (landing) da plataforma educacional · UNILA
 
-Versión 0.3 — portada y repositorio de consulta teórica.
+Versão 0.3 — página inicial e repositório de consulta teórica.
 """
 
 import streamlit as st
@@ -17,7 +17,7 @@ from utils import (
 from utils.helpers import data_uri
 
 # --------------------------------------------------------------------------- #
-# Configuración y estilo
+# Configuração e estilo
 # --------------------------------------------------------------------------- #
 configure_page()
 load_global_style()
@@ -25,13 +25,13 @@ render_sidebar(active="home")
 
 
 # --------------------------------------------------------------------------- #
-# Construcción del HTML de las tarjetas
+# Construção do HTML dos cartões
 # --------------------------------------------------------------------------- #
 def _card_html(section: dict) -> str:
-    """Genera el HTML de una tarjeta clicable a partir de una sección.
+    """Gera o HTML de um cartão clicável a partir de uma seção.
 
-    El enlace es relativo (el *slug* de la página) para que la navegación
-    funcione igual en local y en Streamlit Cloud.
+    O link é relativo (o *slug* da página) para que a navegação
+    funcione da mesma forma localmente e no Streamlit Cloud.
     """
     icon = data_uri(section["image"])
     return f"""
@@ -45,7 +45,7 @@ def _card_html(section: dict) -> str:
 
 
 def render_landing() -> None:
-    """Renderiza la pantalla principal de la plataforma."""
+    """Renderiza a tela principal da plataforma."""
     logo = data_uri("logo_unila.png")
     cards = "".join(_card_html(sec) for sec in SECTIONS)
 
@@ -55,13 +55,13 @@ def render_landing() -> None:
           <section class="left-panel">
             <img class="brand-logo" src="{logo}" alt="UNILA" />
 
-            <h1 class="app-title">Circuitos Eléctricos I</h1>
-            <p class="app-subtitle">Guía Interactiva de Aprendizaje</p>
+            <h1 class="app-title">Circuitos Elétricos I</h1>
+            <p class="app-subtitle">Guia Interativo de Aprendizagem</p>
 
             <div class="app-rule"></div>
 
             <p class="app-author">
-              Desarrollado por el Monitor<br>
+              Desenvolvido pelo Monitor<br>
               <strong>Bruno Manuel Olmedo Chavez</strong>
             </p>
           </section>

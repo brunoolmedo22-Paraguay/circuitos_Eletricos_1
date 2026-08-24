@@ -1,4 +1,4 @@
-"""Utilidades compartidas de la plataforma Circuitos Eléctricos I."""
+"""Utilitários compartilhados da plataforma Circuitos Elétricos I."""
 
 from .helpers import (
     APP_TITLE,

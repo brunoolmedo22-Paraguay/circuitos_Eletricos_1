@@ -1,56 +1,56 @@
 {
   "metadata": {
-    "title": "Formulario de Circuitos Eléctricos I",
+    "title": "Formulário de Circuitos Elétricos I",
     "source": "Robert L. Boylestad — Introdução à análise de circuitos, 12ª edição, Pearson, 2012",
-    "language": "es",
+    "language": "pt-BR",
     "formula_count": 172,
     "chapter_count": 26,
-    "note": "Referencias organizadas por capítulo/sección del ejemplar utilizado en la plataforma."
+    "note": "Referências organizadas por capítulo/seção do exemplar utilizado na plataforma."
   },
   "chapters": [
     {
       "number": 1,
-      "title": "Introducción",
+      "title": "Introdução",
       "start_page": "1"
     },
     {
       "number": 2,
-      "title": "Tensión y corriente",
+      "title": "Tensão e corrente",
       "start_page": "24"
     },
     {
       "number": 3,
-      "title": "Resistencia",
+      "title": "Resistência",
       "start_page": "51"
     },
     {
       "number": 4,
-      "title": "Ley de Ohm, potencia y energía",
+      "title": "Lei de Ohm, potência e energia",
       "start_page": "84"
     },
     {
       "number": 5,
-      "title": "Circuitos en serie",
+      "title": "Circuitos em série",
       "start_page": "112"
     },
     {
       "number": 6,
-      "title": "Circuitos en paralelo",
+      "title": "Circuitos em paralelo",
       "start_page": "159"
     },
     {
       "number": 7,
-      "title": "Circuitos serie-paralelo",
+      "title": "Circuitos série-paralelo",
       "start_page": "205"
     },
     {
       "number": 8,
-      "title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "title": "Métodos de análise e tópicos selecionados (CC)",
       "start_page": "237"
     },
     {
       "number": 9,
-      "title": "Teoremas para análisis de circuitos",
+      "title": "Teoremas para análise de circuitos",
       "start_page": "286"
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "number": 11,
-      "title": "Inductores",
+      "title": "Indutores",
       "start_page": "388"
     },
     {
@@ -70,27 +70,27 @@
     },
     {
       "number": 13,
-      "title": "Formas de onda alternadas senoidales",
+      "title": "Formas de onda alternadas senoidais",
       "start_page": "452"
     },
     {
       "number": 14,
-      "title": "Dispositivos básicos y fasores",
+      "title": "Dispositivos básicos e fasores",
       "start_page": "493"
     },
     {
       "number": 15,
-      "title": "Circuitos CA en serie y paralelo",
+      "title": "Circuitos CA em série e paralelo",
       "start_page": "532"
     },
     {
       "number": 16,
-      "title": "Circuitos CA serie-paralelo",
+      "title": "Circuitos CA série-paralelo",
       "start_page": "592"
     },
     {
       "number": 17,
-      "title": "Métodos de análisis (CA)",
+      "title": "Métodos de análise (CA)",
       "start_page": "616"
     },
     {
@@ -100,17 +100,17 @@
     },
     {
       "number": 19,
-      "title": "Potencia (CA)",
+      "title": "Potência (CA)",
       "start_page": "684"
     },
     {
       "number": 20,
-      "title": "Resonancia",
+      "title": "Ressonância",
       "start_page": "712"
     },
     {
       "number": 21,
-      "title": "Decibeles, filtros y gráficos de Bode",
+      "title": "Decibéis, filtros e gráficos de Bode",
       "start_page": "746"
     },
     {
@@ -125,81 +125,81 @@
     },
     {
       "number": 24,
-      "title": "Formas de onda pulsadas y respuesta R-C",
+      "title": "Formas de onda pulsadas e resposta R-C",
       "start_page": "863"
     },
     {
       "number": 25,
-      "title": "Circuitos no senoidales",
+      "title": "Circuitos não senoidais",
       "start_page": "885"
     },
     {
       "number": 26,
-      "title": "Análisis de sistemas: una introducción",
+      "title": "Análise de sistemas: uma introdução",
       "start_page": "903"
     }
   ],
   "formulas": [
     {
       "id": "engineering_notation",
-      "name": "Notación de ingeniería",
+      "name": "Notação de engenharia",
       "latex": "N=a\\times 10^{3k}",
       "variants": [],
       "chapter": 1,
-      "chapter_title": "Introducción",
+      "chapter_title": "Introdução",
       "section": "1.7",
       "pages": "12–13",
       "topics": [
-        "Notación",
+        "Notação",
         "Unidades"
       ],
       "variables": {},
       "frequent": false,
       "aliases": [
-        "potencias de diez",
-        "prefijos SI"
+        "potências de dez",
+        "prefixos SI"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "percent_error",
-      "name": "Error porcentual",
+      "name": "Erro percentual",
       "latex": "\\%\\,erro=\\left|\\frac{x_{med}-x_{ref}}{x_{ref}}\\right|100\\%",
       "variants": [],
       "chapter": 1,
-      "chapter_title": "Introducción",
+      "chapter_title": "Introdução",
       "section": "1.5",
       "pages": "9–10",
       "topics": [
-        "Medición",
+        "Medição",
         "Unidades"
       ],
       "variables": {},
       "frequent": false,
       "aliases": [
-        "precisión",
-        "error relativo"
+        "precisão",
+        "erro relativo"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "voltage_energy_charge",
-      "name": "Definición de tensión",
+      "name": "Definição de tensão",
       "latex": "V=\\frac{W}{Q}",
       "variants": [],
       "chapter": 2,
-      "chapter_title": "Tensión y corriente",
+      "chapter_title": "Tensão e corrente",
       "section": "2.3",
       "pages": "26–28",
       "topics": [
-        "Tensión",
-        "Energía"
+        "Tensão",
+        "Energia"
       ],
       "variables": {
-        "V": "tensión [V]",
-        "W": "energía [J]",
+        "V": "tensão [V]",
+        "W": "energia [J]",
         "Q": "carga [C]"
       },
       "frequent": true,
@@ -209,24 +209,24 @@
     },
     {
       "id": "current_charge_time",
-      "name": "Definición de corriente",
+      "name": "Definição de corrente",
       "latex": "I=\\frac{Q}{t}",
       "variants": [
         "Q=It",
         "t=\\frac{Q}{I}"
       ],
       "chapter": 2,
-      "chapter_title": "Tensión y corriente",
+      "chapter_title": "Tensão e corrente",
       "section": "2.4",
       "pages": "28–30",
       "topics": [
-        "Corriente",
+        "Corrente",
         "Carga"
       ],
       "variables": {
-        "I": "corriente [A]",
+        "I": "corrente [A]",
         "Q": "carga [C]",
-        "t": "tiempo [s]"
+        "t": "tempo [s]"
       },
       "frequent": true,
       "aliases": [],
@@ -235,20 +235,20 @@
     },
     {
       "id": "electron_charge_count",
-      "name": "Carga total por electrones",
+      "name": "Carga total por elétrons",
       "latex": "Q=nq_e",
       "variants": [],
       "chapter": 2,
-      "chapter_title": "Tensión y corriente",
+      "chapter_title": "Tensão e corrente",
       "section": "2.4",
       "pages": "28–30",
       "topics": [
-        "Corriente",
+        "Corrente",
         "Carga"
       ],
       "variables": {
-        "n": "número de electrones",
-        "q_e": "carga elemental"
+        "n": "número de elétrons",
+        "q_e": "carga elementar"
       },
       "frequent": false,
       "aliases": [],
@@ -257,49 +257,49 @@
     },
     {
       "id": "amp_hour",
-      "name": "Capacidad ampere-hora",
+      "name": "Capacidade ampère-hora",
       "latex": "C_{Ah}=I\\,t_h",
       "variants": [
         "t_h=\\frac{C_{Ah}}{I}"
       ],
       "chapter": 2,
-      "chapter_title": "Tensión y corriente",
+      "chapter_title": "Tensão e corrente",
       "section": "2.6",
       "pages": "38–39",
       "topics": [
-        "Baterías",
-        "Corriente",
-        "Energía"
+        "Baterias",
+        "Corrente",
+        "Energia"
       ],
       "variables": {},
       "frequent": true,
       "aliases": [
         "Ah",
-        "ampere hora",
-        "autonomía batería"
+        "ampère-hora",
+        "autonomia da bateria"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "resistance_geometry",
-      "name": "Resistencia de un conductor",
+      "name": "Resistência de um condutor",
       "latex": "R=\\rho\\frac{\\ell}{A}",
       "variants": [
         "\\rho=R\\frac{A}{\\ell}"
       ],
       "chapter": 3,
-      "chapter_title": "Resistencia",
+      "chapter_title": "Resistência",
       "section": "3.2",
       "pages": "51–54",
       "topics": [
-        "Resistencia",
-        "Conductores"
+        "Resistência",
+        "Condutores"
       ],
       "variables": {
-        "R": "resistencia [Ω]",
-        "ρ": "resistividad [Ω·m]",
-        "ℓ": "longitud [m]",
+        "R": "resistência [Ω]",
+        "ρ": "resistividade [Ω·m]",
+        "ℓ": "comprimento [m]",
         "A": "área [m²]"
       },
       "frequent": true,
@@ -309,17 +309,17 @@
     },
     {
       "id": "temperature_resistance",
-      "name": "Resistencia con temperatura",
+      "name": "Resistência com temperatura",
       "latex": "R_2=R_1[1+\\alpha(T_2-T_1)]",
       "variants": [
         "\\Delta R=R_1\\alpha\\Delta T"
       ],
       "chapter": 3,
-      "chapter_title": "Resistencia",
+      "chapter_title": "Resistência",
       "section": "3.4",
       "pages": "57–59",
       "topics": [
-        "Resistencia",
+        "Resistência",
         "Temperatura"
       ],
       "variables": {},
@@ -332,22 +332,22 @@
     },
     {
       "id": "conductance",
-      "name": "Conductancia",
+      "name": "Condutância",
       "latex": "G=\\frac{1}{R}",
       "variants": [
         "R=\\frac{1}{G}"
       ],
       "chapter": 3,
-      "chapter_title": "Resistencia",
+      "chapter_title": "Resistência",
       "section": "3.7",
       "pages": "67–68",
       "topics": [
-        "Conductancia",
-        "Resistencia"
+        "Condutância",
+        "Resistência"
       ],
       "variables": {
-        "G": "conductancia [S]",
-        "R": "resistencia [Ω]"
+        "G": "condutância [S]",
+        "R": "resistência [Ω]"
       },
       "frequent": true,
       "aliases": [],
@@ -356,19 +356,19 @@
     },
     {
       "id": "circular_mil_area",
-      "name": "Área en mil circular",
+      "name": "Área em mil circular",
       "latex": "A_{CM}=d^2",
       "variants": [],
       "chapter": 3,
-      "chapter_title": "Resistencia",
+      "chapter_title": "Resistência",
       "section": "3.2",
       "pages": "51–54",
       "topics": [
-        "Conductores",
-        "Resistencia"
+        "Condutores",
+        "Resistência"
       ],
       "variables": {
-        "d": "diámetro en mils"
+        "d": "diâmetro em mils"
       },
       "frequent": false,
       "aliases": [],
@@ -377,16 +377,16 @@
     },
     {
       "id": "wire_resistance_cm",
-      "name": "Resistencia con mil circular",
+      "name": "Resistência com mil circular",
       "latex": "R=\\rho\\frac{\\ell}{A_{CM}}",
       "variants": [],
       "chapter": 3,
-      "chapter_title": "Resistencia",
+      "chapter_title": "Resistência",
       "section": "3.2",
       "pages": "51–54",
       "topics": [
-        "Conductores",
-        "Resistencia"
+        "Condutores",
+        "Resistência"
       ],
       "variables": {},
       "frequent": false,
@@ -396,37 +396,37 @@
     },
     {
       "id": "ohms_law",
-      "name": "Ley de Ohm",
+      "name": "Lei de Ohm",
       "latex": "V=IR",
       "variants": [
         "I=\\frac{V}{R}",
         "R=\\frac{V}{I}"
       ],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.2",
       "pages": "84–86",
       "topics": [
-        "Tensión",
-        "Corriente",
-        "Resistencia"
+        "Tensão",
+        "Corrente",
+        "Resistência"
       ],
       "variables": {
-        "V": "tensión [V]",
-        "I": "corriente [A]",
-        "R": "resistencia [Ω]"
+        "V": "tensão [V]",
+        "I": "corrente [A]",
+        "R": "resistência [Ω]"
       },
       "frequent": true,
       "aliases": [
         "ohm",
-        "ley ohm"
+        "lei de ohm"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "power_vi",
-      "name": "Potencia eléctrica",
+      "name": "Potência elétrica",
       "latex": "P=VI",
       "variants": [
         "P=I^2R",
@@ -434,18 +434,18 @@
         "I=\\frac{P}{V}"
       ],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.4",
       "pages": "89–91",
       "topics": [
-        "Potencia",
-        "Tensión",
-        "Corriente"
+        "Potência",
+        "Tensão",
+        "Corrente"
       ],
       "variables": {
-        "P": "potencia [W]",
-        "V": "tensión [V]",
-        "I": "corriente [A]"
+        "P": "potência [W]",
+        "V": "tensão [V]",
+        "I": "corrente [A]"
       },
       "frequent": true,
       "aliases": [],
@@ -454,25 +454,25 @@
     },
     {
       "id": "joule_loss",
-      "name": "Pérdida óhmica / efecto Joule",
+      "name": "Perda ôhmica / efeito Joule",
       "latex": "P_{loss}=I^2R",
       "variants": [
         "P_{loss}=\\frac{V_R^2}{R}"
       ],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.4",
       "pages": "89–91",
       "topics": [
-        "Potencia",
-        "Pérdidas",
-        "Resistencia"
+        "Potência",
+        "Perdas",
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
       "aliases": [
-        "perda ohmica",
-        "pérdida resistiva",
+        "perda ôhmica",
+        "perda resistiva",
         "joule"
       ],
       "note": "",
@@ -480,23 +480,23 @@
     },
     {
       "id": "electrical_energy",
-      "name": "Energía eléctrica",
+      "name": "Energia elétrica",
       "latex": "W=Pt",
       "variants": [
         "W=VIt"
       ],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.5",
       "pages": "91–93",
       "topics": [
-        "Energía",
-        "Potencia"
+        "Energia",
+        "Potência"
       ],
       "variables": {
-        "W": "energía [J o Wh]",
-        "P": "potencia [W]",
-        "t": "tiempo"
+        "W": "energia [J ou Wh]",
+        "P": "potência [W]",
+        "t": "tempo"
       },
       "frequent": true,
       "aliases": [],
@@ -505,19 +505,19 @@
     },
     {
       "id": "efficiency",
-      "name": "Eficiencia",
+      "name": "Eficiência",
       "latex": "\\eta=\\frac{P_{out}}{P_{in}}\\times100\\%",
       "variants": [
         "P_{loss}=P_{in}-P_{out}"
       ],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.6",
       "pages": "93–96",
       "topics": [
-        "Eficiencia",
-        "Potencia",
-        "Pérdidas"
+        "Eficiência",
+        "Potência",
+        "Perdas"
       ],
       "variables": {},
       "frequent": true,
@@ -527,16 +527,16 @@
     },
     {
       "id": "energy_kwh",
-      "name": "Energía en kWh",
+      "name": "Energia em kWh",
       "latex": "E_{kWh}=P_{kW}t_h",
       "variants": [],
       "chapter": 4,
-      "chapter_title": "Ley de Ohm, potencia y energía",
+      "chapter_title": "Lei de Ohm, potência e energia",
       "section": "4.5",
       "pages": "91–93",
       "topics": [
-        "Energía",
-        "Potencia"
+        "Energia",
+        "Potência"
       ],
       "variables": {},
       "frequent": true,
@@ -546,16 +546,16 @@
     },
     {
       "id": "series_resistance",
-      "name": "Resistencia equivalente en serie",
+      "name": "Resistência equivalente em série",
       "latex": "R_T=R_1+R_2+\\cdots+R_n",
       "variants": [],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.2",
       "pages": "113–115",
       "topics": [
-        "Serie",
-        "Resistencia"
+        "Série",
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -565,24 +565,24 @@
     },
     {
       "id": "kvl",
-      "name": "Ley de Kirchhoff de tensiones (KVL)",
+      "name": "Lei de Kirchhoff das tensões (KVL)",
       "latex": "\\sum_k V_k=0",
       "variants": [
         "E=V_1+V_2+\\cdots+V_n"
       ],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.6",
       "pages": "122–126",
       "topics": [
         "Kirchhoff",
-        "Tensión",
-        "Mallas"
+        "Tensão",
+        "Malhas"
       ],
       "variables": {},
       "frequent": true,
       "aliases": [
-        "segunda ley kirchhoff",
+        "segunda lei de Kirchhoff",
         "kvl"
       ],
       "note": "",
@@ -590,17 +590,17 @@
     },
     {
       "id": "voltage_divider",
-      "name": "Divisor de tensión",
+      "name": "Divisor de tensão",
       "latex": "V_x=V_T\\frac{R_x}{R_T}",
       "variants": [],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.7",
       "pages": "126–129",
       "topics": [
         "Divisores",
-        "Tensión",
-        "Serie"
+        "Tensão",
+        "Série"
       ],
       "variables": {},
       "frequent": true,
@@ -610,16 +610,16 @@
     },
     {
       "id": "series_current",
-      "name": "Corriente en un circuito serie",
+      "name": "Corrente em um circuito em série",
       "latex": "I_T=I_1=I_2=\\cdots=I_n",
       "variants": [],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.3",
       "pages": "115–119",
       "topics": [
-        "Corriente",
-        "Serie"
+        "Corrente",
+        "Série"
       ],
       "variables": {},
       "frequent": true,
@@ -629,16 +629,16 @@
     },
     {
       "id": "series_power",
-      "name": "Potencia total en serie",
+      "name": "Potência total em série",
       "latex": "P_T=P_1+P_2+\\cdots+P_n",
       "variants": [],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.4",
       "pages": "119–121",
       "topics": [
-        "Potencia",
-        "Serie"
+        "Potência",
+        "Série"
       ],
       "variables": {},
       "frequent": false,
@@ -648,19 +648,19 @@
     },
     {
       "id": "source_internal_voltage",
-      "name": "Tensión terminal de una fuente real",
+      "name": "Tensão terminal de uma fonte real",
       "latex": "V_L=E-I R_{int}",
       "variants": [
         "E=V_L+IR_{int}"
       ],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.10",
       "pages": "135–138",
       "topics": [
-        "Fuentes",
-        "Tensión",
-        "Pérdidas"
+        "Fontes",
+        "Tensão",
+        "Perdas"
       ],
       "variables": {},
       "frequent": false,
@@ -670,39 +670,39 @@
     },
     {
       "id": "voltage_regulation",
-      "name": "Regulación de tensión",
+      "name": "Regulação de tensão",
       "latex": "VR=\\frac{V_{NL}-V_{FL}}{V_{FL}}\\times100\\%",
       "variants": [],
       "chapter": 5,
-      "chapter_title": "Circuitos en serie",
+      "chapter_title": "Circuitos em série",
       "section": "5.10",
       "pages": "135–138",
       "topics": [
-        "Tensión",
-        "Fuentes"
+        "Tensão",
+        "Fontes"
       ],
       "variables": {},
       "frequent": false,
       "aliases": [
-        "regulación"
+        "regulação"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "parallel_resistance",
-      "name": "Resistencia equivalente en paralelo",
+      "name": "Resistência equivalente em paralelo",
       "latex": "\\frac{1}{R_T}=\\sum_{k=1}^{n}\\frac{1}{R_k}",
       "variants": [
         "R_T=\\left(\\sum_k\\frac{1}{R_k}\\right)^{-1}"
       ],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.2",
       "pages": "159–166",
       "topics": [
         "Paralelo",
-        "Resistencia"
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -712,16 +712,16 @@
     },
     {
       "id": "parallel_two_resistors",
-      "name": "Dos resistores en paralelo",
+      "name": "Dois resistores em paralelo",
       "latex": "R_T=\\frac{R_1R_2}{R_1+R_2}",
       "variants": [],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.2",
       "pages": "159–166",
       "topics": [
         "Paralelo",
-        "Resistencia"
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -731,16 +731,16 @@
     },
     {
       "id": "parallel_equal_resistors",
-      "name": "Resistores iguales en paralelo",
+      "name": "Resistores iguais em paralelo",
       "latex": "R_T=\\frac{R}{n}",
       "variants": [],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.2",
       "pages": "159–166",
       "topics": [
         "Paralelo",
-        "Resistencia"
+        "Resistência"
       ],
       "variables": {},
       "frequent": false,
@@ -750,24 +750,24 @@
     },
     {
       "id": "kcl",
-      "name": "Ley de Kirchhoff de corrientes (KCL)",
+      "name": "Lei de Kirchhoff das correntes (KCL)",
       "latex": "\\sum_k I_k=0",
       "variants": [
         "I_T=I_1+I_2+\\cdots+I_n"
       ],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.5",
       "pages": "171–175",
       "topics": [
         "Kirchhoff",
-        "Corriente",
-        "Nodos"
+        "Corrente",
+        "Nós"
       ],
       "variables": {},
       "frequent": true,
       "aliases": [
-        "primera ley kirchhoff",
+        "primeira lei de Kirchhoff",
         "kcl"
       ],
       "note": "",
@@ -775,18 +775,18 @@
     },
     {
       "id": "current_divider",
-      "name": "Divisor de corriente",
+      "name": "Divisor de corrente",
       "latex": "I_x=I_T\\frac{R_T}{R_x}",
       "variants": [
         "I_1=I_T\\frac{R_2}{R_1+R_2}"
       ],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.6",
       "pages": "175–178",
       "topics": [
         "Divisores",
-        "Corriente",
+        "Corrente",
         "Paralelo"
       ],
       "variables": {},
@@ -797,15 +797,15 @@
     },
     {
       "id": "parallel_conductance",
-      "name": "Conductancia equivalente en paralelo",
+      "name": "Condutância equivalente em paralelo",
       "latex": "G_T=G_1+G_2+\\cdots+G_n",
       "variants": [],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.2",
       "pages": "159–166",
       "topics": [
-        "Conductancia",
+        "Condutância",
         "Paralelo"
       ],
       "variables": {},
@@ -816,15 +816,15 @@
     },
     {
       "id": "parallel_voltage",
-      "name": "Tensión en ramas paralelas",
+      "name": "Tensão em ramos paralelos",
       "latex": "V_T=V_1=V_2=\\cdots=V_n",
       "variants": [],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.3",
       "pages": "166–169",
       "topics": [
-        "Tensión",
+        "Tensão",
         "Paralelo"
       ],
       "variables": {},
@@ -835,15 +835,15 @@
     },
     {
       "id": "parallel_power",
-      "name": "Potencia total en paralelo",
+      "name": "Potência total em paralelo",
       "latex": "P_T=\\sum_k P_k",
       "variants": [],
       "chapter": 6,
-      "chapter_title": "Circuitos en paralelo",
+      "chapter_title": "Circuitos em paralelo",
       "section": "6.4",
       "pages": "169–171",
       "topics": [
-        "Potencia",
+        "Potência",
         "Paralelo"
       ],
       "variables": {},
@@ -854,16 +854,16 @@
     },
     {
       "id": "loaded_divider",
-      "name": "Divisor de tensión cargado",
+      "name": "Divisor de tensão carregado",
       "latex": "V_L=E\\frac{R_2\\parallel R_L}{R_1+(R_2\\parallel R_L)}",
       "variants": [],
       "chapter": 7,
-      "chapter_title": "Circuitos serie-paralelo",
+      "chapter_title": "Circuitos série-paralelo",
       "section": "7.7",
       "pages": "219–220",
       "topics": [
         "Divisores",
-        "Serie-paralelo",
+        "Série-paralelo",
         "Carga"
       ],
       "variables": {},
@@ -878,12 +878,12 @@
       "latex": "R_a\\parallel R_b=\\frac{R_aR_b}{R_a+R_b}",
       "variants": [],
       "chapter": 7,
-      "chapter_title": "Circuitos serie-paralelo",
+      "chapter_title": "Circuitos série-paralelo",
       "section": "7.2",
       "pages": "205–206",
       "topics": [
-        "Serie-paralelo",
-        "Resistencia"
+        "Série-paralelo",
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -897,12 +897,12 @@
       "latex": "R_{sh}=\\frac{I_mR_m}{I-I_m}",
       "variants": [],
       "chapter": 7,
-      "chapter_title": "Circuitos serie-paralelo",
+      "chapter_title": "Circuitos série-paralelo",
       "section": "7.9",
       "pages": "222–225",
       "topics": [
-        "Instrumentación",
-        "Corriente"
+        "Instrumentação",
+        "Corrente"
       ],
       "variables": {},
       "frequent": false,
@@ -912,16 +912,16 @@
     },
     {
       "id": "voltmeter_multiplier",
-      "name": "Resistencia multiplicadora de voltímetro",
+      "name": "Resistência multiplicadora do voltímetro",
       "latex": "R_s=\\frac{V}{I_m}-R_m",
       "variants": [],
       "chapter": 7,
-      "chapter_title": "Circuitos serie-paralelo",
+      "chapter_title": "Circuitos série-paralelo",
       "section": "7.9",
       "pages": "222–225",
       "topics": [
-        "Instrumentación",
-        "Tensión"
+        "Instrumentação",
+        "Tensão"
       ],
       "variables": {},
       "frequent": false,
@@ -931,17 +931,17 @@
     },
     {
       "id": "source_transform",
-      "name": "Conversión de fuentes",
+      "name": "Conversão de fontes",
       "latex": "V_s=I_sR_s",
       "variants": [
         "I_s=\\frac{V_s}{R_s}"
       ],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.3",
       "pages": "239–241",
       "topics": [
-        "Fuentes",
+        "Fontes",
         "Redes",
         "CC"
       ],
@@ -953,60 +953,60 @@
     },
     {
       "id": "mesh_matrix",
-      "name": "Ecuaciones de malla",
+      "name": "Equações de malha",
       "latex": "\\mathbf{R}\\,\\mathbf{I}=\\mathbf{V}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.7–8.8",
       "pages": "246–254",
       "topics": [
-        "Mallas",
-        "Matrices",
+        "Malhas",
+        "Matrizes",
         "Redes"
       ],
       "variables": {},
       "frequent": false,
       "aliases": [
-        "método de mallas"
+        "método das malhas"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "node_matrix",
-      "name": "Ecuaciones nodales",
+      "name": "Equações nodais",
       "latex": "\\mathbf{G}\\,\\mathbf{V}=\\mathbf{I}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.9–8.10",
       "pages": "254–262",
       "topics": [
-        "Nodos",
-        "Matrices",
+        "Nós",
+        "Matrizes",
         "Redes"
       ],
       "variables": {},
       "frequent": false,
       "aliases": [
-        "método de nodos"
+        "método dos nós"
       ],
       "note": "",
       "source": "Boylestad, Introdução à análise de circuitos, 12ª ed., 2012"
     },
     {
       "id": "delta_to_star_ra",
-      "name": "Conversión Δ→Y: R_A",
+      "name": "Conversão Δ→Y: R_A",
       "latex": "R_A=\\frac{R_{AB}R_{CA}}{R_{AB}+R_{BC}+R_{CA}}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.12",
       "pages": "265–270",
       "topics": [
-        "Conversión Δ-Y",
-        "Resistencia",
+        "Conversão Δ-Y",
+        "Resistência",
         "Redes"
       ],
       "variables": {},
@@ -1017,16 +1017,16 @@
     },
     {
       "id": "delta_to_star_rb",
-      "name": "Conversión Δ→Y: R_B",
+      "name": "Conversão Δ→Y: R_B",
       "latex": "R_B=\\frac{R_{AB}R_{BC}}{R_{AB}+R_{BC}+R_{CA}}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.12",
       "pages": "265–270",
       "topics": [
-        "Conversión Δ-Y",
-        "Resistencia",
+        "Conversão Δ-Y",
+        "Resistência",
         "Redes"
       ],
       "variables": {},
@@ -1037,16 +1037,16 @@
     },
     {
       "id": "delta_to_star_rc",
-      "name": "Conversión Δ→Y: R_C",
+      "name": "Conversão Δ→Y: R_C",
       "latex": "R_C=\\frac{R_{BC}R_{CA}}{R_{AB}+R_{BC}+R_{CA}}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.12",
       "pages": "265–270",
       "topics": [
-        "Conversión Δ-Y",
-        "Resistencia",
+        "Conversão Δ-Y",
+        "Resistência",
         "Redes"
       ],
       "variables": {},
@@ -1057,16 +1057,16 @@
     },
     {
       "id": "star_to_delta_rab",
-      "name": "Conversión Y→Δ: R_AB",
+      "name": "Conversão Y→Δ: R_AB",
       "latex": "R_{AB}=R_A+R_B+\\frac{R_AR_B}{R_C}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.12",
       "pages": "265–270",
       "topics": [
-        "Conversión Δ-Y",
-        "Resistencia",
+        "Conversão Δ-Y",
+        "Resistência",
         "Redes"
       ],
       "variables": {},
@@ -1077,16 +1077,16 @@
     },
     {
       "id": "bridge_balance",
-      "name": "Puente resistivo equilibrado",
+      "name": "Ponte resistiva equilibrada",
       "latex": "\\frac{R_1}{R_2}=\\frac{R_3}{R_4}",
       "variants": [],
       "chapter": 8,
-      "chapter_title": "Métodos de análisis y tópicos seleccionados (CC)",
+      "chapter_title": "Métodos de análise e tópicos selecionados (CC)",
       "section": "8.11",
       "pages": "262–265",
       "topics": [
-        "Puentes",
-        "Resistencia",
+        "Pontes",
+        "Resistência",
         "Redes"
       ],
       "variables": {},
@@ -1097,15 +1097,15 @@
     },
     {
       "id": "superposition",
-      "name": "Teorema de superposición",
+      "name": "Teorema da superposição",
       "latex": "x_T=x_1+x_2+\\cdots+x_n",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.2",
       "pages": "286–293",
       "topics": [
-        "Superposición",
+        "Superposição",
         "Redes",
         "CC"
       ],
@@ -1117,17 +1117,17 @@
     },
     {
       "id": "thevenin_voltage",
-      "name": "Tensión de Thévenin",
+      "name": "Tensão de Thévenin",
       "latex": "V_{Th}=V_{oc}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.3",
       "pages": "293–303",
       "topics": [
         "Thévenin",
         "Redes",
-        "Tensión"
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -1137,17 +1137,17 @@
     },
     {
       "id": "thevenin_resistance",
-      "name": "Resistencia de Thévenin",
+      "name": "Resistência de Thévenin",
       "latex": "R_{Th}=\\frac{V_{Th}}{I_{sc}}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.3",
       "pages": "293–303",
       "topics": [
         "Thévenin",
         "Redes",
-        "Resistencia"
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -1157,17 +1157,17 @@
     },
     {
       "id": "norton_current",
-      "name": "Corriente de Norton",
+      "name": "Corrente de Norton",
       "latex": "I_N=I_{sc}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.4",
       "pages": "303–307",
       "topics": [
         "Norton",
         "Redes",
-        "Corriente"
+        "Corrente"
       ],
       "variables": {},
       "frequent": true,
@@ -1177,17 +1177,17 @@
     },
     {
       "id": "norton_resistance",
-      "name": "Resistencia de Norton",
+      "name": "Resistência de Norton",
       "latex": "R_N=R_{Th}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.4",
       "pages": "303–307",
       "topics": [
         "Norton",
         "Thévenin",
-        "Resistencia"
+        "Resistência"
       ],
       "variables": {},
       "frequent": true,
@@ -1197,17 +1197,17 @@
     },
     {
       "id": "thevenin_norton_conversion",
-      "name": "Conversión Thévenin–Norton",
+      "name": "Conversão Thévenin–Norton",
       "latex": "V_{Th}=I_NR_{Th}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.3–9.4",
       "pages": "293–307",
       "topics": [
         "Thévenin",
         "Norton",
-        "Fuentes"
+        "Fontes"
       ],
       "variables": {},
       "frequent": true,
@@ -1217,19 +1217,19 @@
     },
     {
       "id": "max_power_dc",
-      "name": "Máxima transferencia de potencia (CC)",
+      "name": "Máxima transferência de potência (CC)",
       "latex": "R_L=R_{Th}",
       "variants": [
         "P_{L,max}=\\frac{V_{Th}^2}{4R_{Th}}"
       ],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.5",
       "pages": "307–315",
       "topics": [
-        "Potencia",
+        "Potência",
         "Thévenin",
-        "Máxima transferencia"
+        "Máxima transferência"
       ],
       "variables": {},
       "frequent": true,
@@ -1243,12 +1243,12 @@
       "latex": "V=\\frac{\\sum_k E_k/R_k}{\\sum_k 1/R_k}",
       "variants": [],
       "chapter": 9,
-      "chapter_title": "Teoremas para análisis de circuitos",
+      "chapter_title": "Teoremas para análise de circuitos",
       "section": "9.6",
       "pages": "315–318",
       "topics": [
         "Millman",
-        "Nodos",
+        "Nós",
         "Redes"
       ],
       "variables": {},
@@ -1259,7 +1259,7 @@
     },
     {
       "id": "capacitance",
-      "name": "Capacitancia",
+      "name": "Capacitância",
       "latex": "C=\\frac{Q}{V}",
       "variants": [
         "Q=CV"
@@ -1269,9 +1269,9 @@
       "section": "10.3",
       "pages": "335–339",
       "topics": [
-        "Capacitancia",
+        "Capacitância",
         "Carga",
-        "Tensión"
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -1281,7 +1281,7 @@
     },
     {
       "id": "capacitor_current",
-      "name": "Corriente del capacitor",
+      "name": "Corrente no capacitor",
       "latex": "i_C=C\\frac{dv_C}{dt}",
       "variants": [],
       "chapter": 10,
@@ -1289,9 +1289,9 @@
       "section": "10.10",
       "pages": "363–365",
       "topics": [
-        "Capacitancia",
-        "Corriente",
-        "Transitorios"
+        "Capacitância",
+        "Corrente",
+        "Transitórios"
       ],
       "variables": {},
       "frequent": true,
@@ -1301,7 +1301,7 @@
     },
     {
       "id": "capacitor_voltage_integral",
-      "name": "Tensión del capacitor",
+      "name": "Tensão no capacitor",
       "latex": "v_C(t)=v_C(t_0)+\\frac{1}{C}\\int_{t_0}^{t}i_C(\\tau)d\\tau",
       "variants": [],
       "chapter": 10,
@@ -1309,9 +1309,9 @@
       "section": "10.10",
       "pages": "363–365",
       "topics": [
-        "Capacitancia",
-        "Tensión",
-        "Transitorios"
+        "Capacitância",
+        "Tensão",
+        "Transitórios"
       ],
       "variables": {},
       "frequent": false,
@@ -1321,7 +1321,7 @@
     },
     {
       "id": "rc_tau",
-      "name": "Constante de tiempo RC",
+      "name": "Constante de tempo RC",
       "latex": "\\tau=R_{Th}C",
       "variants": [],
       "chapter": 10,
@@ -1329,8 +1329,8 @@
       "section": "10.9",
       "pages": "361–363",
       "topics": [
-        "Transitorios",
-        "Capacitancia",
+        "Transitórios",
+        "Capacitância",
         "RC"
       ],
       "variables": {},
@@ -1341,7 +1341,7 @@
     },
     {
       "id": "rc_charge_voltage",
-      "name": "Carga RC: tensión",
+      "name": "Carga RC: tensão",
       "latex": "v_C(t)=E+(V_0-E)e^{-t/\\tau}",
       "variants": [
         "V_0=0:\\quad v_C=E(1-e^{-t/RC})"
@@ -1351,8 +1351,8 @@
       "section": "10.5",
       "pages": "348–354",
       "topics": [
-        "Transitorios",
-        "Capacitancia",
+        "Transitórios",
+        "Capacitância",
         "RC"
       ],
       "variables": {},
@@ -1363,7 +1363,7 @@
     },
     {
       "id": "rc_charge_current",
-      "name": "Carga RC: corriente",
+      "name": "Carga RC: corrente",
       "latex": "i_C(t)=\\frac{E-V_0}{R}e^{-t/\\tau}",
       "variants": [],
       "chapter": 10,
@@ -1371,8 +1371,8 @@
       "section": "10.5",
       "pages": "348–354",
       "topics": [
-        "Transitorios",
-        "Corriente",
+        "Transitórios",
+        "Corrente",
         "RC"
       ],
       "variables": {},
@@ -1391,8 +1391,8 @@
       "section": "10.6",
       "pages": "354–359",
       "topics": [
-        "Transitorios",
-        "Capacitancia",
+        "Transitórios",
+        "Capacitância",
         "RC"
       ],
       "variables": {},
@@ -1403,7 +1403,7 @@
     },
     {
       "id": "capacitors_parallel",
-      "name": "Capacitores en paralelo",
+      "name": "Capacitores em paralelo",
       "latex": "C_T=C_1+C_2+\\cdots+C_n",
       "variants": [],
       "chapter": 10,
@@ -1411,7 +1411,7 @@
       "section": "10.11",
       "pages": "365–368",
       "topics": [
-        "Capacitancia",
+        "Capacitância",
         "Paralelo"
       ],
       "variables": {},
@@ -1422,7 +1422,7 @@
     },
     {
       "id": "capacitors_series",
-      "name": "Capacitores en serie",
+      "name": "Capacitores em série",
       "latex": "\\frac{1}{C_T}=\\sum_k\\frac{1}{C_k}",
       "variants": [],
       "chapter": 10,
@@ -1430,8 +1430,8 @@
       "section": "10.11",
       "pages": "365–368",
       "topics": [
-        "Capacitancia",
-        "Serie"
+        "Capacitância",
+        "Série"
       ],
       "variables": {},
       "frequent": true,
@@ -1441,7 +1441,7 @@
     },
     {
       "id": "capacitor_energy",
-      "name": "Energía almacenada en un capacitor",
+      "name": "Energia armazenada em um capacitor",
       "latex": "W_C=\\frac{1}{2}CV^2",
       "variants": [],
       "chapter": 10,
@@ -1449,8 +1449,8 @@
       "section": "10.12",
       "pages": "368",
       "topics": [
-        "Energía",
-        "Capacitancia"
+        "Energia",
+        "Capacitância"
       ],
       "variables": {},
       "frequent": true,
@@ -1460,15 +1460,15 @@
     },
     {
       "id": "inductance_flux",
-      "name": "Definición de inductancia",
+      "name": "Definição de indutância",
       "latex": "L=\\frac{N\\Phi}{I}",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.3",
       "pages": "393–399",
       "topics": [
-        "Inductancia",
+        "Indutância",
         "Magnetismo"
       ],
       "variables": {},
@@ -1479,17 +1479,17 @@
     },
     {
       "id": "inductor_voltage",
-      "name": "Tensión en un inductor",
+      "name": "Tensão em um indutor",
       "latex": "v_L=L\\frac{di_L}{dt}",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.4",
       "pages": "399–401",
       "topics": [
-        "Inductancia",
-        "Tensión",
-        "Transitorios"
+        "Indutância",
+        "Tensão",
+        "Transitórios"
       ],
       "variables": {},
       "frequent": true,
@@ -1499,17 +1499,17 @@
     },
     {
       "id": "inductor_current_integral",
-      "name": "Corriente del inductor",
+      "name": "Corrente no indutor",
       "latex": "i_L(t)=i_L(t_0)+\\frac{1}{L}\\int_{t_0}^{t}v_L(\\tau)d\\tau",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.4",
       "pages": "399–401",
       "topics": [
-        "Inductancia",
-        "Corriente",
-        "Transitorios"
+        "Indutância",
+        "Corrente",
+        "Transitórios"
       ],
       "variables": {},
       "frequent": false,
@@ -1519,16 +1519,16 @@
     },
     {
       "id": "rl_tau",
-      "name": "Constante de tiempo RL",
+      "name": "Constante de tempo RL",
       "latex": "\\tau=\\frac{L}{R_{Th}}",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.8",
       "pages": "407–409",
       "topics": [
-        "Transitorios",
-        "Inductancia",
+        "Transitórios",
+        "Indutância",
         "RL"
       ],
       "variables": {},
@@ -1539,18 +1539,18 @@
     },
     {
       "id": "rl_growth",
-      "name": "Crecimiento de corriente RL",
+      "name": "Crescimento da corrente RL",
       "latex": "i_L(t)=I_f+(I_0-I_f)e^{-t/\\tau}",
       "variants": [
         "I_0=0:\\quad i_L=\\frac{E}{R}(1-e^{-tR/L})"
       ],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.5",
       "pages": "401–403",
       "topics": [
-        "Transitorios",
-        "Inductancia",
+        "Transitórios",
+        "Indutância",
         "RL"
       ],
       "variables": {},
@@ -1561,16 +1561,16 @@
     },
     {
       "id": "rl_decay",
-      "name": "Decaimiento de corriente RL",
+      "name": "Decaimento da corrente RL",
       "latex": "i_L(t)=I_0e^{-tR/L}",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.7",
       "pages": "405–407",
       "topics": [
-        "Transitorios",
-        "Inductancia",
+        "Transitórios",
+        "Indutância",
         "RL"
       ],
       "variables": {},
@@ -1581,16 +1581,16 @@
     },
     {
       "id": "inductors_series",
-      "name": "Inductores no acoplados en serie",
+      "name": "Indutores não acoplados em série",
       "latex": "L_T=L_1+L_2+\\cdots+L_n",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.11",
       "pages": "411–412",
       "topics": [
-        "Inductancia",
-        "Serie"
+        "Indutância",
+        "Série"
       ],
       "variables": {},
       "frequent": false,
@@ -1600,15 +1600,15 @@
     },
     {
       "id": "inductors_parallel",
-      "name": "Inductores no acoplados en paralelo",
+      "name": "Indutores não acoplados em paralelo",
       "latex": "\\frac{1}{L_T}=\\sum_k\\frac{1}{L_k}",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.11",
       "pages": "411–412",
       "topics": [
-        "Inductancia",
+        "Indutância",
         "Paralelo"
       ],
       "variables": {},
@@ -1619,16 +1619,16 @@
     },
     {
       "id": "inductor_energy",
-      "name": "Energía almacenada en un inductor",
+      "name": "Energia armazenada em um indutor",
       "latex": "W_L=\\frac{1}{2}LI^2",
       "variants": [],
       "chapter": 11,
-      "chapter_title": "Inductores",
+      "chapter_title": "Indutores",
       "section": "11.13",
       "pages": "413–414",
       "topics": [
-        "Energía",
-        "Inductancia"
+        "Energia",
+        "Indutância"
       ],
       "variables": {},
       "frequent": true,
@@ -1638,7 +1638,7 @@
     },
     {
       "id": "flux_density",
-      "name": "Densidad de flujo magnético",
+      "name": "Densidade de fluxo magnético",
       "latex": "B=\\frac{\\Phi}{A}",
       "variants": [
         "\\Phi=BA"
@@ -1649,7 +1649,7 @@
       "pages": "429–430",
       "topics": [
         "Magnetismo",
-        "Flujo"
+        "Fluxo"
       ],
       "variables": {},
       "frequent": false,
@@ -1659,7 +1659,7 @@
     },
     {
       "id": "reluctance",
-      "name": "Reluctancia",
+      "name": "Relutância",
       "latex": "\\mathcal{R}=\\frac{\\ell}{\\mu A}",
       "variants": [],
       "chapter": 12,
@@ -1668,7 +1668,7 @@
       "pages": "430",
       "topics": [
         "Magnetismo",
-        "Reluctancia"
+        "Relutância"
       ],
       "variables": {},
       "frequent": false,
@@ -1678,7 +1678,7 @@
     },
     {
       "id": "magnetic_ohm",
-      "name": "Ley de Ohm magnética",
+      "name": "Lei de Ohm magnética",
       "latex": "\\Phi=\\frac{\\mathcal{F}}{\\mathcal{R}}",
       "variants": [
         "\\mathcal{F}=\\Phi\\mathcal{R}"
@@ -1689,7 +1689,7 @@
       "pages": "430",
       "topics": [
         "Magnetismo",
-        "Flujo"
+        "Fluxo"
       ],
       "variables": {},
       "frequent": true,
@@ -1699,7 +1699,7 @@
     },
     {
       "id": "magnetomotive_force",
-      "name": "Fuerza magnetomotriz",
+      "name": "Força magnetomotriz",
       "latex": "\\mathcal{F}=NI",
       "variants": [],
       "chapter": 12,
@@ -1718,7 +1718,7 @@
     },
     {
       "id": "magnetic_field_strength",
-      "name": "Intensidad de campo magnético",
+      "name": "Intensidade de campo magnético",
       "latex": "H=\\frac{NI}{\\ell}",
       "variants": [],
       "chapter": 12,
@@ -1737,7 +1737,7 @@
     },
     {
       "id": "permeability",
-      "name": "Permeabilidad",
+      "name": "Permeabilidade",
       "latex": "\\mu=\\mu_0\\mu_r",
       "variants": [],
       "chapter": 12,
@@ -1746,7 +1746,7 @@
       "pages": "430",
       "topics": [
         "Magnetismo",
-        "Materiales"
+        "Materiais"
       ],
       "variables": {},
       "frequent": false,
@@ -1756,7 +1756,7 @@
     },
     {
       "id": "ampere_law",
-      "name": "Ley circuital de Ampère",
+      "name": "Lei circuital de Ampère",
       "latex": "\\oint H\\,d\\ell=NI",
       "variants": [],
       "chapter": 12,
@@ -1775,7 +1775,7 @@
     },
     {
       "id": "inductance_reluctance",
-      "name": "Inductancia y reluctancia",
+      "name": "Indutância e relutância",
       "latex": "L=\\frac{N^2}{\\mathcal{R}}",
       "variants": [],
       "chapter": 12,
@@ -1783,7 +1783,7 @@
       "section": "12.3–12.5",
       "pages": "430–431",
       "topics": [
-        "Inductancia",
+        "Indutância",
         "Magnetismo"
       ],
       "variables": {},
@@ -1794,18 +1794,18 @@
     },
     {
       "id": "period_frequency",
-      "name": "Frecuencia y período",
+      "name": "Frequência e período",
       "latex": "f=\\frac{1}{T}",
       "variants": [
         "T=\\frac{1}{f}"
       ],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.2",
       "pages": "453–456",
       "topics": [
         "CA senoidal",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": true,
@@ -1815,16 +1815,16 @@
     },
     {
       "id": "angular_frequency",
-      "name": "Frecuencia angular",
+      "name": "Frequência angular",
       "latex": "\\omega=2\\pi f=\\frac{2\\pi}{T}",
       "variants": [],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.4–13.5",
       "pages": "458–464",
       "topics": [
         "CA senoidal",
-        "Frecuencia",
+        "Frequência",
         "Fasores"
       ],
       "variables": {},
@@ -1835,18 +1835,18 @@
     },
     {
       "id": "sinusoid",
-      "name": "Expresión senoidal general",
+      "name": "Expressão senoidal geral",
       "latex": "v(t)=V_m\\sin(\\omega t+\\phi)",
       "variants": [
         "i(t)=I_m\\sin(\\omega t+\\phi)"
       ],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.5",
       "pages": "461–464",
       "topics": [
         "CA senoidal",
-        "Tensión",
+        "Tensão",
         "Fasores"
       ],
       "variables": {},
@@ -1857,11 +1857,11 @@
     },
     {
       "id": "phase_time",
-      "name": "Desfase a partir del tiempo",
+      "name": "Defasagem a partir do tempo",
       "latex": "\\phi=360^\\circ\\frac{\\Delta t}{T}",
       "variants": [],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.6",
       "pages": "464–469",
       "topics": [
@@ -1876,16 +1876,16 @@
     },
     {
       "id": "sine_average",
-      "name": "Valor medio de media onda senoidal",
+      "name": "Valor médio de meia onda senoidal",
       "latex": "V_{avg}=\\frac{2V_m}{\\pi}",
       "variants": [],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.7",
       "pages": "469–474",
       "topics": [
         "CA senoidal",
-        "Valor medio"
+        "Valor médio"
       ],
       "variables": {},
       "frequent": false,
@@ -1895,19 +1895,19 @@
     },
     {
       "id": "sine_rms",
-      "name": "Valor eficaz de una senoide",
+      "name": "Valor eficaz de uma senoide",
       "latex": "V_{rms}=\\frac{V_m}{\\sqrt{2}}",
       "variants": [
         "I_{rms}=\\frac{I_m}{\\sqrt{2}}"
       ],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.8",
       "pages": "474–479",
       "topics": [
         "CA senoidal",
         "RMS",
-        "Tensión"
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -1917,11 +1917,11 @@
     },
     {
       "id": "general_rms",
-      "name": "Definición general de RMS",
+      "name": "Definição geral de RMS",
       "latex": "X_{rms}=\\sqrt{\\frac{1}{T}\\int_0^T x^2(t)dt}",
       "variants": [],
       "chapter": 13,
-      "chapter_title": "Formas de onda alternadas senoidales",
+      "chapter_title": "Formas de onda alternadas senoidais",
       "section": "13.8",
       "pages": "474–479",
       "topics": [
@@ -1936,16 +1936,16 @@
     },
     {
       "id": "inductive_reactance",
-      "name": "Reactancia inductiva",
+      "name": "Reatância indutiva",
       "latex": "X_L=\\omega L=2\\pi fL",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.3–14.4",
       "pages": "494–506",
       "topics": [
-        "Inductancia",
-        "Reactancia",
+        "Indutância",
+        "Reatância",
         "CA senoidal"
       ],
       "variables": {},
@@ -1956,16 +1956,16 @@
     },
     {
       "id": "capacitive_reactance",
-      "name": "Reactancia capacitiva",
+      "name": "Reatância capacitiva",
       "latex": "X_C=\\frac{1}{\\omega C}=\\frac{1}{2\\pi fC}",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.3–14.4",
       "pages": "494–506",
       "topics": [
-        "Capacitancia",
-        "Reactancia",
+        "Capacitância",
+        "Reatância",
         "CA senoidal"
       ],
       "variables": {},
@@ -1976,16 +1976,16 @@
     },
     {
       "id": "resistor_impedance",
-      "name": "Impedancia resistiva",
+      "name": "Impedância resistiva",
       "latex": "Z_R=R",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.3",
       "pages": "494–500",
       "topics": [
-        "Impedancia",
-        "Resistencia",
+        "Impedância",
+        "Resistência",
         "CA senoidal"
       ],
       "variables": {},
@@ -1996,16 +1996,16 @@
     },
     {
       "id": "inductor_impedance",
-      "name": "Impedancia inductiva",
+      "name": "Impedância indutiva",
       "latex": "Z_L=j\\omega L=jX_L",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.3",
       "pages": "494–500",
       "topics": [
-        "Impedancia",
-        "Inductancia",
+        "Impedância",
+        "Indutância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2016,16 +2016,16 @@
     },
     {
       "id": "capacitor_impedance",
-      "name": "Impedancia capacitiva",
+      "name": "Impedância capacitiva",
       "latex": "Z_C=\\frac{1}{j\\omega C}=-jX_C",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.3",
       "pages": "494–500",
       "topics": [
-        "Impedancia",
-        "Capacitancia",
+        "Impedância",
+        "Capacitância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2036,16 +2036,16 @@
     },
     {
       "id": "polar_rectangular",
-      "name": "Polar → rectangular",
+      "name": "Polar → retangular",
       "latex": "A\\angle\\theta=A\\cos\\theta+jA\\sin\\theta",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.9",
       "pages": "512–513",
       "topics": [
         "Fasores",
-        "Complejos"
+        "Complexos"
       ],
       "variables": {},
       "frequent": false,
@@ -2055,16 +2055,16 @@
     },
     {
       "id": "rectangular_polar_mag",
-      "name": "Rectangular → módulo",
+      "name": "Retangular → módulo",
       "latex": "|Z|=\\sqrt{a^2+b^2}",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.9",
       "pages": "512–513",
       "topics": [
         "Fasores",
-        "Complejos"
+        "Complexos"
       ],
       "variables": {},
       "frequent": false,
@@ -2074,16 +2074,16 @@
     },
     {
       "id": "rectangular_polar_angle",
-      "name": "Rectangular → ángulo",
+      "name": "Retangular → ângulo",
       "latex": "\\theta=\\tan^{-1}\\left(\\frac{b}{a}\\right)",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.9",
       "pages": "512–513",
       "topics": [
         "Fasores",
-        "Complejos"
+        "Complexos"
       ],
       "variables": {},
       "frequent": false,
@@ -2093,16 +2093,16 @@
     },
     {
       "id": "average_power_phase",
-      "name": "Potencia media senoidal",
+      "name": "Potência média senoidal",
       "latex": "P=V_{rms}I_{rms}\\cos\\phi",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.5",
       "pages": "506–510",
       "topics": [
-        "Potencia CA",
-        "Factor de potencia"
+        "Potência CA",
+        "Fator de potência"
       ],
       "variables": {},
       "frequent": true,
@@ -2112,16 +2112,16 @@
     },
     {
       "id": "power_factor",
-      "name": "Factor de potencia",
+      "name": "Fator de potência",
       "latex": "PF=\\cos\\phi",
       "variants": [],
       "chapter": 14,
-      "chapter_title": "Dispositivos básicos y fasores",
+      "chapter_title": "Dispositivos básicos e fasores",
       "section": "14.5",
       "pages": "506–510",
       "topics": [
-        "Potencia CA",
-        "Factor de potencia"
+        "Potência CA",
+        "Fator de potência"
       ],
       "variables": {},
       "frequent": true,
@@ -2131,17 +2131,17 @@
     },
     {
       "id": "ac_ohm",
-      "name": "Ley de Ohm fasorial",
+      "name": "Lei de Ohm fasorial",
       "latex": "\\underline{V}=\\underline{I}\\,\\underline{Z}",
       "variants": [
         "\\underline{I}=\\frac{\\underline{V}}{\\underline{Z}}"
       ],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.2",
       "pages": "532–537",
       "topics": [
-        "Impedancia",
+        "Impedância",
         "Fasores",
         "CA senoidal"
       ],
@@ -2153,16 +2153,16 @@
     },
     {
       "id": "series_impedance",
-      "name": "Impedancia total en serie",
+      "name": "Impedância total em série",
       "latex": "Z_T=Z_1+Z_2+\\cdots+Z_n",
       "variants": [],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.3",
       "pages": "537–543",
       "topics": [
-        "Impedancia",
-        "Serie",
+        "Impedância",
+        "Série",
         "CA senoidal"
       ],
       "variables": {},
@@ -2173,16 +2173,16 @@
     },
     {
       "id": "ac_voltage_divider",
-      "name": "Divisor de tensión fasorial",
+      "name": "Divisor de tensão fasorial",
       "latex": "\\underline{V}_x=\\underline{V}_T\\frac{Z_x}{Z_T}",
       "variants": [],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.4",
       "pages": "543–546",
       "topics": [
         "Divisores",
-        "Impedancia",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2193,16 +2193,16 @@
     },
     {
       "id": "admittance",
-      "name": "Admitancia",
+      "name": "Admitância",
       "latex": "Y=\\frac{1}{Z}=G+jB",
       "variants": [],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.7",
       "pages": "553–556",
       "topics": [
-        "Admitancia",
-        "Impedancia",
+        "Admitância",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2213,15 +2213,15 @@
     },
     {
       "id": "parallel_admittance",
-      "name": "Admitancia total en paralelo",
+      "name": "Admitância total em paralelo",
       "latex": "Y_T=Y_1+Y_2+\\cdots+Y_n",
       "variants": [],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.8",
       "pages": "556–561",
       "topics": [
-        "Admitancia",
+        "Admitância",
         "Paralelo",
         "CA senoidal"
       ],
@@ -2233,18 +2233,18 @@
     },
     {
       "id": "ac_current_divider",
-      "name": "Divisor de corriente fasorial",
+      "name": "Divisor de corrente fasorial",
       "latex": "\\underline{I}_x=\\underline{I}_T\\frac{Y_x}{Y_T}",
       "variants": [
         "\\underline{I}_1=\\underline{I}_T\\frac{Z_2}{Z_1+Z_2}"
       ],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.9",
       "pages": "561–562",
       "topics": [
         "Divisores",
-        "Admitancia",
+        "Admitância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2255,18 +2255,18 @@
     },
     {
       "id": "rl_series_impedance",
-      "name": "Impedancia R-L serie",
+      "name": "Impedância R-L série",
       "latex": "Z=R+jX_L",
       "variants": [
         "|Z|=\\sqrt{R^2+X_L^2}",
         "\\theta=\\tan^{-1}(X_L/R)"
       ],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.3",
       "pages": "537–543",
       "topics": [
-        "Impedancia",
+        "Impedância",
         "RL",
         "CA senoidal"
       ],
@@ -2278,18 +2278,18 @@
     },
     {
       "id": "rc_series_impedance",
-      "name": "Impedancia R-C serie",
+      "name": "Impedância R-C série",
       "latex": "Z=R-jX_C",
       "variants": [
         "|Z|=\\sqrt{R^2+X_C^2}",
         "\\theta=-\\tan^{-1}(X_C/R)"
       ],
       "chapter": 15,
-      "chapter_title": "Circuitos CA en serie y paralelo",
+      "chapter_title": "Circuitos CA em série e paralelo",
       "section": "15.3",
       "pages": "537–543",
       "topics": [
-        "Impedancia",
+        "Impedância",
         "RC",
         "CA senoidal"
       ],
@@ -2301,15 +2301,15 @@
     },
     {
       "id": "ac_parallel_impedance",
-      "name": "Impedancia equivalente en paralelo",
+      "name": "Impedância equivalente em paralelo",
       "latex": "Z_T=\\left(\\sum_k\\frac{1}{Z_k}\\right)^{-1}",
       "variants": [],
       "chapter": 16,
-      "chapter_title": "Circuitos CA serie-paralelo",
+      "chapter_title": "Circuitos CA série-paralelo",
       "section": "16.2",
       "pages": "593–600",
       "topics": [
-        "Impedancia",
+        "Impedância",
         "Paralelo",
         "CA senoidal"
       ],
@@ -2321,16 +2321,16 @@
     },
     {
       "id": "ac_cascade_input",
-      "name": "Impedancia de entrada de una cascada",
+      "name": "Impedância de entrada de uma cascata",
       "latex": "Z_{in}=Z_1+Z_{resto}",
       "variants": [],
       "chapter": 16,
-      "chapter_title": "Circuitos CA serie-paralelo",
+      "chapter_title": "Circuitos CA série-paralelo",
       "section": "16.3",
       "pages": "600",
       "topics": [
-        "Impedancia",
-        "Serie-paralelo",
+        "Impedância",
+        "Série-paralelo",
         "CA senoidal"
       ],
       "variables": {},
@@ -2341,16 +2341,16 @@
     },
     {
       "id": "ac_mesh_matrix",
-      "name": "Mallas en CA",
+      "name": "Malhas em CA",
       "latex": "\\mathbf{Z}\\,\\mathbf{I}=\\mathbf{V}",
       "variants": [],
       "chapter": 17,
-      "chapter_title": "Métodos de análisis (CA)",
+      "chapter_title": "Métodos de análise (CA)",
       "section": "17.4",
       "pages": "619–624",
       "topics": [
-        "Mallas",
-        "Impedancia",
+        "Malhas",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2361,16 +2361,16 @@
     },
     {
       "id": "ac_node_matrix",
-      "name": "Nodos en CA",
+      "name": "Nós em CA",
       "latex": "\\mathbf{Y}\\,\\mathbf{V}=\\mathbf{I}",
       "variants": [],
       "chapter": 17,
-      "chapter_title": "Métodos de análisis (CA)",
+      "chapter_title": "Métodos de análise (CA)",
       "section": "17.5",
       "pages": "624–631",
       "topics": [
-        "Nodos",
-        "Admitancia",
+        "Nós",
+        "Admitância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2381,16 +2381,16 @@
     },
     {
       "id": "ac_bridge_balance",
-      "name": "Puente CA equilibrado",
+      "name": "Ponte CA equilibrada",
       "latex": "Z_1Z_4=Z_2Z_3",
       "variants": [],
       "chapter": 17,
-      "chapter_title": "Métodos de análisis (CA)",
+      "chapter_title": "Métodos de análise (CA)",
       "section": "17.6",
       "pages": "631–634",
       "topics": [
-        "Puentes",
-        "Impedancia",
+        "Pontes",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2401,16 +2401,16 @@
     },
     {
       "id": "delta_star_complex",
-      "name": "Conversión Δ–Y compleja",
+      "name": "Conversão Δ–Y complexa",
       "latex": "Z_A=\\frac{Z_{AB}Z_{CA}}{Z_{AB}+Z_{BC}+Z_{CA}}",
       "variants": [],
       "chapter": 17,
-      "chapter_title": "Métodos de análisis (CA)",
+      "chapter_title": "Métodos de análise (CA)",
       "section": "17.7",
       "pages": "634–638",
       "topics": [
-        "Conversión Δ-Y",
-        "Impedancia",
+        "Conversão Δ-Y",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2421,7 +2421,7 @@
     },
     {
       "id": "ac_superposition",
-      "name": "Superposición fasorial",
+      "name": "Superposição fasorial",
       "latex": "\\underline{X}_T=\\sum_k\\underline{X}_k",
       "variants": [],
       "chapter": 18,
@@ -2429,7 +2429,7 @@
       "section": "18.2",
       "pages": "647–653",
       "topics": [
-        "Superposición",
+        "Superposição",
         "Fasores",
         "CA senoidal"
       ],
@@ -2441,7 +2441,7 @@
     },
     {
       "id": "ac_thevenin",
-      "name": "Thévenin en CA",
+      "name": "Thévenin em CA",
       "latex": "\\underline{V}_{Th}=\\underline{V}_{oc}",
       "variants": [],
       "chapter": 18,
@@ -2450,7 +2450,7 @@
       "pages": "653–662",
       "topics": [
         "Thévenin",
-        "Impedancia",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2461,7 +2461,7 @@
     },
     {
       "id": "ac_thevenin_impedance",
-      "name": "Impedancia de Thévenin",
+      "name": "Impedância de Thévenin",
       "latex": "Z_{Th}=\\frac{V_{Th}}{I_{sc}}",
       "variants": [],
       "chapter": 18,
@@ -2470,7 +2470,7 @@
       "pages": "653–662",
       "topics": [
         "Thévenin",
-        "Impedancia",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2481,7 +2481,7 @@
     },
     {
       "id": "ac_norton",
-      "name": "Norton en CA",
+      "name": "Norton em CA",
       "latex": "\\underline{I}_N=\\underline{I}_{sc}",
       "variants": [],
       "chapter": 18,
@@ -2500,7 +2500,7 @@
     },
     {
       "id": "max_power_ac",
-      "name": "Máxima transferencia de potencia (CA)",
+      "name": "Máxima transferência de potência (CA)",
       "latex": "Z_L=Z_{Th}^{*}",
       "variants": [
         "R_L=R_{Th},\\quad X_L=-X_{Th}"
@@ -2510,9 +2510,9 @@
       "section": "18.5",
       "pages": "668–671",
       "topics": [
-        "Potencia CA",
-        "Máxima transferencia",
-        "Impedancia"
+        "Potência CA",
+        "Máxima transferência",
+        "Impedância"
       ],
       "variables": {},
       "frequent": true,
@@ -2522,7 +2522,7 @@
     },
     {
       "id": "millman_ac",
-      "name": "Millman en CA",
+      "name": "Millman em CA",
       "latex": "\\underline{V}=\\frac{\\sum_k \\underline{E}_k/Z_k}{\\sum_k 1/Z_k}",
       "variants": [],
       "chapter": 18,
@@ -2531,7 +2531,7 @@
       "pages": "671",
       "topics": [
         "Millman",
-        "Impedancia",
+        "Impedância",
         "CA senoidal"
       ],
       "variables": {},
@@ -2542,15 +2542,15 @@
     },
     {
       "id": "instantaneous_power_ac",
-      "name": "Potencia instantánea",
+      "name": "Potência instantânea",
       "latex": "p(t)=v(t)i(t)",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.2",
       "pages": "684–685",
       "topics": [
-        "Potencia CA",
+        "Potência CA",
         "CA senoidal"
       ],
       "variables": {},
@@ -2561,16 +2561,16 @@
     },
     {
       "id": "real_power",
-      "name": "Potencia activa",
+      "name": "Potência ativa",
       "latex": "P=VI\\cos\\phi",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.2–19.3",
       "pages": "684–686",
       "topics": [
-        "Potencia CA",
-        "Potencia"
+        "Potência CA",
+        "Potência"
       ],
       "variables": {},
       "frequent": true,
@@ -2580,16 +2580,16 @@
     },
     {
       "id": "reactive_power",
-      "name": "Potencia reactiva",
+      "name": "Potência reativa",
       "latex": "Q=VI\\sin\\phi",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.5–19.6",
       "pages": "687–691",
       "topics": [
-        "Potencia CA",
-        "Reactiva"
+        "Potência CA",
+        "Reativa"
       ],
       "variables": {},
       "frequent": true,
@@ -2599,15 +2599,15 @@
     },
     {
       "id": "apparent_power",
-      "name": "Potencia aparente",
+      "name": "Potência aparente",
       "latex": "S=VI",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.4",
       "pages": "686–687",
       "topics": [
-        "Potencia CA",
+        "Potência CA",
         "Aparente"
       ],
       "variables": {},
@@ -2618,16 +2618,16 @@
     },
     {
       "id": "complex_power",
-      "name": "Potencia compleja",
+      "name": "Potência complexa",
       "latex": "\\underline{S}=P+jQ=\\underline{V}\\,\\underline{I}^{*}",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.7–19.8",
       "pages": "691–696",
       "topics": [
-        "Potencia CA",
-        "Complejos"
+        "Potência CA",
+        "Complexos"
       ],
       "variables": {},
       "frequent": true,
@@ -2637,18 +2637,18 @@
     },
     {
       "id": "power_triangle",
-      "name": "Triángulo de potencias",
+      "name": "Triângulo de potências",
       "latex": "S=\\sqrt{P^2+Q^2}",
       "variants": [
         "PF=\\frac{P}{S}"
       ],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.7",
       "pages": "691–693",
       "topics": [
-        "Potencia CA",
-        "Factor de potencia"
+        "Potência CA",
+        "Fator de potência"
       ],
       "variables": {},
       "frequent": true,
@@ -2658,15 +2658,15 @@
     },
     {
       "id": "total_complex_power",
-      "name": "Potencia compleja total",
+      "name": "Potência complexa total",
       "latex": "\\underline{S}_T=\\sum_k\\underline{S}_k",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.8",
       "pages": "693–696",
       "topics": [
-        "Potencia CA",
+        "Potência CA",
         "Redes"
       ],
       "variables": {},
@@ -2677,17 +2677,17 @@
     },
     {
       "id": "pf_correction_qc",
-      "name": "Corrección de factor de potencia",
+      "name": "Correção do fator de potência",
       "latex": "Q_C=P(\\tan\\phi_1-\\tan\\phi_2)",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.9",
       "pages": "696–699",
       "topics": [
-        "Potencia CA",
-        "Factor de potencia",
-        "Capacitancia"
+        "Potência CA",
+        "Fator de potência",
+        "Capacitância"
       ],
       "variables": {},
       "frequent": true,
@@ -2697,17 +2697,17 @@
     },
     {
       "id": "pf_correction_c",
-      "name": "Capacitancia para corrección de FP",
+      "name": "Capacitância para correção de FP",
       "latex": "C=\\frac{Q_C}{\\omega V^2}",
       "variants": [],
       "chapter": 19,
-      "chapter_title": "Potencia (CA)",
+      "chapter_title": "Potência (CA)",
       "section": "19.9",
       "pages": "696–699",
       "topics": [
-        "Potencia CA",
-        "Factor de potencia",
-        "Capacitancia"
+        "Potência CA",
+        "Fator de potência",
+        "Capacitância"
       ],
       "variables": {},
       "frequent": false,
@@ -2717,16 +2717,16 @@
     },
     {
       "id": "series_resonance_frequency",
-      "name": "Frecuencia de resonancia",
+      "name": "Frequência de ressonância",
       "latex": "f_0=\\frac{1}{2\\pi\\sqrt{LC}}",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.2",
       "pages": "713–715",
       "topics": [
-        "Resonancia",
-        "Frecuencia",
+        "Ressonância",
+        "Frequência",
         "RLC"
       ],
       "variables": {},
@@ -2737,16 +2737,16 @@
     },
     {
       "id": "series_resonance_condition",
-      "name": "Condición de resonancia",
+      "name": "Condição de ressonância",
       "latex": "X_L=X_C",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.2",
       "pages": "713–715",
       "topics": [
-        "Resonancia",
-        "Reactancia",
+        "Ressonância",
+        "Reatância",
         "RLC"
       ],
       "variables": {},
@@ -2757,16 +2757,16 @@
     },
     {
       "id": "series_q",
-      "name": "Factor de calidad serie",
+      "name": "Fator de qualidade série",
       "latex": "Q=\\frac{X_L}{R}=\\frac{\\omega_0L}{R}=\\frac{1}{\\omega_0CR}",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.3",
       "pages": "715–716",
       "topics": [
-        "Resonancia",
-        "Factor Q",
+        "Ressonância",
+        "Fator Q",
         "RLC"
       ],
       "variables": {},
@@ -2777,17 +2777,17 @@
     },
     {
       "id": "bandwidth",
-      "name": "Ancho de banda",
+      "name": "Largura de banda",
       "latex": "BW=f_2-f_1=\\frac{f_0}{Q}",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.5",
       "pages": "717–719",
       "topics": [
-        "Resonancia",
+        "Ressonância",
         "Filtros",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": true,
@@ -2797,16 +2797,16 @@
     },
     {
       "id": "half_power_freq_product",
-      "name": "Frecuencias de media potencia",
+      "name": "Frequências de meia potência",
       "latex": "f_1f_2=f_0^2",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.5",
       "pages": "717–719",
       "topics": [
-        "Resonancia",
-        "Frecuencia"
+        "Ressonância",
+        "Frequência"
       ],
       "variables": {},
       "frequent": false,
@@ -2816,15 +2816,15 @@
     },
     {
       "id": "parallel_resonance_ideal",
-      "name": "Resonancia paralela ideal",
+      "name": "Ressonância paralela ideal",
       "latex": "f_0=\\frac{1}{2\\pi\\sqrt{LC}}",
       "variants": [],
       "chapter": 20,
-      "chapter_title": "Resonancia",
+      "chapter_title": "Ressonância",
       "section": "20.8",
       "pages": "722–724",
       "topics": [
-        "Resonancia",
+        "Ressonância",
         "Paralelo",
         "RLC"
       ],
@@ -2836,16 +2836,16 @@
     },
     {
       "id": "decibel_power",
-      "name": "Ganancia de potencia en dB",
+      "name": "Ganho de potência em dB",
       "latex": "G_{dB}=10\\log_{10}\\left(\\frac{P_2}{P_1}\\right)",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.3",
       "pages": "749–753",
       "topics": [
-        "Decibeles",
-        "Ganancia"
+        "Decibéis",
+        "Ganho"
       ],
       "variables": {},
       "frequent": true,
@@ -2855,17 +2855,17 @@
     },
     {
       "id": "decibel_voltage",
-      "name": "Ganancia de tensión en dB",
+      "name": "Ganho de tensão em dB",
       "latex": "G_{dB}=20\\log_{10}\\left|\\frac{V_2}{V_1}\\right|",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.3",
       "pages": "749–753",
       "topics": [
-        "Decibeles",
-        "Ganancia",
-        "Tensión"
+        "Decibéis",
+        "Ganho",
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -2875,17 +2875,17 @@
     },
     {
       "id": "decibel_current",
-      "name": "Ganancia de corriente en dB",
+      "name": "Ganho de corrente em dB",
       "latex": "G_{dB}=20\\log_{10}\\left|\\frac{I_2}{I_1}\\right|",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.3",
       "pages": "749–753",
       "topics": [
-        "Decibeles",
-        "Ganancia",
-        "Corriente"
+        "Decibéis",
+        "Ganho",
+        "Corrente"
       ],
       "variables": {},
       "frequent": false,
@@ -2895,17 +2895,17 @@
     },
     {
       "id": "rc_lowpass_fc",
-      "name": "Corte RC pasa-bajos",
+      "name": "Corte RC passa-baixas",
       "latex": "f_c=\\frac{1}{2\\pi RC}",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.5",
       "pages": "754–757",
       "topics": [
         "Filtros",
         "RC",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": true,
@@ -2915,17 +2915,17 @@
     },
     {
       "id": "rc_lowpass_transfer",
-      "name": "Transferencia RC pasa-bajos",
+      "name": "Transferência RC passa-baixas",
       "latex": "H(j\\omega)=\\frac{1}{1+j\\omega RC}",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.5",
       "pages": "754–757",
       "topics": [
         "Filtros",
         "RC",
-        "Transferencia"
+        "Transferência"
       ],
       "variables": {},
       "frequent": false,
@@ -2935,17 +2935,17 @@
     },
     {
       "id": "rc_highpass_transfer",
-      "name": "Transferencia RC pasa-altos",
+      "name": "Transferência RC passa-altas",
       "latex": "H(j\\omega)=\\frac{j\\omega RC}{1+j\\omega RC}",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.6",
       "pages": "757–760",
       "topics": [
         "Filtros",
         "RC",
-        "Transferencia"
+        "Transferência"
       ],
       "variables": {},
       "frequent": false,
@@ -2955,16 +2955,16 @@
     },
     {
       "id": "bode_magnitude_db",
-      "name": "Magnitud de Bode",
+      "name": "Magnitude de Bode",
       "latex": "|H|_{dB}=20\\log_{10}|H(j\\omega)|",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.10–21.11",
       "pages": "765–775",
       "topics": [
         "Bode",
-        "Decibeles",
+        "Decibéis",
         "Filtros"
       ],
       "variables": {},
@@ -2975,16 +2975,16 @@
     },
     {
       "id": "bandpass_center",
-      "name": "Frecuencia central de pasa-banda",
+      "name": "Frequência central do passa-faixa",
       "latex": "f_0=\\sqrt{f_Lf_H}",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.7",
       "pages": "760–763",
       "topics": [
         "Filtros",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": false,
@@ -2994,16 +2994,16 @@
     },
     {
       "id": "filter_bandwidth",
-      "name": "Ancho de banda de filtro",
+      "name": "Largura de banda do filtro",
       "latex": "BW=f_H-f_L",
       "variants": [],
       "chapter": 21,
-      "chapter_title": "Decibeles, filtros y gráficos de Bode",
+      "chapter_title": "Decibéis, filtros e gráficos de Bode",
       "section": "21.7",
       "pages": "760–763",
       "topics": [
         "Filtros",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": false,
@@ -3013,7 +3013,7 @@
     },
     {
       "id": "mutual_inductance",
-      "name": "Inductancia mutua",
+      "name": "Indutância mútua",
       "latex": "M=k\\sqrt{L_1L_2}",
       "variants": [],
       "chapter": 22,
@@ -3022,8 +3022,8 @@
       "pages": "802–804",
       "topics": [
         "Transformadores",
-        "Inductancia",
-        "Acoplamiento"
+        "Indutância",
+        "Acoplamento"
       ],
       "variables": {},
       "frequent": true,
@@ -3033,7 +3033,7 @@
     },
     {
       "id": "transformer_turns_voltage",
-      "name": "Relación de transformación de tensión",
+      "name": "Relação de transformação de tensão",
       "latex": "\\frac{V_p}{V_s}=\\frac{N_p}{N_s}=a",
       "variants": [],
       "chapter": 22,
@@ -3042,7 +3042,7 @@
       "pages": "804–807",
       "topics": [
         "Transformadores",
-        "Tensión"
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -3052,7 +3052,7 @@
     },
     {
       "id": "transformer_current",
-      "name": "Relación de corrientes ideal",
+      "name": "Relação de correntes ideal",
       "latex": "\\frac{I_p}{I_s}=\\frac{N_s}{N_p}=\\frac{1}{a}",
       "variants": [],
       "chapter": 22,
@@ -3061,7 +3061,7 @@
       "pages": "804–807",
       "topics": [
         "Transformadores",
-        "Corriente"
+        "Corrente"
       ],
       "variables": {},
       "frequent": true,
@@ -3071,7 +3071,7 @@
     },
     {
       "id": "transformer_impedance",
-      "name": "Impedancia reflejada",
+      "name": "Impedância refletida",
       "latex": "Z_p=a^2Z_L",
       "variants": [],
       "chapter": 22,
@@ -3080,7 +3080,7 @@
       "pages": "807–808",
       "topics": [
         "Transformadores",
-        "Impedancia"
+        "Impedância"
       ],
       "variables": {},
       "frequent": true,
@@ -3090,7 +3090,7 @@
     },
     {
       "id": "transformer_power",
-      "name": "Potencia en transformador ideal",
+      "name": "Potência em transformador ideal",
       "latex": "V_pI_p=V_sI_s",
       "variants": [],
       "chapter": 22,
@@ -3099,7 +3099,7 @@
       "pages": "807–808",
       "topics": [
         "Transformadores",
-        "Potencia"
+        "Potência"
       ],
       "variables": {},
       "frequent": true,
@@ -3109,7 +3109,7 @@
     },
     {
       "id": "coupled_series_aiding",
-      "name": "Inductores acoplados serie aditiva",
+      "name": "Indutores acoplados em série aditiva",
       "latex": "L_T=L_1+L_2+2M",
       "variants": [],
       "chapter": 22,
@@ -3117,8 +3117,8 @@
       "section": "22.8",
       "pages": "815–818",
       "topics": [
-        "Inductancia",
-        "Acoplamiento",
+        "Indutância",
+        "Acoplamento",
         "Transformadores"
       ],
       "variables": {},
@@ -3129,7 +3129,7 @@
     },
     {
       "id": "coupled_series_opposing",
-      "name": "Inductores acoplados serie sustractiva",
+      "name": "Indutores acoplados em série subtrativa",
       "latex": "L_T=L_1+L_2-2M",
       "variants": [],
       "chapter": 22,
@@ -3137,8 +3137,8 @@
       "section": "22.8",
       "pages": "815–818",
       "topics": [
-        "Inductancia",
-        "Acoplamiento",
+        "Indutância",
+        "Acoplamento",
         "Transformadores"
       ],
       "variables": {},
@@ -3160,7 +3160,7 @@
       "pages": "838–842",
       "topics": [
         "Trifásico",
-        "Tensión"
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -3181,7 +3181,7 @@
       "pages": "844–846",
       "topics": [
         "Trifásico",
-        "Corriente"
+        "Corrente"
       ],
       "variables": {},
       "frequent": true,
@@ -3191,7 +3191,7 @@
     },
     {
       "id": "three_phase_active_power",
-      "name": "Potencia activa trifásica",
+      "name": "Potência ativa trifásica",
       "latex": "P_{3\\phi}=\\sqrt{3}V_LI_L\\cos\\phi",
       "variants": [],
       "chapter": 23,
@@ -3200,7 +3200,7 @@
       "pages": "846–850",
       "topics": [
         "Trifásico",
-        "Potencia CA"
+        "Potência CA"
       ],
       "variables": {},
       "frequent": true,
@@ -3210,7 +3210,7 @@
     },
     {
       "id": "three_phase_reactive_power",
-      "name": "Potencia reactiva trifásica",
+      "name": "Potência reativa trifásica",
       "latex": "Q_{3\\phi}=\\sqrt{3}V_LI_L\\sin\\phi",
       "variants": [],
       "chapter": 23,
@@ -3219,7 +3219,7 @@
       "pages": "846–850",
       "topics": [
         "Trifásico",
-        "Potencia CA"
+        "Potência CA"
       ],
       "variables": {},
       "frequent": false,
@@ -3229,7 +3229,7 @@
     },
     {
       "id": "three_phase_apparent_power",
-      "name": "Potencia aparente trifásica",
+      "name": "Potência aparente trifásica",
       "latex": "S_{3\\phi}=\\sqrt{3}V_LI_L",
       "variants": [],
       "chapter": 23,
@@ -3238,7 +3238,7 @@
       "pages": "846–850",
       "topics": [
         "Trifásico",
-        "Potencia CA"
+        "Potência CA"
       ],
       "variables": {},
       "frequent": false,
@@ -3248,7 +3248,7 @@
     },
     {
       "id": "three_phase_phase_power",
-      "name": "Potencia por fase",
+      "name": "Potência por fase",
       "latex": "P_{3\\phi}=3V_\\phi I_\\phi\\cos\\phi",
       "variants": [],
       "chapter": 23,
@@ -3257,7 +3257,7 @@
       "pages": "846–850",
       "topics": [
         "Trifásico",
-        "Potencia CA"
+        "Potência CA"
       ],
       "variables": {},
       "frequent": false,
@@ -3267,16 +3267,16 @@
     },
     {
       "id": "duty_cycle",
-      "name": "Ciclo de trabajo",
+      "name": "Ciclo de trabalho",
       "latex": "D=\\frac{t_{on}}{T}\\times100\\%",
       "variants": [],
       "chapter": 24,
-      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "chapter_title": "Formas de onda pulsadas e resposta R-C",
       "section": "24.3",
       "pages": "866–868",
       "topics": [
         "Pulsos",
-        "Tiempo"
+        "Tempo"
       ],
       "variables": {},
       "frequent": true,
@@ -3286,16 +3286,16 @@
     },
     {
       "id": "pulse_frequency",
-      "name": "Frecuencia de repetición",
+      "name": "Frequência de repetição",
       "latex": "f=\\frac{1}{T}",
       "variants": [],
       "chapter": 24,
-      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "chapter_title": "Formas de onda pulsadas e resposta R-C",
       "section": "24.3",
       "pages": "866–868",
       "topics": [
         "Pulsos",
-        "Frecuencia"
+        "Frequência"
       ],
       "variables": {},
       "frequent": false,
@@ -3305,16 +3305,16 @@
     },
     {
       "id": "pulse_average",
-      "name": "Valor medio de pulso rectangular",
+      "name": "Valor médio de pulso retangular",
       "latex": "V_{avg}=V_p\\frac{t_{on}}{T}=V_pD",
       "variants": [],
       "chapter": 24,
-      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "chapter_title": "Formas de onda pulsadas e resposta R-C",
       "section": "24.4",
       "pages": "868–869",
       "topics": [
         "Pulsos",
-        "Valor medio"
+        "Valor médio"
       ],
       "variables": {},
       "frequent": false,
@@ -3324,17 +3324,17 @@
     },
     {
       "id": "rc_square_response",
-      "name": "Respuesta RC a escalón",
+      "name": "Resposta RC ao degrau",
       "latex": "v_C(t)=V_f+(V_i-V_f)e^{-t/RC}",
       "variants": [],
       "chapter": 24,
-      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "chapter_title": "Formas de onda pulsadas e resposta R-C",
       "section": "24.5–24.6",
       "pages": "869–875",
       "topics": [
         "Pulsos",
         "RC",
-        "Transitorios"
+        "Transitórios"
       ],
       "variables": {},
       "frequent": true,
@@ -3348,13 +3348,13 @@
       "latex": "R_1C_1=R_2C_2",
       "variants": [],
       "chapter": 24,
-      "chapter_title": "Formas de onda pulsadas y respuesta R-C",
+      "chapter_title": "Formas de onda pulsadas e resposta R-C",
       "section": "24.7",
       "pages": "875–877",
       "topics": [
-        "Instrumentación",
+        "Instrumentação",
         "RC",
-        "Compensación"
+        "Compensação"
       ],
       "variables": {},
       "frequent": false,
@@ -3364,17 +3364,17 @@
     },
     {
       "id": "fourier_series",
-      "name": "Serie trigonométrica de Fourier",
+      "name": "Série trigonométrica de Fourier",
       "latex": "f(t)=a_0+\\sum_{n=1}^{\\infty}[a_n\\cos(n\\omega_0t)+b_n\\sin(n\\omega_0t)]",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.2",
       "pages": "886–892",
       "topics": [
         "Fourier",
-        "No senoidal",
-        "Armónicos"
+        "Não senoidal",
+        "Harmônicos"
       ],
       "variables": {},
       "frequent": true,
@@ -3384,16 +3384,16 @@
     },
     {
       "id": "fourier_a0",
-      "name": "Coeficiente DC de Fourier",
+      "name": "Coeficiente CC de Fourier",
       "latex": "a_0=\\frac{1}{T}\\int_0^T f(t)dt",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.2",
       "pages": "886–892",
       "topics": [
         "Fourier",
-        "Valor medio"
+        "Valor médio"
       ],
       "variables": {},
       "frequent": false,
@@ -3403,16 +3403,16 @@
     },
     {
       "id": "fourier_an",
-      "name": "Coeficiente cosenoidal",
+      "name": "Coeficiente cossenoidal",
       "latex": "a_n=\\frac{2}{T}\\int_0^T f(t)\\cos(n\\omega_0t)dt",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.2",
       "pages": "886–892",
       "topics": [
         "Fourier",
-        "Armónicos"
+        "Harmônicos"
       ],
       "variables": {},
       "frequent": false,
@@ -3426,12 +3426,12 @@
       "latex": "b_n=\\frac{2}{T}\\int_0^T f(t)\\sin(n\\omega_0t)dt",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.2",
       "pages": "886–892",
       "topics": [
         "Fourier",
-        "Armónicos"
+        "Harmônicos"
       ],
       "variables": {},
       "frequent": false,
@@ -3441,17 +3441,17 @@
     },
     {
       "id": "nonsinusoidal_rms",
-      "name": "RMS con armónicos",
+      "name": "RMS com harmônicos",
       "latex": "X_{rms}=\\sqrt{X_{0}^2+X_{1,rms}^2+X_{2,rms}^2+\\cdots}",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.3",
       "pages": "892–897",
       "topics": [
         "RMS",
-        "Armónicos",
-        "No senoidal"
+        "Harmônicos",
+        "Não senoidal"
       ],
       "variables": {},
       "frequent": false,
@@ -3461,17 +3461,17 @@
     },
     {
       "id": "harmonic_impedance",
-      "name": "Impedancia del armónico n",
+      "name": "Impedância do harmônico n",
       "latex": "Z_n=R+j\\left(n\\omega_0L-\\frac{1}{n\\omega_0C}\\right)",
       "variants": [],
       "chapter": 25,
-      "chapter_title": "Circuitos no senoidales",
+      "chapter_title": "Circuitos não senoidais",
       "section": "25.3",
       "pages": "892–897",
       "topics": [
-        "Armónicos",
-        "Impedancia",
-        "No senoidal"
+        "Harmônicos",
+        "Impedância",
+        "Não senoidal"
       ],
       "variables": {},
       "frequent": false,
@@ -3481,17 +3481,17 @@
     },
     {
       "id": "voltage_gain",
-      "name": "Ganancia de tensión",
+      "name": "Ganho de tensão",
       "latex": "A_v=\\frac{V_o}{V_i}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.3",
       "pages": "908–910",
       "topics": [
         "Sistemas",
-        "Ganancia",
-        "Tensión"
+        "Ganho",
+        "Tensão"
       ],
       "variables": {},
       "frequent": true,
@@ -3501,17 +3501,17 @@
     },
     {
       "id": "current_gain",
-      "name": "Ganancia de corriente",
+      "name": "Ganho de corrente",
       "latex": "A_i=\\frac{I_o}{I_i}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.4",
       "pages": "910–912",
       "topics": [
         "Sistemas",
-        "Ganancia",
-        "Corriente"
+        "Ganho",
+        "Corrente"
       ],
       "variables": {},
       "frequent": false,
@@ -3521,17 +3521,17 @@
     },
     {
       "id": "power_gain",
-      "name": "Ganancia de potencia",
+      "name": "Ganho de potência",
       "latex": "A_G=\\frac{P_o}{P_i}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.4",
       "pages": "910–912",
       "topics": [
         "Sistemas",
-        "Ganancia",
-        "Potencia"
+        "Ganho",
+        "Potência"
       ],
       "variables": {},
       "frequent": false,
@@ -3541,17 +3541,17 @@
     },
     {
       "id": "cascade_gain",
-      "name": "Ganancia total en cascada",
+      "name": "Ganho total em cascata",
       "latex": "A_T=A_1A_2\\cdots A_n",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.5",
       "pages": "912–914",
       "topics": [
         "Sistemas",
-        "Ganancia",
-        "Cascada"
+        "Ganho",
+        "Cascata"
       ],
       "variables": {},
       "frequent": true,
@@ -3561,17 +3561,17 @@
     },
     {
       "id": "cascade_db_gain",
-      "name": "Ganancia total en cascada (dB)",
+      "name": "Ganho total em cascata (dB)",
       "latex": "A_{T,dB}=A_{1,dB}+A_{2,dB}+\\cdots+A_{n,dB}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.5",
       "pages": "912–914",
       "topics": [
         "Sistemas",
-        "Ganancia",
-        "Decibeles"
+        "Ganho",
+        "Decibéis"
       ],
       "variables": {},
       "frequent": false,
@@ -3581,17 +3581,17 @@
     },
     {
       "id": "z_parameters",
-      "name": "Parámetros Z",
+      "name": "Parâmetros Z",
       "latex": "\\begin{bmatrix}V_1\\\\V_2\\end{bmatrix}=\\begin{bmatrix}Z_{11}&Z_{12}\\\\Z_{21}&Z_{22}\\end{bmatrix}\\begin{bmatrix}I_1\\\\I_2\\end{bmatrix}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.6",
       "pages": "914–918",
       "topics": [
         "Sistemas",
-        "Dos puertos",
-        "Impedancia"
+        "Duas portas",
+        "Impedância"
       ],
       "variables": {},
       "frequent": false,
@@ -3601,17 +3601,17 @@
     },
     {
       "id": "y_parameters",
-      "name": "Parámetros Y",
+      "name": "Parâmetros Y",
       "latex": "\\begin{bmatrix}I_1\\\\I_2\\end{bmatrix}=\\begin{bmatrix}Y_{11}&Y_{12}\\\\Y_{21}&Y_{22}\\end{bmatrix}\\begin{bmatrix}V_1\\\\V_2\\end{bmatrix}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.7",
       "pages": "918–920",
       "topics": [
         "Sistemas",
-        "Dos puertos",
-        "Admitancia"
+        "Duas portas",
+        "Admitância"
       ],
       "variables": {},
       "frequent": false,
@@ -3621,17 +3621,17 @@
     },
     {
       "id": "h_parameters",
-      "name": "Parámetros híbridos h",
+      "name": "Parâmetros híbridos h",
       "latex": "\\begin{bmatrix}V_1\\\\I_2\\end{bmatrix}=\\begin{bmatrix}h_{11}&h_{12}\\\\h_{21}&h_{22}\\end{bmatrix}\\begin{bmatrix}I_1\\\\V_2\\end{bmatrix}",
       "variants": [],
       "chapter": 26,
-      "chapter_title": "Análisis de sistemas: una introducción",
+      "chapter_title": "Análise de sistemas: uma introdução",
       "section": "26.8",
       "pages": "920–922",
       "topics": [
         "Sistemas",
-        "Dos puertos",
-        "Parámetros híbridos"
+        "Duas portas",
+        "Parâmetros híbridos"
       ],
       "variables": {},
       "frequent": false,

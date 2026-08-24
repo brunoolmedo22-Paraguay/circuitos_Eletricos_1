@@ -1,9 +1,9 @@
 """
-Funciones y datos compartidos por toda la plataforma.
+Funções e dados compartilhados por toda a plataforma.
 
-Centraliza aquí todo lo que las páginas necesitan en común (rutas, carga de
-imágenes, inyección de CSS, configuración de página y navegación) para que los
-módulos de contenido queden limpios y sin duplicación.
+Centraliza aqui tudo o que as páginas precisam em comum (rotas, carregamento de
+imagens, injeção de CSS, configuração da página e navegação) para que os
+módulos de conteúdo fiquem limpos e sem duplicação.
 """
 
 from __future__ import annotations
@@ -15,21 +15,21 @@ from pathlib import Path
 import streamlit as st
 
 # --------------------------------------------------------------------------- #
-# Rutas relativas al proyecto (funcionan en local, GitHub y Streamlit Cloud)
+# Rotas relativas ao projeto (funcionam localmente, no GitHub e no Streamlit Cloud)
 # --------------------------------------------------------------------------- #
 ROOT_DIR = Path(__file__).resolve().parent.parent
 ASSETS_DIR = ROOT_DIR / "assets"
 STYLES_DIR = ROOT_DIR / "styles"
 
 # --------------------------------------------------------------------------- #
-# Identidad de la aplicación
+# Identidade da aplicação
 # --------------------------------------------------------------------------- #
-APP_TITLE = "Circuitos Eléctricos I"
+APP_TITLE = "Circuitos Elétricos I"
 APP_ICON = "⚡"
 APP_VERSION = "0.3"
 
-# Definición única de las secciones. Cada página y la portada leen de aquí,
-# así agregar un módulo nuevo es cambiar una sola lista.
+# Definição única das seções. Cada página e a tela inicial leem daqui,
+# assim adicionar um novo módulo exige alterar apenas uma lista.
 SECTIONS = [
     {
         "key": "teoria",
@@ -37,22 +37,22 @@ SECTIONS = [
         "slug": "teoria",
         "icon": "📘",
         "image": "teoria.png",
-        "title": "Aprenda la Teoría",
+        "title": "Aprenda a Teoria",
         "description": (
-            "Consulte definiciones, ecuaciones, convenciones y referencias de "
-            "los contenidos trabajados en Circuitos Eléctricos I."
+            "Consulte definições, equações, convenções e referências dos "
+            "conteúdos trabalhados em Circuitos Elétricos I."
         ),
     },
     {
-        "key": "interactue",
-        "page": "pages/interactue.py",
-        "slug": "interactue",
+        "key": "interaja",
+        "page": "pages/interaja.py",
+        "slug": "interaja",
         "icon": "🎛️",
-        "image": "interactue.png",
-        "title": "Interactúe con la Teoría",
+        "image": "interaja.png",
+        "title": "Interaja com a Teoria",
         "description": (
-            "Experimente con simulaciones dinámicas modificando parámetros y "
-            "observando el comportamiento eléctrico de los circuitos."
+            "Experimente simulações dinâmicas modificando parâmetros e "
+            "observando o comportamento elétrico dos circuitos."
         ),
     },
     {
@@ -61,35 +61,35 @@ SECTIONS = [
         "slug": "formularios",
         "icon": "📐",
         "image": "formularios.png",
-        "title": "Formularios",
+        "title": "Formulários",
         "description": (
-            "Consulte rápidamente ecuaciones, relaciones fundamentales y "
-            "expresiones matemáticas de la disciplina."
+            "Consulte rapidamente equações, relações fundamentais e "
+            "expressões matemáticas da disciplina."
         ),
     },
     {
-        "key": "ejercicios",
-        "page": "pages/ejercicios.py",
-        "slug": "ejercicios",
+        "key": "exercicios",
+        "page": "pages/exercicios.py",
+        "slug": "exercicios",
         "icon": "✅",
-        "image": "solutions.png",
-        "title": "Ejercicios Resueltos",
+        "image": "exercicios.png",
+        "title": "Exercícios Resolvidos",
         "description": (
-            "Estudie ejercicios completamente desarrollados con explicaciones "
-            "paso a paso y ecuaciones en LaTeX."
+            "Estude exercícios completamente desenvolvidos com explicações "
+            "passo a passo e equações em LaTeX."
         ),
     },
 ]
 
 # --------------------------------------------------------------------------- #
-# Recursos (imágenes y CSS)
+# Recursos (imagens e CSS)
 # --------------------------------------------------------------------------- #
 
 def asset_b64(filename: str) -> str:
-    """Devuelve una imagen de ``assets/`` como cadena base64 lista para un data URI.
+    """Retorna uma imagem de ``assets/`` como string base64 pronta para um data URI.
 
-    Se cachea porque las mismas imágenes se incrustan en cada renderizado de la
-    portada. Si el archivo no existe devuelve cadena vacía para no romper la app.
+    O resultado é armazenado em cache porque as mesmas imagens são incorporadas em cada renderização da
+    página inicial. Se o arquivo não existir, retorna uma string vazia para não quebrar o app.
     """
     path = ASSETS_DIR / filename
     if not path.exists():
@@ -98,7 +98,7 @@ def asset_b64(filename: str) -> str:
 
 
 def data_uri(filename: str, mime: str = "image/png") -> str:
-    """Data URI completo para incrustar una imagen en HTML/CSS."""
+    """Data URI completo para incorporar uma imagem em HTML/CSS."""
     b64 = asset_b64(filename)
     return f"data:{mime};base64,{b64}" if b64 else ""
 
@@ -110,10 +110,10 @@ def _read_css() -> str:
 
 
 # --------------------------------------------------------------------------- #
-# Configuración y estilo global
+# Configuração e estilo global
 # --------------------------------------------------------------------------- #
 def configure_page(subtitle: str | None = None) -> None:
-    """Aplica ``st.set_page_config`` de forma homogénea en todas las páginas."""
+    """Aplica ``st.set_page_config`` de forma homogênea em todas as páginas."""
     page_title = f"{APP_TITLE} · {subtitle}" if subtitle else APP_TITLE
     st.set_page_config(
         page_title=page_title,
@@ -124,54 +124,54 @@ def configure_page(subtitle: str | None = None) -> None:
 
 
 def load_global_style() -> None:
-    """Inyecta el CSS global (paleta, tipografía, layout y componentes)."""
+    """Injeta o CSS global (paleta, tipografia, layout e componentes)."""
     css = _read_css()
     if css:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
 def render_html(html: str) -> None:
-    """Inyecta HTML en la app de forma segura.
+    """Injeta HTML no app de forma segura.
 
-    Streamlit pasa ``st.markdown`` por un parser Markdown: si alguna línea del
-    HTML está indentada (4+ espacios) la interpreta como bloque de código y la
-    muestra como texto literal. Aquí quitamos la indentación de cada línea (y las
-    líneas vacías) para que el bloque se renderice siempre como HTML.
+    O Streamlit processa ``st.markdown`` com um parser Markdown: se alguma linha do
+    HTML estiver indentada (4+ espaços), ela é interpretada como bloco de código e
+    exibida como texto literal. Aqui removemos a indentação de cada linha (e as
+    linhas vazias) para que o bloco seja sempre renderizado como HTML.
     """
     cleaned = "\n".join(line.lstrip() for line in html.splitlines() if line.strip())
     st.markdown(cleaned, unsafe_allow_html=True)
 
 
 # --------------------------------------------------------------------------- #
-# Navegación
+# Navegação
 # --------------------------------------------------------------------------- #
 def render_sidebar(active: str | None = None) -> None:
-    """Barra lateral de navegación propia (reemplaza la lista automática).
+    """Barra lateral de navegação própria (substitui a lista automática).
 
-    ``active`` es la clave de la sección actual, para no enlazarla a sí misma.
+    ``active`` é a chave da seção atual, para não criar um link para ela mesma.
     """
     with st.sidebar:
         st.markdown(
             f"<div class='side-brand'>{APP_ICON} {APP_TITLE}</div>",
             unsafe_allow_html=True,
         )
-        st.page_link("app.py", label="Inicio", icon="🏠")
+        st.page_link("app.py", label="Início", icon="🏠")
         for sec in SECTIONS:
             st.page_link(sec["page"], label=sec["title"], icon=sec["icon"])
         st.markdown(
-            f"<div class='side-foot'>Monitoría · UNILA<br>Versión {APP_VERSION}</div>",
+            f"<div class='side-foot'>Monitoria · UNILA<br>Versão {APP_VERSION}</div>",
             unsafe_allow_html=True,
         )
 
 
 # --------------------------------------------------------------------------- #
-# Contenido temporal para módulos aún no desarrollados
+# Conteúdo temporário para módulos ainda não desenvolvidos
 # --------------------------------------------------------------------------- #
 def render_placeholder(section_key: str) -> None:
-    """Estado 'en construcción' consistente para las páginas de la v0.1."""
+    """Estado 'em construção' consistente para as páginas da v0.1."""
     sec = next((s for s in SECTIONS if s["key"] == section_key), None)
     if sec is None:
-        st.error("Sección no encontrada.")
+        st.error("Seção não encontrada.")
         return
 
     icon_uri = data_uri(sec["image"])
@@ -189,11 +189,11 @@ def render_placeholder(section_key: str) -> None:
         </div>
 
         <div class="build-note">
-          <span class="build-note__tag">En construcción</span>
-          <p>Este módulo forma parte de la hoja de ruta de la plataforma y se
-          desarrollará en una próxima versión. La estructura ya está lista para
-          recibir el contenido.</p>
+          <span class="build-note__tag">Em construção</span>
+          <p>Este módulo faz parte do roteiro de desenvolvimento da plataforma e será
+          desenvolvido em uma próxima versão. A estrutura já está pronta para
+          receber o conteúdo.</p>
         </div>
         """
     )
-    st.page_link("app.py", label="Volver al inicio", icon=":material/arrow_back:")
+    st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

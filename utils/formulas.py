@@ -1,4 +1,4 @@
-"""Catálogo, filtros y búsqueda del formulario de Circuitos Eléctricos I."""
+"""Catálogo, filtros e busca do formulário de Circuitos Elétricos I."""
 
 from __future__ import annotations
 
@@ -12,8 +12,8 @@ from typing import Iterable
 ROOT_DIR = Path(__file__).resolve().parent.parent
 CATALOG_PATH = ROOT_DIR / "data" / "formulas.json"
 
-# Orden deliberado para que la portada empiece por las relaciones que más se
-# consultan durante resolución de circuitos, no por el orden del libro.
+# Ordem deliberada para que a página inicial comece pelas relações mais
+# consultadas na resolução de circuitos, e não pela ordem do livro.
 FREQUENT_IDS = [
     "ohms_law",
     "power_vi",
@@ -43,29 +43,34 @@ FREQUENT_IDS = [
 
 
 _TOKEN_EQUIV = {
-    "corrente": "corriente",
-    "correntes": "corriente",
-    "tensao": "tension",
-    "tensoes": "tension",
-    "voltaje": "tension",
-    "voltagem": "tension",
+    # Português e equivalentes em espanhol convergem para uma forma canônica.
+    "corrientes": "corrente",
+    "correntes": "corrente",
+    "corriente": "corrente",
+    "tension": "tensao",
+    "tensiones": "tensao",
+    "tensoes": "tensao",
+    "voltaje": "tensao",
+    "voltagem": "tensao",
     "resistor": "resistencia",
     "resistores": "resistencia",
     "resistencias": "resistencia",
-    "perda": "perdida",
-    "perdas": "perdida",
-    "perdidas": "perdida",
+    "perdida": "perda",
+    "perdidas": "perda",
+    "perdas": "perda",
     "potencias": "potencia",
     "capacitor": "capacitancia",
     "capacitores": "capacitancia",
-    "indutor": "inductancia",
-    "indutores": "inductancia",
-    "inductor": "inductancia",
-    "inductores": "inductancia",
-    "frequencia": "frecuencia",
-    "frecuencias": "frecuencia",
+    "indutor": "indutancia",
+    "indutores": "indutancia",
+    "inductor": "indutancia",
+    "inductores": "indutancia",
+    "inductancia": "indutancia",
+    "frecuencia": "frequencia",
+    "frecuencias": "frequencia",
     "tevenin": "thevenin",
 }
+
 
 
 def _norm(value: object) -> str:
@@ -144,10 +149,10 @@ def _search_blob(formula: dict) -> str:
 
 
 def search_formulas(query: str, limit: int = 60) -> list[dict]:
-    """Búsqueda tolerante por nombre, tema, alias, variable y referencia.
+    """Busca tolerante por nome, tema, alias, variável e referência.
 
-    Da más peso a coincidencias en el nombre y en los aliases, y exige que todos
-    los términos de una consulta multi-palabra estén presentes en el registro.
+    Dá mais peso às coincidências no nome e nos aliases e exige que todos
+    os termos de uma consulta com múltiplas palavras estejam presentes no registro.
     """
     q = _norm(query)
     if not q:

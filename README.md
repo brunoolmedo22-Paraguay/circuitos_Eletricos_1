@@ -1,110 +1,87 @@
-# ⚡ Circuitos Eléctricos I — Plataforma de Monitoría
+# Circuitos Elétricos I — Guia Interativo de Aprendizagem
 
-Plataforma modular construida con **Streamlit + Python** como complemento de la
-disciplina *Circuitos Eléctricos I* (UNILA).
+Plataforma modular desenvolvida com **Streamlit + Python** como complemento à disciplina **Circuitos Elétricos I** da UNILA.
 
-El proyecto no sustituye las clases. Funciona como un repositorio académico al
-que el estudiante puede volver para localizar conceptos, ecuaciones,
-convenciones, herramientas de cálculo y ejercicios resueltos.
+O projeto não substitui as aulas. Ele funciona como um repositório acadêmico para localizar conceitos, equações, convenções, ferramentas de cálculo e exercícios resolvidos.
 
-> **Estado actual: Versión 0.3** — arquitectura y portada activas. El módulo
-> **Aprenda la Teoría** está completamente vacío y reservado para ser reconstruido desde cero.
+> **Estado atual: Versão 0.3** — arquitetura e página inicial ativas. O módulo **Aprenda a Teoria** permanece reservado para reconstrução do conteúdo teórico.
 
----
+## 🎯 Visão do projeto
 
-## 🎯 Visión del proyecto
+A plataforma está organizada em quatro módulos principais:
 
-La plataforma crecerá alrededor de cuatro grandes módulos:
+| Módulo | Objetivo |
+|---|---|
+| 📘 **Aprenda a Teoria** | Espaço reservado para conceitos, definições e conteúdo teórico. |
+| 🎛️ **Interaja com a Teoria** | Simulações dinâmicas com parâmetros ajustáveis e visualização do comportamento elétrico dos circuitos. |
+| 📐 **Formulários** | Biblioteca organizada de equações e relações matemáticas renderizadas em LaTeX. |
+| ✅ **Exercícios Resolvidos** | Problemas desenvolvidos passo a passo com equações em LaTeX. |
 
-| Módulo | Descripción |
-| --- | --- |
-| 📘 **Aprenda la Teoría** | Página completamente vacía, reservada para reconstruir el contenido desde cero. |
-| 🎛️ **Interactúe con la Teoría** | Simulaciones dinámicas con *sliders*: Ley de Ohm, circuitos RC/RL, constante de tiempo, carga/descarga, etc. Gráficos interactivos. |
-| 📐 **Formularios** | Biblioteca organizada de ecuaciones renderizadas en LaTeX. |
-| ✅ **Ejercicios Resueltos** | Problemas desarrollados paso a paso con ecuaciones en LaTeX. |
+## 📁 Estrutura
 
----
-
-## 🗂️ Estructura
-
-```
-Circuitos_Electricos_I/
-├── app.py                 # Portada (landing)
-├── requirements.txt
-├── README.md
-│
-├── .streamlit/
-│   └── config.toml        # Tema (paleta púrpura UNILA)
-│
-├── assets/                # Imágenes (logo e íconos de las tarjetas)
-│   ├── logo_unila.png
-│   ├── teoria.png
-│   ├── interactue.png
-│   ├── formularios.png
-│   └── solutions.png
-│
+```text
+.
+├── app.py
+├── assets/
+├── data/
+│   └── formulas.json
+├── pages/
+│   ├── teoria.py
+│   ├── interaja.py
+│   ├── formularios.py
+│   └── exercicios.py
 ├── styles/
-│   └── main.css           # Estilo global (paleta, tipografía, tarjetas)
-│
-├── utils/                 # Código reutilizable
+│   ├── main.css
+│   └── formularios.css
+├── utils/
 │   ├── __init__.py
-│   └── helpers.py         # rutas, base64, config, CSS, navegación
-│
-└── pages/                 # Módulos (multipágina de Streamlit)
-    ├── teoria.py
-    ├── interactue.py
-    ├── formularios.py
-    └── ejercicios.py
+│   ├── formulas.py
+│   └── helpers.py
+└── requirements.txt
 ```
 
-Todas las rutas son **relativas**, por lo que el proyecto funciona igual en
-local, en GitHub y en Streamlit Cloud.
+Todas as rotas são relativas, portanto o projeto funciona da mesma forma localmente, no GitHub e no Streamlit Cloud.
 
----
-
-## 🚀 Ejecutar en local
+## 🚀 Executar localmente
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-La app abre en `http://localhost:8501`.
+Por padrão, o Streamlit abre em `http://localhost:8501`.
 
-## ☁️ Desplegar en Streamlit Cloud
+## ☁️ Publicar no Streamlit Cloud
 
-1. Sube el repositorio a GitHub.
-2. En [share.streamlit.io](https://share.streamlit.io) crea una nueva app.
-3. Archivo principal: `app.py`.
+1. Envie o repositório para o GitHub.
+2. Crie uma nova aplicação no Streamlit Cloud.
+3. Selecione `app.py` como arquivo principal.
+4. Faça o deploy.
+
+## 🧩 Adicionar um novo módulo
+
+A lista `SECTIONS`, em `utils/helpers.py`, é a fonte central da navegação. Para adicionar uma seção, inclua a entrada em `SECTIONS`, coloque o ícone correspondente em `assets/` e crie a página em `pages/`.
+
+## 📐 Formulários
+
+O módulo `pages/formularios.py` utiliza a base `data/formulas.json` e as funções de `utils/formulas.py` para busca e filtros. A base atual contém **172 relações matemáticas distribuídas em 26 capítulos** do Boylestad, 12ª edição.
+
+A consulta pode ser feita por:
+
+- fórmulas mais frequentes;
+- busca por nome, variável, tema, alias ou conceito;
+- capítulo;
+- tema.
+
+Os detalhes são expandidos diretamente dentro do painel de cada fórmula, sem alterar a posição da consulta.
+
+## 🎨 Identidade visual
+
+- Paleta púrpura UNILA (`#88678b` / `#532458`).
+- Cartões com bordas arredondadas, sombras suaves e estados de interação.
+- Componentes matemáticos renderizados em LaTeX.
+- Layout responsivo para desktop e dispositivos menores.
 
 ---
 
-## 🧩 Cómo agregar un módulo nuevo
-
-La lista `SECTIONS` en `utils/helpers.py` es la **única fuente de verdad**: la
-portada, la barra lateral y las páginas leen de ahí. Para sumar una sección,
-agrega su entrada a `SECTIONS`, coloca su ícono en `assets/` y crea el archivo
-correspondiente en `pages/`.
-
-## 📘 Aprenda la Teoría · Versión 0.3
-
-El módulo está completamente vacío. No contiene títulos, directorios internos, unidades, artículos, tópicos, búsqueda, gráficos, referencias ni material teórico.
-
----
-
-## 🎨 Notas de diseño
-
-- Paleta púrpura UNILA (`#88678b` / `#532458`) definida como variables CSS.
-- Tipografías **Poppins** (títulos) e **Inter** (texto).
-- Tarjetas con *hover*, sombras suaves y bordes redondeados.
-- Los archivos de `assets/` son **placeholders**; reemplázalos por los
-  definitivos manteniendo los mismos nombres. En particular, sustituye
-  `logo_unila.png` por el logotipo institucional oficial.
-
----
-
-*Desarrollado por el Monitor **Bruno Manuel Olmedo Chavez** · UNILA.*
-
-## Formularios
-
-El módulo `pages/formularios.py` consume una base independiente en `data/formulas.json` y usa `utils/formulas.py` para búsqueda y filtros. La base actual contiene 172 relaciones matemáticas distribuidas en los 26 capítulos del Boylestad (12ª ed.). El visualizador permite consulta por fórmulas frecuentes, búsqueda, capítulo y tema sin cambiar de página.
+*Desenvolvido pelo Monitor **Bruno Manuel Olmedo Chavez** · UNILA.*
