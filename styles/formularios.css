@@ -379,3 +379,10 @@ div[class*="st-key-formula-card-open-"] [data-testid="stCaptionContainer"] {
     min-height: auto;
   }
 }
+
+/* Variáveis no detalhe: símbolos são KaTeX inline, nunca chips de código. */
+div[class*="st-key-formula-card-open-"] [data-testid="stMarkdownContainer"] li .katex,
+div[class*="st-key-formula-card-open-"] [data-testid="stMarkdownContainer"] li .katex * {
+  color: var(--accent) !important;
+  background: transparent !important;
+}

@@ -74,7 +74,7 @@ def render_inline_details(formula: dict) -> None:
     if formula.get("variables"):
         st.markdown("**Variables**")
         for symbol, meaning in formula["variables"].items():
-            st.markdown(f"- `${symbol}$` — {meaning}")
+            st.markdown(f"- ${symbol}$ — {meaning}")
 
     if formula.get("variants"):
         st.markdown("**Variantes**")
