@@ -103,7 +103,7 @@ def render_inline_details(formula: dict) -> None:
 nav_col, viewer_col = st.columns([1.28, 5.72], gap="medium")
 
 with nav_col:
-    with st.container(border=True):
+    with st.container(border=True, key="formula-nav-panel"):
         st.markdown("<div class='formula-nav-heading'>FORMULARIO</div>", unsafe_allow_html=True)
         mode = st.session_state.formula_nav
         nav_items = [
@@ -121,11 +121,6 @@ with nav_col:
                 on_click=set_mode,
                 args=(mode_name,),
             )
-            # El CSS global elimina el gap vertical de Streamlit. Este pequeño
-            # separador devuelve aire entre los cuatro botones del formulario.
-            if mode_name != nav_items[-1][0]:
-                st.markdown("<div class='formula-nav-button-gap'></div>", unsafe_allow_html=True)
-
         st.markdown("<div class='formula-nav-divider'></div>", unsafe_allow_html=True)
 
         if mode == "Buscador":
@@ -208,11 +203,15 @@ with viewer_col:
         # Tres columnas densas: el objetivo es ver muchas fórmulas a la vez.
         grid = st.columns(3, gap="medium")
         for idx, formula in enumerate(rows):
+            is_open = st.session_state.formula_selected_id == formula["id"]
+            card_state = "open" if is_open else "closed"
+            card_key = f"formula-card-{card_state}-{formula['id']}"
+
             with grid[idx % 3]:
-                with st.container(border=True):
-                    is_open = st.session_state.formula_selected_id == formula["id"]
-                    marker_class = "formula-card-marker formula-card-marker--open" if is_open else "formula-card-marker"
-                    st.markdown(f"<div class='{marker_class}'></div>", unsafe_allow_html=True)
+                # O key do container vira uma classe CSS estável (st-key-...).
+                # Assim o visual do painel não depende dos data-testid internos
+                # do Streamlit, que podem variar entre versões.
+                with st.container(key=card_key):
                     st.markdown(f"<div class='formula-card-name'>{formula['name']}</div>", unsafe_allow_html=True)
                     st.latex(formula["latex"])
                     st.caption(
@@ -227,6 +226,9 @@ with viewer_col:
                     )
 
                     if is_open:
-                        render_inline_details(formula)
+                        # O detalhe nasce dentro do próprio card. O container
+                        # keyed permite animar a abertura via CSS sem JavaScript.
+                        with st.container(key=f"formula-detail-{formula['id']}"):
+                            render_inline_details(formula)
 
 st.page_link("app.py", label="Volver al inicio", icon=":material/arrow_back:")
