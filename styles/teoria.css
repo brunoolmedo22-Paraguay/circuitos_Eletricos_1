@@ -65,13 +65,6 @@
   color: var(--accent) !important;
 }
 
-.theory-db-note span {
-  display: block;
-  margin-top: 0.36rem;
-  color: #918a95 !important;
-  font-size: 0.69rem;
-}
-
 /* Cabeçalho do visor ------------------------------------------------------ */
 .theory-view-head {
   display: flex;
@@ -117,21 +110,6 @@
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
-}
-
-.theory-source-strip {
-  margin: 0 0.15rem 1rem;
-  padding: 0.56rem 0.72rem;
-  color: #746d77 !important;
-  background: rgba(243, 237, 245, 0.72);
-  border-left: 3px solid rgba(83, 36, 88, 0.34);
-  border-radius: 0 8px 8px 0;
-  font-size: 0.73rem;
-  line-height: 1.45;
-}
-
-.theory-source-strip strong {
-  color: var(--accent) !important;
 }
 
 /* Cartões --------------------------------------------------------------- */
@@ -319,4 +297,70 @@ div[data-baseweb="popover"] [role="option"]:hover {
 .theory-card-kicker--definition {
   margin-top: 0;
   margin-bottom: 0.34rem;
+}
+
+/* --------------------------------------------------------------------------
+   Refinamento v10 · respiro e alinhamento dos cartões
+   -------------------------------------------------------------------------- */
+
+/* O cabeçalho da consulta fica mais limpo quando não há subtítulo. */
+.theory-view-head {
+  margin-bottom: 1rem;
+  min-height: 72px;
+}
+
+/* Cada trio de cartões é uma linha própria; este espaçador separa as linhas. */
+.theory-row-spacer {
+  height: 0.72rem;
+}
+
+/* Mais espaço físico entre os painéis. */
+div[class*="st-key-theory-card-"] {
+  margin-bottom: 0.5rem !important;
+  padding: 1.05rem 1.08rem 1rem !important;
+}
+
+/* O bloco inicial é único para evitar que o título / DEFINIÇÃO se encostem. */
+.theory-card-intro {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.theory-card-title {
+  min-height: 1.45rem;
+  margin: 0 0 0.78rem !important;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.28;
+}
+
+.theory-card-kicker--definition {
+  display: block;
+  margin: 0 0 0.42rem !important;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.theory-card-summary {
+  min-height: 4.7rem;
+  margin: 0 0 0.82rem !important;
+  padding: 0;
+  line-height: 1.55;
+}
+
+/* Dá respiro antes das relações-chave e entre a matemática e a referência. */
+.theory-card-intro + div,
+div[class*="st-key-theory-card-"] .theory-card-kicker:not(.theory-card-kicker--definition) {
+  margin-top: 0.24rem !important;
+}
+
+div[class*="st-key-theory-card-"] [data-testid="stLatex"] {
+  margin: 0.28rem 0 0.34rem !important;
+  padding: 0.1rem 0 !important;
+}
+
+.theory-card-reference {
+  margin-top: 0.9rem;
+  padding-top: 0.78rem;
 }

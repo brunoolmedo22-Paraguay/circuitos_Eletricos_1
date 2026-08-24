@@ -56,9 +56,18 @@ def set_mode(mode_name: str) -> None:
 
 def render_theory_card(item: dict) -> None:
     """Renderiza um cartão curto: conceito, definição, fórmulas e referência."""
-    st.markdown(f"<div class='theory-card-title'>{item['title']}</div>", unsafe_allow_html=True)
-    st.markdown("<div class='theory-card-kicker theory-card-kicker--definition'>DEFINIÇÃO</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='theory-card-summary'>{item['summary']}</div>", unsafe_allow_html=True)
+    # Título, rótulo e definição ficam no mesmo bloco HTML para preservar
+    # o espaçamento interno mesmo com o gap global do Streamlit zerado.
+    st.markdown(
+        f"""
+        <div class="theory-card-intro">
+          <div class="theory-card-title">{item['title']}</div>
+          <div class="theory-card-kicker theory-card-kicker--definition">DEFINIÇÃO</div>
+          <div class="theory-card-summary">{item['summary']}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     equations = formulas_for(item, limit=2)
     if equations:
@@ -137,12 +146,8 @@ with nav_col:
             st.caption("Conceitos essenciais do livro reunidos em cartões curtos de consulta.")
 
         st.markdown(
-            f"""
-            <div class="theory-db-note">
-              <strong>{meta['theory_count']}</strong> conceitos · <strong>{meta['chapter_count']}</strong> capítulos
-              <span>Fonte exclusiva: Boylestad, 12ª ed.</span>
-            </div>
-            """,
+            f"<div class='theory-db-note'><strong>{meta['theory_count']}</strong> conceitos · "
+            f"<strong>{meta['chapter_count']}</strong> capítulos</div>",
             unsafe_allow_html=True,
         )
 
@@ -150,7 +155,7 @@ with viewer_col:
     if mode == "Teorias frequentes":
         rows = frequent_theories(limit=24)
         title = "Teorias mais frequentes"
-        subtitle = "Definições essenciais · conceito, relação-chave e referência no livro"
+        subtitle = ""
     elif mode == "Busca":
         query = st.session_state.get("theory_search", "")
         rows = search_theories(query, limit=60)
@@ -170,13 +175,14 @@ with viewer_col:
         title = selected_topic
         subtitle = f"{len(rows)} conceito(s) relacionado(s) a este tema"
 
+    subtitle_html = f"<p>{subtitle}</p>" if subtitle else ""
     st.markdown(
         f"""
         <div class="theory-view-head">
           <div>
             <div class="theory-view-kicker">CONSULTA</div>
             <h2>{title}</h2>
-            <p>{subtitle}</p>
+            {subtitle_html}
           </div>
           <div class="theory-view-count">{len(rows)}</div>
         </div>
@@ -184,18 +190,19 @@ with viewer_col:
         unsafe_allow_html=True,
     )
 
-    st.markdown(
-        "<div class='theory-source-strip'>Todo o conteúdo desta página é baseado exclusivamente em <strong>Robert L. Boylestad · Introdução à análise de circuitos · 12ª edição</strong>. Não são utilizadas fontes externas.</div>",
-        unsafe_allow_html=True,
-    )
-
     if not rows:
         st.info("Nenhum conceito foi encontrado com esse critério. Tente outra palavra, capítulo ou tema.")
     else:
-        grid = st.columns(3, gap="medium")
-        for idx, item in enumerate(rows):
-            with grid[idx % 3]:
-                with st.container(key=f"theory-card-{item['id']}"):
-                    render_theory_card(item)
+        # Grade em linhas reais (3 cartões por linha). Evita o efeito de
+        # "masonry" das três colunas permanentes, no qual cartões de alturas
+        # diferentes ficavam visualmente colados ou desalinhados.
+        for row_start in range(0, len(rows), 3):
+            row_items = rows[row_start:row_start + 3]
+            grid = st.columns(3, gap="large")
+            for col, item in zip(grid, row_items):
+                with col:
+                    with st.container(key=f"theory-card-{item['id']}"):
+                        render_theory_card(item)
+            st.markdown("<div class='theory-row-spacer'></div>", unsafe_allow_html=True)
 
 st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")
