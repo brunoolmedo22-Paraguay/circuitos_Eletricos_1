@@ -71,7 +71,8 @@
    -------------------------------------------------------------------------- */
 
 .formula-nav-heading {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.95rem;
+  padding-bottom: 0.18rem;
   color: var(--accent);
   font-family: var(--font-display);
   font-size: 0.72rem;
@@ -324,17 +325,41 @@ div[class*="st-key-formula-card-open-"] [data-testid="stCaptionContainer"] {
   color: var(--ink) !important;
 }
 
-[data-testid="stTextInput"] div[data-baseweb="input"] {
+/*
+   O BaseWeb mudou a estrutura do TextInput entre versões do Streamlit.
+   Estilizamos tanto os wrappers conhecidos quanto o wrapper que contém
+   diretamente o <input>, evitando que o tema escuro do navegador pinte
+   o campo de busca de azul/preto.
+*/
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"],
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"],
+.st-key-formula-nav-panel [data-testid="stTextInput"] div:has(> input) {
   color: var(--ink) !important;
-  background: var(--white) !important;
+  background: #ffffff !important;
   border-color: #d9cddd !important;
+  box-shadow: none !important;
 }
 
-[data-testid="stTextInput"] input {
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"]:focus-within,
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"]:focus-within,
+.st-key-formula-nav-panel [data-testid="stTextInput"] div:has(> input):focus-within {
+  border-color: rgba(83, 36, 88, 0.58) !important;
+  box-shadow: 0 0 0 1px rgba(83, 36, 88, 0.10) !important;
+}
+
+.st-key-formula-nav-panel [data-testid="stTextInput"] input {
   color: var(--ink) !important;
-  background: transparent !important;
+  background: #ffffff !important;
   -webkit-text-fill-color: var(--ink) !important;
   caret-color: var(--accent) !important;
+}
+
+/* Texto auxiliar interno do campo (ex.: “Press Enter to apply”). */
+.st-key-formula-nav-panel [data-testid="stTextInput"] div:has(> input) span,
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="input"] span,
+.st-key-formula-nav-panel [data-testid="stTextInput"] div[data-baseweb="base-input"] span {
+  color: #8b8390 !important;
+  -webkit-text-fill-color: #8b8390 !important;
 }
 
 [data-testid="stTextInput"] input::placeholder {
