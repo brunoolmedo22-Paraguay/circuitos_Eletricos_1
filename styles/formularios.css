@@ -411,3 +411,59 @@ div[class*="st-key-formula-card-open-"] [data-testid="stMarkdownContainer"] li .
   color: var(--accent) !important;
   background: transparent !important;
 }
+
+/* --------------------------------------------------------------------------
+   Hotfix v7 · Selectores Capítulo / Tema
+   Mantener exactamente la misma superficie clara del buscador incluso cuando
+   Streamlit/BaseWeb hereda el esquema oscuro del navegador o del sistema.
+   -------------------------------------------------------------------------- */
+
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div > div,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] [role="combobox"],
+.st-key-formula-nav-panel [data-testid="stSelectbox"] [aria-haspopup="listbox"] {
+  color: var(--ink) !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  border-color: #d9cddd !important;
+  box-shadow: none !important;
+}
+
+/* Texto efetivamente selecionado: algumas versões o colocam em span/div
+   internos com a cor do tema escuro. */
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] span,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] p,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] div {
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+/* Mantemos somente o invólucro do seletor branco; o ícone continua visível. */
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] svg {
+  color: var(--ink) !important;
+  fill: currentColor !important;
+}
+
+.st-key-formula-nav-panel [data-testid="stSelectbox"] div[data-baseweb="select"] > div:focus-within,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] [role="combobox"]:focus,
+.st-key-formula-nav-panel [data-testid="stSelectbox"] [aria-haspopup="listbox"]:focus {
+  border-color: rgba(83, 36, 88, 0.58) !important;
+  box-shadow: 0 0 0 1px rgba(83, 36, 88, 0.10) !important;
+}
+
+/* Dropdown aberto: ele é montado fora do container da sidebar. */
+div[data-baseweb="popover"] [role="listbox"],
+div[data-baseweb="popover"] [role="option"],
+div[data-baseweb="menu"] [role="listbox"],
+div[data-baseweb="menu"] [role="option"] {
+  color: var(--ink) !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
+
+div[data-baseweb="popover"] [role="option"]:hover,
+div[data-baseweb="popover"] [role="option"][aria-selected="true"],
+div[data-baseweb="menu"] [role="option"]:hover,
+div[data-baseweb="menu"] [role="option"][aria-selected="true"] {
+  background-color: #eee5f0 !important;
+}
