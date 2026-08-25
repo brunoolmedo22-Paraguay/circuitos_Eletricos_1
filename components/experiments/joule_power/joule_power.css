@@ -66,12 +66,14 @@ button, input, select { font: inherit; }
 .thermal-input-row input { min-width: 0; width: 100%; color: #373039; background: transparent; border: 0; outline: 0; font-size: 11px; font-weight: 760; }
 .thermal-input-row b { color: #8a7f8e; font-size: 9px; }
 .thermal-input-row label.locked > div { background: #f7f3f7; }
+.thermal-properties { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .cp-chip { padding: 6px 8px; background: rgba(255,255,255,.55); border: 1px solid rgba(83,36,88,.10); border-radius: 9px; }
 .cp-chip strong { color: #574d5b; font-size: 10.5px; }
 .thermal-result { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 9px; }
 .thermal-result span { color: #817586; font-size: 9px; }
 .thermal-result strong { color: var(--accent); font-size: 17px; }
 .thermal-numeric { margin-top: 5px; color: #786d7c; font-size: 9.5px; font-weight: 700; text-align: right; }
+.thermal-conversion { color: #897d8d; font-weight: 650; }
 .thermal-card > small { display: block; margin-top: 6px; color: #948997; font-size: 8.4px; line-height: 1.35; }
 
 .context-section { margin-top: 14px; }
@@ -135,5 +137,6 @@ button, input, select { font: inherit; }
   .circuit-panel, .controls-panel { padding: 14px; }
   .circuit-svg { height: 300px; }
   .circuit-bottom-grid, .thermal-input-row, .input-grid { grid-template-columns: 1fr; }
+  .thermal-properties { grid-template-columns: 1fr 1fr; }
   .equation-card { min-height: 140px; }
 }

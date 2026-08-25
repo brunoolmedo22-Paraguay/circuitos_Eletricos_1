@@ -99,20 +99,27 @@
             <div class="thermal-formula">Q̇ = ṁ c<sub>p</sub> ΔT</div>
             <div class="thermal-input-row">
               <label>
-                <span>Vazão mássica</span>
-                <div><input id="massFlow" type="number" min="0.005" max="1" step="0.005" value="0.05" /><b>kg/s</b></div>
+                <span>Vazão volumétrica</span>
+                <div><input id="volumeFlow" type="number" min="0.005" max="1" step="0.005" value="0.05" /><b>L/s</b></div>
               </label>
-              <div class="cp-chip">
-                <span>c<sub>p</sub> da água</span>
-                <strong>4,18 kJ/(kg·°C)</strong>
+              <div class="thermal-properties">
+                <div class="cp-chip">
+                  <span>ρ da água</span>
+                  <strong>1000 kg/m³</strong>
+                </div>
+                <div class="cp-chip">
+                  <span>c<sub>p</sub> da água</span>
+                  <strong>4,18 kJ/(kg·°C)</strong>
+                </div>
               </div>
             </div>
             <div class="thermal-result">
               <span>Elevação ideal de temperatura</span>
               <strong id="deltaTOut">ΔT = 0,07 °C</strong>
             </div>
+            <div id="flowConversion" class="thermal-numeric thermal-conversion">ṁ = ρV̇ = 1000 × (0,050 × 10⁻³) = 0,050 kg/s</div>
             <div id="thermalNumeric" class="thermal-numeric">ΔT = 14,4 / (0,050 × 4180) = 0,07 °C</div>
-            <small>Modelo térmico ideal complementar: considera Q̇ = P e despreza perdas.</small>
+            <small>Modelo térmico ideal complementar: considera ρ = 1000 kg/m³, Q̇ = P e despreza perdas.</small>
           </section>
         </div>
       </article>

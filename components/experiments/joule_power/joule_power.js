@@ -4,12 +4,13 @@
   const $ = (id) => document.getElementById(id);
   const voltage = $('voltage');
   const resistance = $('resistance');
-  const massFlow = $('massFlow');
+  const volumeFlow = $('volumeFlow');
   const currentOut = $('currentOut');
   const powerOut = $('powerOut');
   const thermalPowerOut = $('thermalPowerOut');
   const deltaTOut = $('deltaTOut');
   const thermalNumeric = $('thermalNumeric');
+  const flowConversion = $('flowConversion');
   const svgCurrent = $('svgCurrent');
   const svgPower = $('svgPower');
   const sourceLabel = $('sourceLabel');
@@ -39,8 +40,10 @@
   const challengeResult = $('challengeResult');
 
   const numberFields = [voltage.closest('.number-field'), resistance.closest('.number-field')];
-  const massFlowField = massFlow.closest('label');
+  const volumeFlowField = volumeFlow.closest('label');
   const CP_WATER = 4180; // J/(kg·°C), parâmetro térmico do modelo complementar.
+  const RHO_WATER = 1000; // kg/m³, hipótese solicitada para a água.
+  const LITER_TO_M3 = 1e-3;
 
   const presets = {
     resistor: {
@@ -108,9 +111,11 @@
 
   function thermalValues() {
     const active = activeValues();
-    const mDot = Math.max(0.005, Math.min(1, Number(massFlow.value) || 0.05));
+    const qLps = Math.max(0.005, Math.min(1, Number(volumeFlow.value) || 0.05));
+    const qM3s = qLps * LITER_TO_M3;
+    const mDot = RHO_WATER * qM3s;
     const deltaT = active.P / (mDot * CP_WATER);
-    return { qDot: active.P, mDot, deltaT };
+    return { qDot: active.P, qLps, qM3s, mDot, deltaT };
   }
 
   function heatLevel(power) {
@@ -129,9 +134,10 @@
   }
 
   function updateThermalModel() {
-    const { qDot, mDot, deltaT } = thermalValues();
+    const { qDot, qLps, mDot, deltaT } = thermalValues();
     thermalPowerOut.textContent = `Q̇ = ${compactPower(qDot)}`;
     deltaTOut.textContent = `ΔT = ${fmt(deltaT, deltaT >= 10 ? 1 : 2)} °C`;
+    flowConversion.textContent = `ṁ = ρV̇ = 1000 × (${fmt(qLps, 3)} × 10⁻³) = ${fmt(mDot, 3)} kg/s`;
     thermalNumeric.textContent = `ΔT = ${fmt(qDot, qDot >= 1000 ? 0 : 1)} / (${fmt(mDot, 3)} × 4180) = ${fmt(deltaT, deltaT >= 10 ? 1 : 2)} °C`;
   }
 
@@ -166,7 +172,7 @@
       return;
     }
     if (source === 'flow') {
-      observation.textContent = 'A potência elétrica não mudou: aumentar a vazão de água reduz a elevação de temperatura, pois a mesma potência é distribuída por mais massa por segundo.';
+      observation.textContent = 'A potência elétrica não mudou: aumentar a vazão volumétrica reduz a elevação de temperatura. Com ρ = 1000 kg/m³, o sistema converte L/s em kg/s automaticamente.';
       return;
     }
     if (source === 'voltage' && previous) {
@@ -272,13 +278,13 @@
   });
   voltage.addEventListener('input', () => render('general'));
   resistance.addEventListener('input', () => render('general'));
-  massFlow.addEventListener('input', () => {
+  volumeFlow.addEventListener('input', () => {
     updateThermalModel();
     updateObservation('flow');
     clearChallengeResult();
   });
-  massFlow.addEventListener('change', () => {
-    stabilizeInput(massFlow, 0.005, 1);
+  volumeFlow.addEventListener('change', () => {
+    stabilizeInput(volumeFlow, 0.005, 1);
     updateThermalModel();
   });
 
@@ -349,7 +355,7 @@
       id: 'p40',
       text: 'Com R = 10 Ω, obtenha uma potência de 40 W.',
       note: 'A resistência está bloqueada. Ajuste apenas a tensão.',
-      setup: { V: 12, R: 10, mDot: 0.05, lockV: false, lockR: true, lockFlow: false },
+      setup: { V: 12, R: 10, qLps: 0.05, lockV: false, lockR: true, lockFlow: false },
       check: ({ P }) => Math.abs(P - 40) <= 0.4,
       success: ({ P }) => `${fmt(P, 1)} W ✓`,
     },
@@ -357,7 +363,7 @@
       id: 'quad',
       text: 'Quadruplicate a potência inicial de 3,6 W sem alterar R = 10 Ω.',
       note: 'O alvo é 14,4 W. Observe P = I²R.',
-      setup: { V: 6, R: 10, mDot: 0.05, lockV: false, lockR: true, lockFlow: false },
+      setup: { V: 6, R: 10, qLps: 0.05, lockV: false, lockR: true, lockFlow: false },
       check: ({ P }) => Math.abs(P - 14.4) <= 0.18,
       success: ({ P }) => `${fmt(P, 1)} W ✓ Potência quadruplicada`,
     },
@@ -365,15 +371,15 @@
       id: 'p20',
       text: 'Obtenha 20 W de potência dissipada.',
       note: 'Qualquer combinação de V e R dentro dos limites é válida.',
-      setup: { V: 12, R: 10, mDot: 0.05, lockV: false, lockR: false, lockFlow: false },
+      setup: { V: 12, R: 10, qLps: 0.05, lockV: false, lockR: false, lockFlow: false },
       check: ({ P }) => Math.abs(P - 20) <= 0.25,
       success: ({ P }) => `${fmt(P, 1)} W ✓`,
     },
     {
       id: 'water25',
       text: 'Com um elemento de 5,0 kW, ajuste a vazão para obter ΔT ≈ 25 °C.',
-      note: 'V = 220 V e R ≈ 9,68 Ω estão bloqueados. Ajuste somente ṁ.',
-      setup: { V: 220, R: (220 * 220) / 5000, mDot: 0.05, lockV: true, lockR: true, lockFlow: false },
+      note: 'V = 220 V e R ≈ 9,68 Ω estão bloqueados. Ajuste somente a vazão em L/s.',
+      setup: { V: 220, R: (220 * 220) / 5000, qLps: 0.05, lockV: true, lockR: true, lockFlow: false },
       check: () => Math.abs(thermalValues().deltaT - 25) <= 0.5,
       success: () => `ΔT = ${fmt(thermalValues().deltaT, 1)} °C ✓`,
     },
@@ -382,10 +388,10 @@
   function setLocks(lockV, lockR, lockFlow) {
     voltage.disabled = !!lockV;
     resistance.disabled = !!lockR;
-    massFlow.disabled = !!lockFlow;
+    volumeFlow.disabled = !!lockFlow;
     numberFields[0].classList.toggle('locked', !!lockV);
     numberFields[1].classList.toggle('locked', !!lockR);
-    massFlowField.classList.toggle('locked', !!lockFlow);
+    volumeFlowField.classList.toggle('locked', !!lockFlow);
   }
 
   function applyChallenge(next) {
@@ -393,7 +399,7 @@
     application.value = 'resistor';
     voltage.value = String(next.setup.V);
     resistance.value = String(Number(next.setup.R.toFixed(3)));
-    massFlow.value = String(next.setup.mDot);
+    volumeFlow.value = String(next.setup.qLps);
     setLocks(next.setup.lockV, next.setup.lockR, next.setup.lockFlow);
     state.powered = true;
     challengePrompt.textContent = next.text;
@@ -428,7 +434,7 @@
       challengeResult.textContent = challenge.success(c);
       challengeResult.className = 'challenge-result success';
     } else if (challenge.id === 'water25') {
-      challengeResult.textContent = `ΔT atual: ${fmt(thermalValues().deltaT, 1)} °C. Ajuste a vazão mássica.`;
+      challengeResult.textContent = `ΔT atual: ${fmt(thermalValues().deltaT, 1)} °C. Ajuste a vazão volumétrica em L/s.`;
       challengeResult.className = 'challenge-result';
     } else {
       challengeResult.textContent = `Potência atual: ${compactPower(c.P)}. Observe como V, I e R participam da dissipação.`;
