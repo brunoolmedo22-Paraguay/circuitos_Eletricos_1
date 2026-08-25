@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="rc-lab" aria-label="Microexperimento de circuito RC">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · TRANSITÓRIOS</span>
+        <h1>Circuito RC — Carga e Descarga</h1>
+        <p>Acione a chave e acompanhe a tensão do capacitor ao longo do tempo.</p>
+      </div>
+      <div class="lab-pill"><span>τ</span><strong id="tauPill">1,00 s</strong></div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="visual-panel">
+        <div class="panel-topline">
+          <span class="panel-kicker">CIRCUITO E RESPOSTA TEMPORAL</span>
+          <span id="phaseBadge" class="phase-badge">pronto para carregar</span>
+        </div>
+
+        <div class="visual-grid">
+          <section class="circuit-card">
+            <div class="card-head">
+              <span>CIRCUITO RC</span>
+              <small id="switchStateLabel">chave aberta</small>
+            </div>
+
+            <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 720 430" role="img" aria-label="Circuito RC com fonte, chave, resistor e capacitor">
+              <defs>
+                <filter id="capGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feFlood flood-color="#8b6a8f" flood-opacity="0.18" result="color" />
+                  <feComposite in="color" in2="blur" operator="in" result="glow" />
+                  <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="switchGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feFlood flood-color="#8b6a8f" flood-opacity="0.22" result="color" />
+                  <feComposite in="color" in2="blur" operator="in" result="glow" />
+                  <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <!-- Fonte -->
+              <path class="wire" d="M105 105 H188" />
+              <path class="wire" d="M105 105 V176" />
+              <line class="battery battery-long" x1="72" y1="190" x2="138" y2="190" />
+              <line class="battery battery-short" x1="86" y1="232" x2="124" y2="232" />
+              <path class="wire" d="M105 246 V338 H585" />
+              <text class="polarity" x="148" y="195">+</text>
+              <text class="polarity" x="148" y="237">−</text>
+              <text id="sourceLabel" class="source-label" x="33" y="217">10,0 V</text>
+
+              <!-- ramo de descarga -->
+              <path class="wire discharge-wire" d="M188 158 H160 V338" />
+              <circle class="switch-contact secondary" cx="188" cy="158" r="7" />
+              <text class="tiny-label" x="139" y="153">DESCARGA</text>
+
+              <!-- chave SPDT -->
+              <circle class="switch-contact" cx="188" cy="105" r="7" />
+              <circle id="switchPivot" class="switch-contact active" cx="255" cy="105" r="8" filter="url(#switchGlow)" />
+              <line id="switchLever" class="switch-lever" x1="255" y1="105" x2="214" y2="82" />
+              <rect id="switchHit" x="174" y="70" width="100" height="108" rx="14" class="switch-hit" tabindex="0" role="button" aria-label="Abrir ou fechar a chave" />
+              <text class="tiny-label" x="168" y="83">CARGA</text>
+
+              <!-- resistor -->
+              <path class="wire" d="M255 105 H310" />
+              <path class="resistor" d="M310 105 L330 84 L355 126 L380 84 L405 126 L430 84 L455 126 L480 84 L502 105" />
+              <path class="wire" d="M502 105 H585 V178" />
+              <text id="resistorLabel" class="component-label" x="405" y="57" text-anchor="middle">R = 10 kΩ</text>
+
+              <!-- capacitor -->
+              <line id="capTop" class="cap-plate" x1="535" y1="194" x2="635" y2="194" filter="url(#capGlow)" />
+              <line id="capBottom" class="cap-plate" x1="535" y1="238" x2="635" y2="238" filter="url(#capGlow)" />
+              <path class="wire" d="M585 178 V194 M585 238 V338" />
+              <text id="capLabel" class="component-label" x="650" y="220">C = 100 µF</text>
+              <text class="cap-polarity" x="645" y="194">+</text>
+              <text class="cap-polarity" x="645" y="244">−</text>
+
+              <!-- indicadores de carga -->
+              <g id="chargeMarksTop" class="charge-marks"></g>
+              <g id="chargeMarksBottom" class="charge-marks"></g>
+
+              <!-- etiquetas dinâmicas -->
+              <g class="value-badge" transform="translate(505 270)">
+                <rect width="164" height="48" rx="14" />
+                <text id="vcSvg" x="82" y="22" text-anchor="middle">Vc = 0,00 V</text>
+                <text id="vcPercentSvg" class="badge-sub" x="82" y="38" text-anchor="middle">0,0% da tensão final</text>
+              </g>
+              <g class="current-badge" transform="translate(280 285)">
+                <rect width="170" height="42" rx="13" />
+                <text id="currentSvg" x="85" y="26" text-anchor="middle">iC = 0,00 mA</text>
+              </g>
+
+              <!-- caminhos invisíveis para partículas -->
+              <path id="chargePathTop" d="M105 176 V105 H188 M188 105 H255 H310 L330 84 L355 126 L380 84 L405 126 L430 84 L455 126 L480 84 L502 105 H585 V178" fill="none" stroke="transparent" />
+              <path id="chargePathBottom" d="M585 238 V338 H105 V246" fill="none" stroke="transparent" />
+              <path id="dischargePath" d="M585 178 V105 H502 L480 84 L455 126 L430 84 L405 126 L380 84 L355 126 L330 84 L310 105 H255 L188 158 H160 V338 H585 V238" fill="none" stroke="transparent" />
+              <g id="particles" aria-hidden="true"></g>
+            </svg>
+
+            <div class="circuit-bottom">
+              <button id="chargeButton" class="action-button active" type="button">Carregar</button>
+              <button id="dischargeButton" class="action-button" type="button">Descarregar</button>
+              <button id="resetButton" class="action-button secondary" type="button">Reiniciar</button>
+            </div>
+            <p class="switch-hint">A própria chave no circuito também é clicável: abra para pausar, feche para continuar.</p>
+          </section>
+
+          <section class="graph-card">
+            <div class="card-head">
+              <span>TENSÃO NO CAPACITOR</span>
+              <small id="timeLabel">t = 0,00 s</small>
+            </div>
+            <svg id="graphSvg" class="graph-svg" viewBox="0 0 680 330" role="img" aria-label="Curva da tensão no capacitor em função do tempo">
+              <g id="graphGrid"></g>
+              <path id="graphCurve" class="graph-curve" d="" />
+              <circle id="graphPoint" class="graph-point" cx="0" cy="0" r="5" opacity="0" />
+              <g id="graphAnnotations"></g>
+            </svg>
+            <div class="graph-readout">
+              <span><b id="graphVc">0,00 V</b> Vc</span>
+              <span><b id="graphTau">0,00 τ</b> posição temporal</span>
+            </div>
+          </section>
+        </div>
+
+        <div class="equation-strip" aria-live="polite">
+          <div>
+            <span id="equationTitle">CARGA</span>
+            <strong id="equationSymbolic">Vc(t) = V(1 − e<sup>−t/RC</sup>)</strong>
+          </div>
+          <div id="equationNumeric" class="equation-numeric">Vc(0,00 s) = 10,0(1 − e⁰) = 0,00 V</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">ALTERE E ACOMPANHE</div>
+
+        <div class="mode-control" role="group" aria-label="Fase do transitório">
+          <button id="chargeMode" class="mode-button active" type="button">Carga</button>
+          <button id="dischargeMode" class="mode-button" type="button">Descarga</button>
+        </div>
+
+        <div class="field-stack">
+          <label class="number-field">
+            <span>Fonte · V</span>
+            <div><input id="voltage" type="number" min="0.1" max="1000" step="0.1" value="10" inputmode="decimal" /><b>V</b></div>
+          </label>
+          <label class="number-field">
+            <span>Resistência · R</span>
+            <div><input id="resistance" type="number" min="0.1" max="1000" step="0.1" value="10" inputmode="decimal" /><b>kΩ</b></div>
+          </label>
+          <label class="number-field">
+            <span>Capacitância · C</span>
+            <div><input id="capacitance" type="number" min="0.1" max="10000" step="0.1" value="100" inputmode="decimal" /><b>µF</b></div>
+          </label>
+        </div>
+
+        <section class="tau-card">
+          <span>CONSTANTE DE TEMPO</span>
+          <strong id="tauResult">τ = 1,00 s</strong>
+          <small id="tauFormula">10 kΩ × 100 µF</small>
+        </section>
+
+        <div class="speed-control">
+          <span>Velocidade da simulação</span>
+          <div class="speed-buttons" role="group" aria-label="Velocidade da simulação">
+            <button class="speed-button active" data-speed="1" type="button">1×</button>
+            <button class="speed-button" data-speed="2" type="button">2×</button>
+            <button class="speed-button" data-speed="5" type="button">5×</button>
+          </div>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Feche a chave para iniciar a carga. No primeiro τ ocorre a maior parte da mudança.
+        </div>
+
+        <section class="prediction-card">
+          <div class="prediction-head"><span>PREVISÃO RÁPIDA</span><small>antes de mexer</small></div>
+          <p>Se R aumentar e C permanecer constante, a carga ficará:</p>
+          <div class="prediction-options">
+            <button data-answer="fast" type="button">Mais rápida</button>
+            <button data-answer="slow" type="button">Mais lenta</button>
+            <button data-answer="same" type="button">Igual</button>
+          </div>
+          <div id="predictionResult" class="prediction-result"></div>
+        </section>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+        <section id="challengePanel" class="challenge" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="challengeNote" class="challenge-note"></div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 10 · § 10.5 carga · § 10.6 descarga · constante de tempo e valores instantâneos.</span>
+      <span>Em 1τ, Vc atinge aproximadamente 63,2% do valor final; após 5τ, a corrente de carga é essencialmente nula.</span>
+    </footer>
+  </main>
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>
