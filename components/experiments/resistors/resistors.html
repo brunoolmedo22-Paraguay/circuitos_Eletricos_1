@@ -19,32 +19,43 @@
     <section class="lab-grid">
       <article class="assembly-panel" aria-label="Bancada de montagem dos resistores">
         <div class="panel-topline">
-          <span class="panel-kicker">CIRCUITO MONTADO</span>
+          <span class="panel-kicker">COMPARAÇÃO VISUAL</span>
           <div class="bank-meta">
             <span id="countBadge">2 resistores</span>
             <span id="modeBadge">Série</span>
           </div>
         </div>
 
-        <div id="circuitStage" class="circuit-stage">
-          <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 820 350" role="img" aria-label="Associação de resistores"></svg>
+        <div class="comparison-grid">
+          <section class="mounted-card" aria-label="Circuito montado">
+            <div class="comparison-head">
+              <span class="panel-kicker">CIRCUITO MONTADO</span>
+              <small>configuração atual</small>
+            </div>
+            <div id="circuitStage" class="circuit-stage">
+              <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 820 350" role="img" aria-label="Associação de resistores"></svg>
+            </div>
+          </section>
+
+          <section class="equivalent-card" aria-label="Circuito equivalente">
+            <div class="comparison-head">
+              <span class="panel-kicker">CIRCUITO EQUIVALENTE</span>
+              <small>redução do circuito</small>
+            </div>
+            <div class="equivalent-visual">
+              <svg id="equivalentSvg" class="equivalent-svg" viewBox="0 0 300 130" role="img" aria-label="Resistor equivalente"></svg>
+            </div>
+            <div class="equivalent-result">
+              <span>Resistência equivalente</span>
+              <strong id="eqResistance">30 Ω</strong>
+              <small id="eqModeNote">soma das resistências</small>
+            </div>
+          </section>
         </div>
 
         <div class="equivalence-divider" aria-hidden="true">
-          <span></span><strong>equivale a</strong><span></span>
+          <span></span><strong>à esquerda você monta · à direita vê o equivalente</strong><span></span>
         </div>
-
-        <section class="equivalent-card" aria-label="Circuito equivalente">
-          <div class="equivalent-visual">
-            <div class="panel-kicker">CIRCUITO EQUIVALENTE</div>
-            <svg id="equivalentSvg" class="equivalent-svg" viewBox="0 0 300 130" role="img" aria-label="Resistor equivalente"></svg>
-          </div>
-          <div class="equivalent-result">
-            <span>Resistência equivalente</span>
-            <strong id="eqResistance">30 Ω</strong>
-            <small id="eqModeNote">soma das resistências</small>
-          </div>
-        </section>
 
         <div class="math-card" aria-live="polite">
           <div id="symbolicRelation" class="math-symbolic">Req = R₁ + R₂</div>
