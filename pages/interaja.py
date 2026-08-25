@@ -48,7 +48,7 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors", "voltage_divider", "kcl"}:
+if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors", "voltage_divider", "kcl", "joule_power"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
@@ -64,8 +64,10 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "r
         render_experiment("resistor_colors", height=940)
     elif st.session_state.interact_experiment == "voltage_divider":
         render_experiment("voltage_divider", height=900)
-    else:
+    elif st.session_state.interact_experiment == "kcl":
         render_experiment("kcl", height=950)
+    else:
+        render_experiment("joule_power", height=1010)
 
 else:
     st.markdown(
@@ -76,7 +78,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">6</div>
+          <div class="interact-view-count">7</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -178,6 +180,24 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("kcl",),
+            )
+
+
+    third_row = st.columns(3, gap="small")
+    with third_row[0]:
+        with st.container(key="interact-card-joule-power"):
+            st.markdown("<div class='interact-card-tag'>CC · POTÊNCIA</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>Potência e Efeito Joule</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Energize diferentes cargas resistivas e observe como a potência elétrica se transforma em calor.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_joule_power_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("joule_power",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

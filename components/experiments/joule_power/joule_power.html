@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="joule-lab" aria-label="Microexperimento de potência e efeito Joule">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · POTÊNCIA</span>
+        <h1>Potência e Efeito Joule</h1>
+        <p>Altere as condições elétricas e observe como a potência dissipada modifica o aquecimento do elemento resistivo.</p>
+      </div>
+      <div id="powerPill" class="lab-pill">P = VI</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="circuit-panel" aria-label="Circuito resistivo e resposta térmica">
+        <div class="panel-topline">
+          <span class="panel-kicker">ENERGIA ELÉTRICA → DISSIPAÇÃO TÉRMICA</span>
+          <span id="powerState" class="state-chip on">energizado</span>
+        </div>
+
+        <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 780 390" role="img" aria-label="Fonte CC ligada a elemento resistivo aquecido">
+          <defs>
+            <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#39283d" flood-opacity="0.10" />
+            </filter>
+            <filter id="heatGlow" x="-90%" y="-100%" width="280%" height="300%">
+              <feGaussianBlur id="heatBlur" stdDeviation="0" result="blur" />
+              <feFlood id="heatFlood" flood-color="#d44747" flood-opacity="0" result="heatColor" />
+              <feComposite in="heatColor" in2="blur" operator="in" result="glow" />
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <path class="wire" d="M 272 309 H 120 Q 88 309 88 277 V 108 Q 88 76 120 76 H 282" />
+          <path class="wire" d="M 500 76 H 648 Q 680 76 680 108 V 277 Q 680 309 648 309 H 505" />
+
+          <g id="loadGroup" filter="url(#heatGlow)">
+            <line class="wire" x1="282" y1="76" x2="304" y2="76" />
+            <path id="loadBody" class="load-resistor" d="M304 76 L323 54 L350 98 L377 54 L404 98 L431 54 L458 98 L485 54 L500 76" />
+          </g>
+          <text id="loadLabel" class="component-label" x="401" y="34" text-anchor="middle">ELEMENTO RESISTIVO · 10 Ω</text>
+
+          <g id="heatWaves" class="heat-waves" aria-hidden="true">
+            <path d="M344 42 C335 30 353 24 344 11" />
+            <path d="M401 42 C392 30 410 24 401 11" />
+            <path d="M458 42 C449 30 467 24 458 11" />
+          </g>
+
+          <g class="source" filter="url(#softShadow)">
+            <line class="wire" x1="272" y1="309" x2="338" y2="309" />
+            <line class="battery-plate battery-long" x1="351" y1="277" x2="351" y2="341" />
+            <line class="battery-plate battery-short" x1="395" y1="287" x2="395" y2="331" />
+            <line class="wire" x1="408" y1="309" x2="505" y2="309" />
+            <text class="polarity" x="327" y="286">+</text>
+            <text class="polarity" x="414" y="286">−</text>
+            <text id="sourceLabel" class="component-label" x="374" y="369" text-anchor="middle">V = 12,0 V</text>
+          </g>
+
+          <path id="currentPath" d="M338 309 H120 Q88 309 88 277 V108 Q88 76 120 76 H304 L323 54 L350 98 L377 54 L404 98 L431 54 L458 98 L485 54 L500 76 H648 Q680 76 680 108 V277 Q680 309 648 309 H408" fill="none" stroke="transparent" />
+          <g id="particles" aria-hidden="true"></g>
+
+          <g class="current-badge" transform="translate(522 119)">
+            <rect width="126" height="40" rx="13" />
+            <text id="svgCurrent" x="63" y="25" text-anchor="middle">I = 1,20 A</text>
+          </g>
+          <g class="power-badge" transform="translate(522 169)">
+            <rect width="126" height="40" rx="13" />
+            <text id="svgPower" x="63" y="25" text-anchor="middle">P = 14,4 W</text>
+          </g>
+
+          <g class="direction" transform="translate(132 131)">
+            <path d="M0 0 H80" />
+            <path d="M72 -7 L80 0 L72 7" />
+            <text x="40" y="-13" text-anchor="middle">corrente convencional</text>
+          </g>
+        </svg>
+
+        <div class="circuit-bottom-grid">
+          <section class="equation-card" aria-live="polite">
+            <div class="equation-tabs" role="group" aria-label="Forma da equação de potência">
+              <button class="equation-tab active" data-eq="vi" type="button">VI</button>
+              <button class="equation-tab" data-eq="i2r" type="button">I²R</button>
+              <button class="equation-tab" data-eq="v2r" type="button">V²/R</button>
+            </div>
+            <div id="equationSymbolic" class="equation-symbolic">P = VI</div>
+            <div id="equationNumeric" class="equation-numeric">P = 12,0 × 1,20 = 14,4 W</div>
+          </section>
+
+          <section class="thermal-card" aria-label="Indicador térmico didático">
+            <div class="thermal-copy">
+              <span class="panel-kicker">ENERGIA TÉRMICA ACUMULADA</span>
+              <strong id="energyOut">0 J</strong>
+              <small id="thermalCaption">Indicador qualitativo; não representa temperatura real.</small>
+            </div>
+            <div class="thermal-vessel" aria-hidden="true">
+              <div id="thermalFill" class="thermal-fill"></div>
+              <span>nível térmico didático</span>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">CONTROLE DO EXPERIMENTO</div>
+
+        <div class="context-section">
+          <label for="application">Aplicação</label>
+          <select id="application">
+            <option value="resistor">Resistor</option>
+            <option value="wire">Fio resistivo</option>
+            <option value="heater">Elemento de aquecimento</option>
+            <option value="shower">Chuveiro elétrico</option>
+            <option value="oven">Forno elétrico</option>
+          </select>
+          <small id="applicationNote">Elemento resistivo genérico: a energia elétrica fornecida é dissipada no elemento.</small>
+        </div>
+
+        <div class="context-section compact">
+          <label for="material">Material / referência qualitativa</label>
+          <select id="material">
+            <option value="generic">Elemento genérico</option>
+            <option value="copper">Cobre · condutividade relativa 100%</option>
+            <option value="iron">Ferro · condutividade relativa 14%</option>
+            <option value="nichrome">Nicromo · condutividade relativa 1,73%</option>
+          </select>
+          <small id="materialNote">O valor de R continua sendo definido diretamente abaixo; o material é uma referência qualitativa do livro.</small>
+        </div>
+
+        <div class="input-grid">
+          <label class="number-field">
+            <span>Tensão</span>
+            <div><input id="voltage" type="number" min="0" max="120" step="0.5" value="12" /><b>V</b></div>
+          </label>
+          <label class="number-field">
+            <span>Resistência</span>
+            <div><input id="resistance" type="number" min="0.1" max="10000" step="0.1" value="10" /><b>Ω</b></div>
+          </label>
+        </div>
+
+        <div class="result-card">
+          <div><span>Corrente</span><strong id="currentOut">1,20 A</strong></div>
+          <div><span>Potência dissipada</span><strong id="powerOut">14,4 W</strong></div>
+        </div>
+
+        <section class="energy-control">
+          <div class="energy-head">
+            <div><span>Tempo energizado</span><strong id="timeOut">0,0 s</strong></div>
+            <div><span>Energia fornecida</span><strong id="energyMiniOut">0 J</strong></div>
+          </div>
+          <div class="energy-buttons">
+            <button id="energize" class="small-button primary" type="button">Energizar</button>
+            <button id="turnOff" class="small-button" type="button">Desligar</button>
+            <button id="resetEnergy" class="small-button" type="button">Reiniciar</button>
+          </div>
+        </section>
+
+        <div id="quadraticInsight" class="quadratic-insight" hidden>
+          <strong>Corrente ×2</strong><span>Potência ×4</span>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Com o circuito energizado, a corrente atravessa a resistência e há dissipação de potência.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="challengeNote" class="challenge-note"></div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 4 · § 4.4 Potência · § 4.5 Energia · p. 89–93</span>
+      <span>Aplicações térmicas são contextos didáticos; não há dimensionamento de aparelhos ou instalação elétrica.</span>
+    </footer>
+  </main>
+
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>
