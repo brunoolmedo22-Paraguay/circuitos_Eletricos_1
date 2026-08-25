@@ -48,7 +48,7 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors"}:
+if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors", "voltage_divider"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
@@ -60,8 +60,10 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "r
         render_experiment("sources_dc", height=900)
     elif st.session_state.interact_experiment == "resistors":
         render_experiment("resistors", height=980)
-    else:
+    elif st.session_state.interact_experiment == "resistor_colors":
         render_experiment("resistor_colors", height=940)
+    else:
+        render_experiment("voltage_divider", height=900)
 
 else:
     st.markdown(
@@ -72,7 +74,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">4</div>
+          <div class="interact-view-count">5</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -142,6 +144,22 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("resistor_colors",),
+            )
+
+    with second_row[1]:
+        with st.container(key="interact-card-voltage-divider"):
+            st.markdown("<div class='interact-card-tag'>CC · TENSÃO</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>Divisor de Tensão</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Defina a fonte e os resistores e observe como a tensão se distribui pelo circuito.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_voltage_divider_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("voltage_divider",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

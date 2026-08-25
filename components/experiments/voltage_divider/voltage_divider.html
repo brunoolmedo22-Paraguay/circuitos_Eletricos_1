@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="divider-lab" aria-label="Microexperimento de divisor de tensão">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · TENSÃO</span>
+        <h1>Divisor de Tensão</h1>
+        <p>Altere os resistores e controle a tensão disponível na saída do divisor.</p>
+      </div>
+      <div class="lab-pill" aria-label="Relação principal">Vout = Vin · R₂/(R₁ + R₂)</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="circuit-panel" aria-label="Circuito divisor de tensão">
+        <div class="panel-topline">
+          <span class="panel-kicker">CIRCUITO</span>
+          <span id="seriesBadge" class="series-badge">mesma corrente em R₁ e R₂</span>
+        </div>
+
+        <svg id="dividerSvg" class="circuit-svg" viewBox="0 0 760 430" role="img" aria-label="Fonte de tensão com dois resistores em série e nó de saída Vout">
+          <defs>
+            <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feFlood flood-color="#8b6a8f" flood-opacity="0.26" result="color" />
+              <feComposite in="color" in2="blur" operator="in" result="glow" />
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Fonte no ramo esquerdo -->
+          <path class="wire" d="M110 95 V176" />
+          <line class="battery-plate battery-long" x1="77" y1="190" x2="143" y2="190" />
+          <line class="battery-plate battery-short" x1="91" y1="230" x2="129" y2="230" />
+          <path class="wire" d="M110 244 V335 H520" />
+          <text class="polarity" x="151" y="194">+</text>
+          <text class="polarity" x="151" y="235">−</text>
+          <text id="vinLabel" class="source-label" x="39" y="214">Vin = 12,0 V</text>
+
+          <!-- R1 no topo -->
+          <path class="wire" d="M110 95 H258" />
+          <path id="r1Body" class="resistor" d="M258 95 L278 74 L304 116 L330 74 L356 116 L382 74 L408 116 L434 74 L458 95" />
+          <path class="wire" d="M458 95 H520" />
+          <text id="r1Label" class="component-label" x="358" y="48" text-anchor="middle">R₁ = 1 kΩ</text>
+          <g class="drop-badge" transform="translate(322 128)">
+            <rect width="112" height="34" rx="11" />
+            <text id="vr1Label" x="56" y="22" text-anchor="middle">VR₁ = 4,00 V</text>
+          </g>
+
+          <!-- Nó de saída -->
+          <circle id="voutNode" class="vout-node" cx="520" cy="95" r="8" filter="url(#nodeGlow)" />
+          <path class="output-wire" d="M520 95 H670" />
+          <circle class="output-terminal" cx="670" cy="95" r="6" />
+          <g class="vout-badge" transform="translate(554 48)">
+            <rect width="140" height="38" rx="12" />
+            <text id="voutSvg" x="70" y="25" text-anchor="middle">Vout = 8,00 V</text>
+          </g>
+
+          <!-- R2 vertical -->
+          <path class="wire" d="M520 95 V145" />
+          <path id="r2Body" class="resistor vertical" d="M520 145 L499 165 L541 191 L499 217 L541 243 L499 269 L541 295 L520 315" />
+          <path class="wire" d="M520 315 V335" />
+          <text id="r2Label" class="component-label" x="574" y="232">R₂ = 2 kΩ</text>
+          <g class="drop-badge" transform="translate(566 260)">
+            <rect width="112" height="34" rx="11" />
+            <text id="vr2Label" x="56" y="22" text-anchor="middle">VR₂ = 8,00 V</text>
+          </g>
+
+          <!-- Referência / terra -->
+          <path class="ground" d="M520 335 V357 M492 357 H548 M500 367 H540 M509 377 H531" />
+          <text class="ground-label" x="562" y="373">0 V</text>
+
+          <!-- Caminho da corrente convencional no circuito externo -->
+          <path id="currentPath" d="M110 176 V95 H258 L278 74 L304 116 L330 74 L356 116 L382 74 L408 116 L434 74 L458 95 H520 V145 L499 165 L541 191 L499 217 L541 243 L499 269 L541 295 L520 315 V335 H110 V244" fill="none" stroke="transparent" />
+          <g id="particles" aria-hidden="true"></g>
+
+          <g class="current-badge" transform="translate(164 282)">
+            <rect width="154" height="40" rx="13" />
+            <text id="currentSvg" x="77" y="25" text-anchor="middle">I = 4,00 mA</text>
+          </g>
+        </svg>
+
+        <div class="distribution-strip" aria-live="polite">
+          <span id="sumRelation">Vin = VR₁ + VR₂</span>
+          <strong id="sumValues">12,00 V = 4,00 V + 8,00 V</strong>
+        </div>
+
+        <div class="equation-card" aria-live="polite">
+          <div class="equation-symbolic">
+            <span>Vout = Vin</span>
+            <span class="fraction"><span>R₂</span><span>R₁ + R₂</span></span>
+          </div>
+          <div id="equationValues" class="equation-values">Vout = 12 × 2000 / (1000 + 2000) = 8,00 V</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">ALTERE E OBSERVE</div>
+
+        <div class="field-stack">
+          <label class="number-field" id="vinField">
+            <span>Fonte · Vin</span>
+            <div><input id="vin" type="number" min="0.1" max="1000" step="0.1" value="12" inputmode="decimal" /><b>V</b></div>
+          </label>
+
+          <label class="number-field">
+            <span>R₁</span>
+            <div><input id="r1" type="number" min="1" max="1000000" step="1" value="1000" inputmode="decimal" /><b>Ω</b></div>
+          </label>
+
+          <label class="number-field">
+            <span>R₂</span>
+            <div><input id="r2" type="number" min="1" max="1000000" step="1" value="2000" inputmode="decimal" /><b>Ω</b></div>
+          </label>
+        </div>
+
+        <section class="result-card" aria-label="Resultado da tensão de saída">
+          <span>TENSÃO DE SAÍDA</span>
+          <strong id="voutResult">8,00 V</strong>
+          <small id="ratioResult">R₂ representa 66,7% da resistência total</small>
+        </section>
+
+        <div class="secondary-result">
+          <span>Corrente do circuito</span>
+          <strong id="currentResult">4,00 mA</strong>
+          <small>A mesma corrente atravessa R₁ e R₂.</small>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          R₂ recebe uma parcela maior da tensão porque representa uma parcela maior da resistência total.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt">Com Vin = 12 V, obtenha Vout = 5 V.</p>
+          <div class="challenge-note">A fonte fica fixa. Ajuste R₁ e R₂; mais de uma combinação pode funcionar.</div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 5 · § 5.7 · Divisão de tensão em um circuito em série · p. 126–129</span>
+      <span>Modelo didático: saída medida sobre R₂, sem carga conectada ao nó Vout.</span>
+    </footer>
+  </main>
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>
