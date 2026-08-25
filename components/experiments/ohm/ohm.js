@@ -62,12 +62,18 @@
     // Compressão logarítmica para que o efeito permaneça discreto mesmo em P alto.
     const normalized = Math.min(1, Math.log10(power + 1) / Math.log10(901));
     heatBlur.setAttribute('stdDeviation', (normalized * 8).toFixed(2));
-    heatFlood.setAttribute('flood-opacity', (normalized * 0.42).toFixed(3));
+    heatFlood.setAttribute('flood-opacity', (normalized * 0.46).toFixed(3));
 
-    const r = Math.round(50 + normalized * 68);
-    const g = Math.round(43 + normalized * 24);
-    const b = Math.round(53 - normalized * 10);
+    // Aquece visualmente do grafite para um vermelho quente.
+    const r = Math.round(50 + normalized * 175);
+    const g = Math.round(43 + normalized * 28);
+    const b = Math.round(53 - normalized * 28);
+    const glowR = Math.round(180 + normalized * 55);
+    const glowG = Math.round(92 - normalized * 18);
+    const glowB = Math.round(92 - normalized * 38);
+
     resistorBody.style.stroke = `rgb(${r}, ${g}, ${b})`;
+    heatFlood.setAttribute('flood-color', `rgb(${glowR}, ${glowG}, ${glowB})`);
   }
 
   function update(source = null) {

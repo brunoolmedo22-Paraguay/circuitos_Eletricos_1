@@ -56,7 +56,8 @@
 }
 
 .st-key-interact-card-ohm {
-  padding: 1.05rem 1.08rem 1rem !important;
+  min-height: 13.2rem;
+  padding: 1.22rem 1.22rem 1.16rem !important;
   overflow: hidden;
   background: rgb(243,237,245) !important;
   border: 1px solid rgba(83,36,88,.31) !important;
@@ -69,25 +70,26 @@
   box-shadow: 0 10px 24px rgba(45,20,50,.105) !important;
   transform: translateY(-1px);
 }
-.st-key-interact-card-ohm [data-testid="stVerticalBlock"] { gap: .3rem !important; }
+.st-key-interact-card-ohm [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
-  margin: 0 0 .45rem;
+  margin: 0 0 .52rem;
   color: var(--accent) !important;
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.06rem;
+  line-height: 1.24;
   font-weight: 700;
 }
 .interact-card-summary {
-  min-height: 4rem;
-  margin-bottom: .45rem;
+  min-height: 4.75rem;
+  margin-bottom: .95rem;
   color: #3e3940 !important;
-  font-size: .84rem;
-  line-height: 1.52;
+  font-size: .85rem;
+  line-height: 1.58;
 }
 .interact-card-tag {
   display: inline-block;
-  margin-bottom: .45rem;
-  padding: .24rem .5rem;
+  margin-bottom: .68rem;
+  padding: .26rem .54rem;
   color: var(--panel) !important;
   background: rgba(139,106,143,.10);
   border-radius: 999px;
@@ -109,6 +111,11 @@
   background: #e8ddea !important;
   border-color: #bca8c1 !important;
 }
+
+.st-key-interact-card-ohm [data-testid="stButton"] {
+  margin-top: .14rem !important;
+}
+
 .st-key-interact-back { margin: .35rem 0 .15rem; }
 .st-key-interact-back [data-testid="stButton"] { width: fit-content; }
 
