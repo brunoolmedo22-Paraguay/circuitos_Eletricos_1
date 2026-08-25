@@ -11,7 +11,7 @@
       <div>
         <span class="eyebrow">MICROEXPERIMENTO · CC · POTÊNCIA</span>
         <h1>Potência e Efeito Joule</h1>
-        <p>Altere as condições elétricas e observe como a potência dissipada modifica o aquecimento do elemento resistivo.</p>
+        <p>Escolha uma aplicação, observe seus valores elétricos e relacione a potência dissipada com aquecimento.</p>
       </div>
       <div id="powerPill" class="lab-pill">P = VI</div>
     </header>
@@ -19,11 +19,11 @@
     <section class="lab-grid">
       <article class="circuit-panel" aria-label="Circuito resistivo e resposta térmica">
         <div class="panel-topline">
-          <span class="panel-kicker">ENERGIA ELÉTRICA → DISSIPAÇÃO TÉRMICA</span>
-          <span id="powerState" class="state-chip on">energizado</span>
+          <span class="panel-kicker">POTÊNCIA ELÉTRICA → POTÊNCIA TÉRMICA</span>
+          <span id="powerState" class="state-chip on">ligado</span>
         </div>
 
-        <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 780 390" role="img" aria-label="Fonte CC ligada a elemento resistivo aquecido">
+        <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 780 390" role="img" aria-label="Fonte ligada a elemento resistivo aquecido">
           <defs>
             <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
               <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#39283d" flood-opacity="0.10" />
@@ -43,7 +43,7 @@
             <line class="wire" x1="282" y1="76" x2="304" y2="76" />
             <path id="loadBody" class="load-resistor" d="M304 76 L323 54 L350 98 L377 54 L404 98 L431 54 L458 98 L485 54 L500 76" />
           </g>
-          <text id="loadLabel" class="component-label" x="401" y="34" text-anchor="middle">ELEMENTO RESISTIVO · 10 Ω</text>
+          <text id="loadLabel" class="component-label" x="401" y="34" text-anchor="middle">RESISTOR DIDÁTICO · 10 Ω</text>
 
           <g id="heatWaves" class="heat-waves" aria-hidden="true">
             <path d="M344 42 C335 30 353 24 344 11" />
@@ -91,16 +91,28 @@
             <div id="equationNumeric" class="equation-numeric">P = 12,0 × 1,20 = 14,4 W</div>
           </section>
 
-          <section class="thermal-card" aria-label="Indicador térmico didático">
-            <div class="thermal-copy">
-              <span class="panel-kicker">ENERGIA TÉRMICA ACUMULADA</span>
-              <strong id="energyOut">0 J</strong>
-              <small id="thermalCaption">Indicador qualitativo; não representa temperatura real.</small>
+          <section class="thermal-card" aria-label="Modelo térmico de água">
+            <div class="thermal-head">
+              <span class="panel-kicker">E SE ESSA POTÊNCIA AQUECESSE ÁGUA?</span>
+              <strong id="thermalPowerOut">Q̇ = 14,4 W</strong>
             </div>
-            <div class="thermal-vessel" aria-hidden="true">
-              <div id="thermalFill" class="thermal-fill"></div>
-              <span>nível térmico didático</span>
+            <div class="thermal-formula">Q̇ = ṁ c<sub>p</sub> ΔT</div>
+            <div class="thermal-input-row">
+              <label>
+                <span>Vazão mássica</span>
+                <div><input id="massFlow" type="number" min="0.005" max="1" step="0.005" value="0.05" /><b>kg/s</b></div>
+              </label>
+              <div class="cp-chip">
+                <span>c<sub>p</sub> da água</span>
+                <strong>4,18 kJ/(kg·°C)</strong>
+              </div>
             </div>
+            <div class="thermal-result">
+              <span>Elevação ideal de temperatura</span>
+              <strong id="deltaTOut">ΔT = 0,07 °C</strong>
+            </div>
+            <div id="thermalNumeric" class="thermal-numeric">ΔT = 14,4 / (0,050 × 4180) = 0,07 °C</div>
+            <small>Modelo térmico ideal complementar: considera Q̇ = P e despreza perdas.</small>
           </section>
         </div>
       </article>
@@ -111,34 +123,23 @@
         <div class="context-section">
           <label for="application">Aplicação</label>
           <select id="application">
-            <option value="resistor">Resistor</option>
-            <option value="wire">Fio resistivo</option>
-            <option value="heater">Elemento de aquecimento</option>
-            <option value="shower">Chuveiro elétrico</option>
-            <option value="oven">Forno elétrico</option>
+            <option value="resistor">Resistor didático</option>
+            <option value="heater">Aquecedor elétrico · 120 V</option>
+            <option value="shower">Chuveiro didático · 5 kW / 220 V</option>
+            <option value="boiler">Aquecedor de água · 4,5 kW / 240 V</option>
+            <option value="oven">Forno elétrico · 12,2 kW / 240 V</option>
           </select>
-          <small id="applicationNote">Elemento resistivo genérico: a energia elétrica fornecida é dissipada no elemento.</small>
-        </div>
-
-        <div class="context-section compact">
-          <label for="material">Material / referência qualitativa</label>
-          <select id="material">
-            <option value="generic">Elemento genérico</option>
-            <option value="copper">Cobre · condutividade relativa 100%</option>
-            <option value="iron">Ferro · condutividade relativa 14%</option>
-            <option value="nichrome">Nicromo · condutividade relativa 1,73%</option>
-          </select>
-          <small id="materialNote">O valor de R continua sendo definido diretamente abaixo; o material é uma referência qualitativa do livro.</small>
+          <small id="applicationNote">Preset didático: 12 V e 10 Ω.</small>
         </div>
 
         <div class="input-grid">
           <label class="number-field">
             <span>Tensão</span>
-            <div><input id="voltage" type="number" min="0" max="120" step="0.5" value="12" /><b>V</b></div>
+            <div><input id="voltage" type="number" min="0" max="260" step="0.5" value="12" /><b>V</b></div>
           </label>
           <label class="number-field">
             <span>Resistência</span>
-            <div><input id="resistance" type="number" min="0.1" max="10000" step="0.1" value="10" /><b>Ω</b></div>
+            <div><input id="resistance" type="number" min="0.1" max="10000" step="0.01" value="10" /><b>Ω</b></div>
           </label>
         </div>
 
@@ -147,24 +148,17 @@
           <div><span>Potência dissipada</span><strong id="powerOut">14,4 W</strong></div>
         </div>
 
-        <section class="energy-control">
-          <div class="energy-head">
-            <div><span>Tempo energizado</span><strong id="timeOut">0,0 s</strong></div>
-            <div><span>Energia fornecida</span><strong id="energyMiniOut">0 J</strong></div>
-          </div>
-          <div class="energy-buttons">
-            <button id="energize" class="small-button primary" type="button">Energizar</button>
-            <button id="turnOff" class="small-button" type="button">Desligar</button>
-            <button id="resetEnergy" class="small-button" type="button">Reiniciar</button>
-          </div>
-        </section>
+        <div class="power-switch-row">
+          <button id="energize" class="small-button primary" type="button">Ligar</button>
+          <button id="turnOff" class="small-button" type="button">Desligar</button>
+        </div>
 
         <div id="quadraticInsight" class="quadratic-insight" hidden>
           <strong>Corrente ×2</strong><span>Potência ×4</span>
         </div>
 
         <div id="observation" class="observation" aria-live="polite">
-          Com o circuito energizado, a corrente atravessa a resistência e há dissipação de potência.
+          Com o circuito ligado, a corrente atravessa a resistência e há dissipação de potência.
         </div>
 
         <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
@@ -182,8 +176,8 @@
     </section>
 
     <footer class="lab-foot">
-      <span>Boylestad · 12ª ed. · Cap. 4 · § 4.4 Potência · § 4.5 Energia · p. 89–93</span>
-      <span>Aplicações térmicas são contextos didáticos; não há dimensionamento de aparelhos ou instalação elétrica.</span>
+      <span>Boylestad · 12ª ed. · Cap. 4 · potência e aplicações residenciais.</span>
+      <span>Q̇ = ṁcₚΔT é mostrado como modelo térmico complementar ideal, separado da referência elétrica do Boylestad.</span>
     </footer>
   </main>
 

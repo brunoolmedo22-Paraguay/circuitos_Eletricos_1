@@ -67,7 +67,7 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "r
     elif st.session_state.interact_experiment == "kcl":
         render_experiment("kcl", height=950)
     else:
-        render_experiment("joule_power", height=1010)
+        render_experiment("joule_power", height=1030)
 
 else:
     st.markdown(

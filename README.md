@@ -102,7 +102,3 @@ Incluído em `components/experiments/resistor_colors/` com resistor SVG de quatr
 - Corrente animada chega ao nó, divide-se entre os ramos e recombina.
 - KCL em tempo real, campos numéricos, terceiro ramo e modo Desafio.
 - Conteúdo referenciado ao Boylestad, 12ª ed., Cap. 6, §§ 6.5–6.6.
-
-
-## v27
-- Adicionado microexperimento **Potência e Efeito Joule** com corrente animada, aquecimento visual, energia ao longo do tempo, contextos didáticos e desafios.
