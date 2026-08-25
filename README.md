@@ -92,3 +92,6 @@ Incluído em `components/experiments/sources_dc/` com montagem interativa série
 
 ## Microexperimento 3 — Resistores em Série e Paralelo
 Incluído em `components/experiments/resistors/` com montagem de 2 a 6 resistores, associação série/paralelo, circuito equivalente, cálculo instantâneo de `Req` e modo desafio.
+
+## Microexperimento 4 — Código de Cores dos Resistores
+Incluído em `components/experiments/resistor_colors/` com resistor SVG de quatro faixas, seleção visual de cores, leitura instantânea de valor/tolerância, intervalo esperado, modo inverso valor→cores e desafios de montagem/leitura.

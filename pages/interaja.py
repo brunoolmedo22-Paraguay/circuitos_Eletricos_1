@@ -48,7 +48,7 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors"}:
+if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
@@ -58,8 +58,10 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors"}:
         render_experiment("ohm", height=820)
     elif st.session_state.interact_experiment == "sources_dc":
         render_experiment("sources_dc", height=900)
-    else:
+    elif st.session_state.interact_experiment == "resistors":
         render_experiment("resistors", height=980)
+    else:
+        render_experiment("resistor_colors", height=940)
 
 else:
     st.markdown(
@@ -70,7 +72,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">3</div>
+          <div class="interact-view-count">4</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -123,6 +125,23 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("resistors",),
+            )
+
+    second_row = st.columns(3, gap="small")
+    with second_row[0]:
+        with st.container(key="interact-card-resistor-colors"):
+            st.markdown("<div class='interact-card-tag'>CC · RESISTORES</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>Código de Cores</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Altere as faixas de um resistor e descubra instantaneamente seu valor e tolerância.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_resistor_colors_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("resistor_colors",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

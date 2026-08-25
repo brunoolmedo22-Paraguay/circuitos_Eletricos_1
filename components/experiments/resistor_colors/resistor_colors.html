@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="colors-lab" aria-label="Microexperimento de código de cores dos resistores">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · RESISTORES</span>
+        <h1>Código de Cores dos Resistores</h1>
+        <p>Monte as faixas e observe como cada cor participa da formação do valor do resistor.</p>
+      </div>
+      <div class="lab-pill" aria-label="Resistor de quatro faixas">4 faixas</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="resistor-panel" aria-label="Resistor interativo">
+        <div class="panel-topline">
+          <span class="panel-kicker">RESISTOR</span>
+          <span id="modeBadge" class="mode-badge">CORES → VALOR</span>
+        </div>
+
+        <div class="resistor-stage">
+          <svg id="resistorSvg" class="resistor-svg" viewBox="0 0 820 300" role="img" aria-label="Resistor de quatro faixas">
+            <defs>
+              <filter id="bodyShadow" x="-30%" y="-60%" width="160%" height="220%">
+                <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#39283d" flood-opacity="0.13" />
+              </filter>
+              <linearGradient id="resistorBodyGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#eadbb8" />
+                <stop offset="0.52" stop-color="#d8c49a" />
+                <stop offset="1" stop-color="#c9ae7e" />
+              </linearGradient>
+            </defs>
+
+            <line class="lead" x1="55" y1="150" x2="230" y2="150" />
+            <line class="lead" x1="590" y1="150" x2="765" y2="150" />
+            <circle class="lead-terminal" cx="55" cy="150" r="5" />
+            <circle class="lead-terminal" cx="765" cy="150" r="5" />
+
+            <g id="resistorBody" filter="url(#bodyShadow)">
+              <path class="body-outline" d="M230 103 Q246 90 270 90 H550 Q574 90 590 103 V197 Q574 210 550 210 H270 Q246 210 230 197 Z" fill="url(#resistorBodyGradient)" />
+              <rect id="band0" class="band band-clickable" data-band="0" x="288" y="91" width="34" height="118" rx="3" />
+              <rect id="band1" class="band band-clickable" data-band="1" x="354" y="91" width="34" height="118" rx="3" />
+              <rect id="band2" class="band band-clickable" data-band="2" x="420" y="91" width="34" height="118" rx="3" />
+              <rect id="band3" class="band band-clickable" data-band="3" x="520" y="91" width="30" height="118" rx="3" />
+            </g>
+
+            <g class="band-numbers" aria-hidden="true">
+              <circle cx="305" cy="246" r="12" /><text x="305" y="250">1</text>
+              <circle cx="371" cy="246" r="12" /><text x="371" y="250">2</text>
+              <circle cx="437" cy="246" r="12" /><text x="437" y="250">3</text>
+              <circle cx="535" cy="246" r="12" /><text x="535" y="250">4</text>
+            </g>
+          </svg>
+        </div>
+
+        <div id="bandInterpretation" class="band-interpretation" aria-live="polite">
+          <button class="interpret-item active" data-select-band="0" type="button">
+            <span>1ª faixa</span><strong id="bandValue0">1</strong><small>1º algarismo</small>
+          </button>
+          <button class="interpret-item" data-select-band="1" type="button">
+            <span>2ª faixa</span><strong id="bandValue1">0</strong><small>2º algarismo</small>
+          </button>
+          <button class="interpret-item" data-select-band="2" type="button">
+            <span>Multiplicador</span><strong id="bandValue2">×100</strong><small>escala</small>
+          </button>
+          <button class="interpret-item" data-select-band="3" type="button">
+            <span>Tolerância</span><strong id="bandValue3">±5%</strong><small>variação</small>
+          </button>
+        </div>
+
+        <section id="calculationCard" class="calculation-card" aria-live="polite">
+          <div>
+            <span class="calculation-label">LEITURA</span>
+            <strong id="calculationText">10 × 100 = 1000 Ω</strong>
+          </div>
+          <div class="calculation-arrow">→</div>
+          <div class="calculation-result">
+            <span>Resultado</span>
+            <strong id="compactResult">1 kΩ ±5%</strong>
+          </div>
+        </section>
+
+        <section id="resultPanel" class="result-panel" aria-live="polite">
+          <div class="result-primary">
+            <span>VALOR DO RESISTOR</span>
+            <strong id="nominalValue">1,0 kΩ</strong>
+            <small id="toleranceValue">Tolerância · ±5%</small>
+          </div>
+          <div class="range-info">
+            <div class="range-row"><span>Valor nominal</span><strong id="nominalOhms">1000 Ω</strong></div>
+            <div class="tolerance-bar" aria-hidden="true">
+              <span class="bar-line"></span>
+              <i class="bar-center"></i>
+              <i class="bar-left"></i>
+              <i class="bar-right"></i>
+            </div>
+            <div class="range-row"><span>Faixa esperada</span><strong id="expectedRange">950 Ω — 1,05 kΩ</strong></div>
+          </div>
+        </section>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">MONTE E INTERPRETE</div>
+
+        <div class="mode-control" role="group" aria-label="Modo do experimento">
+          <button id="colorsMode" class="mode-button active" type="button" aria-pressed="true">CORES → VALOR</button>
+          <button id="valueMode" class="mode-button" type="button" aria-pressed="false">VALOR → CORES</button>
+        </div>
+
+        <section id="colorsControls" class="mode-section">
+          <div class="selected-band-card">
+            <div>
+              <span id="selectedBandTitle">1ª faixa</span>
+              <strong id="selectedBandFunction">Primeiro algarismo significativo.</strong>
+            </div>
+            <span id="selectedColorPreview" class="selected-color-preview"></span>
+          </div>
+
+          <div id="palette" class="palette" aria-label="Paleta de cores"></div>
+          <p class="palette-hint">Clique diretamente em uma faixa do resistor ou escolha sua cor aqui.</p>
+        </section>
+
+        <section id="valueControls" class="mode-section" hidden>
+          <div class="inverse-head">
+            <span>Escolha um valor nominal</span>
+            <small>valores de quatro faixas</small>
+          </div>
+          <div id="valuePresets" class="value-presets"></div>
+          <div class="inverse-head tolerance-head">
+            <span>Tolerância</span>
+            <small>faixa final</small>
+          </div>
+          <div id="tolerancePresets" class="tolerance-presets"></div>
+          <div class="inverse-note">As faixas são montadas automaticamente a partir do valor escolhido.</div>
+        </section>
+
+        <div id="observation" class="observation" aria-live="polite">
+          A primeira faixa representa o primeiro algarismo significativo do valor nominal.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="readAnswerArea" class="read-answer" hidden>
+            <label for="readAnswer">Valor nominal</label>
+            <div class="answer-input">
+              <input id="readAnswer" type="number" min="0" step="0.01" placeholder="Ex.: 4700" />
+              <span>Ω</span>
+            </div>
+          </div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 3 · § 3.6 · Código de cores e valores padronizados de resistores · p. 64–67</span>
+      <span>Resistor didático de quatro faixas.</span>
+    </footer>
+  </main>
+
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>

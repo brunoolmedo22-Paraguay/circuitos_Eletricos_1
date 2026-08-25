@@ -57,7 +57,8 @@
 
 .st-key-interact-card-ohm,
 .st-key-interact-card-sources-dc,
-.st-key-interact-card-resistors {
+.st-key-interact-card-resistors,
+.st-key-interact-card-resistor-colors {
   min-height: 13.2rem;
   padding: 1.22rem 1.22rem 1.16rem !important;
   overflow: hidden;
@@ -69,14 +70,16 @@
 }
 .st-key-interact-card-ohm:hover,
 .st-key-interact-card-sources-dc:hover,
-.st-key-interact-card-resistors:hover {
+.st-key-interact-card-resistors:hover,
+.st-key-interact-card-resistor-colors:hover {
   border-color: rgba(83,36,88,.46) !important;
   box-shadow: 0 10px 24px rgba(45,20,50,.105) !important;
   transform: translateY(-1px);
 }
 .st-key-interact-card-ohm [data-testid="stVerticalBlock"],
 .st-key-interact-card-sources-dc [data-testid="stVerticalBlock"],
-.st-key-interact-card-resistors [data-testid="stVerticalBlock"] { gap: .58rem !important; }
+.st-key-interact-card-resistors [data-testid="stVerticalBlock"],
+.st-key-interact-card-resistor-colors [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
   margin: 1rem 0 1.5rem;
   color: var(--accent) !important;
@@ -107,6 +110,7 @@
 .st-key-interact-card-ohm [data-testid="stButton"] button,
 .st-key-interact-card-sources-dc [data-testid="stButton"] button,
 .st-key-interact-card-resistors [data-testid="stButton"] button,
+.st-key-interact-card-resistor-colors [data-testid="stButton"] button,
 .st-key-interact-back [data-testid="stButton"] button {
   color: var(--accent) !important;
   background: #f3edf5 !important;
@@ -118,6 +122,7 @@
 .st-key-interact-card-ohm [data-testid="stButton"] button:hover,
 .st-key-interact-card-sources-dc [data-testid="stButton"] button:hover,
 .st-key-interact-card-resistors [data-testid="stButton"] button:hover,
+.st-key-interact-card-resistor-colors [data-testid="stButton"] button:hover,
 .st-key-interact-back [data-testid="stButton"] button:hover {
   background: #e8ddea !important;
   border-color: #bca8c1 !important;
@@ -125,7 +130,8 @@
 
 .st-key-interact-card-ohm [data-testid="stButton"],
 .st-key-interact-card-sources-dc [data-testid="stButton"],
-.st-key-interact-card-resistors [data-testid="stButton"] {
+.st-key-interact-card-resistors [data-testid="stButton"],
+.st-key-interact-card-resistor-colors [data-testid="stButton"] {
   margin-top: .14rem !important;
 }
 
