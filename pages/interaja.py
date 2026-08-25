@@ -48,13 +48,16 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment == "ohm":
+if st.session_state.interact_experiment in {"ohm", "sources_dc"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
-    # O microexperimento é autocontido: toda a resposta aos controles ocorre
-    # no navegador, sem rerun a cada movimento de slider.
-    render_experiment("ohm", height=820)
+    # Os microexperimentos são autocontidos: a interação acontece no
+    # navegador, sem rerun do Streamlit a cada ajuste do aluno.
+    if st.session_state.interact_experiment == "ohm":
+        render_experiment("ohm", height=820)
+    else:
+        render_experiment("sources_dc", height=900)
 
 else:
     st.markdown(
@@ -65,7 +68,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">1</div>
+          <div class="interact-view-count">2</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -86,6 +89,22 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("ohm",),
+            )
+
+    with grid[1]:
+        with st.container(key="interact-card-sources-dc"):
+            st.markdown("<div class='interact-card-tag'>CC · FONTES</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>Fontes CC</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Monte fontes em série ou em paralelo e observe como a tensão e a capacidade resultantes se modificam.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_sources_dc_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("sources_dc",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

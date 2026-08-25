@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="sources-lab" aria-label="Microexperimento de fontes CC em série e paralelo">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · FONTES</span>
+        <h1>Fontes CC em Série e Paralelo</h1>
+        <p>Monte o banco de fontes e observe como a associação modifica suas características elétricas.</p>
+      </div>
+      <div id="modePill" class="lab-pill" aria-label="Modo de associação">Série</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="assembly-panel" aria-label="Bancada de montagem das fontes">
+        <div class="panel-topline">
+          <span class="panel-kicker">BANCO MONTADO</span>
+          <div class="bank-meta">
+            <span id="bankCountBadge">1 fonte</span>
+            <span id="bankModeBadge">Série</span>
+          </div>
+        </div>
+
+        <div id="bankStage" class="bank-stage">
+          <svg id="bankSvg" class="bank-svg" viewBox="0 0 820 360" role="img" aria-label="Banco de fontes CC"></svg>
+        </div>
+
+        <div class="equivalence-divider" aria-hidden="true">
+          <span></span><strong>equivale a</strong><span></span>
+        </div>
+
+        <section class="equivalent-card" aria-label="Fonte equivalente">
+          <div class="equivalent-visual">
+            <div class="panel-kicker">FONTE EQUIVALENTE</div>
+            <svg id="equivalentSvg" class="equivalent-svg" viewBox="0 0 230 130" role="img" aria-label="Fonte equivalente do banco"></svg>
+          </div>
+          <div class="equivalent-results">
+            <div>
+              <span>Tensão equivalente</span>
+              <strong id="eqVoltage">1,5 V</strong>
+            </div>
+            <div>
+              <span>Capacidade equivalente</span>
+              <strong id="eqCapacity">2,0 Ah</strong>
+            </div>
+          </div>
+        </section>
+
+        <div id="relationCard" class="relation-card" aria-live="polite">
+          <div id="voltageRelation">Veq = 1 × 1,5 = 1,5 V</div>
+          <div id="capacityRelation">Ceq = 2,0 Ah</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">MONTE E OBSERVE</div>
+
+        <div class="mode-control" role="group" aria-label="Tipo de associação">
+          <button id="seriesMode" class="mode-button active" type="button" aria-pressed="true">Série</button>
+          <button id="parallelMode" class="mode-button" type="button" aria-pressed="false">Paralelo</button>
+        </div>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Tensão de cada fonte</span>
+            <div class="input-shell">
+              <input id="sourceVoltage" type="number" min="0.1" max="60" step="0.1" value="1.5" inputmode="decimal" />
+              <b>V</b>
+            </div>
+          </label>
+
+          <label class="field">
+            <span>Capacidade de cada fonte</span>
+            <div class="input-shell">
+              <input id="sourceCapacity" type="number" min="0.1" max="100" step="0.1" value="2.0" inputmode="decimal" />
+              <b>Ah</b>
+            </div>
+          </label>
+        </div>
+
+        <div class="count-control">
+          <div class="count-head">
+            <span>Número de fontes</span>
+            <strong id="countText">1 fonte</strong>
+          </div>
+          <div class="stepper" role="group" aria-label="Número de fontes">
+            <button id="removeSource" type="button" aria-label="Remover fonte">−</button>
+            <span id="countValue">1</span>
+            <button id="addSource" type="button" aria-label="Adicionar fonte">+</button>
+          </div>
+          <div class="count-scale"><span>mín. 1</span><span>máx. 6</span></div>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Em série, as tensões das fontes se somam.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt">Monte um banco de 6 V usando fontes de 1,5 V.</p>
+          <div class="challenge-source-note" id="challengeSourceNote">Fontes disponíveis: 1,5 V · 2,0 Ah</div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Fontes de tensão § 2.5 · Ah § 2.6 · Série § 5.5 · Paralelo § 6.7</span>
+      <span>Modelo didático: fontes idênticas, mesma polaridade e associação exclusivamente série ou paralelo.</span>
+    </footer>
+  </main>
+
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>

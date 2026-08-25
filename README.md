@@ -85,3 +85,6 @@ Os detalhes são expandidos diretamente dentro do painel de cada fórmula, sem a
 ---
 
 *Desenvolvido pelo Monitor **Bruno Manuel Olmedo Chavez** · UNILA.*
+
+## Microexperimento 2 — Fontes CC
+Incluído em `components/experiments/sources_dc/` com montagem interativa série/paralelo, fonte equivalente e modo desafio.

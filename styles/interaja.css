@@ -55,7 +55,8 @@
   font-weight: 700;
 }
 
-.st-key-interact-card-ohm {
+.st-key-interact-card-ohm,
+.st-key-interact-card-sources-dc {
   min-height: 13.2rem;
   padding: 1.22rem 1.22rem 1.16rem !important;
   overflow: hidden;
@@ -65,12 +66,14 @@
   box-shadow: 0 7px 18px rgba(45,20,50,.075) !important;
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
-.st-key-interact-card-ohm:hover {
+.st-key-interact-card-ohm:hover,
+.st-key-interact-card-sources-dc:hover {
   border-color: rgba(83,36,88,.46) !important;
   box-shadow: 0 10px 24px rgba(45,20,50,.105) !important;
   transform: translateY(-1px);
 }
-.st-key-interact-card-ohm [data-testid="stVerticalBlock"] { gap: .58rem !important; }
+.st-key-interact-card-ohm [data-testid="stVerticalBlock"],
+.st-key-interact-card-sources-dc [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
   margin: 1rem 0 1.5rem;
   color: var(--accent) !important;
@@ -99,6 +102,7 @@
   letter-spacing: .09em;
 }
 .st-key-interact-card-ohm [data-testid="stButton"] button,
+.st-key-interact-card-sources-dc [data-testid="stButton"] button,
 .st-key-interact-back [data-testid="stButton"] button {
   color: var(--accent) !important;
   background: #f3edf5 !important;
@@ -108,12 +112,14 @@
   font-weight: 600 !important;
 }
 .st-key-interact-card-ohm [data-testid="stButton"] button:hover,
+.st-key-interact-card-sources-dc [data-testid="stButton"] button:hover,
 .st-key-interact-back [data-testid="stButton"] button:hover {
   background: #e8ddea !important;
   border-color: #bca8c1 !important;
 }
 
-.st-key-interact-card-ohm [data-testid="stButton"] {
+.st-key-interact-card-ohm [data-testid="stButton"],
+.st-key-interact-card-sources-dc [data-testid="stButton"] {
   margin-top: .14rem !important;
 }
 
