@@ -62,12 +62,14 @@
     closed: false,
     speed: 1,
     phaseTime: 0,
+    simTime: 0,
     startVc: 0,
     targetVc: 10,
     graphPoints: [],
     lastParam: null,
     activeChallenge: null,
     previousTau: 1,
+    lastGridLeft: Number.NaN,
   };
 
   const fmt = (value, digits = 2) => Number(value).toLocaleString('pt-BR', {
@@ -93,17 +95,32 @@
   }
 
   function setMode(mode, { start = false } = {}) {
+    const modeChanged = mode !== state.mode;
+
+    // Se o circuito já está rodando, trocar Carga ↔ Descarga inicia
+    // imediatamente uma NOVA fase a partir da tensão atual do capacitor.
+    // O histórico do gráfico NÃO é apagado: a curva permanece contínua.
+    if (modeChanged && state.closed) start = true;
+
     state.mode = mode;
     chargeMode.classList.toggle('active', mode === 'charge');
     dischargeMode.classList.toggle('active', mode === 'discharge');
     chargeButton.classList.toggle('active', mode === 'charge' && state.closed);
     dischargeButton.classList.toggle('active', mode === 'discharge' && state.closed);
+
+    // Ao escolher descarga com o circuito parado e o capacitor vazio,
+    // parte-se de um capacitor previamente carregado em V para fins didáticos.
     if (mode === 'discharge' && state.vc < state.V * .01 && !state.closed) state.vc = state.V;
+
     if (start) {
       state.startVc = state.vc;
       state.phaseTime = 0;
-      state.graphPoints = [];
       state.closed = true;
+      // Garante um ponto exatamente na comutação, sem salto vertical artificial.
+      const last = state.graphPoints[state.graphPoints.length - 1];
+      if (!last || Math.abs(last.t - state.simTime) > 1e-9 || Math.abs(last.vc - state.vc) > 1e-9) {
+        state.graphPoints.push({ t: state.simTime, vc: state.vc });
+      }
     }
     state.targetVc = mode === 'charge' ? state.V : 0;
     renderStatic();
@@ -115,7 +132,10 @@
     if (closed) {
       state.startVc = state.vc;
       state.phaseTime = 0;
-      state.graphPoints = [];
+      const last = state.graphPoints[state.graphPoints.length - 1];
+      if (!last || Math.abs(last.t - state.simTime) > 1e-9 || Math.abs(last.vc - state.vc) > 1e-9) {
+        state.graphPoints.push({ t: state.simTime, vc: state.vc });
+      }
     }
     renderStatic();
   }
@@ -126,8 +146,10 @@
     state.vc = 0;
     state.current = 0;
     state.phaseTime = 0;
+    state.simTime = 0;
     state.startVc = 0;
     state.graphPoints = [];
+    state.lastGridLeft = Number.NaN;
     state.targetVc = state.V;
     renderStatic();
   }
@@ -137,7 +159,10 @@
       state.current = 0;
       return;
     }
+
     state.phaseTime += dtPhysical;
+    state.simTime += dtPhysical;
+
     const e = Math.exp(-state.phaseTime / Math.max(state.tau, 1e-9));
     if (state.mode === 'charge') {
       state.vc = state.V + (state.startVc - state.V) * e;
@@ -146,12 +171,17 @@
       state.vc = state.startVc * e;
       state.current = -state.vc / (state.Rk * 1000);
     }
-    const maxGraphTime = 5 * state.tau;
-    if (state.phaseTime <= maxGraphTime * 1.02) {
-      const last = state.graphPoints[state.graphPoints.length - 1];
-      if (!last || state.phaseTime - last.t >= maxGraphTime / 360) {
-        state.graphPoints.push({ t: state.phaseTime, vc: state.vc });
-      }
+
+    // O eixo X mostra uma janela móvel de 5τ, mas o relógio da simulação
+    // continua indefinidamente. Assim, carga e descarga aparecem no MESMO
+    // histórico, sem reiniciar o gráfico em cada comutação.
+    const sampleStep = Math.max((5 * state.tau) / 420, 1 / 120);
+    const last = state.graphPoints[state.graphPoints.length - 1];
+    if (!last || state.simTime - last.t >= sampleStep) {
+      state.graphPoints.push({ t: state.simTime, vc: state.vc });
+      // Proteção simples para sessões muito longas. A janela visível é de 5τ,
+      // portanto milhares de pontos antigos não trazem benefício visual.
+      if (state.graphPoints.length > 6000) state.graphPoints.splice(0, 1000);
     }
   }
 
@@ -275,17 +305,36 @@
     const fraction = state.V > 0 ? Math.max(0, Math.min(1, state.vc / state.V)) : 0;
     vcPercentSvg.textContent = `${fmt(fraction * 100,1)}% da tensão final`;
     currentSvg.textContent = `iC = ${formatCurrent(state.current)}`;
-    timeLabel.textContent = `t = ${fmt(state.phaseTime,2)} s`;
+    timeLabel.textContent = `t = ${fmt(state.simTime,2)} s`;
     graphVc.textContent = `${fmt(state.vc,2)} V`;
-    graphTau.textContent = `${fmt(state.phaseTime / Math.max(state.tau,1e-9),2)} τ`;
+    graphTau.textContent = `${fmt(state.simTime / Math.max(state.tau,1e-9),2)} τ`;
     setObservation();
     renderChargeMarks();
     renderEquation();
+    const w = graphWindow();
+    const gridStep = Math.max(state.tau / 50, 0.01);
+    if (!Number.isFinite(state.lastGridLeft) || Math.abs(w.left - state.lastGridLeft) >= gridStep) {
+      drawGraphGrid();
+    }
     drawGraphCurve();
   }
 
   const graphBox = { left: 60, right: 650, top: 28, bottom: 278 };
-  function xFor(t) { return graphBox.left + (t / Math.max(5 * state.tau,1e-9)) * (graphBox.right - graphBox.left); }
+
+  function graphWindow() {
+    const span = Math.max(5 * state.tau, 1e-9);
+    // Até 5τ, mantém a janela clássica 0 → 5τ. Depois disso, a janela
+    // acompanha a simulação e conserva sempre uma largura de 5τ.
+    const right = Math.max(span, state.simTime);
+    const left = Math.max(0, right - span);
+    return { left, right, span };
+  }
+
+  function xFor(t) {
+    const w = graphWindow();
+    return graphBox.left + ((t - w.left) / w.span) * (graphBox.right - graphBox.left);
+  }
+
   function yFor(v) {
     const ymax = Math.max(state.V, state.startVc, .1);
     return graphBox.bottom - (Math.max(0, Math.min(ymax, v)) / ymax) * (graphBox.bottom - graphBox.top);
@@ -301,26 +350,44 @@
   function drawGraphGrid() {
     graphGrid.innerHTML = '';
     graphAnnotations.innerHTML = '';
+    const w = graphWindow();
+    state.lastGridLeft = w.left;
+
     graphGrid.appendChild(svgEl('line',{x1:graphBox.left,y1:graphBox.bottom,x2:graphBox.right,y2:graphBox.bottom,class:'graph-axis'}));
     graphGrid.appendChild(svgEl('line',{x1:graphBox.left,y1:graphBox.top,x2:graphBox.left,y2:graphBox.bottom,class:'graph-axis'}));
+
     const ymax = Math.max(state.V, state.startVc, .1);
     [0,.25,.5,.75,1].forEach((f) => {
       const y = graphBox.bottom - f * (graphBox.bottom-graphBox.top);
       graphGrid.appendChild(svgEl('line',{x1:graphBox.left,y1:y,x2:graphBox.right,y2:y,class:'graph-gridline'}));
       graphGrid.appendChild(svgEl('text',{x:graphBox.left-10,y:y+3,'text-anchor':'end',class:'graph-tick'}, `${fmt(ymax*f, f===0?0:1)}`));
     });
-    for (let i=1;i<=5;i+=1) {
-      const x = xFor(i*state.tau);
-      graphGrid.appendChild(svgEl('line',{x1:x,y1:graphBox.top,x2:x,y2:graphBox.bottom,class:'tau-line'}));
-      graphGrid.appendChild(svgEl('text',{x,y:graphBox.bottom+20,'text-anchor':'middle',class:'tau-label'}, `${i}τ`));
+
+    // Seis marcas delimitam cinco intervalos de 1τ. Quando t > 5τ,
+    // os rótulos avançam junto com a janela em vez de congelar em 1τ…5τ.
+    for (let i=0;i<=5;i+=1) {
+      const t = w.left + i * state.tau;
+      const x = graphBox.left + (i/5) * (graphBox.right - graphBox.left);
+      if (i > 0) graphGrid.appendChild(svgEl('line',{x1:x,y1:graphBox.top,x2:x,y2:graphBox.bottom,class:'tau-line'}));
+      const tauPosition = t / Math.max(state.tau,1e-9);
+      const label = Math.abs(tauPosition - Math.round(tauPosition)) < .025
+        ? `${Math.round(tauPosition)}τ`
+        : `${fmt(tauPosition,1)}τ`;
+      graphGrid.appendChild(svgEl('text',{x,y:graphBox.bottom+20,'text-anchor':'middle',class:'tau-label'}, label));
     }
-    graphGrid.appendChild(svgEl('text',{x:(graphBox.left+graphBox.right)/2,y:318,'text-anchor':'middle',class:'graph-axis-label'}, 'tempo'));
+
+    graphGrid.appendChild(svgEl('text',{x:(graphBox.left+graphBox.right)/2,y:318,'text-anchor':'middle',class:'graph-axis-label'}, 'tempo · janela móvel de 5τ'));
     const yLabel = svgEl('text',{x:17,y:(graphBox.top+graphBox.bottom)/2,'text-anchor':'middle',class:'graph-axis-label',transform:`rotate(-90 17 ${(graphBox.top+graphBox.bottom)/2})`}, 'Vc (V)');
     graphGrid.appendChild(yLabel);
-    if (state.mode === 'charge' && state.startVc < state.V*.02) {
-      const x = xFor(state.tau);
+
+    // A anotação de 63,2% acompanha o PRIMEIRO τ da fase de carga atual.
+    // Como phaseTime reinicia em cada comutação, o instante absoluto é:
+    const phaseStart = state.simTime - state.phaseTime;
+    const oneTauTime = phaseStart + state.tau;
+    if (state.mode === 'charge' && state.startVc < state.V*.02 && oneTauTime >= w.left && oneTauTime <= w.right) {
+      const x = xFor(oneTauTime);
       const y = yFor(state.V*(1-Math.exp(-1)));
-      graphAnnotations.appendChild(svgEl('text',{x:x+8,y:y-10,class:'graph-note'}, '≈ 63,2% em 1τ'));
+      graphAnnotations.appendChild(svgEl('text',{x:x+8,y:y-10,class:'graph-note'}, '≈ 63,2% em 1τ desta carga'));
     }
   }
 
@@ -330,14 +397,31 @@
       graphPoint.setAttribute('opacity','0');
       return;
     }
-    const usable = state.graphPoints.filter(p => p.t <= 5*state.tau*1.001);
+
+    const w = graphWindow();
+    let usable = state.graphPoints.filter(p => p.t >= w.left - 1e-9 && p.t <= w.right + 1e-9);
+
+    // Inclui um ponto imediatamente anterior à janela para que a curva entre
+    // suavemente pela borda esquerda, sem parecer começar do nada.
+    const firstVisibleIndex = state.graphPoints.findIndex(p => p.t >= w.left);
+    if (firstVisibleIndex > 0) usable = [state.graphPoints[firstVisibleIndex-1], ...usable];
+
+    if (!usable.length) {
+      graphCurve.setAttribute('d','');
+      graphPoint.setAttribute('opacity','0');
+      return;
+    }
+
     const d = usable.map((p,i) => `${i?'L':'M'} ${xFor(p.t).toFixed(2)} ${yFor(p.vc).toFixed(2)}`).join(' ');
     graphCurve.setAttribute('d', d);
-    const last = usable[usable.length-1];
-    if (last) {
+
+    const last = state.graphPoints[state.graphPoints.length-1];
+    if (last && last.t >= w.left - 1e-9 && last.t <= w.right + 1e-9) {
       graphPoint.setAttribute('cx',xFor(last.t));
       graphPoint.setAttribute('cy',yFor(last.vc));
       graphPoint.setAttribute('opacity','1');
+    } else {
+      graphPoint.setAttribute('opacity','0');
     }
   }
 
@@ -409,7 +493,9 @@
     state.vc = Math.min(oldVc, state.V);
     state.startVc = state.vc;
     state.phaseTime = 0;
+    state.simTime = 0;
     state.graphPoints = [];
+    state.lastGridLeft = Number.NaN;
     if (state.closed) state.targetVc = state.mode === 'charge' ? state.V : 0;
     renderStatic();
   }

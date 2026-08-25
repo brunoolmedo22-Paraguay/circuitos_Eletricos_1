@@ -102,3 +102,9 @@ Incluído em `components/experiments/resistor_colors/` com resistor SVG de quatr
 - Corrente animada chega ao nó, divide-se entre os ramos e recombina.
 - KCL em tempo real, campos numéricos, terceiro ramo e modo Desafio.
 - Conteúdo referenciado ao Boylestad, 12ª ed., Cap. 6, §§ 6.5–6.6.
+
+
+## v31 — gráfico temporal contínuo
+- Carga e descarga agora compartilham o mesmo histórico contínuo de Vc(t).
+- Trocar Carga ↔ Descarga durante a simulação inicia a nova fase a partir de Vc atual, sem salto artificial.
+- O eixo X passou a usar janela móvel de 5τ; após 5τ, o relógio continua e a janela acompanha a simulação.
