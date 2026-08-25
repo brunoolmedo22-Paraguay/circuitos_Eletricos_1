@@ -72,7 +72,7 @@
 }
 .st-key-interact-card-ohm [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
-  margin: 0 0 .82rem;
+  margin: 1rem 0 1.5rem;
   color: var(--accent) !important;
   font-family: var(--font-display);
   font-size: 1.06rem;
