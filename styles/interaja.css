@@ -72,7 +72,7 @@
 }
 .st-key-interact-card-ohm [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
-  margin: 0 0 .52rem;
+  margin: 0 0 .82rem;
   color: var(--accent) !important;
   font-family: var(--font-display);
   font-size: 1.06rem;
@@ -81,21 +81,22 @@
 }
 .interact-card-summary {
   min-height: 4.75rem;
-  margin-bottom: .95rem;
+  margin-top: .08rem;
+  margin-bottom: 1.12rem;
   color: #3e3940 !important;
   font-size: .85rem;
   line-height: 1.58;
 }
 .interact-card-tag {
   display: inline-block;
-  margin-bottom: .68rem;
+  margin-bottom: .96rem;
   padding: .26rem .54rem;
   color: var(--panel) !important;
   background: rgba(139,106,143,.10);
   border-radius: 999px;
   font-size: .64rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .09em;
 }
 .st-key-interact-card-ohm [data-testid="stButton"] button,
 .st-key-interact-back [data-testid="stButton"] button {
