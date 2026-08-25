@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="kcl-lab" aria-label="Microexperimento de KCL e divisão de corrente">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · CORRENTE</span>
+        <h1>KCL e Divisão de Corrente</h1>
+        <p>Altere os ramos e observe como a corrente se distribui em um circuito paralelo.</p>
+      </div>
+      <div class="lab-pill" aria-label="Relação principal">I<sub>total</sub> = Σ I<sub>ramo</sub></div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="circuit-panel" aria-label="Circuito paralelo com divisão de corrente">
+        <div class="panel-topline">
+          <span class="panel-kicker">A CORRENTE CHEGA · DIVIDE · RECOMBINA</span>
+          <span id="branchBadge" class="branch-badge">2 ramos</span>
+        </div>
+
+        <div class="circuit-wrap">
+          <svg id="kclSvg" class="circuit-svg" viewBox="0 0 820 430" role="img" aria-label="Fonte CC alimentando resistores em paralelo"></svg>
+        </div>
+
+        <div class="kcl-strip" aria-live="polite">
+          <div>
+            <span>LEI DE KIRCHHOFF PARA CORRENTES</span>
+            <strong id="kclSymbolic">Itotal = I₁ + I₂</strong>
+          </div>
+          <div id="kclNumeric" class="kcl-numeric">1,80 A = 1,20 A + 0,60 A</div>
+        </div>
+
+        <div class="divider-card" aria-live="polite">
+          <span>DIVISOR DE CORRENTE · 2 RAMOS</span>
+          <div id="dividerFormula" class="divider-formula">I₁ = Itotal · R₂/(R₁ + R₂)</div>
+          <small id="dividerNote">A corrente maior percorre o ramo de menor resistência.</small>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">ALTERE OS CAMINHOS</div>
+
+        <label id="voltageField" class="number-field main-field">
+          <span>Fonte · V</span>
+          <div><input id="voltage" type="number" min="0.1" max="240" step="0.1" value="12" inputmode="decimal" /><b>V</b></div>
+        </label>
+
+        <div class="branch-control">
+          <div class="branch-control-head">
+            <span>Número de ramos</span>
+            <strong id="branchCountText">2 ramos</strong>
+          </div>
+          <div class="stepper" role="group" aria-label="Número de ramos">
+            <button id="removeBranch" type="button" aria-label="Remover ramo">−</button>
+            <span id="branchCountValue">2</span>
+            <button id="addBranch" type="button" aria-label="Adicionar ramo">+</button>
+          </div>
+          <div class="branch-scale"><span>mín. 2</span><span>máx. 3</span></div>
+        </div>
+
+        <div class="fields-head">
+          <span>Resistências dos ramos</span>
+          <small>1 Ω a 100 kΩ</small>
+        </div>
+        <div id="resistorFields" class="resistor-fields"></div>
+
+        <section class="total-card" aria-label="Corrente total">
+          <span>CORRENTE TOTAL</span>
+          <strong id="totalCurrentResult">1,80 A</strong>
+          <small id="totalConductanceNote">Soma das correntes dos 2 caminhos.</small>
+        </section>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Menor resistência → maior corrente no ramo correspondente.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="challengeNote" class="challenge-note"></div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 6 · § 6.5 Lei de Kirchhoff para corrente · p. 171–175 · § 6.6 Regra do divisor de corrente · p. 175–178</span>
+      <span>Modelo didático: fonte ideal e ramos resistivos em paralelo.</span>
+    </footer>
+  </main>
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>

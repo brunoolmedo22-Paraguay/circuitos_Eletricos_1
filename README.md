@@ -95,3 +95,10 @@ Incluído em `components/experiments/resistors/` com montagem de 2 a 6 resistore
 
 ## Microexperimento 4 — Código de Cores dos Resistores
 Incluído em `components/experiments/resistor_colors/` com resistor SVG de quatro faixas, seleção visual de cores, leitura instantânea de valor/tolerância, intervalo esperado, modo inverso valor→cores e desafios de montagem/leitura.
+
+
+## v26 — KCL e Divisão de Corrente
+- Novo microexperimento CC com 2–3 ramos resistivos em paralelo.
+- Corrente animada chega ao nó, divide-se entre os ramos e recombina.
+- KCL em tempo real, campos numéricos, terceiro ramo e modo Desafio.
+- Conteúdo referenciado ao Boylestad, 12ª ed., Cap. 6, §§ 6.5–6.6.

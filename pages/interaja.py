@@ -48,7 +48,7 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors", "voltage_divider"}:
+if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "resistor_colors", "voltage_divider", "kcl"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
@@ -62,8 +62,10 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors", "r
         render_experiment("resistors", height=980)
     elif st.session_state.interact_experiment == "resistor_colors":
         render_experiment("resistor_colors", height=940)
-    else:
+    elif st.session_state.interact_experiment == "voltage_divider":
         render_experiment("voltage_divider", height=900)
+    else:
+        render_experiment("kcl", height=950)
 
 else:
     st.markdown(
@@ -74,7 +76,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">5</div>
+          <div class="interact-view-count">6</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -160,6 +162,22 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("voltage_divider",),
+            )
+
+    with second_row[2]:
+        with st.container(key="interact-card-kcl"):
+            st.markdown("<div class='interact-card-tag'>CC · CORRENTE</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>KCL e Divisão de Corrente</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Observe a corrente chegar a um nó, dividir-se entre os ramos e recombinar-se no circuito.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_kcl_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("kcl",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")
