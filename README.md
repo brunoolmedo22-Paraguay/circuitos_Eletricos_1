@@ -108,3 +108,12 @@ Incluído em `components/experiments/resistor_colors/` com resistor SVG de quatr
 - Carga e descarga agora compartilham o mesmo histórico contínuo de Vc(t).
 - Trocar Carga ↔ Descarga durante a simulação inicia a nova fase a partir de Vc atual, sem salto artificial.
 - O eixo X passou a usar janela móvel de 5τ; após 5τ, o relógio continua e a janela acompanha a simulação.
+
+## v33 — Circuito RL · Crescimento e Decaimento da Corrente
+- Nono microexperimento em `components/experiments/rl/`.
+- Corrente `iL(t)` contínua entre armazenamento, decaimento e alterações de parâmetros.
+- Chave SPDT em SVG com caminho fechado R–L para a fase de decaimento.
+- Campo magnético qualitativo ao redor do indutor e partículas de corrente proporcionais a `iL`.
+- Gráfico progressivo `iL` / `vL`, histórico contínuo e janela móvel de 5τ.
+- `τ = L/R`, `Im = V/R`, energia magnética `WL = 1/2 Li²`, previsões e desafios.
+- Card do catálogo incluído nos mesmos seletores CSS compartilhados dos demais microexperimentos.

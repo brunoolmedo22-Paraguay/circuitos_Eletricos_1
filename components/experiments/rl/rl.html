@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="rl-lab" aria-label="Microexperimento de circuito RL">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · TRANSITÓRIOS</span>
+        <h1>Circuito RL — Crescimento e Decaimento da Corrente</h1>
+        <p>Acione a chave e acompanhe como a corrente se estabelece no indutor.</p>
+      </div>
+      <div class="lab-pill"><span>τ</span><strong id="tauPill">1,00 s</strong></div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="visual-panel">
+        <div class="panel-topline">
+          <span class="panel-kicker">CIRCUITO E RESPOSTA TEMPORAL</span>
+          <span id="phaseBadge" class="phase-badge">pronto para armazenar</span>
+        </div>
+
+        <div class="visual-grid">
+          <section class="circuit-card">
+            <div class="card-head">
+              <span>CIRCUITO RL</span>
+              <small id="switchStateLabel">chave em armazenamento</small>
+            </div>
+
+            <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 720 430" role="img" aria-label="Circuito RL com fonte, chave, resistor e indutor">
+              <defs>
+                <filter id="fieldGlow" x="-120%" y="-120%" width="340%" height="340%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feFlood flood-color="#8b6a8f" flood-opacity="0.22" result="color" />
+                  <feComposite in="color" in2="blur" operator="in" result="glow" />
+                  <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="switchGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feFlood flood-color="#8b6a8f" flood-opacity="0.22" result="color" />
+                  <feComposite in="color" in2="blur" operator="in" result="glow" />
+                  <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <!-- Fonte -->
+              <path class="wire" d="M105 110 H210" />
+              <path class="wire" d="M105 110 V176" />
+              <line class="battery battery-long" x1="72" y1="190" x2="138" y2="190" />
+              <line class="battery battery-short" x1="86" y1="232" x2="124" y2="232" />
+              <path class="wire" d="M105 246 V338 H618 V260" />
+              <text class="polarity" x="148" y="195">+</text>
+              <text class="polarity" x="148" y="237">−</text>
+              <text id="sourceLabel" class="source-label" x="33" y="217">10,0 V</text>
+
+              <!-- retorno de decaimento -->
+              <path class="wire decay-wire" d="M210 165 H172 V338" />
+              <circle class="switch-contact secondary" cx="210" cy="165" r="7" />
+              <text class="tiny-label" x="145" y="160">DECAIMENTO</text>
+
+              <!-- chave SPDT -->
+              <circle class="switch-contact" cx="210" cy="110" r="7" />
+              <circle id="switchPivot" class="switch-contact active" cx="285" cy="110" r="8" filter="url(#switchGlow)" />
+              <line id="switchLever" class="switch-lever" x1="285" y1="110" x2="210" y2="110" />
+              <rect id="switchHit" x="194" y="76" width="110" height="112" rx="14" class="switch-hit" tabindex="0" role="button" aria-label="Comutar entre armazenamento e decaimento" />
+              <text class="tiny-label" x="180" y="88">ARMAZENAMENTO</text>
+
+              <!-- resistor -->
+              <path class="wire" d="M285 110 H318" />
+              <path class="resistor" d="M318 110 L336 89 L358 131 L380 89 L402 131 L424 89 L446 131 L468 89 L486 110" />
+              <path class="wire" d="M486 110 H520" />
+              <text id="resistorLabel" class="component-label" x="402" y="58" text-anchor="middle">R = 10 Ω</text>
+
+              <!-- campo magnético qualitativo -->
+              <g id="fieldGroup" aria-hidden="true">
+                <path class="field-line field-outer" d="M530 76 C548 34 615 31 653 77" />
+                <path class="field-line field-mid" d="M540 87 C560 52 610 50 643 86" />
+                <path class="field-line field-mid" d="M540 160 C560 195 610 197 643 161" />
+                <path class="field-line field-outer" d="M530 172 C548 214 615 217 653 171" />
+              </g>
+
+              <!-- indutor -->
+              <path id="inductorCoil" class="inductor" filter="url(#fieldGlow)"
+                    d="M520 110
+                       C526 82 542 82 548 110
+                       C554 138 570 138 576 110
+                       C582 82 598 82 604 110
+                       C610 138 626 138 632 110
+                       C638 82 654 82 660 110" />
+              <path class="wire" d="M660 110 H680 V338 H618" />
+              <text id="inductorLabel" class="component-label" x="592" y="58" text-anchor="middle">L = 10 H</text>
+
+              <!-- polaridade do indutor -->
+              <text id="inductorPlus" class="inductor-polarity" x="518" y="151">+</text>
+              <text id="inductorMinus" class="inductor-polarity" x="652" y="151">−</text>
+
+              <!-- indicadores dinâmicos -->
+              <g class="value-badge" transform="translate(506 218)">
+                <rect width="170" height="58" rx="14" />
+                <text id="currentSvg" x="85" y="23" text-anchor="middle">iL = 0,000 A</text>
+                <text id="currentPercentSvg" class="badge-sub" x="85" y="41" text-anchor="middle">0,0% de Im</text>
+              </g>
+              <g class="voltage-badge" transform="translate(300 270)">
+                <rect width="180" height="45" rx="13" />
+                <text id="voltageSvg" x="90" y="27" text-anchor="middle">vL = 10,00 V</text>
+              </g>
+              <g class="energy-badge" transform="translate(300 322)">
+                <rect width="180" height="39" rx="12" />
+                <text id="energySvg" x="90" y="24" text-anchor="middle">WL = 0,000 J</text>
+              </g>
+
+              <!-- caminhos invisíveis para partículas -->
+              <path id="storagePath" d="M105 176 V110 H210 L285 110 H318 L336 89 L358 131 L380 89 L402 131 L424 89 L446 131 L468 89 L486 110 H520 C526 82 542 82 548 110 C554 138 570 138 576 110 C582 82 598 82 604 110 C610 138 626 138 632 110 C638 82 654 82 660 110 H680 V338 H105 V246" fill="none" stroke="transparent" />
+              <path id="decayPath" d="M285 110 H318 L336 89 L358 131 L380 89 L402 131 L424 89 L446 131 L468 89 L486 110 H520 C526 82 542 82 548 110 C554 138 570 138 576 110 C582 82 598 82 604 110 C610 138 626 138 632 110 C638 82 654 82 660 110 H680 V338 H172 V165 H210 L285 110" fill="none" stroke="transparent" />
+              <g id="particles" aria-hidden="true"></g>
+            </svg>
+
+            <div class="circuit-bottom">
+              <button id="storeButton" class="action-button active" type="button">Armazenar</button>
+              <button id="decayButton" class="action-button" type="button">Decair</button>
+              <button id="pauseButton" class="action-button secondary" type="button">Pausar</button>
+              <button id="resetButton" class="action-button secondary" type="button">Reiniciar</button>
+            </div>
+            <p class="switch-hint">Clique na própria chave para comutar entre a fonte e o caminho fechado de decaimento R–L.</p>
+          </section>
+
+          <section class="graph-card">
+            <div class="card-head graph-head">
+              <span id="graphTitle">CORRENTE NO INDUTOR</span>
+              <div class="graph-head-right">
+                <div class="graph-toggle" role="group" aria-label="Grandeza exibida no gráfico">
+                  <button class="graph-mode active" data-graph="current" type="button">iL</button>
+                  <button class="graph-mode" data-graph="voltage" type="button">vL</button>
+                </div>
+                <small id="timeLabel">t = 0,00 s</small>
+              </div>
+            </div>
+            <svg id="graphSvg" class="graph-svg" viewBox="0 0 680 330" role="img" aria-label="Resposta temporal do circuito RL">
+              <g id="graphGrid"></g>
+              <path id="graphCurve" class="graph-curve" d="" />
+              <circle id="graphPoint" class="graph-point" cx="0" cy="0" r="5" opacity="0" />
+              <g id="graphAnnotations"></g>
+            </svg>
+            <div class="graph-readout">
+              <span><b id="graphValue">0,000 A</b> <span id="graphUnitText">iL</span></span>
+              <span><b id="graphTau">0,00 τ</b> posição temporal</span>
+            </div>
+          </section>
+        </div>
+
+        <div class="equation-strip" aria-live="polite">
+          <div>
+            <span id="equationTitle">ARMAZENAMENTO</span>
+            <strong id="equationSymbolic">iL(t) = Im(1 − e<sup>−t/τ</sup>)</strong>
+          </div>
+          <div id="equationNumeric" class="equation-numeric">iL(0,00 s) = 1,000(1 − e⁰) = 0,000 A</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">ALTERE E ACOMPANHE</div>
+
+        <div class="mode-control" role="group" aria-label="Fase do transitório">
+          <button id="storeMode" class="mode-button active" type="button">Armazenamento</button>
+          <button id="decayMode" class="mode-button" type="button">Decaimento</button>
+        </div>
+
+        <div class="field-stack">
+          <label class="number-field">
+            <span>Fonte · V</span>
+            <div><input id="voltage" type="number" min="0.1" max="1000" step="0.1" value="10" inputmode="decimal" /><b>V</b></div>
+          </label>
+          <label class="number-field">
+            <span>Resistência · R</span>
+            <div><input id="resistance" type="number" min="0.1" max="10000" step="0.1" value="10" inputmode="decimal" /><b>Ω</b></div>
+          </label>
+          <label class="number-field">
+            <span>Indutância · L</span>
+            <div><input id="inductance" type="number" min="0.001" max="10000" step="0.1" value="10" inputmode="decimal" /><b>H</b></div>
+          </label>
+        </div>
+
+        <section class="tau-card">
+          <span>CONSTANTE DE TEMPO</span>
+          <strong id="tauResult">τ = 1,00 s</strong>
+          <small id="tauFormula">10 H / 10 Ω</small>
+          <div class="tau-divider"></div>
+          <span>CORRENTE FINAL</span>
+          <strong id="finalCurrentResult" class="final-current">Im = 1,000 A</strong>
+          <small id="finalCurrentFormula">10 V / 10 Ω</small>
+        </section>
+
+        <div class="speed-control">
+          <span>Velocidade da simulação</span>
+          <div class="speed-buttons" role="group" aria-label="Velocidade da simulação">
+            <button class="speed-button active" data-speed="1" type="button">1×</button>
+            <button class="speed-button" data-speed="2" type="button">2×</button>
+            <button class="speed-button" data-speed="5" type="button">5×</button>
+          </div>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Inicie o armazenamento. A corrente começa em zero e cresce sem saltos em direção a V/R.
+        </div>
+
+        <section class="prediction-card">
+          <div class="prediction-head">
+            <span>PREVER</span>
+            <button id="newPrediction" class="text-button" type="button">Nova previsão</button>
+          </div>
+          <p id="predictionPrompt">Se L aumentar mantendo R constante, a corrente chegará ao valor final:</p>
+          <div id="predictionOptions" class="prediction-options"></div>
+          <div id="predictionResult" class="prediction-result"></div>
+        </section>
+
+        <button id="compareToggle" class="compare-toggle" type="button">Comparar com RC</button>
+        <section id="comparePanel" class="compare-panel" hidden>
+          <div><b>RC</b><span>τ = RC</span><small>continuidade: tensão no capacitor</small></div>
+          <div><b>RL</b><span>τ = L/R</span><small>continuidade: corrente no indutor</small></div>
+        </section>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+        <section id="challengePanel" class="challenge" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="challengeNote" class="challenge-note"></div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Cap. 11 · circuitos R-L · armazenamento, decaimento, constante de tempo e valores instantâneos.</span>
+      <span>Em 1τ, iL alcança aproximadamente 63,2% do valor final; após 5τ, considera-se estabelecido o regime permanente.</span>
+    </footer>
+  </main>
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>

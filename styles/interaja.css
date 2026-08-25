@@ -62,7 +62,8 @@
 .st-key-interact-card-voltage-divider,
 .st-key-interact-card-kcl,
 .st-key-interact-card-joule-power,
-.st-key-interact-card-rc {
+.st-key-interact-card-rc,
+.st-key-interact-card-rl {
   min-height: 13.2rem;
   padding: 1.22rem 1.22rem 1.16rem !important;
   overflow: hidden;
@@ -79,7 +80,8 @@
 .st-key-interact-card-voltage-divider:hover,
 .st-key-interact-card-kcl:hover,
 .st-key-interact-card-joule-power:hover,
-.st-key-interact-card-rc:hover {
+.st-key-interact-card-rc:hover,
+.st-key-interact-card-rl:hover {
   border-color: rgba(83,36,88,.46) !important;
   box-shadow: 0 10px 24px rgba(45,20,50,.105) !important;
   transform: translateY(-1px);
@@ -91,7 +93,8 @@
 .st-key-interact-card-voltage-divider [data-testid="stVerticalBlock"],
 .st-key-interact-card-kcl [data-testid="stVerticalBlock"],
 .st-key-interact-card-joule-power [data-testid="stVerticalBlock"],
-.st-key-interact-card-rc [data-testid="stVerticalBlock"] { gap: .58rem !important; }
+.st-key-interact-card-rc [data-testid="stVerticalBlock"],
+.st-key-interact-card-rl [data-testid="stVerticalBlock"] { gap: .58rem !important; }
 .interact-card-title {
   margin: 1rem 0 1.5rem;
   color: var(--accent) !important;
@@ -127,6 +130,7 @@
 .st-key-interact-card-kcl [data-testid="stButton"] button,
 .st-key-interact-card-joule-power [data-testid="stButton"] button,
 .st-key-interact-card-rc [data-testid="stButton"] button,
+.st-key-interact-card-rl [data-testid="stButton"] button,
 .st-key-interact-back [data-testid="stButton"] button {
   color: var(--accent) !important;
   background: #f3edf5 !important;
@@ -143,6 +147,7 @@
 .st-key-interact-card-kcl [data-testid="stButton"] button:hover,
 .st-key-interact-card-joule-power [data-testid="stButton"] button:hover,
 .st-key-interact-card-rc [data-testid="stButton"] button:hover,
+.st-key-interact-card-rl [data-testid="stButton"] button:hover,
 .st-key-interact-back [data-testid="stButton"] button:hover {
   background: #e8ddea !important;
   border-color: #bca8c1 !important;
@@ -155,7 +160,8 @@
 .st-key-interact-card-voltage-divider [data-testid="stButton"],
 .st-key-interact-card-kcl [data-testid="stButton"],
 .st-key-interact-card-joule-power [data-testid="stButton"],
-.st-key-interact-card-rc [data-testid="stButton"] {
+.st-key-interact-card-rc [data-testid="stButton"],
+.st-key-interact-card-rl [data-testid="stButton"] {
   margin-top: .14rem !important;
 }
 
