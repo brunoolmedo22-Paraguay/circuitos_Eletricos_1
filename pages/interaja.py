@@ -48,7 +48,7 @@ def close_experiment() -> None:
     st.session_state.interact_experiment = None
 
 
-if st.session_state.interact_experiment in {"ohm", "sources_dc"}:
+if st.session_state.interact_experiment in {"ohm", "sources_dc", "resistors"}:
     with st.container(key="interact-back"):
         st.button("← Voltar aos experimentos", on_click=close_experiment)
 
@@ -56,8 +56,10 @@ if st.session_state.interact_experiment in {"ohm", "sources_dc"}:
     # navegador, sem rerun do Streamlit a cada ajuste do aluno.
     if st.session_state.interact_experiment == "ohm":
         render_experiment("ohm", height=820)
-    else:
+    elif st.session_state.interact_experiment == "sources_dc":
         render_experiment("sources_dc", height=900)
+    else:
+        render_experiment("resistors", height=960)
 
 else:
     st.markdown(
@@ -68,7 +70,7 @@ else:
             <h2>Ver · mexer · perceber · testar</h2>
             <p>Experiências curtas para compreender o comportamento dos circuitos diretamente pela interação.</p>
           </div>
-          <div class="interact-view-count">2</div>
+          <div class="interact-view-count">3</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -105,6 +107,22 @@ else:
                 use_container_width=True,
                 on_click=open_experiment,
                 args=("sources_dc",),
+            )
+
+    with grid[2]:
+        with st.container(key="interact-card-resistors"):
+            st.markdown("<div class='interact-card-tag'>CC · RESISTORES</div>", unsafe_allow_html=True)
+            st.markdown("<div class='interact-card-title'>Resistores em Série e Paralelo</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='interact-card-summary'>Monte associações de resistores e observe como a resistência equivalente se modifica.</div>",
+                unsafe_allow_html=True,
+            )
+            st.button(
+                "Experimentar",
+                key="open_resistors_experiment",
+                use_container_width=True,
+                on_click=open_experiment,
+                args=("resistors",),
             )
 
     st.page_link("app.py", label="Voltar ao início", icon=":material/arrow_back:")

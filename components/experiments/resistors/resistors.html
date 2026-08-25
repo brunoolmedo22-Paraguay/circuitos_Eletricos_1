@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="resistors-lab" aria-label="Microexperimento de resistores em série e paralelo">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC · RESISTORES</span>
+        <h1>Resistores em Série e Paralelo</h1>
+        <p>Monte a associação e compare o circuito original com sua resistência equivalente.</p>
+      </div>
+      <div id="modePill" class="lab-pill" aria-label="Modo de associação">Série</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="assembly-panel" aria-label="Bancada de montagem dos resistores">
+        <div class="panel-topline">
+          <span class="panel-kicker">CIRCUITO MONTADO</span>
+          <div class="bank-meta">
+            <span id="countBadge">2 resistores</span>
+            <span id="modeBadge">Série</span>
+          </div>
+        </div>
+
+        <div id="circuitStage" class="circuit-stage">
+          <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 820 350" role="img" aria-label="Associação de resistores"></svg>
+        </div>
+
+        <div class="equivalence-divider" aria-hidden="true">
+          <span></span><strong>equivale a</strong><span></span>
+        </div>
+
+        <section class="equivalent-card" aria-label="Circuito equivalente">
+          <div class="equivalent-visual">
+            <div class="panel-kicker">CIRCUITO EQUIVALENTE</div>
+            <svg id="equivalentSvg" class="equivalent-svg" viewBox="0 0 300 130" role="img" aria-label="Resistor equivalente"></svg>
+          </div>
+          <div class="equivalent-result">
+            <span>Resistência equivalente</span>
+            <strong id="eqResistance">30 Ω</strong>
+            <small id="eqModeNote">soma das resistências</small>
+          </div>
+        </section>
+
+        <div class="math-card" aria-live="polite">
+          <div id="symbolicRelation" class="math-symbolic">Req = R₁ + R₂</div>
+          <div id="numericRelation" class="math-numeric">Req = 10 + 20 = 30 Ω</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">MONTE E OBSERVE</div>
+
+        <div class="mode-control" role="group" aria-label="Tipo de associação">
+          <button id="seriesMode" class="mode-button active" type="button" aria-pressed="true">Série</button>
+          <button id="parallelMode" class="mode-button" type="button" aria-pressed="false">Paralelo</button>
+        </div>
+
+        <div class="count-control">
+          <div class="count-head">
+            <span>Número de resistores</span>
+            <strong id="countText">2 resistores</strong>
+          </div>
+          <div class="stepper" role="group" aria-label="Número de resistores">
+            <button id="removeResistor" type="button" aria-label="Remover resistor">−</button>
+            <span id="countValue">2</span>
+            <button id="addResistor" type="button" aria-label="Adicionar resistor">+</button>
+          </div>
+          <div class="count-scale"><span>mín. 2</span><span>máx. 6</span></div>
+        </div>
+
+        <div class="resistor-fields-head">
+          <span>Valores individuais</span>
+          <small>1 Ω a 10 kΩ</small>
+        </div>
+        <div id="resistorFields" class="resistor-fields"></div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          Em série, adicionar resistência aumenta a resistência equivalente.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p id="challengePrompt"></p>
+          <div id="challengeNote" class="challenge-note"></div>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Boylestad · 12ª ed. · Resistores em série: Cap. 5 · § 5.2 · p. 113–115 · Resistores em paralelo: Cap. 6 · § 6.2 · p. 159–166</span>
+      <span>Modelo didático: associação exclusivamente série ou paralelo.</span>
+    </footer>
+  </main>
+
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>

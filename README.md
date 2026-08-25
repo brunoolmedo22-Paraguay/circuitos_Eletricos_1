@@ -88,3 +88,7 @@ Os detalhes são expandidos diretamente dentro do painel de cada fórmula, sem a
 
 ## Microexperimento 2 — Fontes CC
 Incluído em `components/experiments/sources_dc/` com montagem interativa série/paralelo, fonte equivalente e modo desafio.
+
+
+## Microexperimento 3 — Resistores em Série e Paralelo
+Incluído em `components/experiments/resistors/` com montagem de 2 a 6 resistores, associação série/paralelo, circuito equivalente, cálculo instantâneo de `Req` e modo desafio.
