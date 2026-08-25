@@ -26,7 +26,7 @@ STYLES_DIR = ROOT_DIR / "styles"
 # --------------------------------------------------------------------------- #
 APP_TITLE = "Circuitos Elétricos I"
 APP_ICON = "⚡"
-APP_VERSION = "0.4"
+APP_VERSION = "0.5"
 
 # Definição única das seções. Cada página e a tela inicial leem daqui,
 # assim adicionar um novo módulo exige alterar apenas uma lista.

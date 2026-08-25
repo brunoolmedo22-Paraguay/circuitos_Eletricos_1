@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>{{EXPERIMENT_CSS}}</style>
+</head>
+<body>
+  <main class="ohm-lab" aria-label="Microexperimento da Lei de Ohm">
+    <header class="lab-head">
+      <div>
+        <span class="eyebrow">MICROEXPERIMENTO · CC</span>
+        <h1>Lei de Ohm</h1>
+        <p>Altere a tensão e a resistência e observe o comportamento da corrente.</p>
+      </div>
+      <div class="lab-pill" aria-label="Relação principal">I = V/R</div>
+    </header>
+
+    <section class="lab-grid">
+      <article class="circuit-panel" aria-label="Circuito CC com fonte e resistor">
+        <div class="panel-kicker">CIRCUITO</div>
+        <svg id="circuitSvg" class="circuit-svg" viewBox="0 0 760 390" role="img" aria-label="Fonte de tensão ligada a um resistor em circuito fechado">
+          <defs>
+            <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#39283d" flood-opacity="0.11" />
+            </filter>
+            <filter id="heatGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur id="heatBlur" stdDeviation="0" result="blur"/>
+              <feFlood id="heatFlood" flood-color="#b96f59" flood-opacity="0" result="heatColor"/>
+              <feComposite in="heatColor" in2="blur" operator="in" result="glow"/>
+              <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Fiação principal: deixa o intervalo superior para o resistor e o inferior para a fonte. -->
+          <path class="wire" d="M 260 302 H 118 Q 88 302 88 272 V 108 Q 88 78 118 78 H 270" />
+          <path class="wire" d="M 490 78 H 642 Q 672 78 672 108 V 272 Q 672 302 642 302 H 500" />
+
+          <!-- Resistor -->
+          <g id="resistorGroup" filter="url(#heatGlow)">
+            <line class="wire" x1="270" y1="78" x2="292" y2="78" />
+            <path id="resistorBody" class="resistor" d="M292 78 L310 58 L336 98 L362 58 L388 98 L414 58 L440 98 L466 58 L490 78" />
+          </g>
+          <text id="resistorLabel" class="component-label" x="380" y="42" text-anchor="middle">R = 5 Ω</text>
+
+          <!-- Fonte CC -->
+          <g class="source" filter="url(#softShadow)">
+            <line class="wire" x1="260" y1="302" x2="329" y2="302" />
+            <line class="battery-plate battery-long" x1="342" y1="270" x2="342" y2="334" />
+            <line class="battery-plate battery-short" x1="386" y1="280" x2="386" y2="324" />
+            <line class="wire" x1="399" y1="302" x2="500" y2="302" />
+            <text class="polarity plus" x="319" y="279">+</text>
+            <text class="polarity minus" x="405" y="279">−</text>
+            <text id="sourceLabel" class="component-label" x="365" y="365" text-anchor="middle">V = 10,0 V</text>
+          </g>
+
+          <!-- Caminho invisível usado exclusivamente pelas partículas da corrente convencional. -->
+          <path id="currentPath" d="M 329 302 H 118 Q 88 302 88 272 V 108 Q 88 78 118 78 H 292 L310 58 L336 98 L362 58 L388 98 L414 58 L440 98 L466 58 L490 78 H 642 Q 672 78 672 108 V 272 Q 672 302 642 302 H 399" fill="none" stroke="transparent" />
+          <g id="particles" aria-hidden="true"></g>
+
+          <g class="current-badge" transform="translate(506 112)">
+            <rect width="130" height="42" rx="14" />
+            <text id="svgCurrent" x="65" y="27" text-anchor="middle">I = 2,00 A</text>
+          </g>
+
+          <g class="direction" transform="translate(135 132)">
+            <path d="M0 0 H78" />
+            <path d="M70 -7 L78 0 L70 7" />
+            <text x="39" y="-13" text-anchor="middle">corrente convencional</text>
+          </g>
+        </svg>
+
+        <div class="equation-card" aria-live="polite">
+          <div class="equation-main">
+            <span class="eq-symbol">I</span>
+            <span class="eq-equals">=</span>
+            <span class="fraction"><span>V</span><span>R</span></span>
+          </div>
+          <div id="equationValues" class="equation-values">I = 10,0 / 5 = 2,00 A</div>
+        </div>
+      </article>
+
+      <aside class="controls-panel">
+        <div class="panel-kicker">EXPERIMENTE</div>
+
+        <div class="control-block">
+          <div class="control-head">
+            <label for="voltage">Tensão</label>
+            <output id="voltageOut" for="voltage">10,0 V</output>
+          </div>
+          <input id="voltage" class="range" type="range" min="0" max="30" step="0.5" value="10" aria-label="Tensão em volts" />
+          <div class="range-scale"><span>0 V</span><span>30 V</span></div>
+        </div>
+
+        <div class="control-block">
+          <div class="control-head">
+            <label for="resistance">Resistência</label>
+            <output id="resistanceOut" for="resistance">5 Ω</output>
+          </div>
+          <input id="resistance" class="range" type="range" min="1" max="100" step="1" value="5" aria-label="Resistência em ohms" />
+          <div class="range-scale"><span>1 Ω</span><span>100 Ω</span></div>
+        </div>
+
+        <div class="result-card">
+          <div>
+            <span>Corrente</span>
+            <strong id="currentOut">2,00 A</strong>
+          </div>
+          <div class="result-secondary">
+            <span>Potência dissipada</span>
+            <strong id="powerOut">20,0 W</strong>
+          </div>
+        </div>
+
+        <div id="observation" class="observation" aria-live="polite">
+          A corrente depende da razão entre a tensão aplicada e a resistência do circuito.
+        </div>
+
+        <button id="challengeToggle" class="button button-primary" type="button">🎯 Desafio</button>
+
+        <section id="challengePanel" class="challenge" aria-live="polite" hidden>
+          <div class="challenge-head">
+            <span>DESAFIO</span>
+            <button id="newChallenge" class="text-button" type="button">Novo desafio</button>
+          </div>
+          <p>Obtenha uma corrente de <strong id="targetCurrent">2,50 A</strong>.</p>
+          <button id="checkChallenge" class="button button-secondary" type="button">Verificar</button>
+          <div id="challengeResult" class="challenge-result"></div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="lab-foot">
+      <span>Lei de Ohm · Boylestad · 12ª ed. · Cap. 4 · § 4.2 · p. 84–86</span>
+      <span class="heat-legend"><i></i> O brilho do resistor indica, apenas de forma didática, maior dissipação de potência.</span>
+    </footer>
+  </main>
+
+  <script>{{EXPERIMENT_JS}}</script>
+</body>
+</html>
