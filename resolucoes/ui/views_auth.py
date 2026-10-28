@@ -15,6 +15,14 @@ def _card_head(title: str, text: str) -> None:
     md(f'<div class="ex-auth__head"><h2>{esc(title)}</h2><p>{esc(text)}</p></div>')
 
 
+def back_links(key: str) -> None:
+    """Saídas visíveis em todas as telas de acesso."""
+    c1, c2 = st.columns(2)
+    c1.button("← Voltar à biblioteca", key=f"back-lib-{key}", use_container_width=True, on_click=nav_to, args=(None,))
+    with c2:
+        st.page_link("app.py", label="Início da plataforma", icon=":material/home:", use_container_width=True)
+
+
 def _default_after_login(user: User) -> str | None:
     return "admin" if user.is_admin else None
 
@@ -22,6 +30,7 @@ def _default_after_login(user: User) -> str | None:
 def login(p: Platform, next_view: str | None = None, notice: str | None = None) -> None:
     mid = st.columns([1, 1.4, 1])[1]
     with mid, st.container(key="ex-auth"):
+        back_links("login")
         _card_head("Entrar", "Use o login e a senha fornecidos pela administração da disciplina.")
         if notice:
             st.info(notice)
@@ -46,6 +55,7 @@ def login(p: Platform, next_view: str | None = None, notice: str | None = None) 
 def setup(p: Platform, user: User | None) -> None:
     mid = st.columns([1, 1.6, 1])[1]
     with mid, st.container(key="ex-auth"):
+        back_links("setup")
         if not p.users.bootstrap_needed():
             _card_head("Configuração concluída", "Já existe um administrador. Novos administradores são autorizados no painel.")
             st.button("Entrar", type="primary", on_click=nav_to, args=("entrar",))
@@ -76,6 +86,7 @@ def setup(p: Platform, user: User | None) -> None:
 def register(p: Platform, user: User | None) -> None:
     mid = st.columns([1, 1.6, 1])[1]
     with mid, st.container(key="ex-auth"):
+        back_links("register")
         if not p.admin.get_setting("self_registration_code"):
             _card_head("Autocadastro desativado", "Solicite sua conta à administração da disciplina.")
             return

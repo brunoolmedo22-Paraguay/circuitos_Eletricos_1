@@ -15,8 +15,6 @@ from .. import db, security
 from ..errors import AuthError, ConflictError, NotFound, PermissionDenied, ValidationError
 from .common import EMAIL_RE, User, audit, clean_text, require_admin, require_user, row_to_user
 
-MAX_FAILED = 5
-LOCK_MINUTES = 15
 IDLE_HOURS = 4
 _LOGIN_RE = re.compile(r"^[a-z0-9._@\-]{3,120}$")
 
@@ -340,22 +338,17 @@ class UserService:
             if row is None:
                 security.verify_password(password or "", security.DUMMY_HASH)  # tempo constante
                 audit(conn, C.LOG_USUARIO, "login_falhou", None, actor_login=login_n[:120], summary="Login inexistente")
-                error = AuthError("Login ou senha inválidos.")
+                error = AuthError("Login ou senha inválidos. Confira e tente novamente.")
             else:
                 m = row._mapping
-                if m["locked_until"] and m["locked_until"] > now:
-                    audit(conn, C.LOG_USUARIO, "login_bloqueado", None, actor_login=login_n,
-                          target_type="usuario", target_id=m["id"], summary="Tentativa durante bloqueio temporário")
-                    error = AuthError("Acesso temporariamente bloqueado por excesso de tentativas. Tente novamente mais tarde.")
-                elif not security.verify_password(password or "", m["password_hash"]):
-                    failed = (m["failed_attempts"] or 0) + 1
-                    values = {"failed_attempts": failed}
-                    if failed >= MAX_FAILED:
-                        values = {"failed_attempts": 0, "locked_until": now + timedelta(minutes=LOCK_MINUTES)}
-                    conn.execute(db.users.update().where(db.users.c.id == m["id"]).values(**values))
+                # Sem bloqueio por tentativas: o aluno pode tentar quantas vezes
+                # precisar. Falhas ficam apenas registradas no Log de Usuários.
+                if not security.verify_password(password or "", m["password_hash"]):
+                    conn.execute(db.users.update().where(db.users.c.id == m["id"]).values(
+                        failed_attempts=(m["failed_attempts"] or 0) + 1, locked_until=None))
                     audit(conn, C.LOG_USUARIO, "login_falhou", None, actor_login=login_n, target_type="usuario",
-                          target_id=m["id"], summary="Senha incorreta" + (" — conta bloqueada por 15 min" if failed >= MAX_FAILED else ""))
-                    error = AuthError("Login ou senha inválidos.")
+                          target_id=m["id"], summary="Senha incorreta")
+                    error = AuthError("Login ou senha inválidos. Confira e tente novamente.")
                 elif not m["active"]:
                     audit(conn, C.LOG_USUARIO, "login_conta_inativa", None, actor_login=login_n,
                           target_type="usuario", target_id=m["id"], summary="Tentativa de acesso com conta desativada")

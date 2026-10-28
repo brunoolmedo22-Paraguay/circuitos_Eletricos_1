@@ -21,7 +21,7 @@ from _comum import platform
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--redefinir", metavar="LOGIN", help="gera senha provisória para LOGIN, desbloqueia e reativa a conta")
+    ap.add_argument("--redefinir", metavar="LOGIN", help="gera senha provisória para LOGIN e reativa a conta")
     args = ap.parse_args()
 
     import sqlalchemy as sa

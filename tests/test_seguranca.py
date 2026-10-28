@@ -23,7 +23,7 @@ def test_bootstrap_exige_token_e_so_funciona_uma_vez(platform):
     assert not p.users.bootstrap_needed()
 
 
-def test_login_sessao_e_bloqueio(platform, actors):
+def test_login_sessao_e_sem_bloqueio(platform, actors):
     p = platform
     user, token = p.users.login("ANA ", "AnaSenha123")  # login normalizado
     assert user.login == "ana"
@@ -37,13 +37,10 @@ def test_login_sessao_e_bloqueio(platform, actors):
     with pytest.raises(AuthError) as e2:
         p.users.login("ninguem", "errada")
     assert e1.value.message == e2.value.message  # não revela se o login existe
-    for _ in range(4):
+    for _ in range(20):  # muitas tentativas erradas nunca bloqueiam a conta
         with pytest.raises(AuthError):
             p.users.login("ana", "errada")
-    with pytest.raises(AuthError) as e3:  # bloqueada mesmo com a senha certa
-        p.users.login("ana", "AnaSenha123")
-    assert "bloqueado" in e3.value.message
-    p.users.reset_password(actors["monitor"], actors["ana"].id)  # admin desbloqueia
+    assert p.users.login("ana", "AnaSenha123")[0].login == "ana"
 
 
 def test_senhas_nunca_aparecem_nos_logs(platform, actors):
