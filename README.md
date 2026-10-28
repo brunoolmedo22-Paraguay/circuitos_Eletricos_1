@@ -4,7 +4,9 @@ Plataforma modular desenvolvida com **Streamlit + Python** como complemento à d
 
 O projeto não substitui as aulas. Ele funciona como um repositório acadêmico para localizar conceitos, equações, convenções, ferramentas de cálculo e exercícios resolvidos.
 
-> **Estado atual: Versão 0.3** — arquitetura e página inicial ativas. O módulo **Aprenda a Teoria** permanece reservado para reconstrução do conteúdo teórico.
+> **Versão 1.0** — módulo **Exercícios Resolvidos** colaborativo: alunos submetem
+> resoluções (vídeo no YouTube + PDF + circuito no Falstad), a administração avalia
+> qualitativamente e as resoluções aprovadas são publicadas automaticamente.
 
 ## 🎯 Visão do projeto
 
@@ -15,32 +17,25 @@ A plataforma está organizada em quatro módulos principais:
 | 📘 **Aprenda a Teoria** | Espaço reservado para conceitos, definições e conteúdo teórico. |
 | 🎛️ **Interaja com a Teoria** | Simulações dinâmicas com parâmetros ajustáveis e visualização do comportamento elétrico dos circuitos. |
 | 📐 **Formulários** | Biblioteca organizada de equações e relações matemáticas renderizadas em LaTeX. |
-| ✅ **Exercícios Resolvidos** | Problemas desenvolvidos passo a passo com equações em LaTeX. |
+| ✅ **Exercícios Resolvidos** | Biblioteca colaborativa de resoluções de estudantes aprovadas pela equipe da disciplina (vídeo, PDF e Falstad). |
 
 ## 📁 Estrutura
 
 ```text
 .
-├── app.py
-├── assets/
-├── data/
-│   └── formulas.json
-├── pages/
-│   ├── teoria.py
-│   ├── interaja.py
-│   ├── formularios.py
-│   └── exercicios.py
-├── styles/
-│   ├── main.css
-│   └── formularios.css
-├── utils/
-│   ├── __init__.py
-│   ├── formulas.py
-│   └── helpers.py
-└── requirements.txt
+├── app.py                     # página inicial
+├── pages/                     # teoria, interaja, formularios, exercicios (+ rotas legadas)
+├── components/experiments/    # microexperimentos
+├── data/  styles/  utils/  assets/
+├── resolucoes/                # módulo Exercícios Resolvidos
+│   ├── services/              # regras de negócio e permissões (sem Streamlit)
+│   ├── ui/                    # interface do módulo
+│   ├── db.py  storage.py  validators.py  parecer.py  security.py  config.py
+├── scripts/                   # criar_admin, preparar_supabase, backup, demonstração
+├── tests/                     # pytest + teste de navegador (Playwright)
+├── docs/                      # instalação, guia administrativo, alterações, testes
+└── .streamlit/                # config.toml e modelo de segredos
 ```
-
-Todas as rotas são relativas, portanto o projeto funciona da mesma forma localmente, no GitHub e no Streamlit Cloud.
 
 ## 🚀 Executar localmente
 
@@ -51,12 +46,32 @@ streamlit run app.py
 
 Por padrão, o Streamlit abre em `http://localhost:8501`.
 
+Para experimentar o módulo Exercícios Resolvidos sem serviços externos, use o
+**modo demonstração** descrito em `docs/INSTALACAO.md` (§ 2.1).
+
 ## ☁️ Publicar no Streamlit Cloud
 
-1. Envie o repositório para o GitHub.
-2. Crie uma nova aplicação no Streamlit Cloud.
-3. Selecione `app.py` como arquivo principal.
-4. Faça o deploy.
+1. Envie o repositório para o GitHub (os segredos ficam fora dele).
+2. Configure o Supabase gratuito (banco + armazenamento de PDFs) — `docs/INSTALACAO.md` § 3.
+3. Crie a aplicação no Streamlit Cloud com `app.py` e cole os segredos em *Settings → Secrets*.
+4. Cadastre os administradores iniciais — `docs/INSTALACAO.md` § 5.
+
+## ✅ Exercícios Resolvidos (v1.0)
+
+* Catálogo público com miniaturas do YouTube, busca, filtros por unidade e nível e ordenação.
+* Página de cada resolução com três formas de estudo: vídeo incorporado, PDF (visualizar/baixar) e circuito no Falstad.
+* Botão flutuante **Ações**: Submeter Resolução, Alterar Resolução e Administração (somente administradores).
+* Perfis Visitante, Aluno e Administrador com autenticação real e permissões verificadas no servidor.
+* Fluxo formal Rascunho → Submetida → Em análise → Devolvida/Reenviada → Aprovada/Retirada, com versões imutáveis.
+* Avaliação qualitativa (Excelente, Muito Bom, Bom ou Devolvido para Correção) — **sem notas**.
+* Parecer acadêmico em PDF e compartilhamento pelo WhatsApp.
+* Logs de usuários e submissões, histórico de avaliações, exportação CSV, backup completo e verificação de integridade.
+* Custo zero: Streamlit Community Cloud + Supabase Free.
+
+Documentação: [`docs/INSTALACAO.md`](docs/INSTALACAO.md) ·
+[`docs/GUIA_ADMINISTRATIVO.md`](docs/GUIA_ADMINISTRATIVO.md) ·
+[`docs/REGISTRO_DE_ALTERACOES.md`](docs/REGISTRO_DE_ALTERACOES.md) ·
+[`docs/RELATORIO_DE_TESTES.md`](docs/RELATORIO_DE_TESTES.md)
 
 ## 🧩 Adicionar um novo módulo
 

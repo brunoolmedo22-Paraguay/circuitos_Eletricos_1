@@ -1,0 +1,48 @@
+OK	Estado vazio do catálogo	
+OK	Botão flutuante visível para visitante	
+OK	Administração oculta para visitante	
+OK	Token inválido recusado	
+OK	Primeiro administrador criado	
+OK	Segundo administrador cadastrado com senha provisória	
+OK	Aluna cadastrada	
+OK	Exercício 2.04 criado	
+OK	Troca obrigatória da senha provisória	
+OK	Sessão mantida após recarregar a página (cookie)	
+OK	Aluna não vê Administração no menu	
+OK	Exercício proposto 2.04 disponível no envio	
+OK	Envio sem declaração bloqueado	
+OK	Entrega registrada como Submetida	
+OK	Aluna bloqueada no painel administrativo	
+OK	Bandeja mostra a entrega	
+OK	Três materiais disponíveis na avaliação	
+OK	PDF do aluno acessível ao avaliador	
+OK	Devolução registrada	
+OK	Parecer PDF gerado (administrador)	
+OK	Link do WhatsApp com mensagem preenchida	
+OK	Aluna vê estado Devolvida	
+OK	Aluna baixa o parecer	
+OK	Nova versão v2 em edição	
+OK	Reenvio registrado	
+OK	Histórico preserva a v1	
+OK	Aprovação registrada e publicada	
+OK	Catálogo mostra título, autora e nível	
+OK	Miniatura derivada do vídeo aprovado	
+OK	Vídeo incorporado	
+OK	Link Abrir no YouTube	
+OK	Link Falstad preservado exatamente	https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4U…
+OK	Visitante baixa o PDF publicado (v2)	
+OK	Pré-visualização do PDF na plataforma	
+OK	Sem exceções na página da resolução	
+OK	Publicação persiste após reinício	
+OK	PDF persiste após reinício	
+OK	Histórico e avaliações persistem	
+OK	Logs acessíveis ao segundo administrador	
+OK	Histórico de avaliações acessível	
+OK	Configurações e diagnóstico	
+OK	Página / carrega sem erros	
+OK	Página /teoria carrega sem erros	
+OK	Página /formularios carrega sem erros	
+OK	Página /interaja carrega sem erros	
+OK	Microexperimento abre (iframe)	
+OK	Rota legada /ejercicios redireciona	
+OK	Rota legada /interactue redireciona	

@@ -1,9 +1,5 @@
-"""Módulo: Ejercicios — Circuitos Eléctricos I (placeholder v0.1)."""
+"""Rota legada (espanhol). Redireciona para a página oficial Exercícios Resolvidos."""
 
-from utils import configure_page, load_global_style, render_sidebar, render_placeholder
+import streamlit as st
 
-configure_page(subtitle="Ejercicios")
-load_global_style()
-render_sidebar(active="ejercicios")
-
-render_placeholder("ejercicios")
+st.switch_page("pages/exercicios.py")

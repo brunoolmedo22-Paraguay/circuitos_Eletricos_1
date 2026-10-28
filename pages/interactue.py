@@ -1,9 +1,5 @@
-"""Módulo: Interactúe — Circuitos Eléctricos I (placeholder v0.1)."""
+"""Rota legada (espanhol). Redireciona para a página oficial Interaja com a Teoria."""
 
-from utils import configure_page, load_global_style, render_sidebar, render_placeholder
+import streamlit as st
 
-configure_page(subtitle="Interactúe")
-load_global_style()
-render_sidebar(active="interactue")
-
-render_placeholder("interactue")
+st.switch_page("pages/interaja.py")

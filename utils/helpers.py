@@ -26,7 +26,7 @@ STYLES_DIR = ROOT_DIR / "styles"
 # --------------------------------------------------------------------------- #
 APP_TITLE = "Circuitos Elétricos I"
 APP_ICON = "⚡"
-APP_VERSION = "0.5"
+APP_VERSION = "1.0"
 
 # Definição única das seções. Cada página e a tela inicial leem daqui,
 # assim adicionar um novo módulo exige alterar apenas uma lista.
@@ -75,8 +75,8 @@ SECTIONS = [
         "image": "exercicios.png",
         "title": "Exercícios Resolvidos",
         "description": (
-            "Estude exercícios completamente desenvolvidos com explicações "
-            "passo a passo e equações em LaTeX."
+            "Assista, leia e simule resoluções feitas por estudantes e "
+            "aprovadas pela equipe da disciplina."
         ),
     },
 ]
