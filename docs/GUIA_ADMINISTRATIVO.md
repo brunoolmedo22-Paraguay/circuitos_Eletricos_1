@@ -92,7 +92,7 @@ Quando um aluno envia nova versão de uma resolução aprovada, a versão antiga
 ## 8. Usuários
 *Administração → Gerenciar Usuários.* Busque, edite dados, **Tornar
 administrador / Revogar administração**, **Desativar / Reativar conta**, **Gerar
-senha provisória** (desbloqueia contas bloqueadas por tentativas) e **Ver atividade**.
+senha provisória** (para quem esqueceu a senha) e **Ver atividade**.
 Desativar uma conta não remove as resoluções publicadas nem o histórico. O
 sistema impede remover ou desativar o último administrador ativo.
 

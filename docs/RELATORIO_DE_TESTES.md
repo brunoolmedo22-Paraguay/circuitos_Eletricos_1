@@ -59,8 +59,8 @@ publicação até ser aprovada; devolução da nova versão mantém a anterior p
 * Revogar o perfil de administrador encerra as sessões na hora.
 * Último administrador não pode ser removido ou desativado.
 * Configuração inicial exige token e só funciona uma vez.
-* Mensagem de login idêntica para usuário inexistente e senha errada; bloqueio
-  após 5 tentativas.
+* Mensagem de login idêntica para usuário inexistente e senha errada; 20 tentativas
+  erradas seguidas não bloqueiam a conta (decisão da coordenação).
 * Senhas e hashes nunca aparecem no log de auditoria.
 * PostgreSQL: RLS ativo em todas as tabelas; um papel diferente do dono, mesmo
   com permissão SELECT, leu **0 linhas**.

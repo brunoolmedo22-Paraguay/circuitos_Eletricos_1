@@ -328,3 +328,46 @@ div[class*="st-key-ex-prop-"]:hover, div[class*="st-key-ex-mine-"]:hover, div[cl
 @media (max-width: 560px) {
   .ex-hero__stats { justify-content: center; }
 }
+
+
+/* ---------- Campos de texto no padrão claro da plataforma --------------- */
+[data-testid="stMainBlockContainer"] [data-baseweb="input"],
+[data-testid="stMainBlockContainer"] [data-baseweb="base-input"],
+[data-testid="stMainBlockContainer"] [data-baseweb="textarea"],
+[data-testid="stMainBlockContainer"] [data-baseweb="select"] > div,
+[data-testid="stMainBlockContainer"] [data-testid="stDateInputField"],
+[data-testid="stMainBlockContainer"] [data-testid="stNumberInputContainer"] {
+  background: #fff !important;
+  border-color: #d9cddd !important;
+  border-radius: 10px !important;
+}
+[data-testid="stMainBlockContainer"] input,
+[data-testid="stMainBlockContainer"] textarea {
+  background: #fff !important;
+  color: var(--ink) !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--accent) !important;
+}
+[data-testid="stMainBlockContainer"] input::placeholder,
+[data-testid="stMainBlockContainer"] textarea::placeholder { color: #9a90a0 !important; -webkit-text-fill-color: #9a90a0 !important; }
+[data-testid="stMainBlockContainer"] [data-baseweb="input"]:focus-within,
+[data-testid="stMainBlockContainer"] [data-baseweb="textarea"]:focus-within,
+[data-testid="stMainBlockContainer"] [data-baseweb="select"] > div:focus-within {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(83,36,88,.12) !important;
+}
+/* Preenchimento automático do navegador (Chrome pinta de amarelo/escuro) */
+[data-testid="stMainBlockContainer"] input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+}
+[data-testid="stMainBlockContainer"] [data-testid="stFileUploaderDropzone"] {
+  background: #faf8fb !important; border: 1px dashed #cdbfd1 !important; border-radius: 12px !important;
+}
+[data-testid="stMainBlockContainer"] input[type="password"] + div button,
+[data-testid="stMainBlockContainer"] [data-baseweb="input"] button { background: transparent !important; }
+[data-testid="stMainBlockContainer"] [data-baseweb="input"] svg { fill: var(--muted) !important; color: var(--muted) !important; }
+.st-key-ex-auth [data-testid="stPageLink"] a { justify-content: center; min-height: 2.5rem; border-radius: 10px;
+  background: #f3edf5; border: 1px solid #d9cddd; }
+.st-key-ex-auth [data-testid="stPageLink"] a p { color: var(--accent) !important; font-weight: 600; }
+[data-testid="stMainBlockContainer"] [data-baseweb="select"] > div > div { background-color: transparent !important; }
+.st-key-ex-auth [data-testid="stPageLink"] a { min-height: 2.6rem; }

@@ -127,7 +127,7 @@ Alternativa por terminal (útil também para **recuperar acesso**):
 
 ```bash
 python scripts/criar_admin.py                    # cria administrador
-python scripts/criar_admin.py --redefinir LOGIN  # senha provisória + desbloqueio
+python scripts/criar_admin.py --redefinir LOGIN  # senha provisória (e reativa a conta)
 ```
 
 O script lê `.streamlit/secrets.toml` ou as variáveis `CE1_*`. Quem tem a URL do

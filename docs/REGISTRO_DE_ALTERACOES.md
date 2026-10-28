@@ -56,7 +56,7 @@ Inalterados: `app.py`, `pages/teoria.py`, `pages/interaja.py`,
 3. **Autenticação própria em vez do Supabase Auth/OAuth.** Contas são criadas
    pela administração (ou por código da turma), o que dispensa e-mail de
    confirmação e configuração de OAuth — mais simples de transferir entre
-   monitores. Senhas com scrypt (biblioteca padrão), bloqueio após 5 tentativas,
+   monitores. Senhas com scrypt (biblioteca padrão; cada verificação é propositalmente lenta, o que dificulta ataques de força bruta), **sem bloqueio por tentativas** — decisão da coordenação para não impedir alunos de entregar; falhas ficam registradas no Log de Usuários,
    sessões com token aleatório guardado apenas como hash, perfil relido do banco
    a cada interação (revogação imediata).
 4. **Sessão sobrevive a recarregar a página** via cookie (`SameSite=Lax`,
@@ -126,3 +126,17 @@ versões e pareceres (pareceres têm ~10 KB). O limite padrão é 10 MB por PDF
 6. **O backup contém dados pessoais** — armazene em local privado.
 7. **Quem possui a URL do banco tem controle total** — trate-a como senha; troque
    a senha do banco no Supabase se houver suspeita de vazamento.
+
+---
+
+## v1.0.1 — ajustes após o primeiro uso
+
+* **Removido o bloqueio por excesso de tentativas de login.** O aluno pode
+  tentar a senha quantas vezes precisar; cada falha continua registrada no Log
+  de Usuários. Contas que estavam bloqueadas são liberadas automaticamente.
+* **Tema claro fixo** (`.streamlit/config.toml`) com a paleta da plataforma.
+  Antes, em computadores e celulares com o sistema em modo escuro, os campos de
+  texto apareciam com fundo preto. Campos, seletores, datas e upload agora são
+  brancos com borda lilás e foco púrpura, em todas as páginas.
+* **Telas Entrar, Configuração inicial e Criar conta** ganharam os botões
+  “← Voltar à biblioteca” e “Início da plataforma”.
