@@ -21,7 +21,7 @@ def main() -> int:
         return 1
     from resolucoes.backup import restore_backup
 
-    p = platform()
+    p = platform(seed_content=False)
     report = restore_backup(Path(sys.argv[1]).read_bytes(), p)
     print("Backup restaurado.")
     for table, n in report["registros"].items():

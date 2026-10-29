@@ -1,0 +1,1488 @@
+﻿FICHAS DE EXERCÍCIOS PARA CADASTRO — LISTAS 03 E 04
+Introdução à análise de circuitos | Boylestad | 12ª edição | Capítulo 8
+Total: 49 atividades (Lista 03: 27; Lista 04: 22).
+
+INSTRUÇÕES AO DOCENTE
+- Cada bloco abaixo corresponde a UM exercício e pode ser copiado campo a campo.
+- Os códigos seguem a ordem de cada lista: 3.01–3.27 e 4.01–4.22.
+- O número do problema original está preservado no título e na referência.
+- Os enunciados foram transcritos/adaptados para o cadastro; os diagramas permanecem indispensáveis para a resolução.
+- É preciso disponibilizar a Figura 8.xx indicada em cada ficha: o campo "Materiais de apoio" contém a referência e o nome de seu arquivo gráfico, mas NÃO um link hospedado.
+- Os arquivos das figuras são organizados separadamente no ZIP de apoio, para publicação no ambiente escolhido pelo docente.
+- Para os problemas 57 a 60 da Lista 04: APENAS itens (a) e (b), conforme a orientação recebida.
+- A seção "Descrição complementar" inclui apenas instruções de apresentação; exigências específicas de submissão (PDF, vídeo, simulador) devem seguir a configuração existente da plataforma.
+
+###########################################################################
+LISTA 03
+###########################################################################
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 01 DE 27 | BOYLESTAD: PROBLEMA 2
+===========================================================================
+Código *
+3.01
+
+Título *
+Correntes e tensões em um circuito com fonte de corrente (Boylestad, problema 2)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, Lei de Ohm, tensões, correntes
+
+Enunciado *
+Considere o circuito da Figura 8.98.
+a) Determine as correntes I₁ e I₂.
+b) Calcule as tensões V₂ e Vₛ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.98, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 2, Figura 8.98, p. 277.
+Arquivo de apoio da figura: FIG_8_98.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 02 DE 27 | BOYLESTAD: PROBLEMA 4
+===========================================================================
+Código *
+3.02
+
+Título *
+Fontes de corrente e tensão em circuito misto (Boylestad, problema 4)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, Lei de Ohm, tensões, correntes
+
+Enunciado *
+Considere o circuito da Figura 8.100.
+a) Determine a tensão Vₛ.
+b) Calcule a corrente I₂.
+c) Determine a corrente Iₛ da fonte indicada.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.100, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 4, Figura 8.100, p. 277.
+Arquivo de apoio da figura: FIG_8_100.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 03 DE 27 | BOYLESTAD: PROBLEMA 6
+===========================================================================
+Código *
+3.03
+
+Título *
+Análise de corrente e tensão com duas fontes (Boylestad, problema 6)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, Lei de Ohm, tensões, correntes
+
+Enunciado *
+Considere o circuito da Figura 8.102.
+a) Calcule as correntes I₁ e Iₛ.
+b) Calcule as tensões Vₛ e V₃.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.102, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 6, Figura 8.102, p. 277.
+Arquivo de apoio da figura: FIG_8_102.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 04 DE 27 | BOYLESTAD: PROBLEMA 11
+===========================================================================
+Código *
+3.04
+
+Título *
+Redução de fontes de corrente em paralelo (Boylestad, problema 11)
+
+Unidade ou tema *
+Fontes de corrente em paralelo
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente em paralelo, fontes equivalentes, LKC, Lei de Ohm
+
+Enunciado *
+Considere o circuito da Figura 8.107.
+a) Substitua todas as fontes de corrente por uma única fonte de corrente equivalente.
+b) Calcule a tensão Vₛ da fonte.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.107, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 11, Figura 8.107, p. 278.
+Arquivo de apoio da figura: FIG_8_107.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 05 DE 27 | BOYLESTAD: PROBLEMA 12
+===========================================================================
+Código *
+3.05
+
+Título *
+Tensão e corrente em fontes de corrente paralelas (Boylestad, problema 12)
+
+Unidade ou tema *
+Fontes de corrente em paralelo
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente em paralelo, fontes equivalentes, LKC, Lei de Ohm
+
+Enunciado *
+Para o circuito da Figura 8.108, calcule a tensão Vₛ e a corrente I₁.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.108, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 12, Figura 8.108, p. 278.
+Arquivo de apoio da figura: FIG_8_108.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 06 DE 27 | BOYLESTAD: PROBLEMA 15
+===========================================================================
+Código *
+3.06
+
+Título *
+Análise das correntes nos ramos e tensão nodal (Boylestad, problema 15)
+
+Unidade ou tema *
+Análise das correntes nos ramos
+
+Temas e conceitos (separados por vírgula)
+análise de ramos, LKT, LKC, sistemas lineares
+
+Enunciado *
+Considere o circuito da Figura 8.111.
+a) Por meio da análise das correntes nos ramos, determine a intensidade e o sentido das correntes em cada resistor.
+b) Calcule a tensão Vₐ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.111, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 15, Figura 8.111, p. 278 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_111.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 07 DE 27 | BOYLESTAD: PROBLEMA 17
+===========================================================================
+Código *
+3.07
+
+Título *
+Correntes em ramos com resistências padronizadas (Boylestad, problema 17)
+
+Unidade ou tema *
+Análise das correntes nos ramos
+
+Temas e conceitos (separados por vírgula)
+análise de ramos, LKT, LKC, sistemas lineares
+
+Enunciado *
+No circuito da Figura 8.113, utilize a análise das correntes nos ramos para calcular a corrente através de cada resistor. Considere os valores padronizados das resistências indicados na figura.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.113, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 17, Figura 8.113, p. 279.
+Arquivo de apoio da figura: FIG_8_113.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 08 DE 27 | BOYLESTAD: PROBLEMA 18
+===========================================================================
+Código *
+3.08
+
+Título *
+Corrente no resistor de 9,1 kΩ e tensão Vₐ (Boylestad, problema 18)
+
+Unidade ou tema *
+Análise das correntes nos ramos
+
+Temas e conceitos (separados por vírgula)
+análise de ramos, LKT, LKC, sistemas lineares
+
+Enunciado *
+Considere o circuito da Figura 8.114, cujos resistores possuem valores padronizados.
+a) Usando a análise das correntes nos ramos, calcule a corrente no resistor de 9,1 kΩ.
+b) A partir dos resultados, determine a tensão Vₐ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.114, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 18, Figura 8.114, p. 279.
+Arquivo de apoio da figura: FIG_8_114.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 09 DE 27 | BOYLESTAD: PROBLEMA 21
+===========================================================================
+Código *
+3.09
+
+Título *
+Correntes nas fontes e potências pelo método das malhas (Boylestad, problema 21)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.112:
+a) Empregue a abordagem geral do método das malhas para determinar a corrente através de cada fonte de tensão.
+b) Com os resultados obtidos, calcule a potência fornecida pela fonte E₂ e a potência no resistor R₃.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.112, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 21, Figura 8.112, p. 279.
+Arquivo de apoio da figura: FIG_8_112.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 10 DE 27 | BOYLESTAD: PROBLEMA 24
+===========================================================================
+Código *
+3.10
+
+Título *
+Malhas, redução das equações e determinantes (Boylestad, problema 24)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Considere o circuito da Figura 8.115.
+a) Determine as correntes de malha usando a abordagem geral.
+b) Aplique a Lei de Kirchhoff para Correntes para reduzir o conjunto de equações a três equações.
+c) Use determinantes para calcular as três correntes de malha.
+d) Determine a corrente em cada fonte, utilizando o resultado do item (c).
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.115, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 24, Figura 8.115, p. 280 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_115.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 11 DE 27 | BOYLESTAD: PROBLEMA 26
+===========================================================================
+Código *
+3.11
+
+Título *
+Malhas com fontes de tensão e cálculo de I em R₅ (Boylestad, problema 26)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.117:
+a) Escreva as equações de malha usando a abordagem geral.
+b) Calcule as correntes de malha por determinantes.
+c) Com os resultados do item (b), calcule a corrente através do resistor R₅.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.117, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 26, Figura 8.117, p. 280.
+Arquivo de apoio da figura: FIG_8_117.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 12 DE 27 | BOYLESTAD: PROBLEMA 27
+===========================================================================
+Código *
+3.12
+
+Título *
+Correntes de malha e potência fornecida pela fonte de 6 V (Boylestad, problema 27)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.118:
+a) Escreva as correntes de malha usando a abordagem geral.
+b) Use determinantes para calcular as correntes de malha.
+c) Calcule a potência fornecida pela fonte de 6 V.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.118, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 27, Figura 8.118, p. 280.
+Arquivo de apoio da figura: FIG_8_118.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 13 DE 27 | BOYLESTAD: PROBLEMA 32
+===========================================================================
+Código *
+3.13
+
+Título *
+Equações por inspeção e corrente no resistor de 8 Ω (Boylestad, problema 32)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.111:
+a) Usando a abordagem padronizada do método das malhas, escreva as equações de malha.
+b) Determine a corrente através do resistor de 8 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.111, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 32, Figura 8.111, p. 281 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_111.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 14 DE 27 | BOYLESTAD: PROBLEMA 34
+===========================================================================
+Código *
+3.14
+
+Título *
+Malhas por inspeção com três fontes independentes (Boylestad, problema 34)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.113:
+a) Usando a abordagem padronizada do método das malhas, escreva as equações de malha para as três fontes independentes.
+b) Calcule a corrente através de cada fonte do circuito.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.113, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 34, Figura 8.113, p. 281 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_113.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 15 DE 27 | BOYLESTAD: PROBLEMA 36
+===========================================================================
+Código *
+3.15
+
+Título *
+Malhas por inspeção e correntes nas fontes (Boylestad, problema 36)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.116:
+a) Escreva as equações de malha pela abordagem padronizada.
+b) Usando determinantes, determine as três correntes de malha.
+c) Calcule a corrente através de cada fonte do circuito.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.116, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 36, Figura 8.116, p. 281 (enunciado) e p. 280 (figura).
+Arquivo de apoio da figura: FIG_8_116.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 16 DE 27 | BOYLESTAD: PROBLEMA 39
+===========================================================================
+Código *
+3.16
+
+Título *
+Malhas por inspeção e tensões Vₐ, Vᵦ e Vₐᵦ (Boylestad, problema 39)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.123:
+a) Escreva as equações de malha usando a abordagem padronizada.
+b) Use determinantes para encontrar as correntes de malha.
+c) Calcule as tensões Vₐ e Vᵦ.
+d) Determine a tensão Vₐᵦ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.123, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 39, Figura 8.123, p. 281.
+Arquivo de apoio da figura: FIG_8_123.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 17 DE 27 | BOYLESTAD: PROBLEMA 41
+===========================================================================
+Código *
+3.17
+
+Título *
+Análise nodal e corrente no resistor de 20 Ω (Boylestad, problema 41)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.125:
+a) Escreva as equações nodais pela abordagem geral.
+b) Determine as tensões nodais usando determinantes.
+c) Calcule a corrente através do resistor de 20 Ω com base na análise nodal.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.125, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 41, Figura 8.125, p. 281 (enunciado) e p. 282 (figura).
+Arquivo de apoio da figura: FIG_8_125.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 18 DE 27 | BOYLESTAD: PROBLEMA 43
+===========================================================================
+Código *
+3.18
+
+Título *
+Equações nodais e polaridade das tensões (Boylestad, problema 43)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.127:
+a) Escreva as equações nodais usando a abordagem geral.
+b) Utilize determinantes para calcular as tensões nodais.
+c) Determine a intensidade e a polaridade da tensão através de cada resistor.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.127, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 43, Figura 8.127, p. 282.
+Arquivo de apoio da figura: FIG_8_127.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 19 DE 27 | BOYLESTAD: PROBLEMA 45
+===========================================================================
+Código *
+3.19
+
+Título *
+Análise nodal de um circuito em ponte (Boylestad, problema 45)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.129:
+a) Escreva as equações nodais usando a abordagem geral.
+b) Determine as tensões nodais por determinantes.
+c) Calcule a tensão através do resistor de 5 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.129, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 45, Figura 8.129, p. 282.
+Arquivo de apoio da figura: FIG_8_129.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 20 DE 27 | BOYLESTAD: PROBLEMA 46
+===========================================================================
+Código *
+3.20
+
+Título *
+Equações nodais e tensão sobre R₆ (Boylestad, problema 46)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.130:
+a) Escreva as equações nodais pela abordagem geral.
+b) Determine as tensões nodais usando determinantes.
+c) Calcule a tensão através do resistor R₆.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.130, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 46, Figura 8.130, p. 282.
+Arquivo de apoio da figura: FIG_8_130.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 21 DE 27 | BOYLESTAD: PROBLEMA 51
+===========================================================================
+Código *
+3.21
+
+Título *
+Método nodal padronizado e tensões das fontes de corrente (Boylestad, problema 51)
+
+Unidade ou tema *
+Método dos nós — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, fontes independentes
+
+Enunciado *
+Para o circuito da Figura 8.124:
+a) Determine as tensões nodais usando a abordagem padronizada do método dos nós.
+b) Com base no item (a), calcule a tensão através de cada fonte de corrente.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.124, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 51, Figura 8.124, p. 282 (enunciado) e p. 281 (figura).
+Arquivo de apoio da figura: FIG_8_124.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 22 DE 27 | BOYLESTAD: PROBLEMA 55
+===========================================================================
+Código *
+3.22
+
+Título *
+Método nodal por inspeção e corrente no resistor de 2 Ω (Boylestad, problema 55)
+
+Unidade ou tema *
+Método dos nós — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, fontes independentes
+
+Enunciado *
+Para o circuito da Figura 8.132:
+a) Determine as tensões nodais usando a abordagem padronizada para análise nodal.
+b) Calcule a corrente através do resistor de 2 Ω com os resultados do item (a).
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.132, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 55, Figura 8.132, p. 283.
+Arquivo de apoio da figura: FIG_8_132.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 23 DE 27 | BOYLESTAD: PROBLEMA 63
+===========================================================================
+Código *
+3.23
+
+Título *
+Conversão Y–Δ ou Δ–Y para calcular corrente I (Boylestad, problema 63)
+
+Unidade ou tema *
+Conversões Y–Δ e Δ–Y
+
+Temas e conceitos (separados por vírgula)
+conversão Y-Δ, conversão Δ-Y, resistências equivalentes, correntes
+
+Enunciado *
+No circuito da Figura 8.139, utilize uma conversão Δ–Y ou Y–Δ para determinar a corrente I.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.139, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 63, Figura 8.139, p. 284.
+Arquivo de apoio da figura: FIG_8_139.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 24 DE 27 | BOYLESTAD: PROBLEMA 64
+===========================================================================
+Código *
+3.24
+
+Título *
+Conversão de triângulo em estrela e cálculo de I (Boylestad, problema 64)
+
+Unidade ou tema *
+Conversões Y–Δ e Δ–Y
+
+Temas e conceitos (separados por vírgula)
+conversão Y-Δ, conversão Δ-Y, resistências equivalentes, correntes
+
+Enunciado *
+No circuito da Figura 8.140, converta o Δ formado pelos resistores de 6,8 kΩ em uma configuração T equivalente e calcule a corrente I.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.140, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 64, Figura 8.140, p. 284.
+Arquivo de apoio da figura: FIG_8_140.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 25 DE 27 | BOYLESTAD: PROBLEMA 65
+===========================================================================
+Código *
+3.25
+
+Título *
+Conversão Y–Δ em circuito resistivo (Boylestad, problema 65)
+
+Unidade ou tema *
+Conversões Y–Δ e Δ–Y
+
+Temas e conceitos (separados por vírgula)
+conversão Y-Δ, conversão Δ-Y, resistências equivalentes, correntes
+
+Enunciado *
+Para o circuito da Figura 8.141, calcule a corrente I sem realizar uma conversão Y–Δ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.141, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 65, Figura 8.141, p. 284.
+Arquivo de apoio da figura: FIG_8_141.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 26 DE 27 | BOYLESTAD: PROBLEMA 67
+===========================================================================
+Código *
+3.26
+
+Título *
+Conversão Y–Δ e corrente da fonte Iₛ₁ (Boylestad, problema 67)
+
+Unidade ou tema *
+Conversões Y–Δ e Δ–Y
+
+Temas e conceitos (separados por vírgula)
+conversão Y-Δ, conversão Δ-Y, resistências equivalentes, correntes
+
+Enunciado *
+O circuito da Figura 8.143 é semelhante aos circuitos de duas fontes que podem ser resolvidos pelos métodos das malhas ou dos nós. Nesta atividade, utilize uma conversão Y–Δ para determinar a corrente da fonte Iₛ₁.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.143, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 67, Figura 8.143, p. 284 (enunciado) e p. 285 (figura).
+Arquivo de apoio da figura: FIG_8_143.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 03 | EXERCÍCIO 27 DE 27 | BOYLESTAD: PROBLEMA 69
+===========================================================================
+Código *
+3.27
+
+Título *
+Resistência equivalente por conversões Y–Δ ou Δ–Y (Boylestad, problema 69)
+
+Unidade ou tema *
+Conversões Y–Δ e Δ–Y
+
+Temas e conceitos (separados por vírgula)
+conversão Y-Δ, conversão Δ-Y, resistências equivalentes, correntes
+
+Enunciado *
+Para o circuito da Figura 8.145, utilize conversões Y–Δ ou Δ–Y para determinar a resistência total Rₜ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.145, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 69, Figura 8.145, p. 284 (enunciado) e p. 285 (figura).
+Arquivo de apoio da figura: FIG_8_145.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+###########################################################################
+LISTA 04
+###########################################################################
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 01 DE 22 | BOYLESTAD: PROBLEMA 22
+===========================================================================
+Código *
+4.01
+
+Título *
+Correntes e tensão no resistor de 3,3 kΩ (Boylestad, problema 22)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.113:
+a) Utilizando a abordagem geral do método das malhas, determine a corrente através de cada resistor.
+b) Determine a tensão através do resistor de 3,3 kΩ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.113, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 22, Figura 8.113, p. 280 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_113.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 02 DE 22 | BOYLESTAD: PROBLEMA 23
+===========================================================================
+Código *
+4.02
+
+Título *
+Malhas e tensão Vₐ em circuito de quatro resistores (Boylestad, problema 23)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.114:
+a) Utilizando a abordagem geral do método das malhas, determine a corrente através de cada resistor.
+b) Calcule a tensão Vₐ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.114, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 23, Figura 8.114, p. 280 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_114.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 03 DE 22 | BOYLESTAD: PROBLEMA 25
+===========================================================================
+Código *
+4.03
+
+Título *
+Equações de malha, determinantes e correntes das fontes (Boylestad, problema 25)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.116:
+a) Escreva as equações de malha segundo a abordagem geral.
+b) Determine as correntes de malha usando determinantes.
+c) Determine a corrente através de cada fonte com base no item (b).
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.116, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 25, Figura 8.116, p. 280.
+Arquivo de apoio da figura: FIG_8_116.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 04 DE 22 | BOYLESTAD: PROBLEMA 28
+===========================================================================
+Código *
+4.04
+
+Título *
+Redesenho de circuito com cruzamentos e análise de malhas (Boylestad, problema 28)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Considere o circuito da Figura 8.119.
+a) Redesenhe o circuito eliminando o cruzamento de condutores, sem alterar as conexões elétricas.
+b) Escreva as equações de malha pela abordagem geral.
+c) Calcule as correntes de malha.
+d) Determine a potência total fornecida pelas duas fontes.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.119, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Justifique a interpretação das conexões elétricas e/ou a escolha do método quando solicitado.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 28, Figura 8.119, p. 280.
+Arquivo de apoio da figura: FIG_8_119.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 05 DE 22 | BOYLESTAD: PROBLEMA 30
+===========================================================================
+Código *
+4.05
+
+Título *
+Supermalha: correntes nos elementos (Boylestad, problema 30)
+
+Unidade ou tema *
+Método das malhas — supermalha
+
+Temas e conceitos (separados por vírgula)
+supermalha, fonte de corrente, LKT, correntes de malha
+
+Enunciado *
+Para o circuito da Figura 8.121, use a abordagem da supermalha para calcular a corrente através de cada elemento.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.121, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 30, Figura 8.121, p. 281.
+Arquivo de apoio da figura: FIG_8_121.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 06 DE 22 | BOYLESTAD: PROBLEMA 31
+===========================================================================
+Código *
+4.06
+
+Título *
+Supermalha com duas fontes de corrente (Boylestad, problema 31)
+
+Unidade ou tema *
+Método das malhas — supermalha
+
+Temas e conceitos (separados por vírgula)
+supermalha, fonte de corrente, LKT, correntes de malha
+
+Enunciado *
+Para o circuito da Figura 8.122, use a abordagem da supermalha para calcular a corrente através de cada elemento.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.122, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 31, Figura 8.122, p. 281.
+Arquivo de apoio da figura: FIG_8_122.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 07 DE 22 | BOYLESTAD: PROBLEMA 33
+===========================================================================
+Código *
+4.07
+
+Título *
+Método das malhas por inspeção: resistor de 3 Ω (Boylestad, problema 33)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.112:
+a) Escreva as equações de malha utilizando a abordagem padronizada.
+b) Determine a corrente através do resistor de 3 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.112, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 33, Figura 8.112, p. 281 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_112.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 08 DE 22 | BOYLESTAD: PROBLEMA 35
+===========================================================================
+Código *
+4.08
+
+Título *
+Três correntes de malha com determinantes (Boylestad, problema 35)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.115:
+a) Escreva as equações de malha segundo a abordagem padronizada.
+b) Determine as três correntes de malha usando determinantes.
+c) Determine a corrente através do resistor de 1 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.115, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 35, Figura 8.115, p. 281 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_115.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 09 DE 22 | BOYLESTAD: PROBLEMA 37
+===========================================================================
+Código *
+4.09
+
+Título *
+Análise de malhas padronizada e tensão Vₐᵦ (Boylestad, problema 37)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, análise de circuitos, sistemas lineares
+
+Enunciado *
+Para o circuito da Figura 8.109:
+a) Escreva as equações de malha usando a abordagem padronizada.
+b) Calcule a tensão Vₐᵦ com base nos resultados do item (a).
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.109, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 37, Figura 8.109, p. 281 (enunciado) e p. 279 (figura).
+Arquivo de apoio da figura: FIG_8_109.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 10 DE 22 | BOYLESTAD: PROBLEMA 38
+===========================================================================
+Código *
+4.10
+
+Título *
+Quatro malhas e tensão na ligação central (Boylestad, problema 38)
+
+Unidade ou tema *
+Método das malhas — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+correntes de malha, LKT, sistemas lineares, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.118:
+a) Escreva as equações pela abordagem padronizada do método das malhas.
+b) Determine as quatro correntes de malha utilizando determinantes.
+c) Calcule a tensão na conexão comum situada no centro do diagrama.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.118, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 38, Figura 8.118, p. 281 (enunciado) e p. 280 (figura).
+Arquivo de apoio da figura: FIG_8_118.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 11 DE 22 | BOYLESTAD: PROBLEMA 40
+===========================================================================
+Código *
+4.11
+
+Título *
+Equações nodais, determinantes e correntes em resistores (Boylestad, problema 40)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Considere o circuito da Figura 8.124.
+a) Escreva as equações nodais pela abordagem geral.
+b) Calcule as tensões nodais utilizando determinantes.
+c) Com os resultados, determine a tensão através do resistor de 8 Ω.
+d) Calcule as correntes através dos resistores de 2 Ω e 4 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.124, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 40, Figura 8.124, p. 281.
+Arquivo de apoio da figura: FIG_8_124.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 12 DE 22 | BOYLESTAD: PROBLEMA 42
+===========================================================================
+Código *
+4.12
+
+Título *
+Nodos, determinantes e balanço de potências (Boylestad, problema 42)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.126:
+a) Escreva as equações nodais pela abordagem geral.
+b) Determine as tensões nodais utilizando determinantes.
+c) Qual é a potência total fornecida pelas fontes de corrente?
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.126, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 42, Figura 8.126, p. 281 (enunciado) e p. 282 (figura).
+Arquivo de apoio da figura: FIG_8_126.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 13 DE 22 | BOYLESTAD: PROBLEMA 44
+===========================================================================
+Código *
+4.13
+
+Título *
+Análise nodal com fontes de corrente e tensão (Boylestad, problema 44)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.128:
+a) Escreva as equações nodais usando a abordagem geral.
+b) Calcule as tensões nodais usando determinantes.
+c) Calcule a corrente através do resistor de 6 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.128, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 44, Figura 8.128, p. 282.
+Arquivo de apoio da figura: FIG_8_128.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 14 DE 22 | BOYLESTAD: PROBLEMA 47
+===========================================================================
+Código *
+4.14
+
+Título *
+Análise nodal e corrente no resistor de 9 Ω (Boylestad, problema 47)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+análise nodal, LKC, tensões nodais, determinantes
+
+Enunciado *
+Para o circuito da Figura 8.131:
+a) Escreva as equações nodais usando a abordagem geral.
+b) Calcule as tensões nodais por determinantes.
+c) Determine a corrente através do resistor de 9 Ω.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.131, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 47, Figura 8.131, p. 282 (enunciado) e p. 283 (figura).
+Arquivo de apoio da figura: FIG_8_131.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 15 DE 22 | BOYLESTAD: PROBLEMA 49
+===========================================================================
+Código *
+4.15
+
+Título *
+Método do supernó em circuito com fonte de 24 V (Boylestad, problema 49)
+
+Unidade ou tema *
+Método dos nós — supernó
+
+Temas e conceitos (separados por vírgula)
+supernó, análise nodal, LKC, fontes de tensão
+
+Enunciado *
+Usando a abordagem do supernó, determine as tensões nodais do circuito da Figura 8.133.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.133, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 49, Figura 8.133, p. 282 (enunciado) e p. 283 (figura).
+Arquivo de apoio da figura: FIG_8_133.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 16 DE 22 | BOYLESTAD: PROBLEMA 50
+===========================================================================
+Código *
+4.16
+
+Título *
+Método do supernó com fontes de corrente e de tensão (Boylestad, problema 50)
+
+Unidade ou tema *
+Método dos nós — supernó
+
+Temas e conceitos (separados por vírgula)
+supernó, análise nodal, LKC, fontes de tensão
+
+Enunciado *
+Usando a abordagem do supernó, determine as tensões nodais do circuito da Figura 8.134.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.134, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 50, Figura 8.134, p. 282 (enunciado) e p. 283 (figura).
+Arquivo de apoio da figura: FIG_8_134.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 17 DE 22 | BOYLESTAD: PROBLEMA 57
+===========================================================================
+Código *
+4.17
+
+Título *
+Circuito em ponte: malhas e corrente em Rₛ (Boylestad, problema 57)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Para o circuito em ponte da Figura 8.135, resolva somente os itens a e b:
+a) Escreva as equações de malha usando a abordagem padronizada.
+b) Determine a corrente através de Rₛ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.135, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Atenção: somente os itens (a) e (b) estão incluídos nesta atividade; não resolva os itens (c) e (d).
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 57, Figura 8.135, p. 283.
+Arquivo de apoio da figura: FIG_8_135.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 18 DE 22 | BOYLESTAD: PROBLEMA 58
+===========================================================================
+Código *
+4.18
+
+Título *
+Ponte de resistores: equações nodais e tensão em Rₛ (Boylestad, problema 58)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Para o circuito em ponte da Figura 8.135, resolva somente os itens a e b:
+a) Escreva as equações nodais usando a abordagem padronizada.
+b) Determine a tensão através de Rₛ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.135, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Atenção: somente os itens (a) e (b) estão incluídos nesta atividade; não resolva os itens (c) e (d).
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 58, Figura 8.135, p. 283.
+Arquivo de apoio da figura: FIG_8_135.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 19 DE 22 | BOYLESTAD: PROBLEMA 59
+===========================================================================
+Código *
+4.19
+
+Título *
+Ponte alimentada por fonte de corrente: malhas (Boylestad, problema 59)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Para o circuito em ponte da Figura 8.136, resolva somente os itens a e b:
+a) Escreva as equações de malha usando a abordagem padronizada.
+b) Determine a corrente através de Rₛ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.136, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Atenção: somente os itens (a) e (b) estão incluídos nesta atividade; não resolva os itens (c) e (d).
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 59, Figura 8.136, p. 283 (enunciado) e p. 284 (figura).
+Arquivo de apoio da figura: FIG_8_136.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 20 DE 22 | BOYLESTAD: PROBLEMA 60
+===========================================================================
+Código *
+4.20
+
+Título *
+Ponte alimentada por fonte de corrente: nós (Boylestad, problema 60)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Para o circuito em ponte da Figura 8.136, resolva somente os itens a e b:
+a) Escreva as equações nodais usando a abordagem padronizada.
+b) Determine a corrente através de Rₛ.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.136, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Atenção: somente os itens (a) e (b) estão incluídos nesta atividade; não resolva os itens (c) e (d).
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 60, Figura 8.136, p. 283 (enunciado) e p. 284 (figura).
+Arquivo de apoio da figura: FIG_8_136.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 21 DE 22 | BOYLESTAD: PROBLEMA 61
+===========================================================================
+Código *
+4.21
+
+Título *
+Circuito em ponte: escolher entre malhas ou nós (Boylestad, problema 61)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Para o circuito da Figura 8.137, determine a corrente através do resistor da fonte Rₛ utilizando o método das malhas ou o método dos nós. Justifique a escolha do método.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.137, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Justifique a interpretação das conexões elétricas e/ou a escolha do método quando solicitado.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 61, Figura 8.137, p. 284.
+Arquivo de apoio da figura: FIG_8_137.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+
+===========================================================================
+LISTA 04 | EXERCÍCIO 22 DE 22 | BOYLESTAD: PROBLEMA 62
+===========================================================================
+Código *
+4.22
+
+Título *
+Circuito em ponte com fonte de corrente: escolha do método (Boylestad, problema 62)
+
+Unidade ou tema *
+Circuitos em ponte
+
+Temas e conceitos (separados por vírgula)
+circuitos em ponte, malhas, análise nodal, equilíbrio da ponte
+
+Enunciado *
+Repita o procedimento do Problema 61 para o circuito da Figura 8.138: determine a corrente através do resistor da fonte Rₛ utilizando o método das malhas ou dos nós e justifique sua escolha.
+
+Descrição complementar
+Utilize obrigatoriamente o diagrama da Figura 8.138, respeitando as referências de terra, as polaridades das fontes e os sentidos indicados. Mostre as equações, os cálculos intermediários e os resultados com as unidades corretas. Justifique a interpretação das conexões elétricas e/ou a escolha do método quando solicitado.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, Problema 62, Figura 8.138, p. 284.
+Arquivo de apoio da figura: FIG_8_138.png (incluído no pacote de figuras; publicar ou anexar para que o estudante tenha acesso ao circuito).
+
+Disponível para entregas
+Sim
+

@@ -38,8 +38,6 @@ EXERCICIOS = [
      "Uma fonte de $12\\,V$ alimenta um resistor de $3\\,k\\Omega$. Determine a corrente e a potência dissipada."),
     ("2.04", "Análise de Malhas", "Unidade 2 — Métodos de Análise", "malhas, LKT, sistemas lineares",
      "Determine as correntes de malha $I_1$ e $I_2$ e a tensão sobre o resistor de $2\\,k\\Omega$."),
-    ("3.01", "Equivalente de Thévenin", "Unidade 3 — Teoremas de Redes", "Thévenin, Norton, resistência equivalente",
-     "Encontre o equivalente de Thévenin visto pelos terminais $a$–$b$ e a corrente em $R_L = 1\\,k\\Omega$."),
     ("5.02", "Carga de um capacitor (RC)", "Unidade 5 — Circuitos RC e RL", "RC, constante de tempo, transitório",
      "Com $R = 10\\,k\\Omega$ e $C = 100\\,\\mu F$, determine $\\tau$ e $v_C(t)$ após o fechamento da chave."),
 ]
@@ -107,6 +105,9 @@ def main() -> int:
     for code, title, unit, topics, stmt in EXERCICIOS:
         exs[code] = p.exercises.create(admin, code=code, title=title, unit=unit, topics=topics, statement=stmt)
 
+    # Exercícios do pacote Boylestad (Listas 03 e 04) já foram importados automaticamente.
+    for ex in p.exercises.list(admin, include_inactive=True):
+        exs.setdefault(ex.code, ex)
     good = {k: {"rating": C.RATING_ATENDE, "comment": ""} for k, _ in C.CRITERIA}
     req = {k: True for k, _ in C.REQUIREMENTS}
 
@@ -140,8 +141,8 @@ def main() -> int:
     entrega("ana", "2.04", "DEMOvid0001", level=C.MUITO_BOM)
     entrega("bruno", "2.04", "DEMOvid0002", level=C.EXCELENTE)
     entrega("carla", "1.03", "DEMOvid0003", level=C.BOM)
-    entrega("ana", "3.01", "DEMOvid0004", level=C.EXCELENTE)
-    entrega("bruno", "3.01", "DEMOvid0005", devolver=True)
+    entrega("ana", "3.08", "DEMOvid0004", level=C.EXCELENTE)
+    entrega("bruno", "4.17", "DEMOvid0005", devolver=True)
     entrega("carla", "5.02", "DEMOvid0006")
 
     print("Dados de demonstração criados. Credenciais (somente para teste local):")

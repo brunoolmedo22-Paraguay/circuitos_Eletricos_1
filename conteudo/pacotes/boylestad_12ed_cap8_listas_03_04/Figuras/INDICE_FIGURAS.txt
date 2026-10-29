@@ -1,0 +1,43 @@
+﻿FIGURAS DOS EXERCÍCIOS: BOYLESTAD, 12ª EDIÇÃO, CAPÍTULO 8
+
+Imagens recortadas do livro fornecido pelo docente.
+Antes de publicar cada ficha, adicione o circuito indicado na referência.
+
+FIG_8_100.png — Figura 8.100; p. 277; Lista 03: 4
+FIG_8_102.png — Figura 8.102; p. 277; Lista 03: 6
+FIG_8_107.png — Figura 8.107; p. 278; Lista 03: 11
+FIG_8_108.png — Figura 8.108; p. 278; Lista 03: 12
+FIG_8_109.png — Figura 8.109; p. 279; Lista 04: 37
+FIG_8_111.png — Figura 8.111; p. 279; Lista 03: 15; 32
+FIG_8_112.png — Figura 8.112; p. 279; Lista 03: 21, Lista 04: 33
+FIG_8_113.png — Figura 8.113; p. 279; Lista 03: 17; 34, Lista 04: 22
+FIG_8_114.png — Figura 8.114; p. 279; Lista 03: 18, Lista 04: 23
+FIG_8_115.png — Figura 8.115; p. 279; Lista 03: 24, Lista 04: 35
+FIG_8_116.png — Figura 8.116; p. 280; Lista 03: 36, Lista 04: 25
+FIG_8_117.png — Figura 8.117; p. 280; Lista 03: 26
+FIG_8_118.png — Figura 8.118; p. 280; Lista 03: 27, Lista 04: 38
+FIG_8_119.png — Figura 8.119; p. 280; Lista 04: 28
+FIG_8_121.png — Figura 8.121; p. 281; Lista 04: 30
+FIG_8_122.png — Figura 8.122; p. 281; Lista 04: 31
+FIG_8_123.png — Figura 8.123; p. 281; Lista 03: 39
+FIG_8_124.png — Figura 8.124; p. 281; Lista 03: 51, Lista 04: 40
+FIG_8_125.png — Figura 8.125; p. 282; Lista 03: 41
+FIG_8_126.png — Figura 8.126; p. 282; Lista 04: 42
+FIG_8_127.png — Figura 8.127; p. 282; Lista 03: 43
+FIG_8_128.png — Figura 8.128; p. 282; Lista 04: 44
+FIG_8_129.png — Figura 8.129; p. 282; Lista 03: 45
+FIG_8_130.png — Figura 8.130; p. 282; Lista 03: 46
+FIG_8_131.png — Figura 8.131; p. 283; Lista 04: 47
+FIG_8_132.png — Figura 8.132; p. 283; Lista 03: 55
+FIG_8_133.png — Figura 8.133; p. 283; Lista 04: 49
+FIG_8_134.png — Figura 8.134; p. 283; Lista 04: 50
+FIG_8_135.png — Figura 8.135; p. 283; Lista 04: 57; 58
+FIG_8_136.png — Figura 8.136; p. 284; Lista 04: 59; 60
+FIG_8_137.png — Figura 8.137; p. 284; Lista 04: 61
+FIG_8_138.png — Figura 8.138; p. 284; Lista 04: 62
+FIG_8_139.png — Figura 8.139; p. 284; Lista 03: 63
+FIG_8_140.png — Figura 8.140; p. 284; Lista 03: 64
+FIG_8_141.png — Figura 8.141; p. 284; Lista 03: 65
+FIG_8_143.png — Figura 8.143; p. 285; Lista 03: 67
+FIG_8_145.png — Figura 8.145; p. 285; Lista 03: 69
+FIG_8_98.png — Figura 8.98; p. 277; Lista 03: 2
