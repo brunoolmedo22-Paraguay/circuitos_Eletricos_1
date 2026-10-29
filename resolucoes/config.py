@@ -37,6 +37,7 @@ class Settings:
     mode: str = MODE_PRODUCAO
     allow_local_persistence: bool = False
     check_video_online: bool = True
+    seed_content: bool = True               # importa os pacotes de exercícios na inicialização
     extra: dict = field(default_factory=dict)
 
     # ------------------------------------------------------------------ #
@@ -126,6 +127,7 @@ def load_settings(overrides: dict | None = None) -> Settings:
             _get(sec, "app", "allow_local_persistence", "CE1_ALLOW_LOCAL_PERSISTENCE"), False
         ),
         check_video_online=_as_bool(_get(sec, "youtube", "check_online", "CE1_CHECK_VIDEO_ONLINE"), True),
+        seed_content=_as_bool(_get(sec, "app", "import_packs", "CE1_IMPORT_PACKS"), True),
     )
     if overrides:
         data.update(overrides)

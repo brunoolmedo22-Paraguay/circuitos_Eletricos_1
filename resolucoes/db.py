@@ -186,6 +186,26 @@ app_settings = sa.Table(
     sa.Column("updated_by", sa.String(36), nullable=True),
 )
 
+# Figuras dos exercícios propostos. Uma mesma imagem pode servir a vários
+# exercícios (cada vínculo é uma linha). source = "pacote": imagem versionada
+# no repositório (conteudo/pacotes/...); source = "arquivo": imagem enviada pela
+# administração e guardada no armazenamento persistente (ref = chave).
+exercise_figures = sa.Table(
+    "ce1_exercise_figures",
+    metadata,
+    sa.Column("id", sa.String(36), primary_key=True),
+    sa.Column("exercise_id", sa.String(36), sa.ForeignKey("ce1_exercises.id"), nullable=False),
+    sa.Column("position", sa.Integer, nullable=False, default=0),
+    sa.Column("source", sa.String(20), nullable=False),
+    sa.Column("ref", sa.String(300), nullable=False),
+    sa.Column("label", sa.String(120), nullable=False, default=""),
+    sa.Column("caption", sa.String(300), nullable=False, default=""),
+    sa.Column("width", sa.Integer, nullable=True),
+    sa.Column("height", sa.Integer, nullable=True),
+    sa.Column("created_at", sa.DateTime, nullable=False),
+)
+sa.Index("ix_ce1_exfig_exercise", exercise_figures.c.exercise_id)
+
 # Usada apenas quando [storage] backend = "database" (PDFs guardados no próprio banco).
 files = sa.Table(
     "ce1_files",
@@ -197,7 +217,7 @@ files = sa.Table(
     sa.Column("created_at", sa.DateTime, nullable=False),
 )
 
-ALL_TABLES = [users, sessions, exercises, submissions, versions, reviews, audit_log, app_settings, files]
+ALL_TABLES = [users, sessions, exercises, exercise_figures, submissions, versions, reviews, audit_log, app_settings, files]
 
 _engines: dict[str, sa.Engine] = {}
 _lock = threading.Lock()

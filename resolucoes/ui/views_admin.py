@@ -207,7 +207,12 @@ def evaluate(p: Platform, user: User, sid: str | None) -> None:
 
     left, right = st.columns([1.45, 1], gap="medium") if mine else (st.container(), None)
     with left:
-        t_video, t_pdf, t_fal, t_aluno, t_hist = st.tabs(["Vídeo", "PDF", "Falstad", "Aluno", "Versões e avaliações"])
+        t_enun, t_video, t_pdf, t_fal, t_aluno, t_hist = st.tabs(
+            ["Enunciado", "Vídeo", "PDF", "Falstad", "Aluno", "Versões e avaliações"])
+        with t_enun:
+            from .exercise_view import render_exercise
+
+            render_exercise(p, ex, key=f"adm-{sid}")
         with t_video:
             if ver["youtube_id"]:
                 youtube_embed(ver["youtube_id"])
@@ -445,9 +450,15 @@ def exercises(p: Platform, user: User) -> None:
                     if k.startswith("new-"):
                         del st.session_state[k]
                 st.rerun()
-    q = st.text_input("Filtrar", key="admex_q", placeholder="Código ou título")
+    from ..services.exercises import list_label
+
+    f1, f2 = st.columns([3, 2])
+    q = f1.text_input("Filtrar", key="admex_q", placeholder="Código ou título")
+    sel_l = f2.multiselect("Lista", sorted({list_label(e.code) for e in exs}), key="admex_l", placeholder="Todas")
     for ex in exs:
         if q and q.lower() not in f"{ex.code} {ex.title}".lower():
+            continue
+        if sel_l and list_label(ex.code) not in sel_l:
             continue
         with st.container(key=f"ex-row-ex-{ex.id}"):
             st.markdown(
@@ -464,6 +475,7 @@ def exercises(p: Platform, user: User) -> None:
                         _, success = run_action(p.exercises.update, user, ex.id, success="Exercício atualizado.", **fields)
                         if success:
                             st.rerun()
+                _figures_admin(p, user, ex)
                 c1, c2 = st.columns(2)
                 if c1.button("Desativar" if ex.active else "Ativar", key=f"ex-tg-{ex.id}"):
                     _, success = run_action(p.exercises.set_active, user, ex.id, not ex.active, success="Disponibilidade alterada.")
@@ -476,6 +488,42 @@ def exercises(p: Platform, user: User) -> None:
                             st.rerun()
                 else:
                     c2.caption("Exercícios com entregas não podem ser excluídos; desative-os.")
+
+
+def _figures_admin(p: Platform, user: User, ex) -> None:
+    from .exercise_view import clear_figure_cache
+
+    md('<div class="ex-form-sub">Figuras do enunciado</div>')
+    figs = p.exercises.figures(ex.id)
+    if not figs:
+        st.caption("Nenhuma figura. Se o enunciado cita um circuito, anexe a imagem abaixo.")
+    for fig in figs:
+        c1, c2, c3 = st.columns([1.6, 2.6, 1.2], vertical_alignment="center")
+        try:
+            c1.image(p.exercises.figure_bytes(fig), use_container_width=True)
+        except AppError as exc:
+            c1.warning(exc.message)
+        origem = "pacote do repositório" if fig.source == "pacote" else "enviada pela administração"
+        c2.markdown(f"**{fig.label or 'Figura'}**  \n{fig.caption}  \n<small>{origem}</small>", unsafe_allow_html=True)
+        if c3.button("Remover", key=f"fig-rm-{fig.id}"):
+            _, ok = run_action(p.exercises.remove_figure, user, fig.id, success="Figura removida.")
+            if ok:
+                clear_figure_cache()
+                st.rerun()
+    with st.form(f"fig-add-{ex.id}", clear_on_submit=True):
+        up = st.file_uploader("Adicionar figura (PNG ou JPEG, até 5 MB)", type=["png", "jpg", "jpeg"])
+        c1, c2 = st.columns(2)
+        label = c1.text_input("Rótulo", placeholder="Figura 8.114")
+        caption = c2.text_input("Legenda / referência", placeholder="Boylestad, 12ª ed., p. 279")
+        if st.form_submit_button("Anexar figura"):
+            if up is None:
+                st.error("Selecione uma imagem.")
+            else:
+                _, ok = run_action(p.exercises.add_figure, user, ex.id, up.getvalue(), label=label, caption=caption,
+                                   success="Figura anexada ao exercício.")
+                if ok:
+                    clear_figure_cache()
+                    st.rerun()
 
 
 # --------------------------------------------------------------------------- #
@@ -700,6 +748,34 @@ def config(p: Platform, user: User) -> None:
             "units": units.splitlines()}, success="Configurações salvas.")
         if success:
             st.rerun()
+
+    section_head("Conteúdo", "Pacotes de exercícios",
+                 "Exercícios e figuras versionados no repositório e cadastrados automaticamente na inicialização.")
+    from .. import importacao
+
+    for spec in importacao.PACKS:
+        status = importacao.pack_status(p, spec["id"])
+        with st.container(key=f"ex-panel-pack-{spec['id']}"):
+            st.markdown(f"**{spec['nome']}**")
+            if status:
+                st.markdown(
+                    f"Importado em {status['aplicado_em_utc'].replace('T', ' ')} UTC · versão `{status['versao']}` · "
+                    f"{status['fichas']} fichas · {len(status['criados'])} criado(s) na última aplicação"
+                    + (f" · códigos mantidos sem alteração: {', '.join(status['mantidos_sem_alteracao'])}"
+                       if status["mantidos_sem_alteracao"] else "")
+                )
+            else:
+                st.markdown("Ainda não importado.")
+            st.caption("“Importar ausentes” recria somente os códigos que não existem no banco (por exemplo, "
+                       "um exercício excluído). Exercícios já cadastrados nunca são sobrescritos.")
+            if st.button("Importar ausentes", key=f"pack-{spec['id']}"):
+                rep, ok = run_action(importacao.reimport, p, user, spec["id"])
+                if ok:
+                    from .exercise_view import clear_figure_cache
+
+                    clear_figure_cache()
+                    flash(f"{len(rep['criados'])} exercício(s) criado(s); {len(rep['mantidos_sem_alteracao'])} já existiam.")
+                    st.rerun()
 
     section_head("Diagnóstico", "Serviços conectados")
     for name, detail, healthy in p.admin.diagnostics(user):

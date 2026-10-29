@@ -173,13 +173,9 @@ def detail(p: Platform, user: User | None, sid: str | None) -> None:
                    "A equipe da disciplina já foi sinalizada.")
 
     with st.container(key="ex-statement"):
-        md('<div class="ex-panel__label">Enunciado</div>')
-        st.markdown(item["statement"])
-        if item["description"]:
-            st.caption(item["description"])
-        if item["support_material"]:
-            with st.expander("Materiais de apoio"):
-                st.markdown(item["support_material"])
+        from .exercise_view import render_exercise
+
+        render_exercise(p, p.exercises.get(item["exercise_id"]), key=f"pub-{item['submission_id']}")
 
     section_head("Três formas de estudar", "Escolha como estudar esta resolução",
                  "Não há ordem obrigatória: assista, leia ou experimente o circuito.")

@@ -204,7 +204,8 @@ class SupabaseFileStore:
         resp = self._request(
             "POST",
             f"{self.base}/bucket",
-            json={"id": self.bucket, "name": self.bucket, "public": False, "allowed_mime_types": ["application/pdf"]},
+            json={"id": self.bucket, "name": self.bucket, "public": False,
+                  "allowed_mime_types": ["application/pdf", "image/png", "image/jpeg"]},
         )
         if resp.status_code not in (200, 201):
             raise StorageFailure(f"Não foi possível criar o bucket '{self.bucket}' (HTTP {resp.status_code}).")

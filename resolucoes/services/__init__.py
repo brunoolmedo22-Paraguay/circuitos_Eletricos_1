@@ -57,6 +57,10 @@ class Platform:
         self.catalog = CatalogService(self)
         if init:
             db.init_schema(self.engine)
+            if settings.seed_content:
+                from ..importacao import ensure_packs
+
+                ensure_packs(self)
 
     def local(self, dt: datetime | None) -> datetime | None:
         """Converte um instante UTC armazenado para o horário de Brasília."""

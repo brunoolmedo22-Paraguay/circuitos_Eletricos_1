@@ -11,6 +11,8 @@ from ..errors import AppError
 from ..services import Platform, User
 from ..validators import format_duration, parse_youtube_id, watch_url
 from .runtime import flash, go, nav_to, run_action
+from ..services.exercises import list_label
+from .exercise_view import render_exercise
 from .views_public import clear_public_cache, published_items
 from .widgets import chips, empty_state, esc, level_badge, md, pdf_preview, section_head, status_badge, youtube_embed
 
@@ -91,24 +93,31 @@ def proposed(p: Platform, user: User) -> None:
     if not exs:
         empty_state("Nenhum exercício disponível no momento", "A administração ainda não publicou exercícios propostos.", "✎")
         return
-    f1, f2 = st.columns([3, 2])
-    q = f1.text_input("Buscar exercício", key="prop_q", placeholder="Número, título ou tema")
+    f1, f2, f3 = st.columns([3, 1.6, 2.4])
+    q = f1.text_input("Buscar exercício", key="prop_q", placeholder="Número, título, tema ou figura (ex.: 8.114)")
+    listas = sorted({list_label(e.code) for e in exs})
+    sel_listas = f2.multiselect("Lista", listas, key="prop_listas", placeholder="Todas")
     units = sorted({e.unit for e in exs})
-    sel = f2.multiselect("Unidade", units, key="prop_units", placeholder="Todas")
+    sel = f3.multiselect("Unidade ou tema", units, key="prop_units", placeholder="Todas")
     from ..services.catalog import fold
 
+    shown = 0
     for ex in exs:
+        if sel_listas and list_label(ex.code) not in sel_listas:
+            continue
         if sel and ex.unit not in sel:
             continue
-        if q and not all(t in fold(f"{ex.code} {ex.title} {ex.topics} {ex.unit} {ex.statement}") for t in fold(q).split()):
+        hay = fold(f"{ex.code} {ex.title} {ex.topics} {ex.unit} {ex.statement} {ex.support_material}")
+        if q and not all(t in hay for t in fold(q).split()):
             continue
+        shown += 1
         sub = mine.get(ex.id)
         with st.container(key=f"ex-prop-{ex.id}"):
             c1, c2 = st.columns([4, 1.4], vertical_alignment="center")
             with c1:
                 pub = n_pub.get(ex.id, 0)
                 md(
-                    f'<div class="ex-prop__code">Exercício {esc(ex.code)}</div>'
+                    f'<div class="ex-prop__code">{esc(list_label(ex.code))} · Exercício {esc(ex.code)}</div>'
                     f'<div class="ex-prop__title">{esc(ex.title)}</div>'
                     f'<div class="ex-prop__meta"><span>{esc(ex.unit)}</span>'
                     f'{f"<span>{pub} resolução(ões) publicada(s)</span>" if pub else ""}'
@@ -123,13 +132,10 @@ def proposed(p: Platform, user: User) -> None:
                     else:
                         st.button("Abrir minha entrega", key=f"mine-{ex.id}", use_container_width=True,
                                   on_click=nav_to, args=("submissao",), kwargs={"id": sub["id"]})
-            with st.expander("Ver enunciado"):
-                st.markdown(ex.statement)
-                if ex.description:
-                    st.caption(ex.description)
-                if ex.support_material:
-                    md('<div class="ex-panel__label">Materiais de apoio</div>')
-                    st.markdown(ex.support_material)
+            with st.expander("Ver enunciado e circuito"):
+                render_exercise(p, ex, key=f"prop-{ex.id}")
+    if shown == 0:
+        empty_state("Nenhum exercício com estes filtros", "Remova algum filtro ou tente outro termo de busca.", "⌕")
 
 
 # --------------------------------------------------------------------------- #
@@ -147,8 +153,9 @@ def _choose_exercise(p: Platform, user: User, preselect: str | None) -> None:
     with st.container(key="ex-panel-choose"):
         ex_id = st.selectbox("Exercício *", ids, index=idx, format_func=lambda i: next(e.label for e in exs if e.id == i))
         ex = next(e for e in exs if e.id == ex_id)
-        md(f'<div class="ex-prop__meta"><span>{esc(ex.unit)}</span></div><div class="ex-prop__chips">{chips(ex.topic_list)}</div>')
-        st.markdown(ex.statement)
+        md(f'<div class="ex-prop__meta"><span>{esc(list_label(ex.code))}</span><span>{esc(ex.unit)}</span></div>'
+           f'<div class="ex-prop__chips">{chips(ex.topic_list)}</div>')
+        render_exercise(p, ex, key=f"choose-{ex.id}")
         existing = next((s for s in p.submissions.mine(user) if s["exercise_id"] == ex_id), None)
         if existing:
             st.info("Você já possui uma entrega para este exercício. Correções e melhorias são feitas como novas versões dela.")
@@ -187,8 +194,8 @@ def submit(p: Platform, user: User, sid: str | None, ex_pre: str | None) -> None
             with st.expander("Observações da última avaliação", expanded=True):
                 review_block(p, user, last, key_prefix="ed")
 
-    with st.expander("Enunciado do exercício"):
-        st.markdown(ex.statement)
+    with st.expander("Enunciado e circuito do exercício", expanded=ver["version_no"] == 1 and not ver["youtube_id"]):
+        render_exercise(p, ex, key=f"edit-{ex.id}")
 
     materials_checklist(ver)
 

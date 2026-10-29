@@ -18,7 +18,7 @@ from ..errors import StorageFailure, ValidationError
 from ..validators import check_youtube_video, validate_falstad_url
 from .common import User, audit, clean_text, require_admin
 
-BACKUP_TABLES = [db.users, db.exercises, db.submissions, db.versions, db.reviews, db.audit_log, db.app_settings]
+BACKUP_TABLES = [db.users, db.exercises, db.exercise_figures, db.submissions, db.versions, db.reviews, db.audit_log, db.app_settings]
 
 
 def _json_default(o):
@@ -158,6 +158,8 @@ class AdminService:
                         keys |= {r["pdf_key"] for r in rows if r["pdf_key"]}
                     if table is db.reviews:
                         keys |= {r["parecer_key"] for r in rows if r["parecer_key"]}
+                    if table is db.exercise_figures:
+                        keys |= {r["ref"] for r in rows if r["source"] == "arquivo"}
             for key in sorted(keys):
                 try:
                     zf.writestr(f"arquivos/{key}", self.p.store.get(key))

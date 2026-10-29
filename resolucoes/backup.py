@@ -49,6 +49,12 @@ def restore_backup(zip_bytes: bytes, platform, *, allow_non_empty: bool = False)
 
     counts = {}
     with platform.engine.begin() as conn:
+        subs = conn.execute(sa.select(sa.func.count()).select_from(db.submissions)).scalar_one()
+        if not existing and not subs:
+            # Instalação nova: pode conter apenas o conteúdo importado automaticamente
+            # (pacotes de exercícios) e logs de inicialização. O backup traz tudo isso.
+            for table in (db.exercise_figures, db.exercises, db.audit_log, db.app_settings):
+                conn.execute(table.delete())
         for table in BACKUP_TABLES:
             rows = json.loads(zf.read(f"tabelas/{table.name}.json"))
             if table is db.app_settings:
