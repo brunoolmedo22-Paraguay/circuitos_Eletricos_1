@@ -4,7 +4,8 @@ Plataforma modular desenvolvida com **Streamlit + Python** como complemento à d
 
 O projeto não substitui as aulas. Ele funciona como um repositório acadêmico para localizar conceitos, equações, convenções, ferramentas de cálculo e exercícios resolvidos.
 
-> **Versão 1.0** — módulo **Exercícios Resolvidos** colaborativo: alunos submetem
+> **Versão 1.1** — inclui os 49 exercícios das Listas 03 e 04 (Boylestad, cap. 8) com as figuras dos circuitos.
+> Módulo **Exercícios Resolvidos** colaborativo: alunos submetem
 > resoluções (vídeo no YouTube + PDF + circuito no Falstad), a administração avalia
 > qualitativamente e as resoluções aprovadas são publicadas automaticamente.
 
@@ -27,6 +28,7 @@ A plataforma está organizada em quatro módulos principais:
 ├── pages/                     # teoria, interaja, formularios, exercicios (+ rotas legadas)
 ├── components/experiments/    # microexperimentos
 ├── data/  styles/  utils/  assets/
+├── conteudo/pacotes/          # exercícios e figuras importados automaticamente
 ├── resolucoes/                # módulo Exercícios Resolvidos
 │   ├── services/              # regras de negócio e permissões (sem Streamlit)
 │   ├── ui/                    # interface do módulo
@@ -71,7 +73,8 @@ Para experimentar o módulo Exercícios Resolvidos sem serviços externos, use o
 Documentação: [`docs/INSTALACAO.md`](docs/INSTALACAO.md) ·
 [`docs/GUIA_ADMINISTRATIVO.md`](docs/GUIA_ADMINISTRATIVO.md) ·
 [`docs/REGISTRO_DE_ALTERACOES.md`](docs/REGISTRO_DE_ALTERACOES.md) ·
-[`docs/RELATORIO_DE_TESTES.md`](docs/RELATORIO_DE_TESTES.md)
+[`docs/RELATORIO_DE_TESTES.md`](docs/RELATORIO_DE_TESTES.md) ·
+[`docs/IMPORTACAO_LISTAS_03_04.md`](docs/IMPORTACAO_LISTAS_03_04.md)
 
 ## 🧩 Adicionar um novo módulo
 

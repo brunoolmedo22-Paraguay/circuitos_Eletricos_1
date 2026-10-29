@@ -140,3 +140,21 @@ versões e pareceres (pareceres têm ~10 KB). O limite padrão é 10 MB por PDF
   brancos com borda lilás e foco púrpura, em todas as páginas.
 * **Telas Entrar, Configuração inicial e Criar conta** ganharam os botões
   “← Voltar à biblioteca” e “Início da plataforma”.
+
+---
+
+## v1.1 — Listas 03 e 04 (Boylestad, 12ª ed., cap. 8) com figuras
+
+* **49 Exercícios Propostos importados automaticamente** (Lista 03: 27,
+  códigos 3.01–3.27; Lista 04: 22, códigos 4.01–4.22) a partir do pacote do
+  docente, versionado em `conteudo/pacotes/boylestad_12ed_cap8_listas_03_04/`.
+* **38 figuras originais** exibidas logo abaixo do enunciado, com legenda e
+  botão “Ampliar figura”. Vínculo exato ficha → figura, conferido contra o índice.
+* **Nova tabela `ce1_exercise_figures`** (nenhuma coluna existente alterada);
+  também permite anexar figuras a exercícios futuros pelo painel.
+* **Importação idempotente** na inicialização (marcador por versão); nunca
+  sobrescreve exercícios já cadastrados; “Importar ausentes” em Configurações.
+* Filtro **Lista** e busca pelo número da figura em Exercícios Propostos; aba
+  **Enunciado** na avaliação; figura também na página pública da resolução.
+* Backup inclui o vínculo das figuras; restauração funciona em instalação recém-criada.
+* Detalhes completos: `docs/IMPORTACAO_LISTAS_03_04.md`.

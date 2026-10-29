@@ -161,6 +161,34 @@ def rate_all(page: Page, overrides: dict[str, str] | None = None) -> None:
         page.get_by_text(f"{name} — cumprido", exact=True).click()
 
 
+def check_figures(page: Page, tag: str) -> None:
+    goto(page, "/exercicios?v=propostos")
+    codes = page.locator(".ex-prop__code").all_inner_texts()
+    n3 = sum("Lista 03 · Exercício 3." in c for c in codes)
+    n4 = sum("Lista 04 · Exercício 4." in c for c in codes)
+    check(f"[{tag}] 27 exercícios da Lista 03 e 22 da Lista 04 visíveis ao aluno", (n3, n4) == (27, 22), f"{n3}/{n4}")
+    box = page.get_by_label("Buscar exercício", exact=True)
+    box.fill("8.114")
+    box.press("Enter")
+    settle(page, 2000)
+    found = page.locator(".ex-prop__code").all_inner_texts()
+    check(f"[{tag}] Busca pela Figura 8.114 encontra 3.08 e 4.02",
+          found == ["Lista 03 · Exercício 3.08", "Lista 04 · Exercício 4.02"], str(found))
+    page.get_by_text("Ver enunciado e circuito").first.click()
+    settle(page, 1500)
+    img = page.locator('div[class*="st-key-ex-fig-"] img').first
+    w = img.evaluate("e => e.complete ? e.naturalWidth : 0")
+    check(f"[{tag}] Figura do circuito renderizada (imagem carregada)", w > 300, f"naturalWidth={w}")
+    check(f"[{tag}] Legenda correta (Figura 8.114, p. 279)",
+          text_visible(page, "Figura 8.114 · Boylestad, 12ª ed., cap. 8, p. 279"))
+    page.get_by_role("button", name="Ampliar figura").first.click()
+    settle(page, 1200)
+    check(f"[{tag}] Ampliar figura abre a imagem em tamanho maior",
+          page.locator('[data-testid="stDialog"] .ex-fig-zoom img').count() == 1)
+    page.keyboard.press("Escape")
+    settle(page, 800)
+
+
 # --------------------------------------------------------------------------- #
 def run(page: Page, workdir: Path, server_holder: list) -> None:
     pdf1, pdf2 = workdir / "resolucao_v1.pdf", workdir / "resolucao_v2.pdf"
@@ -208,13 +236,25 @@ def run(page: Page, workdir: Path, server_holder: list) -> None:
 
     print("\n[PRIMEIRO — administrador cria o exercício 2.04]")
     goto(page, "/exercicios?v=admin&a=exercicios")
-    fill(page, "Código *", "2.04")
-    fill(page, "Título *", "Análise de Malhas")
-    page.get_by_label("Unidade ou tema *").click()
+    check("Pacote Boylestad já cadastrado na instalação nova (sem carga manual)",
+          text_visible(page, "Exercício 4.22") and text_visible(page, "Exercício 3.01"))
+    page.get_by_text("Novo exercício", exact=True).click()
+    settle(page, 1000)
+    form = page.locator('[data-testid="stExpander"]').filter(has_text="Novo exercício").first
+
+    def ffill(label, value):
+        f = form.get_by_label(label, exact=True)
+        f.fill(value)
+        f.press("Tab")
+
+    ffill("Código *", "2.04")
+    ffill("Título *", "Análise de Malhas")
+    form.get_by_label("Unidade ou tema *").click()
     page.get_by_role("option").filter(has_text="Unidade 2").first.click()
-    fill(page, "Temas e conceitos (separados por vírgula)", "malhas, LKT, sistemas lineares")
-    fill(page, "Enunciado *", "Determine as correntes de malha $I_1$ e $I_2$ do circuito.")
-    click(page, "Criar exercício")
+    ffill("Temas e conceitos (separados por vírgula)", "malhas, LKT, sistemas lineares")
+    ffill("Enunciado *", "Determine as correntes de malha $I_1$ e $I_2$ do circuito.")
+    form.get_by_role("button", name="Criar exercício").click()
+    settle(page)
     check("Exercício 2.04 criado", text_visible(page, "Exercício 2.04 criado"))
     shot(page, "03_exercicio_criado")
     logout(page)
@@ -231,6 +271,8 @@ def run(page: Page, workdir: Path, server_holder: list) -> None:
     check("Sessão mantida após recarregar a página (cookie)", text_visible(page, "Ana Souza", 15000))
     items = fab_items(page)
     check("Aluna não vê Administração no menu", "Administração" not in items)
+    check_figures(page, "aluna")
+    goto(page, "/exercicios")
     page.locator(".st-key-ce1-fab button").first.click()
     page.wait_for_timeout(600)
     page.get_by_role("button", name="01 · Submeter Resolução").click()
@@ -359,6 +401,7 @@ def run(page: Page, workdir: Path, server_holder: list) -> None:
     click(page, "Abrir")
     check("Histórico e avaliações persistem", text_visible(page, "Versão v1 — Devolvida") and
           text_visible(page, "Aprovado — Muito Bom"))
+    check_figures(page, "após reinício")  # mesmas contagens: a importação não duplicou
     logout(page)
 
     print("\n[DÉCIMO PRIMEIRO — segundo administrador gerencia sem o primeiro]")
@@ -401,6 +444,17 @@ def main() -> int:
             page.set_default_timeout(30000)
             try:
                 run(page, workdir, holder)
+                mob = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True)
+                mp = mob.new_page()
+                mp.set_default_timeout(30000)
+                print("\n[Celular]")
+                login(mp, "ana", "AnaSegura2026")
+                check_figures(mp, "celular")
+                img = mp.locator('div[class*="st-key-ex-fig-"] img').first
+                cw = img.evaluate("e => e.clientWidth")
+                check("[celular] Figura cabe na tela sem corte", 0 < cw <= 390, f"{cw}px")
+                shot(mp, "15_celular_figura")
+                mob.close()
             except Exception as exc:  # registra a falha e a tela atual
                 check("Execução sem interrupção", False, repr(exc)[:300])
                 shot(page, "zz_falha")

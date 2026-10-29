@@ -1,4 +1,4 @@
-# Relatório de testes — versão 1.0
+# Relatório de testes — versão 1.1
 
 Executado em outubro de 2026 sobre o código final entregue, em ambiente Linux
 (Python 3.12, Streamlit 1.66, PostgreSQL 16, Chromium via Playwright).
@@ -8,9 +8,9 @@ Somente testes realmente executados estão listados como aprovados.
 
 | Bateria | Ambiente | Resultado |
 |---|---|---|
-| Testes de serviço (`pytest`) | SQLite + armazenamento no banco e em disco | **75 aprovados**, 2 ignorados (específicos do PostgreSQL) |
-| Testes de serviço (`pytest`) | **PostgreSQL 16 real** + SQLite, ambos os armazenamentos | **131 aprovados**, 2 ignorados (RLS nos cenários SQLite) |
-| Navegador de ponta a ponta (`tests/e2e_navegador.py`) | Servidor Streamlit real + Chromium, instalação nova e vazia | **48/48 verificações aprovadas** |
+| Testes de serviço (`pytest`) | SQLite + armazenamento no banco e em disco | **93 aprovados**, 2 ignorados (específicos do PostgreSQL) |
+| Testes de serviço (`pytest`) | **PostgreSQL 16 real** + SQLite, ambos os armazenamentos | **161 aprovados**, 2 ignorados (RLS nos cenários SQLite) |
+| Navegador de ponta a ponta (`tests/e2e_navegador.py`) | Servidor Streamlit real + Chromium (desktop e celular), instalação nova | **65/65 verificações aprovadas** |
 | Regressão visual | Capturas de Aprenda a Teoria e Formulários antes/depois | Sem diferenças visíveis |
 
 Como reproduzir: `docs/INSTALACAO.md`, § 9.
@@ -84,6 +84,13 @@ Navegador: página inicial, Aprenda a Teoria, Formulários e Interaja carregam
 sem exceções; um microexperimento abre; as rotas antigas `/ejercicios` e
 `/interactue` redirecionam para as páginas oficiais. Capturas de Teoria antes e
 depois da mudança são visualmente idênticas.
+
+### Teste G — Listas 03 e 04 com figuras (v1.1) ✅
+Detalhado em `docs/IMPORTACAO_LISTAS_03_04.md` (§ 6): integridade das 49
+fichas, 38 figuras e vínculos conferidos contra o índice, itens a) e b) dos
+problemas 57–60, idempotência após repetição e reinício, preservação de
+exercícios do professor, entrega completa num exercício importado e exibição
+da figura no navegador (desktop, celular e após reiniciar o servidor).
 
 ## 3. Classificação das funcionalidades
 

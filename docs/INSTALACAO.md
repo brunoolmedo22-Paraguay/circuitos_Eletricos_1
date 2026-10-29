@@ -166,6 +166,15 @@ Projetos gratuitos são pausados após 7 dias sem uso. Duas proteções:
 
 ---
 
+## 7.1 Conteúdo incluído no repositório
+
+Os exercícios e figuras das Listas 03 e 04 ficam em `conteudo/pacotes/` e são
+cadastrados automaticamente na primeira inicialização após o deploy — não é
+preciso subir imagens. Se o repositório for público, as figuras do livro ficam
+visíveis no GitHub; o Streamlit Community Cloud também implanta repositórios
+privados. Se o bucket do Supabase foi criado com restrição de tipos de arquivo,
+inclua `image/png` e `image/jpeg` para anexar figuras novas pelo painel.
+
 ## 8. Backup e recuperação
 
 * **Backup completo**: *Administração → Configurações → Backup → Gerar backup*.
@@ -216,6 +225,7 @@ Projetos gratuitos são pausados após 7 dias sem uso. Duas proteções:
 | `[auth] session_hours`            | `CE1_SESSION_HOURS`           | `12`          |
 | `[youtube] api_key`               | `CE1_YOUTUBE_API_KEY`         | —             |
 | `[youtube] check_online`          | `CE1_CHECK_VIDEO_ONLINE`      | `true`        |
+| `[app] import_packs`              | `CE1_IMPORT_PACKS`            | `true` (importa os pacotes de `conteudo/pacotes/` na inicialização) |
 
 Parâmetros acadêmicos (limite do PDF, duração recomendada, unidades, código da
 turma para autocadastro, endereço público) ficam no banco e são alterados em

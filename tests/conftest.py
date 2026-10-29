@@ -90,6 +90,7 @@ def platform(request, tmp_path):
         local_storage_dir=str(tmp_path / "arquivos"),
         bootstrap_token=BOOT,
         mode="demonstracao",
+        seed_content=False,  # os testes de fluxo usam exercícios próprios; a importação tem testes dedicados
     )
     yt = FakeYouTube()
     p = Platform(settings, http_get=yt)

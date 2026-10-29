@@ -5,10 +5,16 @@ OK	Token inválido recusado
 OK	Primeiro administrador criado	
 OK	Segundo administrador cadastrado com senha provisória	
 OK	Aluna cadastrada	
+OK	Pacote Boylestad já cadastrado na instalação nova (sem carga manual)	
 OK	Exercício 2.04 criado	
 OK	Troca obrigatória da senha provisória	
 OK	Sessão mantida após recarregar a página (cookie)	
 OK	Aluna não vê Administração no menu	
+OK	[aluna] 27 exercícios da Lista 03 e 22 da Lista 04 visíveis ao aluno	27/22
+OK	[aluna] Busca pela Figura 8.114 encontra 3.08 e 4.02	['Lista 03 · Exercício 3.08', 'Lista 04 · Exercício 4.02']
+OK	[aluna] Figura do circuito renderizada (imagem carregada)	naturalWidth=604
+OK	[aluna] Legenda correta (Figura 8.114, p. 279)	
+OK	[aluna] Ampliar figura abre a imagem em tamanho maior	
 OK	Exercício proposto 2.04 disponível no envio	
 OK	Envio sem declaração bloqueado	
 OK	Entrega registrada como Submetida	
@@ -36,6 +42,11 @@ OK	Sem exceções na página da resolução
 OK	Publicação persiste após reinício	
 OK	PDF persiste após reinício	
 OK	Histórico e avaliações persistem	
+OK	[após reinício] 27 exercícios da Lista 03 e 22 da Lista 04 visíveis ao aluno	27/22
+OK	[após reinício] Busca pela Figura 8.114 encontra 3.08 e 4.02	['Lista 03 · Exercício 3.08', 'Lista 04 · Exercício 4.02']
+OK	[após reinício] Figura do circuito renderizada (imagem carregada)	naturalWidth=604
+OK	[após reinício] Legenda correta (Figura 8.114, p. 279)	
+OK	[após reinício] Ampliar figura abre a imagem em tamanho maior	
 OK	Logs acessíveis ao segundo administrador	
 OK	Histórico de avaliações acessível	
 OK	Configurações e diagnóstico	
@@ -46,3 +57,9 @@ OK	Página /interaja carrega sem erros
 OK	Microexperimento abre (iframe)	
 OK	Rota legada /ejercicios redireciona	
 OK	Rota legada /interactue redireciona	
+OK	[celular] 27 exercícios da Lista 03 e 22 da Lista 04 visíveis ao aluno	27/22
+OK	[celular] Busca pela Figura 8.114 encontra 3.08 e 4.02	['Lista 03 · Exercício 3.08', 'Lista 04 · Exercício 4.02']
+OK	[celular] Figura do circuito renderizada (imagem carregada)	naturalWidth=604
+OK	[celular] Legenda correta (Figura 8.114, p. 279)	
+OK	[celular] Ampliar figura abre a imagem em tamanho maior	
+OK	[celular] Figura cabe na tela sem corte	317px

@@ -371,3 +371,29 @@ div[class*="st-key-ex-prop-"]:hover, div[class*="st-key-ex-mine-"]:hover, div[cl
 .st-key-ex-auth [data-testid="stPageLink"] a p { color: var(--accent) !important; font-weight: 600; }
 [data-testid="stMainBlockContainer"] [data-baseweb="select"] > div > div { background-color: transparent !important; }
 .st-key-ex-auth [data-testid="stPageLink"] a { min-height: 2.6rem; }
+
+/* ---------- Figuras dos exercícios (circuitos) ------------------------- */
+div[class*="st-key-ex-fig-"] {
+  margin: .6rem 0 .4rem; padding: .9rem 1rem .6rem !important; background: #fff !important;
+  border: 1px solid var(--line) !important; border-radius: 14px !important;
+}
+div[class*="st-key-ex-fig-"] [data-testid="stImage"],
+div[class*="st-key-ex-fig-"] [data-testid="stImageContainer"] { display: flex; justify-content: center; }
+div[class*="st-key-ex-fig-"] img { max-width: 100% !important; height: auto !important; object-fit: contain; }
+.ex-fig__caption { color: var(--muted) !important; font-size: .8rem; }
+.ex-panel__label--spaced { margin-top: .8rem; }
+[data-testid="stDialog"] img { max-width: 100% !important; height: auto !important; }
+div[class*="st-key-ex-fig-"] [data-testid="stElementContainer"]:has(img),
+div[class*="st-key-ex-fig-"] [data-testid="stImage"],
+div[class*="st-key-ex-fig-"] [data-testid="stImageContainer"] { width: 100% !important; display: flex !important;
+  justify-content: center !important; align-items: center; }
+div[class*="st-key-ex-fig-"] img { margin: 0 auto !important; display: block; }
+.ex-fig-zoom { overflow: auto; max-height: 72vh; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  -webkit-overflow-scrolling: touch; }
+.ex-fig-zoom img { display: block; width: max(100%, 960px); max-width: none !important; height: auto; }
+@media (max-width: 640px) {
+  div[class*="st-key-ex-fig-"] { padding: .4rem .3rem .5rem !important; margin-left: -.35rem; margin-right: -.35rem; }
+  div[class*="st-key-ex-prop-"] { padding: .7rem .6rem !important; }
+  [data-testid="stExpander"] details > div { padding-left: .5rem !important; padding-right: .5rem !important; }
+}
+div[class*="st-key-ex-fig-"] [data-testid="stFullScreenFrame"] > div { margin-left: auto !important; margin-right: auto !important; }

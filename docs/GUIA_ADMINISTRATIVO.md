@@ -28,6 +28,20 @@ busca) e enunciado. O enunciado aceita Markdown e LaTeX: `$V = R \cdot I$`.
   enunciado continuam editáveis. Exercícios com entregas não podem ser excluídos.
 * As unidades sugeridas são definidas em *Configurações*.
 
+### Figuras do enunciado
+Em *Gerenciar Exercícios → Editar*, a seção **Figuras do enunciado** mostra as
+imagens do exercício. Use **Anexar figura** (PNG ou JPEG, até 5 MB, com rótulo
+como “Figura 8.114” e legenda) para circuitos de exercícios novos, ou
+**Remover**. A figura aparece para o aluno logo abaixo do enunciado.
+
+### Pacotes de exercícios (Listas 03 e 04 do Boylestad)
+Os 49 exercícios das Listas 03 e 04, com as figuras do livro, são cadastrados
+automaticamente na primeira inicialização. Em *Configurações → Pacotes de
+exercícios* veja quando foram importados e quais códigos já existiam (mantidos
+sem alteração). Se você excluir um deles e quiser de volta, use **Importar
+ausentes** — exercícios existentes nunca são sobrescritos. Para mudar um
+enunciado, edite o exercício normalmente: a importação não desfaz a edição.
+
 ## 2. Adicionar estudantes
 *Administração → Adicionar Usuários.*
 * **Individual:** nome, login (sugestão: matrícula), matrícula, e-mail, WhatsApp.
