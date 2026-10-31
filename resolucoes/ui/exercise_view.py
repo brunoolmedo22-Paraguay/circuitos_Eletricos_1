@@ -45,7 +45,8 @@ def clear_figure_cache() -> None:
 def _zoom(data: bytes, title: str) -> None:
     if title:
         st.markdown(f"**{title}**")
-    mime = "image/jpeg" if data[:3] == b"\xff\xd8\xff" else "image/png"
+    mime = ("image/svg+xml" if data.lstrip().startswith(b"<svg") else
+            "image/jpeg" if data[:3] == b"\xff\xd8\xff" else "image/png")
     b64 = base64.b64encode(data).decode("ascii")
     # Imagem ampliada (1,5×) dentro de um painel rolável: no celular, deslize para percorrer o circuito.
     st.markdown(
