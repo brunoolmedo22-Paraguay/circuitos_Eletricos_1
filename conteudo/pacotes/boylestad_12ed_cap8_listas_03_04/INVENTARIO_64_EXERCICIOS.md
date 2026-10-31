@@ -77,15 +77,15 @@ Fonte: Boylestad, *Introdução à análise de circuitos*, 12. ed., cap. 8. Inve
 | A.10 | 16 | Análise de ramos e conversão de fontes no resistor de 12 Ω | 8.112 | Sim |
 | A.11 | 19 | Equações de correntes nos ramos e determinantes | 8.115 | Sim |
 | A.12 | 20 | Análise geral de malhas e tensão Va | 8.111 | Sim |
-| A.13 | 29 | Método das malhas no circuito da figura 8.120 | 8.120 | Não |
-| A.14 | 48 | Análise nodal do circuito da figura 8.132 | 8.132 | Sim |
-| A.15 | 52 | Conversão de fonte e tensões nodais | 8.125 | Sim |
+| A.13 | 48 | Tensões nodais e corrente em resistor de 4 Ω | 8.132 | Sim |
+| A.14 | 52 | Conversão de fonte e tensão em resistor de 6 Ω | 8.125 | Sim |
+| A.15 | 53 | Conversão de fonte e corrente em resistor de 4 Ω | 8.130 | Sim |
 
 ### Notas de integração
 
-- Os 15 problemas são distintos dos 49 já catalogados nas Listas 03 e 04.
+- As 15 fichas completas estão em `Adicional_15_Carga_Plataforma.txt`. Os 15 problemas são distintos dos 49 já catalogados nas Listas 03 e 04.
 - A referência às figuras é do livro; arquivos ausentes devem ser produzidos/autorizados antes de disponibilizar as atividades aos alunos.
 - Este inventário **não é um importador automático**, nem altera o banco de dados da plataforma.
 - Para publicação, criar fichas completas, conferir cada enunciado e vincular diagramas acessíveis. Não publicar automaticamente sem validação.
 
-**Total catalogado: 64 (49 fichas existentes + 15 seleções adicionais).**
+**Total catalogado: 64 (49 fichas existentes + 15 fichas adicionais preparadas).**
