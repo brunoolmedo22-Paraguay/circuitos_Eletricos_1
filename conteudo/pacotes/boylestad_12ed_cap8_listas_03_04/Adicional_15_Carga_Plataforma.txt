@@ -1,6 +1,6 @@
 # FICHAS DE EXERCÍCIOS — ADICIONAL
 
-Boylestad, *Introdução à análise de circuitos*, 12ª edição, capítulo 8. Enunciados reformulados para o cadastro acadêmico. **Status: preparado no repositório; ainda não importado ao banco de dados.**
+Boylestad, *Introdução à análise de circuitos*, 12ª edição, capítulo 8. Enunciados reformulados para o cadastro acadêmico. **Pacote registrado para importação automática. Figuras vinculadas no diretório Figuras.**
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 01 DE 15 | BOYLESTAD: PROBLEMA 1
@@ -25,10 +25,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 1, Figura 8.97, p. 277.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 02 DE 15 | BOYLESTAD: PROBLEMA 3
@@ -53,10 +53,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 3, Figura 8.99, p. 277.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 03 DE 15 | BOYLESTAD: PROBLEMA 5
@@ -81,10 +81,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 5, Figura 8.101, p. 277.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 04 DE 15 | BOYLESTAD: PROBLEMA 7
@@ -109,10 +109,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 7, Figura 8.103, p. 278.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 05 DE 15 | BOYLESTAD: PROBLEMA 8
@@ -137,10 +137,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 8, Figura 8.104, p. 278.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 06 DE 15 | BOYLESTAD: PROBLEMA 9
@@ -165,10 +165,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 9, Figura 8.105, p. 278.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 07 DE 15 | BOYLESTAD: PROBLEMA 10
@@ -193,10 +193,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 10, Figura 8.106, p. 278.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 08 DE 15 | BOYLESTAD: PROBLEMA 13
@@ -224,7 +224,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_109.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 09 DE 15 | BOYLESTAD: PROBLEMA 14
@@ -249,10 +249,10 @@ Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridade
 
 Materiais de apoio (links, referências)
 BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 14, Figura 8.110, p. 278.
-ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+Figura do circuito incluída no pacote versionado e exibida junto ao enunciado.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 10 DE 15 | BOYLESTAD: PROBLEMA 16
@@ -280,7 +280,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_112.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 11 DE 15 | BOYLESTAD: PROBLEMA 19
@@ -308,7 +308,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_115.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 12 DE 15 | BOYLESTAD: PROBLEMA 20
@@ -336,7 +336,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_111.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 13 DE 15 | BOYLESTAD: PROBLEMA 48
@@ -364,7 +364,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_132.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 14 DE 15 | BOYLESTAD: PROBLEMA 52
@@ -392,7 +392,7 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_125.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
 ===========================================================================
 ADICIONAL | EXERCÍCIO 15 DE 15 | BOYLESTAD: PROBLEMA 53
@@ -420,5 +420,5 @@ BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: 
 Figura disponível no pacote existente: FIG_8_130.png.
 
 Disponível para entregas
-Não (até validação da figura e importação no banco)
+Sim
 
