@@ -50,7 +50,15 @@ PACKS = [
         "figuras": "Figuras",
         "esperado": {"03": 27, "04": 22},
         "somente_ab": {"04": [57, 58, 59, 60]},
-    }
+    },
+    {
+        "id": "boylestad_12ed_cap8_listas_03_04",
+        "nome": "Boylestad, 12ª ed., cap. 8 — Adicional (15 fichas)",
+        "fichas": "Adicional_15_Carga_Plataforma.txt",
+        "esperado": {"AD": 15},
+        "sem_figuras": True,
+        "marcador": "boylestad_12ed_cap8_adicional",
+    },
 ]
 
 FIELDS = [
@@ -64,7 +72,7 @@ FIELDS = [
     ("available", "Disponível para entregas"),
 ]
 _HEADER = re.compile(
-    r"^=+\n(LISTA (\d+) \| EXERCÍCIO (\d+) DE (\d+) \| BOYLESTAD: PROBLEMA (\d+))\n=+\n", re.M
+    r"^=+\n((?:LISTA (\d+)|ADICIONAL) \| EXERCÍCIO (\d+) DE (\d+) \| BOYLESTAD: PROBLEMA (\d+))\n=+\n", re.M
 )
 _FIG_FILE = re.compile(r"Arquivo de apoio da figura:\s*(FIG_[\w.]+?\.png)")
 _FIG_NUM = re.compile(r"Figura (\d+\.\d+)")
@@ -136,7 +144,7 @@ def parse_fichas(text: str) -> list[Ficha]:
         page = re.search(r"p\. (\d+) \(figura\)", mats) or re.search(r"Figura \d+\.\d+, p\. (\d+)", mats)
         fichas.append(
             Ficha(
-                lista=f"{int(h.group(2)):02d}", seq=int(h.group(3)), total_lista=int(h.group(4)),
+                lista=f"{int(h.group(2)):02d}" if h.group(2) else "AD", seq=int(h.group(3)), total_lista=int(h.group(4)),
                 problema=int(h.group(5)), code=f["code"], title=f["title"], unit=f["unit"], topics=f["topics"],
                 statement=f["statement"], description=f["description"],
                 support_material=_INSTRUCAO.sub(
@@ -174,8 +182,9 @@ def load_pack(spec: dict, root: Path | None = None) -> Pack:
     base = (root or CONTENT_ROOT) / spec["id"]
     raw = (base / spec["fichas"]).read_bytes()
     fichas = parse_fichas(raw.decode("utf-8-sig"))
-    indice, pages = parse_indice((base / spec["indice"]).read_text(encoding="utf-8-sig"))
-    pack = Pack(id=spec["id"], nome=spec["nome"], root=base, version=hashlib.sha256(raw).hexdigest()[:16],
+    indice, pages = (parse_indice((base / spec["indice"]).read_text(encoding="utf-8-sig"))
+                     if not spec.get("sem_figuras") else ({}, {}))
+    pack = Pack(id=spec.get("marcador", spec["id"]), nome=spec["nome"], root=base, version=hashlib.sha256(raw).hexdigest()[:16],
                 fichas=fichas, indice=indice, figuras_indice=pages)
     pack.problems = validate_pack(pack, spec)
     return pack
@@ -197,13 +206,15 @@ def validate_pack(pack: Pack, spec: dict) -> list[str]:
         if code in seen:
             probs.append(f"{where}: código duplicado {code}.")
         seen.add(code)
-        if not code.startswith(f"{int(f.lista)}."):
+        if not code.startswith("A." if f.lista == "AD" else f"{int(f.lista)}."):
             probs.append(f"{where}: código {code} não pertence à lista.")
         for attr in ("title", "unit", "statement"):
             if not getattr(f, attr).strip():
                 probs.append(f"{where}: campo obrigatório vazio ({attr}).")
         if f"problema {f.problema}" not in f.title:
             probs.append(f"{where}: o título não cita o problema original.")
+        if spec.get("sem_figuras"):
+            continue
         if not f.figure_file:
             probs.append(f"{where}: ficha sem arquivo de figura.")
         elif not (pack.root / spec["figuras"] / f.figure_file).is_file():
@@ -231,6 +242,10 @@ def validate_pack(pack: Pack, spec: dict) -> list[str]:
 # --------------------------------------------------------------------------- #
 # Aplicação no banco
 # --------------------------------------------------------------------------- #
+def spec_path(pack: Pack) -> str:
+    return pack.root.name
+
+
 def _marker_key(pack_id: str) -> str:
     return f"_pacote:{pack_id}"
 
@@ -253,16 +268,19 @@ def apply_pack(platform, pack: Pack, *, actor: User | None = None) -> dict:
     with platform.engine.begin() as conn:
         for f in pack.fichas:
             code = normalize_exercise_code(f.code)
-            rel = f"{pack.id}/Figuras/{f.figure_file}"
-            with Image.open(pack.root / "Figuras" / f.figure_file) as im:
-                w, h = im.size
+            rel = f"{spec_path(pack)}/Figuras/{f.figure_file}" if f.figure_file else ""
+            if f.figure_file:
+                with Image.open(pack.root / "Figuras" / f.figure_file) as im:
+                    w, h = im.size
+            else:
+                w, h = None, None
             caption = f"Boylestad, 12ª ed., cap. 8, p. {f.figure_page or pack.figuras_indice.get(f.figure_file, '')}".rstrip(", p. ")
             existing = conn.execute(sa.select(db.exercises.c.id, db.exercises.c.title)
                                     .where(db.exercises.c.code == code)).first()
             if existing is not None:
                 has_figs = conn.execute(sa.select(sa.func.count()).select_from(db.exercise_figures)
                                         .where(db.exercise_figures.c.exercise_id == existing.id)).scalar_one()
-                if existing.title.strip() == f.title.strip() and not has_figs:
+                if f.figure_file and existing.title.strip() == f.title.strip() and not has_figs:
                     svc._attach(conn, existing.id, source=FIG_PACOTE, ref=rel, label=f.figure_label,
                                 caption=caption, width=w, height=h)
                     completados.append(code)
@@ -272,7 +290,8 @@ def apply_pack(platform, pack: Pack, *, actor: User | None = None) -> dict:
             data = svc._clean(title=f.title, statement=f.statement, unit=f.unit, topics=f.topics,
                               description=f.description, support_material=f.support_material)
             eid = svc._insert(conn, code, data, active=f.available, actor_id=actor.id if actor else None)
-            svc._attach(conn, eid, source=FIG_PACOTE, ref=rel, label=f.figure_label, caption=caption, width=w, height=h)
+            if f.figure_file:
+                svc._attach(conn, eid, source=FIG_PACOTE, ref=rel, label=f.figure_label, caption=caption, width=w, height=h)
             criados.append(code)
         report = {
             "pacote": pack.nome,
@@ -318,5 +337,5 @@ def ensure_packs(platform, *, root: Path | None = None) -> list[dict]:
 def reimport(platform, actor: User, pack_id: str) -> dict:
     """Ação administrativa: recria apenas os exercícios ausentes do pacote."""
     require_admin(actor)
-    spec = next(s for s in PACKS if s["id"] == pack_id)
+    spec = next(s for s in PACKS if s.get("marcador", s["id"]) == pack_id)
     return apply_pack(platform, load_pack(spec), actor=actor)
