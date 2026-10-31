@@ -102,12 +102,15 @@ def test_sem_solucoes_publicadas(pack):
 def test_importacao_cadastra_49_com_figuras(seeded, actors):
     p, ana = seeded, actors["ana"]
     exs = p.exercises.list(ana)
-    assert len(exs) == 49
+    assert len(exs) == 64
+    assert sum(1 for e in exs if list_label(e.code) == "Adicional") == 15
     assert sum(1 for e in exs if list_label(e.code) == "Lista 03") == 27
     assert sum(1 for e in exs if list_label(e.code) == "Lista 04") == 22
     expected = {f.code: f for f in importacao.load_pack(SPEC).fichas}
     refs = set()
     for ex in exs:
+        if ex.code not in expected:
+            continue
         f = expected[ex.code]
         assert (ex.title, ex.unit, ex.statement, ex.description) == (f.title, f.unit, f.statement, f.description)
         figs = p.exercises.figures(ex.id)
@@ -130,7 +133,7 @@ def test_importacao_idempotente_e_persistente(seeded, actors):
         n_fig = conn.execute(sa.select(sa.func.count()).select_from(db.exercise_figures)).scalar_one()
         n_log = conn.execute(sa.select(sa.func.count()).select_from(db.audit_log)
                              .where(db.audit_log.c.action == "pacote_importado")).scalar_one()
-    assert (n_ex, n_fig, n_log) == (49, 49, 1)
+    assert (n_ex, n_fig, n_log) == (64, 64, 2)
     assert importacao.pack_status(p2, SPEC["id"])["criados"].__len__() == 49
 
 
