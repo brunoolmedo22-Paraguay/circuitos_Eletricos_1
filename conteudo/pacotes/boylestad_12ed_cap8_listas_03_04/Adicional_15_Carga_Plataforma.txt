@@ -1,0 +1,424 @@
+# FICHAS DE EXERCÍCIOS — ADICIONAL
+
+Boylestad, *Introdução à análise de circuitos*, 12ª edição, capítulo 8. Enunciados reformulados para o cadastro acadêmico. **Status: preparado no repositório; ainda não importado ao banco de dados.**
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 01 DE 15 | BOYLESTAD: PROBLEMA 1
+===========================================================================
+Código *
+A.01
+
+Título *
+Correntes e tensão de fonte ideal (Boylestad, problema 1)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.97. a) Determine I₁ e I₂ no circuito indicado. b) Determine a tensão Vₛ, respeitando a polaridade mostrada.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 1, Figura 8.97, p. 277.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 02 DE 15 | BOYLESTAD: PROBLEMA 3
+===========================================================================
+Código *
+A.02
+
+Título *
+Tensão e polaridade em fonte de corrente (Boylestad, problema 3)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.99. Determine o valor e a polaridade da tensão Vₛ na fonte de corrente ideal do circuito.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 3, Figura 8.99, p. 277.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 03 DE 15 | BOYLESTAD: PROBLEMA 5
+===========================================================================
+Código *
+A.03
+
+Título *
+Tensão V₃ e corrente I₂ (Boylestad, problema 5)
+
+Unidade ou tema *
+Fontes de corrente
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.101. Determine a tensão V₃ e a corrente I₂ no circuito, adotando os sentidos e as polaridades indicados.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 5, Figura 8.101, p. 277.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 04 DE 15 | BOYLESTAD: PROBLEMA 7
+===========================================================================
+Código *
+A.04
+
+Título *
+Conversão de fontes de tensão (Boylestad, problema 7)
+
+Unidade ou tema *
+Conversões de fontes
+
+Temas e conceitos (separados por vírgula)
+conversões de fontes, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.103. Para cada circuito da figura, obtenha a fonte de corrente equivalente e sua resistência em paralelo.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 7, Figura 8.103, p. 278.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 05 DE 15 | BOYLESTAD: PROBLEMA 8
+===========================================================================
+Código *
+A.05
+
+Título *
+Conversão de fontes de corrente (Boylestad, problema 8)
+
+Unidade ou tema *
+Conversões de fontes
+
+Temas e conceitos (separados por vírgula)
+conversões de fontes, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.104. Para cada circuito da figura, obtenha a fonte de tensão equivalente e sua resistência em série.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 8, Figura 8.104, p. 278.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 06 DE 15 | BOYLESTAD: PROBLEMA 9
+===========================================================================
+Código *
+A.06
+
+Título *
+Corrente de carga por fontes equivalentes (Boylestad, problema 9)
+
+Unidade ou tema *
+Conversões de fontes
+
+Temas e conceitos (separados por vírgula)
+conversões de fontes, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.105. a) Calcule a corrente no resistor de 10 Ω e discuta o efeito de sua resistência reduzida. b) Transforme a fonte de corrente em fonte de tensão e recalcule a corrente; compare.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 9, Figura 8.105, p. 278.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 07 DE 15 | BOYLESTAD: PROBLEMA 10
+===========================================================================
+Código *
+A.07
+
+Título *
+Associação de fontes e corrente de carga (Boylestad, problema 10)
+
+Unidade ou tema *
+Conversões de fontes
+
+Temas e conceitos (separados por vírgula)
+conversões de fontes, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.106. a) Transforme a fonte de corrente em fonte de tensão. b) Associe as fontes em série. c) Calcule a corrente no resistor de 91 Ω.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 10, Figura 8.106, p. 278.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 08 DE 15 | BOYLESTAD: PROBLEMA 13
+===========================================================================
+Código *
+A.08
+
+Título *
+Conversão de fontes e tensão Vab (Boylestad, problema 13)
+
+Unidade ou tema *
+Conversões de fontes
+
+Temas e conceitos (separados por vírgula)
+conversões de fontes, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.109. Transforme as fontes de tensão em fontes de corrente; determine Vab, sua polaridade e a intensidade e o sentido de I₃.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 13, Figura 8.109, p. 278.
+Figura disponível no pacote existente: FIG_8_109.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 09 DE 15 | BOYLESTAD: PROBLEMA 14
+===========================================================================
+Código *
+A.09
+
+Título *
+Fonte equivalente e tensões V₁ e V₂ (Boylestad, problema 14)
+
+Unidade ou tema *
+Fontes de corrente em paralelo
+
+Temas e conceitos (separados por vírgula)
+fontes de corrente em paralelo, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.110. a) Transforme a fonte de tensão em fonte de corrente. b) Reduza o circuito a uma fonte equivalente e obtenha V₁. c) Determine V₂. d) Calcule I₂.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 14, Figura 8.110, p. 278.
+ATENÇÃO: figura não incluída no repositório; disponibilizar o livro por acesso institucional ou criar diagrama próprio autorizado antes da publicação.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 10 DE 15 | BOYLESTAD: PROBLEMA 16
+===========================================================================
+Código *
+A.10
+
+Título *
+Corrente de ramo por dois métodos (Boylestad, problema 16)
+
+Unidade ou tema *
+Análise das correntes nos ramos
+
+Temas e conceitos (separados por vírgula)
+análise das correntes nos ramos, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.112. a) Determine a corrente no resistor de 12 Ω pela análise das correntes nos ramos. b) Converta as fontes de tensão em fontes de corrente e obtenha novamente a corrente. c) Compare.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 16, Figura 8.112, p. 279.
+Figura disponível no pacote existente: FIG_8_112.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 11 DE 15 | BOYLESTAD: PROBLEMA 19
+===========================================================================
+Código *
+A.11
+
+Título *
+Sistema de equações de correntes de ramo (Boylestad, problema 19)
+
+Unidade ou tema *
+Análise das correntes nos ramos
+
+Temas e conceitos (separados por vírgula)
+análise das correntes nos ramos, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.115. a) Formule as equações das correntes de ramo. b) Reduza o sistema a três equações independentes com a LKC. c) Resolva o sistema por determinantes.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 19, Figura 8.115, p. 279.
+Figura disponível no pacote existente: FIG_8_115.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 12 DE 15 | BOYLESTAD: PROBLEMA 20
+===========================================================================
+Código *
+A.12
+
+Título *
+Malhas e tensão Va (Boylestad, problema 20)
+
+Unidade ou tema *
+Método das malhas — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+método das malhas — abordagem geral, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.111. a) Calcule as correntes em cada resistor pelo método geral das malhas. b) Determine a tensão Vₐ a partir dos resultados.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 20, Figura 8.111, p. 279.
+Figura disponível no pacote existente: FIG_8_111.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 13 DE 15 | BOYLESTAD: PROBLEMA 48
+===========================================================================
+Código *
+A.13
+
+Título *
+Tensões nodais e corrente em resistor de 4 Ω (Boylestad, problema 48)
+
+Unidade ou tema *
+Método dos nós — abordagem geral
+
+Temas e conceitos (separados por vírgula)
+método dos nós — abordagem geral, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.132. Determine as tensões nodais pelo método geral dos nós e calcule a corrente através do resistor de 4 Ω.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 48, Figura 8.132, p. 282.
+Figura disponível no pacote existente: FIG_8_132.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 14 DE 15 | BOYLESTAD: PROBLEMA 52
+===========================================================================
+Código *
+A.14
+
+Título *
+Conversão de fonte e tensão em resistor de 6 Ω (Boylestad, problema 52)
+
+Unidade ou tema *
+Método dos nós — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+método dos nós — abordagem padronizada, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.125. a) Converta a fonte de tensão em fonte de corrente e calcule as tensões nodais pelo método padronizado. b) Determine a tensão no resistor de 6 Ω.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 52, Figura 8.125, p. 283.
+Figura disponível no pacote existente: FIG_8_125.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
+===========================================================================
+ADICIONAL | EXERCÍCIO 15 DE 15 | BOYLESTAD: PROBLEMA 53
+===========================================================================
+Código *
+A.15
+
+Título *
+Conversão de fonte e corrente em resistor de 4 Ω (Boylestad, problema 53)
+
+Unidade ou tema *
+Método dos nós — abordagem padronizada
+
+Temas e conceitos (separados por vírgula)
+método dos nós — abordagem padronizada, circuitos CC, leis de Kirchhoff, análise de circuitos
+
+Enunciado *
+Considere o circuito da Figura 8.130. a) Converta a fonte de tensão em fonte de corrente e calcule as tensões nodais pelo método padronizado. b) Calcule a corrente através do resistor de 4 Ω.
+
+Descrição complementar
+Apresente o desenvolvimento algébrico, os sentidos das correntes, as polaridades das tensões e os resultados com unidades. Consulte o diagrama indicado na referência bibliográfica.
+
+Materiais de apoio (links, referências)
+BOYLESTAD, Robert L. Introdução à análise de circuitos. 12. ed. São Paulo: Pearson, 2012. Capítulo 8, problema 53, Figura 8.130, p. 283.
+Figura disponível no pacote existente: FIG_8_130.png.
+
+Disponível para entregas
+Não (até validação da figura e importação no banco)
+
