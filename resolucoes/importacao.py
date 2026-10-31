@@ -56,7 +56,7 @@ PACKS = [
         "nome": "Boylestad, 12ª ed., cap. 8 — Adicional (15 fichas)",
         "fichas": "Adicional_15_Carga_Plataforma.txt",
         "esperado": {"AD": 15},
-        "sem_figuras": True,
+        "indice_auto": True,
         "marcador": "boylestad_12ed_cap8_adicional",
     },
 ]
@@ -151,7 +151,9 @@ def parse_fichas(text: str) -> list[Ficha]:
                     r"Figura do circuito: \1 — exibida junto ao enunciado nesta plataforma.", mats
                 ).strip(),
                 available=f["available"].strip().lower() in {"sim", "s", "yes"},
-                figure_file=mfile.group(1) if mfile else "",
+                figure_file=(mfile.group(1) if mfile else
+                             (f"FIG_{mnum.group(1).replace('.', '_')}.{'svg' if mnum.group(1) in {'8.97', '8.99', '8.101', '8.103', '8.104', '8.105', '8.106', '8.110'} else 'png'}"
+                              if not h.group(2) and mnum else "")),
                 figure_label=f"Figura {mnum.group(1)}" if mnum else "",
                 figure_page=page.group(1) if page else "",
             )
@@ -183,7 +185,9 @@ def load_pack(spec: dict, root: Path | None = None) -> Pack:
     raw = (base / spec["fichas"]).read_bytes()
     fichas = parse_fichas(raw.decode("utf-8-sig"))
     indice, pages = (parse_indice((base / spec["indice"]).read_text(encoding="utf-8-sig"))
-                     if not spec.get("sem_figuras") else ({}, {}))
+                     if not spec.get("indice_auto") else
+                     ({(f.lista, f.problema): f.figure_file for f in fichas},
+                      {f.figure_file: f.figure_page for f in fichas}))
     pack = Pack(id=spec.get("marcador", spec["id"]), nome=spec["nome"], root=base, version=hashlib.sha256(raw).hexdigest()[:16],
                 fichas=fichas, indice=indice, figuras_indice=pages)
     pack.problems = validate_pack(pack, spec)
@@ -213,8 +217,6 @@ def validate_pack(pack: Pack, spec: dict) -> list[str]:
                 probs.append(f"{where}: campo obrigatório vazio ({attr}).")
         if f"problema {f.problema}" not in f.title:
             probs.append(f"{where}: o título não cita o problema original.")
-        if spec.get("sem_figuras"):
-            continue
         if not f.figure_file:
             probs.append(f"{where}: ficha sem arquivo de figura.")
         elif not (pack.root / spec["figuras"] / f.figure_file).is_file():
@@ -269,7 +271,11 @@ def apply_pack(platform, pack: Pack, *, actor: User | None = None) -> dict:
         for f in pack.fichas:
             code = normalize_exercise_code(f.code)
             rel = f"{spec_path(pack)}/Figuras/{f.figure_file}" if f.figure_file else ""
-            if f.figure_file:
+            if f.figure_file.endswith(".svg"):
+                import xml.etree.ElementTree as ET
+                svg = ET.parse(pack.root / "Figuras" / f.figure_file).getroot()
+                w, h = int(svg.attrib["width"]), int(svg.attrib["height"])
+            elif f.figure_file:
                 with Image.open(pack.root / "Figuras" / f.figure_file) as im:
                     w, h = im.size
             else:
@@ -286,6 +292,8 @@ def apply_pack(platform, pack: Pack, *, actor: User | None = None) -> dict:
                     completados.append(code)
                 else:
                     mantidos.append(code)
+                if pack.id == "boylestad_12ed_cap8_adicional" and existing.title.strip() == f.title.strip() and f.available:
+                    conn.execute(db.exercises.update().where(db.exercises.c.id == existing.id).values(active=True, updated_at=db.utcnow()))
                 continue
             data = svc._clean(title=f.title, statement=f.statement, unit=f.unit, topics=f.topics,
                               description=f.description, support_material=f.support_material)
