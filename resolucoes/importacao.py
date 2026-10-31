@@ -55,6 +55,7 @@ PACKS = [
         "id": "boylestad_12ed_cap8_listas_03_04",
         "nome": "Boylestad, 12ª ed., cap. 8 — Adicional (15 fichas)",
         "fichas": "Adicional_15_Carga_Plataforma.txt",
+        "figuras": "Figuras",
         "esperado": {"AD": 15},
         "indice_auto": True,
         "marcador": "boylestad_12ed_cap8_adicional",
@@ -210,7 +211,7 @@ def validate_pack(pack: Pack, spec: dict) -> list[str]:
         if code in seen:
             probs.append(f"{where}: código duplicado {code}.")
         seen.add(code)
-        if not code.startswith("A." if f.lista == "AD" else f"{int(f.lista)}."):
+        if not code.startswith("a." if f.lista == "AD" else f"{int(f.lista)}."):
             probs.append(f"{where}: código {code} não pertence à lista.")
         for attr in ("title", "unit", "statement"):
             if not getattr(f, attr).strip():
