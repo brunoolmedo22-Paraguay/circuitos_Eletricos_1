@@ -1,3 +1,7 @@
+import dataclasses
+import sqlalchemy as sa
+from resolucoes import db
+from resolucoes.services import Platform
 """Testes do pacote adicional de 15 exercícios."""
 from resolucoes import importacao
 from resolucoes.services.exercises import list_label
@@ -19,3 +23,16 @@ def test_pacote_adicional():
 def test_codigos_adicionais():
     assert normalize_exercise_code("A.01") == "a.01"
     assert list_label("a.01") == "Adicional"
+
+
+def test_importacao_64_exercicios_64_figuras(platform):
+    settings = dataclasses.replace(platform.settings, seed_content=True)
+    app = Platform(settings, engine=platform.engine, store=platform.store)
+    with app.engine.connect() as conn:
+        assert conn.execute(sa.select(sa.func.count()).select_from(db.exercises)).scalar_one() == 64
+        assert conn.execute(sa.select(sa.func.count()).select_from(db.exercise_figures)).scalar_one() == 64
+        assert conn.execute(sa.select(sa.func.count()).select_from(db.exercises).where(db.exercises.c.active.is_(True))).scalar_one() == 64
+    Platform(settings, engine=platform.engine, store=platform.store)
+    with app.engine.connect() as conn:
+        assert conn.execute(sa.select(sa.func.count()).select_from(db.exercises)).scalar_one() == 64
+        assert conn.execute(sa.select(sa.func.count()).select_from(db.exercise_figures)).scalar_one() == 64
