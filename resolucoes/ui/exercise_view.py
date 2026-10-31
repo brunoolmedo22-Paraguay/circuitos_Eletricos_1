@@ -67,7 +67,8 @@ def render_figures(exercise_id: str, *, key: str) -> None:
                 st.warning(f"{fig.label or 'Figura'} indisponível no momento. {exc.message}")
                 continue
             # Largura natural (sem ampliar a imagem e borrar os valores); no celular o CSS limita a 100%.
-            st.image(data, width=int(min(fig.width or 720, 820)))
+            st.image(data.decode("utf-8-sig") if data.lstrip().startswith(b"<svg") else data,
+                     width=int(min(fig.width or 720, 820)))
             title = " · ".join(x for x in (fig.label, fig.caption) if x)
             c1, c2 = st.columns([4, 1.3], vertical_alignment="center")
             if title:
