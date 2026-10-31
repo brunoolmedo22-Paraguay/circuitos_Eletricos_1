@@ -36,3 +36,16 @@ def test_importacao_64_exercicios_64_figuras(platform):
     with app.engine.connect() as conn:
         assert conn.execute(sa.select(sa.func.count()).select_from(db.exercises)).scalar_one() == 64
         assert conn.execute(sa.select(sa.func.count()).select_from(db.exercise_figures)).scalar_one() == 64
+
+
+def test_svg_renderizado_pelo_streamlit():
+    from pathlib import Path
+    from streamlit.elements.lib.image_utils import image_to_url
+    import streamlit as st
+    root = Path(__file__).resolve().parents[1] / "conteudo/pacotes/boylestad_12ed_cap8_listas_03_04/Figuras"
+    data = (root / "FIG_8_97.svg").read_bytes()
+    assert data.startswith(b"<svg")
+    markup = data.decode("utf-8-sig")
+    assert markup.startswith("<svg")
+    url = image_to_url(markup, 500, False, "RGB", "PNG", "test-svg")
+    assert url.startswith("data:image/svg+xml")
