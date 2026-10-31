@@ -317,12 +317,14 @@ _CODE_RE = re.compile(r"^\d{1,2}\.\d{1,3}[a-z]?$")
 
 def normalize_exercise_code(code: str) -> str:
     raw = (code or "").strip().replace(",", ".").lower()
-    if not _CODE_RE.match(raw):
+    if not (_CODE_RE.match(raw) or re.fullmatch(r"a\.\d{2}", raw)):
         raise ValidationError("Código inválido. Use o formato capítulo.número, por exemplo 2.04.", field="codigo")
     return raw
 
 
 def exercise_sort_key(code: str) -> str:
+    if re.fullmatch(r"a\.\d{2}", code):
+        return f"999.{int(code.split('.')[1]):04d}"
     m = re.match(r"^(\d+)\.(\d+)([a-z]?)$", code)
     if not m:
         return code
