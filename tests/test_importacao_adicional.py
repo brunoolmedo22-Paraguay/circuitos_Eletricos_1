@@ -11,6 +11,8 @@ def test_pacote_adicional():
     assert len(pack.fichas) == 15
     assert [f.code for f in pack.fichas] == [f"A.{i:02d}" for i in range(1, 16)]
     assert all(f.figure_file for f in pack.fichas)
+    assert all(f.available for f in pack.fichas)
+    assert len({f.figure_file for f in pack.fichas}) == 15
     assert len({f.problema for f in pack.fichas}) == 15
 
 
