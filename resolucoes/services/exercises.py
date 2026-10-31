@@ -70,7 +70,7 @@ def _fig(row) -> Figure:
 def list_label(code: str) -> str:
     """Rótulo da lista a partir do código (3.01 → "Lista 03")."""
     head = (code or "").split(".")[0]
-    return f"Lista {int(head):02d}" if head.isdigit() else "Outros"
+    return f"Lista {int(head):02d}" if head.isdigit() else ("Adicional" if head.lower() == "a" else "Outros")
 
 
 def _row(row, count: int = 0) -> Exercise:
